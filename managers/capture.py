@@ -76,7 +76,8 @@ class CaptureManager:
         cv2.imshow(self.name, frame if frame is not None else self.read())
 
     def control(self, key=None):
-        k = cv2.waitKey(1) & 0xFF
+        if key is None:
+            k = cv2.waitKey(1) & 0xFF
 
         # wyjscie z programu
         if k == ord('q'):

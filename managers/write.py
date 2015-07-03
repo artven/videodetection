@@ -39,7 +39,7 @@ class WriteManager:
             self.__filename = filename
 
         self.__writer.open(self.__filename, self.__forucc, self.__fps, self.__size)
-        
+
     @property
     def is_opened(self):
         return self.__writer.isOpened()
