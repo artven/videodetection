@@ -6,10 +6,6 @@ import cv2
 class BackgroundSubtractor:
     MOG2, KNN = 0, 1
 
-    __MOG2 = cv2.createBackgroundSubtractorMOG2
-    __KNN = cv2.createBackgroundSubtractorKNN
-    __subtractor = (__MOG2, __KNN)
-
     def __init__(self, subtype):
         """
         :param subtype: Typ silnika wyodrębniania tła - BackgroundSubtractor.MOG2/KNN
@@ -31,7 +27,7 @@ class BackgroundSubtractor:
         :param kernel: Jądro przekształcenia morfologicznego.
         :param mediansize: Rozmiar filtru medianowego.
         :param dilateiter: Liczba wykonywanych dylatacji obrazu.
-        :return: Binarna ramka obrazu z wyodrębnionym tłem i obiektami.
+        :return: Binarna ramka obrazu z wyodrębnionym tłem.
         """
 
         ker = cv2.getStructuringElement(kernel, kernelsize)
