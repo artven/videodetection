@@ -11,8 +11,8 @@ class CaptureManager:
 
     __id = 0
 
-    __pos_msec = cv2.CAP_PROP_POS_MSEC            # Current position in milliseconds or video capture timestamp.
-    __pos_frames = cv2.CAP_PROP_POS_FRAMES        # 0-based index of the frame to be decoded/captured next.
+    __pos_msec = cv2.CAP_PROP_POS_MSEC        # Current position in milliseconds or video capture timestamp.
+    __pos_frames = cv2.CAP_PROP_POS_FRAMES    # 0-based index of the frame to be decoded/captured next.
     __pos_ratio = cv2.CAP_PROP_POS_AVI_RATIO  # Relative position: 0 - start, 1 - end.
     __width = cv2.CAP_PROP_FRAME_WIDTH        # Width of the frames in the video stream.
     __height = cv2.CAP_PROP_FRAME_HEIGHT      # Height of the frames in the video stream.
