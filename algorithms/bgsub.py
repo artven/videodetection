@@ -6,7 +6,7 @@ import cv2
 class BackgroundSubtractor:
     MOG2, KNN = 0, 1
 
-    def __init__(self, subtype):
+    def __init__(self, subtype=0):
         """
         :param subtype: Typ silnika wyodrębniania tła - BackgroundSubtractor.MOG2/KNN
         """
@@ -37,16 +37,19 @@ class BackgroundSubtractor:
         newframe = self.__fgbg.apply(frame)
         morphframe = cv2.morphologyEx(newframe, op, ker)
         medianframe = cv2.medianBlur(morphframe, mediansize)
-        dilatframe = cv2.dilate(medianframe, kernel, iterations=dilateiter)
+        dilatframe = cv2.dilate(medianframe, ker, iterations=dilateiter)
         self.__lastFrame = dilatframe
 
         return self.__lastFrame
 
-    def control(self, key):
+    def control(self, key=None):
         """Sterowanie procesem wyodrębniania.
         Funkcja pozwala włączać/wyłączać proces substrakcji poprzez przekzanie klawisza.
         Klawisz 's' spowoduje zatrzymanie operacji.
         :param key: Klawisz(znak) sterujący.
         """
+
+        if key is None:
+            key = cv2.waitKey(1) & 0xFF
 
         self.__run = not self.__run if key == ord('s') else self.__run
