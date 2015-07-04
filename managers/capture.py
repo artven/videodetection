@@ -78,6 +78,8 @@ class CaptureManager:
     def control(self, key=None):
         if key is None:
             k = cv2.waitKey(1) & 0xFF
+        else:
+            k = key
 
         # wyjscie z programu
         if k == ord('q'):

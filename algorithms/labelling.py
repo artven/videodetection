@@ -15,7 +15,6 @@ def mark(frame, percent=0.005):
         if marker != 0:
             # jeżeli obszar jest zbyt mały to go nie oznaczaj
             if np.count_nonzero(marked_image == marker)/size < percent:
-                print(np.count_nonzero(marked_image == marker))
                 result[marked_image == marker] = 0
             else:
                 result[marked_image == marker] = __random_color()
