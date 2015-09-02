@@ -12,6 +12,11 @@ class Obj:
         self.pt1 = pt1
         self.pt2 = pt2
 
+    def update(self, obj):
+        # Update object infromation from another object
+        self.pt1 = obj.pt1
+        self.pt2 = obj.pt2
+
 
 class ObjectDetector:
 

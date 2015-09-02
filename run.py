@@ -7,6 +7,7 @@ from managers.video import VideoReader
 from managers.window import Window
 from algorithms.bgsub import BackgroundSubtractor
 from algorithms.objdetection import ObjectDetector
+from algorithms.objectfollowiing import ObjectFollower
 
 if __name__ == "__main__":
 
@@ -29,6 +30,12 @@ if __name__ == "__main__":
             resultFrame[:height, :width, :] = frame
             resultFrame[:height, width:, :] = cv2.cvtColor(substractedFrame, cv2.COLOR_GRAY2BGR)
             resultFrame[height:, :width, :] = ObjectDetector.drawObjectsBorders(substractedFrame)
+
+            objects = ObjectDetector.find(substractedFrame)
+            ObjectFollower.updateObjects(objects)
+            followed = ObjectFollower.drawFollowedObjects()
+
+
 
 
 
