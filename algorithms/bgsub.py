@@ -6,7 +6,7 @@ import cv2
 class BackgroundSubtractor:
 
 
-    def __init__(self, subtype=0):
+    def __init__(self):
 
         self.__fgbg = cv2.createBackgroundSubtractorMOG2()
         self.__run = True

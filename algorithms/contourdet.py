@@ -103,7 +103,4 @@ if __name__ == "__main__":
     cv2.imshow(window2, detector.draw())
 
     while 1:
-
-        k = cv2.waitKey(1) & 0xFF
-        if k == ord('q'):
-            break
+        pass
