@@ -4,7 +4,7 @@ import cv2
 import numpy as np
 
 
-class CaptureManager:
+class VideoReader:
 
     # Read data from device or file.
 

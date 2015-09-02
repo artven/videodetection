@@ -1,7 +1,7 @@
 __author__ = 'rafal'
 
 from cv2 import destroyWindow, namedWindow, imshow
-
+import cv2
 
 class Window:
 
@@ -11,13 +11,10 @@ class Window:
         Window.__id += 1
         self.__name = "Window" + str(Window.__id)
         self.__mode = windowmode
-        self.__windowCrated = False
+        namedWindow(self.__name, self.__mode)
 
     def __del__(self):
         destroyWindow(self.__name)
 
     def show(self, img):
-        if not self.__windowCrated:
-            namedWindow(self.__name, self.__mode)
-            self.__windowCrated = True
         imshow(self.__name, img)

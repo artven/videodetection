@@ -45,10 +45,10 @@ class WriteManager:
         return self.__writer.isOpened()
 
 if __name__ == "__main__":
-    from managers.capture import CaptureManager
+    from managers.video import VideoReader
 
     source = 0
-    inputVideo = CaptureManager(source)
+    inputVideo = VideoReader(source)
     outputVideo = WriteManager()
 
     while 1:

@@ -1,35 +1,37 @@
 __author__ = 'rafal'
 import cv2
 import numpy as np
-from managers.capture import CaptureManager
+
+from utilities import keypressed
+from managers.video import VideoReader
+from managers.window import Window
 from algorithms.bgsub import BackgroundSubtractor
+from algorithms.objdetection import ObjectDetector
 
 if __name__ == "__main__":
 
-    source = "videos/samples/samochód czerwony błonia.avi"
-    inputVideo = CaptureManager(source)
+    path = "videos/samples/samochód czerwony błonia.avi"
+    inputVideo = VideoReader(path)
+    outputWindow = Window()
+    width, height = inputVideo.size()
+
     bgSub = BackgroundSubtractor()
 
-    width, height = inputVideo.size
+    resultFrame = np.zeros([2*height, 2*width, 3], dtype=np.uint8)
 
-
-    while 1:
+    while not keypressed():
         frame = inputVideo.read()
 
-        if not inputVideo.is_good:
-            break
+        if inputVideo.isGood():
 
-        resultFrame = np.zeros([2*height, 2*width, 3], np.uint8)
-        greyFrame = cv2.cvtColor(cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY), cv2.COLOR_GRAY2BGR)
-        bgFrame = bgSub.apply(frame)
+            substractedFrame = bgSub.apply(frame, mediansize=5)
 
-        resultFrame[:height, :width, :] = frame
-        resultFrame[:height, width:, :] = greyFrame
-        resultFrame[height:, :width, :] = cv2.cvtColor(bgFrame, cv2.COLOR_GRAY2BGR)
+            resultFrame[:height, :width, :] = frame
+            resultFrame[:height, width:, :] = cv2.cvtColor(substractedFrame, cv2.COLOR_GRAY2BGR)
+            resultFrame[height:, :width, :] = ObjectDetector.drawObjectsBorders(substractedFrame)
 
-        inputVideo.show(resultFrame)
 
-        key = cv2.waitKey(1) & 0xFF
-        bgSub.control(key)
-        if not inputVideo.control(key):
+
+            outputWindow.show(resultFrame)
+        else:
             break

@@ -3,46 +3,56 @@ __author__ = 'rafal'
 import cv2
 import numpy as np
 from utilities import keypressed
+from algorithms.contourdet import ContourDetector
+
+
+class Obj:
+
+    def __init__(self, pt1, pt2):
+        self.pt1 = pt1
+        self.pt2 = pt2
 
 
 class ObjectDetector:
 
     @staticmethod
     def find(img):
-        # Mark object, based on substracted image.
-        height, width = img.shape
-        size = img.size
+        # Find objects, based on substracted image.
         _, marked_image = cv2.connectedComponents(img)
         unique_markers = np.unique(marked_image)
 
-        resultPoints = []
-
+        result = []
         for marker in unique_markers:
+
+            # Avoid 0-marked region
+            if marker == 0:
+                continue
+
             markedRegion = np.uint8(marked_image == marker)
-            # TODO zastosować klase CountourDetector
-            image, contours, hierarchy = cv2.findContours(img.copy(), cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
+
+            # Check if new region is not too small
+            if np.count_nonzero(markedRegion) < 500:  # TODO zmienić na % obrazu
+                continue
+
+            contours = ContourDetector.find(img)
             cnt = contours[0]
-            leftmost = tuple(cnt[cnt[:, :, 0].argmin()][0])
-            rightmost = tuple(cnt[cnt[:, :, 0].argmax()][0])
-            topmost = tuple(cnt[cnt[:, :, 1].argmin()][0])
-            bottommost = tuple(cnt[cnt[:, :, 1].argmax()][0])
+            leftmost, rightmost, topmost, bottommost = ContourDetector.extremePoints(cnt)
             pt1, pt2 = (leftmost[0], bottommost[1]), (rightmost[0], topmost[1])
+            result.append(Obj(pt1, pt2))
 
-            resultPoints.append((pt1, pt2))
-
-        return resultPoints
+        return result
 
     @staticmethod
-    def mark(img, points):
-        for point in points:
-            cv2.rectangle(img, point[0], point[1], (0, 0, 255), thickness=2)
+    def mark(img, objects):
+        for obj in objects:
+            cv2.rectangle(img, obj.pt1, obj.pt2, (0, 0, 255), thickness=2)
 
     @staticmethod
     def drawObjectsBorders(img):
         newImg = img.copy()
-        objectPoints = ObjectDetector.find(newImg)
+        objects = ObjectDetector.find(newImg)
         newImg = cv2.cvtColor(newImg, cv2.COLOR_GRAY2BGR)
-        ObjectDetector.mark(newImg, objectPoints)
+        ObjectDetector.mark(newImg, objects)
         return newImg
 
 

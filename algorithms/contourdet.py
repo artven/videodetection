@@ -6,17 +6,18 @@ import cv2
 
 class ContourDetector:
 
-    def __init__(self):
-        self.__image = None
-        self.__contours = None
-        self.__hierarchy = None
-        self.__width = None
-        self.__height = None
+    @staticmethod
+    def find(frame, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_SIMPLE):
+        img, contours, hierarchy = cv2.findContours(frame.copy(), mode, method)
+        return contours
 
-    def find(self, frame, mode=cv2.RETR_TREE, method=cv2.CHAIN_APPROX_SIMPLE):
-        self.__height, self.__width = frame.shape
-        _, self.__contours, self.__hierarchy = cv2.findContours(frame.copy(), mode, method)
-        return self.__contours, self.__hierarchy
+    @staticmethod
+    def extremePoints(cnt):
+        leftmost = tuple(cnt[cnt[:, :, 0].argmin()][0])
+        rightmost = tuple(cnt[cnt[:, :, 0].argmax()][0])
+        topmost = tuple(cnt[cnt[:, :, 1].argmin()][0])
+        bottommost = tuple(cnt[cnt[:, :, 1].argmax()][0])
+        return leftmost, rightmost, topmost, bottommost
 
     def draw(self, cnt=-1, color=(0, 255, 0), thickness=1):
 
