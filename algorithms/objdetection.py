@@ -8,14 +8,48 @@ from algorithms.contourdet import ContourDetector
 
 class Obj:
 
-    def __init__(self, pt1, pt2):
-        self.pt1 = pt1
-        self.pt2 = pt2
+    NewObj = 0
+    Followed = 1
+    Unknow = 2
+
+    def __init__(self, pt1, pt2, status=0):
+        self._pt1 = pt1  # (leftmost, bottommost)
+        self._pt2 = pt2  # (rightmost, topmost)
+        self._status = Obj.NewObj
+        self._timeFollowed = 0
+        self._timeUnknow = 0
+
+
+    def __eq__(self, other):
+        pass
 
     def update(self, obj):
-        # Update object infromation from another object
-        self.pt1 = obj.pt1
-        self.pt2 = obj.pt2
+        pass
+
+    # getters
+    def getPt1(self):
+        # returns (leftmost, bottommost) point
+        return self._pt1
+
+    def getPt2(self):
+        # returns (rightmost, topmost) point
+        return self._pt2
+
+    def getStatus(self):
+        return self._status
+
+    def getRectangle(self):
+        x = self._pt1[0]  # leftmost
+        y = self._pt2[1]  # topmost
+        w = abs(self._pt1[0] - self._pt1[0])  # |leftmost - topmost|
+        h = abs(self._pt1[1] - self._pt1[1])  # |topmost - bottommost|
+        return x, y, w, h
+
+
+
+
+
+
 
 
 class ObjectDetector:
@@ -23,6 +57,7 @@ class ObjectDetector:
     @staticmethod
     def find(img):
         # Find objects, based on substracted image.
+        # Returns tuple of found objects.
         _, marked_image = cv2.connectedComponents(img)
         unique_markers = np.unique(marked_image)
 
@@ -39,7 +74,7 @@ class ObjectDetector:
             if np.count_nonzero(markedRegion) < 500:  # TODO zmienić na % obrazu
                 continue
 
-            contours = ContourDetector.find(img)
+            contours = ContourDetector.find(markedRegion)
             cnt = contours[0]
             leftmost, rightmost, topmost, bottommost = ContourDetector.extremePoints(cnt)
             pt1, pt2 = (leftmost[0], bottommost[1]), (rightmost[0], topmost[1])
@@ -49,8 +84,10 @@ class ObjectDetector:
 
     @staticmethod
     def mark(img, objects):
+        markedImage = cv2.cvtColor(img, cv2.COLOR_GRAY2BGR) if len(img.shape) == 2 else img.copy()
         for obj in objects:
-            cv2.rectangle(img, obj.pt1, obj.pt2, (0, 0, 255), thickness=2)
+            cv2.rectangle(markedImage, obj.getPt1(), obj.getPt2(), (0, 0, 255), thickness=4)
+        return markedImage
 
     @staticmethod
     def drawObjectsBorders(img):
