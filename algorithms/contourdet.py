@@ -19,89 +19,46 @@ class ContourDetector:
         bottommost = tuple(cnt[cnt[:, :, 1].argmax()][0])
         return leftmost, rightmost, topmost, bottommost
 
-    def draw(self, cnt=-1, color=(0, 255, 0), thickness=1):
-
-        result = np.zeros((self.__height, self.__width, 3), np.uint8)
-
-        if cnt == -1:
-            cv2.drawContours(result, self.__contours, -1, color, thickness)
-        else:
-            cnt = self.__contours[cnt]
-            cv2.drawContours(result, [cnt], 0, color, thickness)
-
+    @staticmethod
+    def draw(img, cnt, color=(0, 255, 0), thickness=1):
+        result = img.copy()
+        cv2.drawContours(result, [cnt], 0, color, thickness)
         return result
 
-    def moments(self, cnt=0):
-        cnt = self.__contours[cnt]
+    @staticmethod
+    def moments(cnt):
         return cv2.moments(cnt)
 
-    def centroid(self, cnt=0):
-        M = self.moments(cnt)
+    @staticmethod
+    def centroid(cnt):
+        M = ContourDetector.moments(cnt)
         cx = int(M['m10']/M['m00'])
         cy = int(M['m01']/M['m00'])
         return cx, cy
 
-    def area(self, cnt=0):
-        cnt = self.__contours[cnt]
+    @staticmethod
+    def area(cnt):
         return cv2.contourArea(cnt)
 
-    def perimeter(self, cnt=0, closed=True):
-        cnt = self.__contours[cnt]
+    @staticmethod
+    def perimeter(cnt, closed=True):
         return cv2.arcLength(cnt, closed)
 
-    def approx(self, cnt=0, epsilon=0.1, closed=True):
-        cnt = self.__contours[cnt]
+    @staticmethod
+    def approx(cnt, epsilon=0.1, closed=True):
         epsilon = epsilon*cv2.arcLength(cnt, closed)
         approx = cv2.approxPolyDP(cnt, epsilon, closed)
         return approx
 
-    def convex_hull(self, cnt=0):
-        cnt = self.__contours[cnt]
-        hull = cv2.convexHull(cnt)
-        return hull
+    @staticmethod
+    def convexHull(cnt):
+        return cv2.convexHull(cnt)
 
-    def is_convex(self, cnt=0):
-        cnt = self.contour_count[cnt]
+    @staticmethod
+    def isConvex(cnt):
         return cv2.cv2.isContourConvex(cnt)
 
-    def bounding_rectangle(self, cnt=0):
-        x,y,w,h = cv2.boundingRect(cnt)
-        return x,y,w,h
-
-    def rotated_rectangle(self, cnt=0):
-        cnt = self.contour_count[cnt]
-        rect = cv2.minAreaRect(cnt)
-        box = cv2.boxPoints(rect)
-        box = np.int0(box)
-        return box
-
-    def circle(self, cnt=0):
-        result = np.zeros((self.__height, self.__width, 3), np.uint8)
-        (x, y), radius = cv2.minEnclosingCircle(cnt)
-        center, radius = (int(x), int(y)), int(radius)
-        return center, radius
-
-    @property
-    def contour_count(self):
-        return len(self.__contours) if self.__contours is not None else 0
-
-
-
-if __name__ == "__main__":
-
-    path = "../images/image_screenshot_04.07.2015.png"
-    image = cv2.cvtColor(cv2.imread(path), cv2.COLOR_BGR2GRAY)
-
-    window1 = "obraz wejsciowy"
-    window2 = "kontury"
-    cv2.namedWindow(window1)
-    cv2.namedWindow(window2)
-
-    cv2.imshow(window1, image)
-
-    detector = ContourDetector()
-    detector.find(image)
-    cv2.imshow(window2, detector.draw())
-
-    while 1:
-        pass
+    @staticmethod
+    def boundingRectangle(cnt):
+        x, y, w, h = cv2.boundingRect(cnt)
+        return x, y, w, h
