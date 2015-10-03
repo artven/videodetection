@@ -17,7 +17,7 @@ class ObjectFollower:
         matchedObjects = []
         for obj in ObjectFollower.currentlyFollowed:
             for newObj in newObjects:
-                if ObjectFollower.__areConnected(obj, newObj):
+                if ObjectFollower.areConnected(obj, newObj):
                     obj.update(newObj)
                     newObjects.remove(newObj)
                     matchedObjects.append(obj)
@@ -38,7 +38,7 @@ class ObjectFollower:
     def drawFollowedObjects(img):
         result = img.copy()
         for obj in ObjectFollower.currentlyFollowed:
-            cv2.rectangle(result, obj.pt1, obj.pt2, (255, 0, 0), thickness=3)
+            cv2.rectangle(result, obj.getPt1(), obj.getPt1(), (255, 0, 0), thickness=3)
         return result
 
     @staticmethod

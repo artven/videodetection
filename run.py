@@ -7,7 +7,7 @@ from managers.video import VideoReader
 from managers.window import Window
 from algorithms.bgsub import BackgroundSubtractor
 from algorithms.objdetection import ObjectDetector
-from algorithms.objectfollowiing import ObjectFollower
+from algorithms.objectfollowing import ObjectFollower
 
 if __name__ == "__main__":
 
@@ -33,11 +33,8 @@ if __name__ == "__main__":
 
             objects = ObjectDetector.find(substractedFrame)
             ObjectFollower.updateObjects(objects)
-            followed = ObjectFollower.drawFollowedObjects()
-
-
-
-
+            followed = ObjectFollower.drawFollowedObjects(frame)
+            resultFrame[height:, width:, :] = followed
 
             outputWindow.show(resultFrame)
         else:

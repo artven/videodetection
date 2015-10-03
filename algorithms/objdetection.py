@@ -23,8 +23,22 @@ class Obj:
     def __eq__(self, other):
         pass
 
-    def update(self, obj):
-        pass
+    def isOnScreenBorder(self, screenwidth, screenheight, border=5):
+        # Checks if object is near to screen border
+        leftmost = self._pt1[0]
+        bottommost = self._pt1[1]
+        rightmost = self._pt2[0]
+        topmost = self._pt2[1]
+
+        return (leftmost < border) or (rightmost < screenwidth-border) or \
+               (topmost < border) or (bottommost < screenheight-border)
+
+    def update(self, newObj):
+        if self._status == Obj.Followed:
+            self._timeFollowed += 1
+        if self._status == Obj.Unknow:
+            self._timeUnknow += 1
+
 
     # getters
     def getPt1(self):
@@ -38,18 +52,15 @@ class Obj:
     def getStatus(self):
         return self._status
 
+    def setStatus(self, newstatus):
+        self._status = newstatus
+
     def getRectangle(self):
         x = self._pt1[0]  # leftmost
         y = self._pt2[1]  # topmost
-        w = abs(self._pt1[0] - self._pt1[0])  # |leftmost - topmost|
-        h = abs(self._pt1[1] - self._pt1[1])  # |topmost - bottommost|
-        return x, y, w, h
-
-
-
-
-
-
+        w = abs(self._pt1[0] - self._pt2[0])  # |leftmost - topmost|
+        h = abs(self._pt1[1] - self._pt2[1])  # |topmost - bottommost|
+        return x, y, w+1, h+1
 
 
 class ObjectDetector:
@@ -103,7 +114,7 @@ if __name__ == "__main__":
     img = np.zeros([400, 400], dtype=np.uint8)
     val = 255
     img[100:300, 50:150] = val
-    img[350:380, 60:150] = val
+    img[100:380, 50:150] = val
 
     winname = "output window"
     cv2.namedWindow(winname, cv2.WINDOW_FREERATIO)
