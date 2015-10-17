@@ -18,3 +18,6 @@ class Window:
 
     def show(self, img):
         imshow(self.__name, img)
+
+    def getName(self):
+        return self.__name

@@ -45,7 +45,7 @@ class WriteManager:
         return self.__writer.isOpened()
 
 if __name__ == "__main__":
-    from managers.video import VideoReader
+    from utilities.video import VideoReader
 
     source = 0
     inputVideo = VideoReader(source)

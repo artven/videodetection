@@ -21,8 +21,8 @@ class VideoReader:
         if not self.__run:
             return self.__frame
 
-        if not self.__good:
-            raise RuntimeError("Source is broken!")
+        #if not self.__good:
+        #    raise RuntimeError("Source is broken!")
 
         ret, newframe = self.__cap.read()
         if not ret:
