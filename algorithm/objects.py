@@ -2,6 +2,7 @@ __author__ = 'rafal'
 
 import cv2
 
+
 class Vehicle:
 
     STATUS_NEW = 0
@@ -12,10 +13,13 @@ class Vehicle:
     _colors = [(0, 255, 0), (0, 0, 255), (192, 192, 192)]
 
     def __init__(self, x, y, w, h, status=STATUS_NEW, timeTracked=0, timeUnknow=0, pixelDiff=0):
-        self.__x = x
-        self.__y = y
-        self.__w = w
-        self.__h = h
+        self.x = x
+        self.y = y
+        self.w = w
+        self.h = h
+        self.centerx = x+int(w/2)
+        self.centery = y+int(h/2)
+
         self.__status = status
         self.__timeTracked = timeTracked
         self.__timeUnknow = timeUnknow
@@ -36,9 +40,9 @@ class Vehicle:
 
     def getCoordinates(self):
         """ Zwraca lewy-górny punkt oraz szerokość i wysokość """
-        return self.__x, self.__y, self.__w, self.__h
+        return int(self.x), int(self.y), int(self.w), int(self.h)
 
-    def getTimeTracked(self):
+    def getTimeTracked(self): # Pani zaneta sie przygotowala gorzej niz ja xD xD :-)
         return self.__timeTracked
 
     def setTimeTracked(self, value):
@@ -64,16 +68,31 @@ class Vehicle:
         self.__pixelDiff = value
 
 
-def drawObjects(image, objects, linewidth=3):
+def drawObjects(image, objects, linewidth=2):
     """Oznacza potencjalne pojazdy kolorami"""
 
     # sprawdź czy obrazj jest w formacie bgr i dokonaj ewentualnej konwersji
     img = cv2.cvtColor(image, cv2.COLOR_GRAY2BGR) if len(image.shape) == 2 else image.copy()
 
     for obj in objects:
+        # oznacz granice obiektu
         x, y, w, h = obj.getCoordinates()
-        point1 = (int(x), int(y))
-        point2 = (int(x+w), int(y+h))
-        cv2.rectangle(img, point1, point2, obj.getColor(), thickness=linewidth)
+        point1 = (x, y)
+        point2 = (x+w, y+h)
+        cv2.rectangle(img, point1, point2, obj.getColor(), thickness=linewidth+2)
+
+        # oznacz centrum obiektu
+        cenx = obj.centerx
+        ceny = obj.centery
+
+        point1 = (cenx, ceny-10)
+        point2 = (cenx, ceny+10)
+        cv2.line(img, point1, point2, obj.getColor(), thickness=linewidth)
+
+
+        point1 = (cenx-10, ceny)
+        point2 = (cenx+10, ceny)
+        cv2.line(img, point1, point2, obj.getColor(), thickness=linewidth)
+
 
     return img

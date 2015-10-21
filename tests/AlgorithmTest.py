@@ -1,16 +1,25 @@
+#!/usr/bin/env python3
 __author__ = 'rafal'
 
 import cv2
 import numpy as np
 import time
+import os
+
+
+def clearConsole():
+    os.system('clear')
+
 
 # narzędzia pomocnicze
 from utilities.keys import keypressed
 from utilities.video import VideoReader
 from utilities.window import Window
+from utilities.frame import Frame
 
 # algorytm
 from algorithm.core import algorithm
+from algorithm.analysis import getVehiclesData
 
 # przypadki testowe
 f1 = "videos/samples/autobus akropol.avi"
@@ -20,24 +29,40 @@ f4 = "videos/samples/samochód czarny w tle akropol.avi"
 f5 = "videos/samples/samochód srebrny akropol.avi"
 f6 = "videos/samples/samochód zielony.avi"
 f7 = "videos/samples/taksówka akropol.avi"
+f8 = "videos/full/2015-06-05-132225.webm"
+f9 = "videos/full/2015-06-05-132408.webm"
 
+# files = [f1, f2, f3, f4, f5, f6, f7, f8]
 
-files = [f1, f2, f3, f4, f5, f6, f7]
-
+files = [f1, f2, f9]
 
 for filename in files:
+
+    # clearConsole()
+
     nameParts = filename.split(sep='/')
     print(nameParts[-1])
 
     inputVideo = VideoReader("../" + filename)
     outputWindow = Window()
     width, height = inputVideo.size()
+    fps = inputVideo.getFPS()
+
+    prevFrame = None
 
     while not keypressed():
-        frame = inputVideo.read()
+
+        frame = Frame(inputVideo.read(), isFromCamera=True, fps=fps)
 
         if not inputVideo.isGood():
             break
 
-        result = algorithm(frame, width, height)
-        outputWindow.show(result)
+        followedvehicles, allComponents, orgImg, subImg, objImg, followImg = algorithm(frame.img, width, height)
+        outputWindow.show(allComponents)
+
+        # wyliczanie parametrów
+        if prevFrame is not None:
+            getVehiclesData()
+
+        # zapamiętanie poprzedniej ramki w celu policzenia prędkości
+        prevFrame = Frame

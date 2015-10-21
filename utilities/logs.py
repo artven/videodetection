@@ -5,8 +5,11 @@ from datetime import datetime
 from algorithm.objects import Vehicle
 
 
-class LogWriter:
+class Record:
+    pass
 
+
+class LogWriter:
 
     def __init__(self):
         datetime.now().
@@ -20,5 +23,3 @@ class LogWriter:
 
 
 
-class Record:
-    pass
