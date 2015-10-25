@@ -12,7 +12,7 @@ from utilities.frame import Frame
 class Follower:
 
     tracked = []
-    border = 100
+    border = 200
     distanceFromBorder = 50
     frameWidth = 0
     direction = "left2right"  # "right2left"
@@ -49,7 +49,8 @@ class Follower:
                         # pobierz ze stosu pojazd
                         if len(Follower.tracked):
                             oldCar, oldframe = Follower.tracked.pop()
-                            result.append(newCar, frame, oldCar, oldframe, mask)
+                            result.append((newCar, frame, oldCar, oldframe, mask))
+                            print("Nowy obiekt!")
                         else:
                             print("Nie udało się pobrać danych o obiekcie!")
         elif Follower.direction == "left2right":
@@ -69,6 +70,8 @@ class Follower:
                         # pobierz ze stosu pojazd
                         if len(Follower.tracked):
                             oldCar, oldframe = Follower.tracked.pop()
+                            result.append((newCar, frame, oldCar, oldframe, mask))
+                            print("Nowy obiekt!")
                         else:
                             print("Nie udało się pobrać danych o obiekcie!")
 
@@ -78,7 +81,7 @@ class Follower:
         if Follower.detectedCarOnLeft == False:
             Follower.leftLocktLock = False
 
-
+        return result if len(result) else None
 
 
 

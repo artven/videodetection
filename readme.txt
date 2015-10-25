@@ -9,6 +9,12 @@ Wymagane do uruchomienia programu :
 - biblioteka opencv 3.0 instrukcja instalacji dla ubuntu: http://milq.github.ioinstall-opencv-ubuntu-debian
 - biblioteki pygtk+, NumPy
 
+sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
+
+sudo apt-get install build-essential python3-dev python3-setuptools \
+                     python3-numpy python3-scipy \
+                     libatlas-dev libatlas3gf-base
+
 Materiały wykorzystane przy tworzeniu programu:
 - książki:
 	a)OpenCV:
