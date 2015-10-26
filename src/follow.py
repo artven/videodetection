@@ -1,25 +1,25 @@
 __author__ = 'rafal'
 
 # from algorithm.contourdet import ContourDetector
+from src.detect import Vehicle
+from src.video import Frame
+from src.detect import Detector
 
 
 class ObjectRecord:
     # Klasa przechowująca dane o wykrytm obiekcie
 
-    def __init__(self, lastCar, firstCar, lastFrame, firstFrame, binaryMask):
-        self.lastCar = lastCar
-        self.firstCar = firstCar
-        self.lastFrame = lastFrame
-        self.firstFrame = firstFrame
-        self.binaryMask = binaryMask
+    def __init__(self, new_car: Vehicle, old_car: Vehicle, new_frame: Frame, old_frame: Frame, mask):
+        self.new_car, self.old_car, self.new_frame, self.old_frame, self.mask = \
+            new_car, old_car, new_frame, old_frame, mask
 
 
 class Follower:
 
     tracked = []
-    border = 200
+
     distanceFromBorder = 50
-    frameWidth = 0
+
     direction = "right2left"  # "right2left"
 
     detectedCarOnRight = False
@@ -29,10 +29,15 @@ class Follower:
 
 
     @staticmethod
-    def update(newVehicles, frame, mask):
+    def update(newVehicles, frame: Frame, mask):
 
-        height, width = frame.getSize()
-        Follower.frameWidth = width
+        # Pobierz granicę detekcji.
+        border = Detector.verticalBorder
+
+        # Zdefiniuj długość ramki.
+        height, width = frame.size()
+        frame_width = width
+
 
         result = []
 

@@ -3,9 +3,29 @@ __author__ = 'rafal'
 import cv2
 import numpy as np
 
-from src.objects import Vehicle
 from src.contour import ContourDetector
-from src.objects import Frame
+from src.video import Frame
+
+
+class Vehicle:
+
+    def __init__(self, x, y, w, h):
+        self.x = x
+        self.y = y
+        self.w = w
+        self.h = h
+        self.centerx = x+int(w/2)
+        self.centery = y+int(h/2)
+
+    def __eq__(self, other):
+        x, y, w, h = other.get_coordinates()
+        return (self.__x, self.__y, self.__w, self.__h) == (x, y, w, h)
+
+    def get_coordinates(self):
+        """ Zwraca lewy-górny punkt oraz szerokość i wysokość """
+        return int(self.x), int(self.y), int(self.w), int(self.h)
+
+
 
 class Detector:
     # Klasa dokonująca wtępnej selekcji obiektów.
@@ -19,8 +39,19 @@ class Detector:
     horizontalBorder = 50
 
     # Interfejs klasy.
+
     @staticmethod
-    def find(image):
+    def find_vehicle(frame):
+        image = frame.img
+
+        # Substrakcja tła
+        bin_image = Subtractor.apply(image)
+        vehicles = Detector.find_possible_vehicles(bin_image)
+        Detector.select()
+
+
+    @staticmethod
+    def find_possible_vehicles(image):
         """
         Oznacza potencjalne obiekty mogące być pojazdami.
         :param image:
@@ -47,10 +78,10 @@ class Detector:
     def select(vehicles, frame: Frame, ):
         """
         Dokonuje selekcji znalezionych obiektów. Odrzuca obiekty znajdujące się przy krawędzi obrazu.
-        :return: Lista pojazdów
+        :return: Lista pojazdów.
         """
 
-        height, width = frame.getSize()
+        height, width = frame.size()
         result = []
         for vehic in vehicles:
             if (vehic.centerx > border) and (vehic.centerx < width-border) and (vehic.centery>horizontalborder) and \
@@ -67,6 +98,16 @@ class Detector:
         frame.img = cv2.line(frame.img, leftLowerPoint, rightLowerPoint, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, rightLowerPoint, rightUpperPoint, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, leftUpperPoint, rightUpperPoint, (0, 0, 255), thickness=3)
+
+    def algorithm(frame):
+    # wyodrębnianie tła
+    substracted = Subtractor.apply(frame.img)
+
+
+    # wyszukiwanie obiektów na obrazie
+    vehicles = Detector.find_possible_vehicles(substracted)
+
+    return vehicles, substracted
 
     # Funkcje pomocnicze.
     @staticmethod
@@ -108,4 +149,41 @@ class Detector:
         return x, y, w, h
 
 
+class Subtractor:
+    # Klasa wyodrębniająca tło oraz poruszające się elementy na obrazie.
+
+    # Silnik wyodrębniania tła.
+    substractor_engine = cv2.createBackgroundSubtractorMOG2()
+
+    # Parametry filtracji obrazu.
+    operation = cv2.MORPH_OPEN
+    kernel = cv2.MORPH_ELLIPSE
+    kernelsize = (3, 3)
+    mediansize = 5
+    dilateiter = 5
+
+    @staticmethod
+    def apply(image):
+        """
+        Dokonuje wyodrębnienia tła z klatki obrazu. Zwraca zbinearyzowany obraz.
+        """
+
+        if len(image.shape) == 3:
+            image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+        substractedFrame = Subtractor.substractor_engine.apply(image)
+        filteredFrame = Subtractor.__filter(substractedFrame)
+        _, substracted = cv2.threshold(filteredFrame, 0, 255, cv2.THRESH_BINARY)
+        return substracted
+
+    @staticmethod
+    def __filter(image):
+        """
+        Dokonuje filtracji za pomocą mediany i dylatacji.
+        """
+        ker = cv2.getStructuringElement(Subtractor.kernel, Subtractor.kernelsize)
+        morphframe = cv2.morphologyEx(image, Subtractor.operation, ker)
+        medianframe = cv2.medianBlur(morphframe, Subtractor.mediansize)
+        dilatframe = cv2.dilate(medianframe, ker, iterations=Subtractor.dilateiter)
+        return dilatframe
 

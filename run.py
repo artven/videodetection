@@ -1,16 +1,39 @@
 #!/usr/bin/env python3
 __author__ = 'rafal'
 
-import os
+# przypadki testowe left2right
+f1 = 'videos/samples/samochód bordowy akropol.avi'
+f2 = 'videos/samples/samochód srebrny akropol.avi'
+f3 = 'videos/samples/samochód zielony.avi'
+f4 = 'videos/samples/taksówka akropol.avi'
+
+# przypadki testowe right2left
+f5 = 'videos/vid1.avi'
+
+from src.utilities import key_pressed
+from src.video import VideoReader, Window, Frame
 
 
-def clearConsole():
-    os.system('clear')
+video = VideoReader(f5)
+input_widnow = Window()
 
+while not key_pressed():
+
+    image = video.read()
+
+    if not video.is_good():
+        break
+
+    input_widnow.show(image)
+
+
+
+
+'''
 
 # narzędzia pomocnicze
 from utilities.keys import keypressed
-from utilities.video import VideoReader
+from src.video import VideoReader
 from utilities.frame import Frame
 
 # algorytm
@@ -21,21 +44,14 @@ from src.follow import Follower
 # from algorithm.classification import VehiclesClassifier
 from src.classification import Classyfication
 
-# przypadki testowe left2right
-f1 = 'videos/samples/samochód bordowy akropol.avi'
-f2 = 'videos/samples/samochód srebrny akropol.avi'
-f3 = 'videos/samples/samochód zielony.avi'
-f4 = 'videos/samples/taksówka akropol.avi'
 
-# przypadki testowe right2left
-f5 = 'videos/vid1.avi'
 
 foundObjects = []
 
 # files = [f1, f2, f3, f4]
 files = [f5]
 
-from utilities.logs import Logger
+from src.logs import Logger
 
 database = Logger()
 
@@ -79,3 +95,4 @@ print(database.tableInfo())
 for row in rows:
     print(row)
 
+'''

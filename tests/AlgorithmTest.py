@@ -10,7 +10,7 @@ def clearConsole():
 
 # narzędzia pomocnicze
 from utilities.keys import keypressed
-from utilities.video import VideoReader
+from src.video import VideoReader
 from utilities.window import Window
 from utilities.frame import Frame
 
@@ -43,7 +43,7 @@ for filename in files:
     inputVideo = VideoReader("../" + filename)
     outputWindow = Window()
     width, height = inputVideo.size()
-    fps = inputVideo.getFPS()
+    fps = inputVideo.fps()
 
     prevFrame = None
 
@@ -51,7 +51,7 @@ for filename in files:
 
         frame = Frame(inputVideo.read(), isFromCamera=True, fps=fps)
 
-        if not inputVideo.isGood():
+        if not inputVideo.is_good():
             break
 
         followedvehicles, allComponents, orgImg, subImg, objImg, followImg = algorithm(frame.img, width, height)

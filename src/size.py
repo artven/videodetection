@@ -48,7 +48,7 @@ class SizeMeasurment:
     def drawCarContour(img, car, binaryMask):
 
         # Wyznacz rejon pojazdu na obrazie.
-        x, y, w, h = car.getCoordinates()
+        x, y, w, h = car.get_coordinates()
         mask = binaryMask[y:y+h, x:x+w]
         image = img[y:y+h, x:x+w, :]
 
@@ -65,7 +65,7 @@ class SizeMeasurment:
     def drawSizeInfo(img, car, carWidth, carHeight, carArea):
 
         # Pobierz położenie pojazdu:
-        x, y, w, h = car.getCoordinates()
+        x, y, w, h = car.get_coordinates()
 
         # Narysuj informacje o długości.
         pt1, pt2 = (x, y-20), (x+w, y-20)

@@ -5,7 +5,7 @@ import cv2
 
 def preSelectVehicles:
     """Dokonaj selekcji obiektów, które nie znajdują się przy krawędzi."""
-    height, width = frame.getSize()
+    height, width = frame.size()
     result = []
 
     for vehic in vehicles:

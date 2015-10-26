@@ -20,7 +20,7 @@ if __name__ == "__main__":
         tmp = np.zeros([500, 500], dtype=np.uint8)
         resultFrame[cords[0]:cords[1], cords[2]:cords[3]] = value
         tmp[cords[0]:cords[1], cords[2]:cords[3]] = value
-        objs = Detector.find(np.uint8(tmp == value))
+        objs = Detector.find_possible_vehicles(np.uint8(tmp == value))
         foundObjects.extend(objs)
 
     # for obj in foundObjects:

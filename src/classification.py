@@ -17,10 +17,10 @@ class Classyfication:
         """
 
         # Pobierz dane o pojeździe.
-        newCar, oldCar, newFrame, oldFrame, mask = obj.lastCar, obj.firstCar, obj.lastFrame, obj.firstFrame, obj.binaryMask
+        newCar, oldCar, newFrame, oldFrame, mask = obj.new_car, obj.old_car, obj.new_frame, obj.old_frame, obj.mask
 
         # Wybierz rejon obrazu:
-        x, y, w, h = newCar.getCoordinates()
+        x, y, w, h = newCar.get_coordinates()
         image = newFrame.img
         roi = image[y:y+h, x:x+w, :]
         maskRoi = mask[y:y+h, x:x+w]

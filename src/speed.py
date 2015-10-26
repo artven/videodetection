@@ -42,7 +42,7 @@ class SpeedMeasurment:
     def drawSpeedInfo(car, speed, img):
 
         # Pobierz położenie pojazdu:
-        x, y, w, h = car.getCoordinates()
+        x, y, w, h = car.get_coordinates()
 
         text = ("S: %.2f" % speed) + " km/h"
         org = (x, y+30)
