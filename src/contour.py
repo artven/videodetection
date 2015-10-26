@@ -1,6 +1,5 @@
 __author__ = 'rafal'
 
-import numpy as np
 import cv2
 
 
@@ -12,7 +11,7 @@ class ContourDetector:
         return contours
 
     @staticmethod
-    def extremePoints(cnt):
+    def extreme_points(cnt):
         leftmost = tuple(cnt[cnt[:, :, 0].argmin()][0])
         rightmost = tuple(cnt[cnt[:, :, 0].argmax()][0])
         topmost = tuple(cnt[cnt[:, :, 1].argmin()][0])
@@ -51,14 +50,14 @@ class ContourDetector:
         return approx
 
     @staticmethod
-    def convexHull(cnt):
+    def convex_hull(cnt):
         return cv2.convexHull(cnt)
 
     @staticmethod
-    def isConvex(cnt):
+    def is_convex(cnt):
         return cv2.cv2.isContourConvex(cnt)
 
     @staticmethod
-    def boundingRectangle(cnt):
+    def bounding_rectangle(cnt):
         x, y, w, h = cv2.boundingRect(cnt)
         return x, y, w, h

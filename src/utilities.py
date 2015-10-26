@@ -13,7 +13,6 @@ def key_pressed(key='q', delay=1):
 def convertGray2BGR(grayFrame):
     return cv2.cvtColor(grayFrame, cv2.COLOR_GRAY2BGR)
 
-
 def convertBGR2Gray(bgrFrame):
     return cv2.cvtColor(bgrFrame, cv2.COLOR_BGR2GRAY)
 

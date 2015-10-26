@@ -12,87 +12,40 @@ f5 = 'videos/vid1.avi'
 
 from src.utilities import key_pressed
 from src.video import VideoReader, Window, Frame
-
+from src.detect import Detector, draw_vehicles
+from src.follow import Follower
+from src.classify import Classyfication
+from src.logs import Database, ImageSaver
 
 video = VideoReader(f5)
 input_widnow = Window()
+results = []
+db = Database()
+img_saver = ImageSaver()
 
 while not key_pressed():
 
-    image = video.read()
+    frame = Frame(video)
 
     if not video.is_good():
         break
 
-    input_widnow.show(image)
+    vehicles, mask = Detector.find_vehicles(frame)
+    objects = Follower.update(vehicles, frame, mask)
 
+    frame = draw_vehicles(frame, vehicles)
+    frame = Detector.draw_detection_region(frame)
+    input_widnow.show(frame.img)
 
+    if objects is not None:
+        for obj in objects:
+            res = Classyfication.perform(obj)
+            results.append(res)
 
+for record in results:
+    db.write(record)
+    img_saver.write(record)
 
-'''
+logs = db.read_logs()
+print(logs)
 
-# narzędzia pomocnicze
-from utilities.keys import keypressed
-from src.video import VideoReader
-from utilities.frame import Frame
-
-# algorytm
-from src.core import algorithm
-# from algorithm.analysis import getVehiclesData, printVehiclesData, preSelectVehicles
-from src.analysis import preSelectVehicles
-from src.follow import Follower
-# from algorithm.classification import VehiclesClassifier
-from src.classification import Classyfication
-
-
-
-foundObjects = []
-
-# files = [f1, f2, f3, f4]
-files = [f5]
-
-from src.logs import Logger
-
-database = Logger()
-
-for filename in files:
-
-    inputVideo = VideoReader(filename)
-    # outputWindow = Window()
-
-    while not keypressed():
-
-        frame = Frame(inputVideo)
-
-        if not inputVideo.isGood():
-            break
-
-        vehicles, mask = algorithm(frame)
-        vehicles, frame = preSelectVehicles(vehicles, frame, drawLines=False)
-        objects = Follower.update(vehicles, frame, mask)
-
-        if objects is not None:
-            foundObjects.extend(objects)
-
-        # outputWindow.show(drawObjects(frame.img, vehicles))
-
-# print("znaleziono samochodów: " + str(len(foundObjects)))
-
-classificationResults = []
-
-if len(foundObjects):
-    for obj in foundObjects:
-        res = Classyfication.perform(obj)
-        classificationResults.append(res)
-
-for res in classificationResults:
-    database.writeRecord(res)
-
-rows = database.readLogs()
-
-print(database.tableInfo())
-
-for row in rows:
-    print(row)
-
-'''
