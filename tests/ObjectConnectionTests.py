@@ -2,10 +2,10 @@ __author__ = 'rafal'
 
 import cv2
 import numpy as np
+
 from utilities import keypressed
 from algorithm.detection import Detector
-from algorithm.following import Follower
-
+from src.follow import Follower
 
 
 if __name__ == "__main__":

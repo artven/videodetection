@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
 __author__ = 'rafal'
 
-import cv2
-import numpy as np
-import time
 import os
 
 
@@ -18,8 +15,8 @@ from utilities.window import Window
 from utilities.frame import Frame
 
 # algorytm
-from algorithm.core import algorithm
-from algorithm.analysis import getVehiclesData
+from src.core import algorithm
+from src.analysis import getVehiclesData
 
 # przypadki testowe
 f1 = "videos/samples/autobus akropol.avi"

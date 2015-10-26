@@ -9,6 +9,7 @@ class VideoReader:
     # Read data from device or file.
 
     def __init__(self, videosource=0):
+        self.source = videosource
         self.__cap = cv2.VideoCapture(videosource)
         self.__good = self.__cap.isOpened()
         self.__frame = None
