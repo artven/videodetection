@@ -37,7 +37,7 @@ class Configuration:
     __draw_cars = True
 
     @staticmethod
-    def laod_config(file=filename):
+    def load_config(file=filename):
         with open(file) as data_file:
             Configuration.__current_config = json.load(data_file)
         Configuration.__write_all()
@@ -47,7 +47,6 @@ class Configuration:
         Configuration.__load_all()
         with open(file, 'w') as outfile:
             json.dump(Configuration.__current_config, outfile)
-
 
     @staticmethod
     def restore_default(file=filename):
@@ -95,7 +94,6 @@ class Configuration:
         Configuration.draw_speed_info(config["draw_speed_info"])
         Configuration.draw_size_info(config["draw_size_info"])
         Configuration.draw_color_bar(config["draw_color_bar"])
-
 
     # Opcje konfiguracji programu:
 
@@ -158,8 +156,8 @@ class Configuration:
     @staticmethod
     def draw_speed_region(value=None):
         if value is not None:
-            Configuration.__draw_detection_region = value
-        return Configuration.__draw_detection_region
+            Configuration.__draw_speed_region = value
+        return Configuration.__draw_speed_region
 
     @staticmethod
     def draw_cars(value=None):

@@ -2,7 +2,7 @@ __author__ = 'rafal'
 
 import cv2
 
-
+# TODO dopisać komenatze
 class ContourDetector:
 
     @staticmethod

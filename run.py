@@ -11,17 +11,29 @@ f4 = 'videos/samples/taksówka akropol.avi'
 f5 = 'videos/vid1.avi'
 
 from src.utilities import key_pressed
-from src.video import VideoReader, Window, Frame
+from src.video import VideoReader, VideoWriter, Window, Frame
 from src.detect import Detector, draw_vehicles
 from src.follow import Follower
 from src.classify import Classyfication
 from src.logs import Database, ImageSaver
+from src.config import Configuration
+
+Configuration.load_config()
+# Configuration.pixel_length(400)
+# Configuration.draw_speed_region(False)
+# Configuration.draw_detection_region(False)
+# Configuration.draw_conturs(False)
+# Configuration.draw_size_info(False)
+# Configuration.draw_speed_info(False)
+# Configuration.draw_color_bar(False)
 
 video = VideoReader(f5)
+output_video = VideoWriter(video.size())
 input_widnow = Window()
-results = []
 db = Database()
 img_saver = ImageSaver()
+
+results = []
 
 while not key_pressed():
 
@@ -33,9 +45,20 @@ while not key_pressed():
     vehicles, mask = Detector.find_vehicles(frame)
     objects = Follower.update(vehicles, frame, mask)
 
-    frame = draw_vehicles(frame, vehicles)
-    frame = Detector.draw_detection_region(frame)
+    # Rysowanie pojazdów.
+    if Configuration.draw_cars():
+        frame = draw_vehicles(frame, vehicles)
+
+    # Rysowanie obszaru wykrywania.
+    if Configuration.draw_detection_region():
+        frame = Detector.draw_detection_region(frame)
+
+    # Rysowanie obszaru pomiaru prędkości
+    if Configuration.draw_speed_region():
+        frame = Classyfication.draw_speed_region(frame)
+
     input_widnow.show(frame.img)
+    output_video.write(frame.img)
 
     if objects is not None:
         for obj in objects:
@@ -46,6 +69,4 @@ for record in results:
     db.write(record)
     img_saver.write(record)
 
-logs = db.read_logs()
-print(logs)
 

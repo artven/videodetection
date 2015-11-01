@@ -14,6 +14,11 @@ class Classyfication:
     pixel_length = 200
     meters_length = 4
 
+    draw_size_info = True
+    draw_color_bar = True
+    draw_conturs = True
+    draw_speed_info = True
+
     @staticmethod
     def perform(obj: ObjectRecord):
         """
@@ -43,11 +48,18 @@ class Classyfication:
         speed = SpeedMeasurment.calculate_speed(new_car, new_frame, old_car, old_frame)
 
         # Narysowanie wyników na obrazie
-        # TODO nalezy poprawic podpisywanie obrazku
-        image = SizeMeasurment.draw_size_info(image, new_car, car_width, car_height, car_area)
-        image = ColorDetector.draw_color_bar(image, color_bar)
-        image = SizeMeasurment.draw_car_contour(image, new_car, mask)
-        image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
+        # Rozmiar
+        if Classyfication.draw_size_info:
+            image = SizeMeasurment.draw_size_info(image, new_car, car_width, car_height, car_area)
+        # Kolor
+        if Classyfication.draw_color_bar:
+            image = ColorDetector.draw_color_bar(image, color_bar)
+        # Kontur
+        if Classyfication.draw_conturs:
+            image = SizeMeasurment.draw_car_contour(image, new_car, mask)
+        # Prędkość
+        if Classyfication.draw_speed_info:
+            image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
 
         date = new_frame.creationTime
 
@@ -59,6 +71,14 @@ class Classyfication:
     @staticmethod
     def get_ratio():
         return float(Classyfication.meters_length) / float(Classyfication.pixel_length)
+
+    @staticmethod
+    def draw_speed_region(frame: Frame):
+        h, w = frame.size()
+        x = int(w/2) - int(Classyfication.pixel_length/2)
+        frame.img = cv2.line(frame.img, (x, 0), (x, h), (255, 0, 255), thickness=4)
+        frame.img = cv2.line(frame.img, (w-x, 0), (w-x, h), (255, 0, 255), thickness=4)
+        return frame
 
 
 class SpeedMeasurment:
@@ -130,11 +150,11 @@ class SizeMeasurment:
         return area
 
     @staticmethod
-    def draw_car_contour(img, car, binaryMask):
+    def draw_car_contour(img, car, bin_mask):
 
         # Wyznacz rejon pojazdu na obrazie.
         x, y, w, h = car.get_coordinates()
-        mask = binaryMask[y:y+h, x:x+w]
+        mask = bin_mask[y:y+h, x:x+w]
         image = img[y:y+h, x:x+w, :]
 
         # Znajdź kontury samochodu.
@@ -208,8 +228,8 @@ class ColorDetector:
     color_number = 5
 
     # Wysokość i szerokość zwracanego obrazu z konsoli.
-    bar_height = 50
-    bar_width = 300
+    __bar_height = 50
+    __bar_width = 300
 
     @staticmethod
     def __centroid_histogram(clt):
@@ -268,8 +288,8 @@ class ColorDetector:
     @staticmethod
     def __create_colors_bar(hist, centroids):
 
-        w = ColorDetector.bar_width
-        h = ColorDetector.bar_height
+        w = ColorDetector.__bar_width
+        h = ColorDetector.__bar_height
 
         # initialize the bar chart representing the relative frequency
         # of each of the colors
@@ -308,7 +328,7 @@ class ColorDetector:
 
     @staticmethod
     def draw_color_bar(img, color_bar):
-        width = ColorDetector.bar_width
-        height = ColorDetector.bar_height
+        width = ColorDetector.__bar_width
+        height = ColorDetector.__bar_height
         img[:height, :width, :] = color_bar
         return img

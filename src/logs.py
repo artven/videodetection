@@ -18,8 +18,6 @@ class ImageSaver:
         cv2.imwrite(filename, image)
 
 
-
-
 class Database:
 
     def __init__(self):
