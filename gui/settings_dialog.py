@@ -105,6 +105,14 @@ class SettingsDialog:
         self.pixel_limit_spin_adjustment.set_value(Configuration.pixel_limit())
         self.distance_from_border_spin_adjustment.set_value(Configuration.distance_from_border())
 
+        self.draw_detection_region_check.set_active(Configuration.draw_detection_region())
+        self.draw_speed_region_check.set_active(Configuration.draw_speed_region())
+        self.draw_cars_check.set_active(Configuration.draw_cars())
+        self.draw_conturs_check.set_active(Configuration.draw_conturs())
+        self.draw_speed_info_check.set_active(Configuration.draw_speed_info())
+        self.draw_size_info_check.set_active(Configuration.draw_size_info())
+        self.draw_color_bar_check.set_active(Configuration.draw_color_bar())
+
     def __write_settings(self):
         """
         Zapisz wartości z widgetów
@@ -122,6 +130,15 @@ class SettingsDialog:
         Configuration.vertical_border(self.vertical_border_spin_adjustment.get_value())
         Configuration.pixel_limit(self.pixel_limit_spin_adjustment.get_value())
         Configuration.distance_from_border(self.distance_from_border_spin_adjustment.get_value())
+
+        Configuration.draw_detection_region(self.draw_detection_region_check.get_active())
+        Configuration.draw_speed_region(self.draw_speed_region_check.get_active())
+        Configuration.draw_cars(self.draw_cars_check.get_active())
+        Configuration.draw_conturs(self.draw_conturs_check.get_active())
+        Configuration.draw_speed_info(self.draw_speed_info_check.get_active())
+        Configuration.draw_size_info(self.draw_size_info_check.get_active())
+        Configuration.draw_color_bar(self.draw_color_bar_check.get_active())
+
         Configuration.save_config()
 
     def __restore_default(self):

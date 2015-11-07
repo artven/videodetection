@@ -944,7 +944,14 @@
               <object class="GtkBox" id="box2">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
+                <property name="halign">baseline</property>
+                <property name="valign">center</property>
+                <property name="margin_left">5</property>
+                <property name="margin_right">5</property>
+                <property name="margin_top">5</property>
+                <property name="margin_bottom">5</property>
                 <property name="orientation">vertical</property>
+                <property name="spacing">14</property>
                 <child>
                   <object class="GtkCheckButton" id="draw_detection_region_check">
                     <property name="label" translatable="yes">Rysuj rejon czułości</property>
@@ -994,8 +1001,8 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="draw_conturs_check">
-                    <property name="label" translatable="yes">Oznaczaj kontury obiektów</property>
+                  <object class="GtkCheckButton" id="draw_speed_info_check">
+                    <property name="label" translatable="yes">Wypisz informację o prędkości</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -1010,8 +1017,8 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="draw_conturs_check2">
-                    <property name="label" translatable="yes">Oznaczaj kontury obiektów</property>
+                  <object class="GtkCheckButton" id="draw_size_info_check">
+                    <property name="label" translatable="yes">Wypisz informację o rozmiarze</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -1026,8 +1033,8 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="draw_conturs_check3">
-                    <property name="label" translatable="yes">Oznaczaj kontury obiektów</property>
+                  <object class="GtkCheckButton" id="draw_color_bar_check">
+                    <property name="label" translatable="yes">Narysuj pasek kolorów</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">False</property>
@@ -1042,7 +1049,7 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkCheckButton" id="draw_conturs_check4">
+                  <object class="GtkCheckButton" id="draw_conturs_check">
                     <property name="label" translatable="yes">Oznaczaj kontury obiektów</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
