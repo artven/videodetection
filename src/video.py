@@ -11,7 +11,7 @@ class VideoReader:
 
     def __init__(self, videosource=0):
         self.source = videosource
-        self.__cap = cv2.VideoCapture(videosource)
+        self.__cap = cv2.VideoCapture(self.source)
         self.__good = self.__cap.isOpened()
         self.__frame = None
 
@@ -65,13 +65,13 @@ class VideoWriter:
             self.__writer.write(frame)
 
 
-class Window:
+class OpenCVWindow:
 
     __id = 0
 
     def __init__(self, windowmode=cv2.WINDOW_FREERATIO):
-        Window.__id += 1
-        self.__name = "Window" + str(Window.__id)
+        OpenCVWindow.__id += 1
+        self.__name = "Window" + str(OpenCVWindow.__id)
         self.__mode = windowmode
         cv2.namedWindow(self.__name, self.__mode)
 

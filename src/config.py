@@ -184,7 +184,7 @@ class Configuration:
         return Classyfication.draw_size_info
 
     @staticmethod
-    def draw_color_bar(value):
+    def draw_color_bar(value=None):
         if value is not None:
             Classyfication.draw_color_bar = value
         return Classyfication.draw_color_bar
