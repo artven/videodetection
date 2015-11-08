@@ -502,6 +502,8 @@
     <property name="width_request">400</property>
     <property name="height_request">400</property>
     <property name="can_focus">False</property>
+    <property name="halign">start</property>
+    <property name="valign">start</property>
     <property name="title" translatable="yes">Ustawienia</property>
     <signal name="destroy" handler="on_settings_window_destroy" swapped="no"/>
     <child>

@@ -4,7 +4,7 @@ from gi.repository import Gtk
 
 class AboutDialog:
     def __init__(self):
-        self.glade_file = "about_dialog.glade"
+        self.glade_file = "gui/about_dialog.glade"
         self.builder = Gtk.Builder()
         self.builder.add_from_file(self.glade_file)
         self.builder.connect_signals(self)
