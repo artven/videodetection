@@ -317,7 +317,7 @@ class ColorDetector:
         """
 
         # Znajdź najlepsze kolory.
-        colors, percents, color_bar = ColorDetector.__find_dominant_colors(image, n=ColorDetector.color_number)
+        colors, percents, color_bar = ColorDetector.__find_dominant_colors(image, n=int(ColorDetector.color_number))
 
         # Wybierz największy kolor.
         best_percent = max(percents)

@@ -35,6 +35,7 @@ class Configuration:
     __draw_detection_region = True
     __draw_speed_region = True
     __draw_cars = True
+    __play_delay = 0.25
 
     @staticmethod
     def load_config(file=filename):
@@ -54,6 +55,7 @@ class Configuration:
         with open(file, 'w') as outfile:
             json.dump(Configuration.__current_config, outfile)
         Configuration.__write_all()
+        Configuration.__play_delay = 0.25
 
     @staticmethod
     def __load_all():
@@ -188,6 +190,12 @@ class Configuration:
         if value is not None:
             Classyfication.draw_color_bar = value
         return Classyfication.draw_color_bar
+
+    @staticmethod
+    def play_delay(value=None):
+        if value is not None:
+            Configuration.__play_delay = value
+        return Configuration.__play_delay
 
 if __name__ == "__main__":
     print("restore default config")

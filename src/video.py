@@ -39,7 +39,7 @@ class VideoReader:
         return self.__cap.get(cv2.CAP_PROP_FPS)
 
     def frames_count(self):
-        return self.__cap.get(cv2.CAP_PROP_FRAME_COUNT)
+        return int(self.__cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
     def size(self):
         return int(self.__cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(self.__cap.get(cv2.CAP_PROP_FRAME_HEIGHT))

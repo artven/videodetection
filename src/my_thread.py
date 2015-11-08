@@ -21,18 +21,3 @@ class MyThread (threading.Thread):
     def run(self):
             self.function()
 
-
-
-if __name__ == "__main__":
-
-    def f(arg1, arg2):
-        while 1:
-            print(arg1 + arg2)
-            time.sleep(1)
-
-    thread1 = MyThread(f, "hello world", "witaj swiecie")
-    thread2 = MyThread(f, "adam giza", "mi ubliza")
-
-    thread1.start()
-    thread2.start()
-

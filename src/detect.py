@@ -100,10 +100,10 @@ class Detector:
     @staticmethod
     def draw_detection_region(frame):
         height, width = frame.size()
-        lup = (Detector.horizontal_border, Detector.vertical_border)
-        rup = (width-Detector.horizontal_border, Detector.vertical_border)
-        llp = (Detector.horizontal_border, height-Detector.vertical_border)
-        rlp = (width-Detector.horizontal_border, height-Detector.vertical_border)
+        lup = (int(Detector.horizontal_border), int(Detector.vertical_border))
+        rup = (int(width-Detector.horizontal_border), int(Detector.vertical_border))
+        llp = (int(Detector.horizontal_border), int(height-Detector.vertical_border))
+        rlp = (int(width-Detector.horizontal_border), int(height-Detector.vertical_border))
         frame.img = cv2.line(frame.img, llp, lup, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, llp, rlp, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, rlp, rup, (0, 0, 255), thickness=3)
