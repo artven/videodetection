@@ -44,6 +44,11 @@ class SettingsDialog:
         self.draw_speed_info_check = self.builder.get_object("draw_speed_info_check")
         self.draw_size_info_check = self.builder.get_object("draw_size_info_check")
         self.draw_color_bar_check = self.builder.get_object("draw_color_bar_check")
+
+        # Pozostałe opcje
+        self.display_delay_scale_adjustment = self.builder.get_object("display_delay_scale_adjustment")
+
+        # Przyciski
         self.cancel_button = self.builder.get_object("cancel_button")
         self.ok_button = self.builder.get_object("ok_button")
         
@@ -84,6 +89,10 @@ class SettingsDialog:
             Gtk.main_quit()
         else:
             self.window.hide()
+
+    def on_display_delay_scale_value_changed(self, object, data=None):
+        print(self.display_delay_scale_adjustment.get_value())
+        Configuration.play_delay(self.display_delay_scale_adjustment.get_value())
 
     def __load_settings(self):
         """

@@ -57,6 +57,8 @@ class ProgramView:
         self.statusbar.push(self.context_id, text)
 
     def enable_buttons(self):
+        self.play_toggle_button.set_active(False)
+        self.pause_toggle_button.set_active(True)
         self.play_toggle_button.set_sensitive(True)
         self.pause_toggle_button.set_sensitive(True)
         self.stop_button.set_sensitive(True)
@@ -80,13 +82,16 @@ class ProgramView:
             self.controller.set_new_file(path)
             self.write_on_statusbar("Wybrano nowy plik " + path)
             self.enable_buttons()
+            # self.main_image.clear()
         self.file_chooser_dialog.destroy()
         self.file_chooser_dialog = None
 
     def on_open_camera_button_clicked(self, object, data=None):
+        # TODO
         self.write_on_statusbar("Wybierz kamerę")
 
     def on_open_database_clicked(self, object, data=None):
+        #TODO
         self.write_on_statusbar("Wybierz bazę danych z samochodami")
 
     def on_play_toggled(self, object, data=None):
@@ -112,6 +117,7 @@ class ProgramView:
         self.play_toggle_button.set_active(False)
         self.disable_buttons()
         self.controller.stop()
+        self.main_image.clear()
         self.write_on_statusbar("Stop")
 
     def on_run_alg_toggled(self, object, data=None):
