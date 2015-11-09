@@ -1,10 +1,13 @@
 #!/usr/bin/env python3.4
+from sys import stderr
+
 __author__ = 'rafal'
 
 from gi.repository import Gtk
 from gui.about_dialog import AboutDialog
 from gui.settings_dialog import SettingsDialog
 from gui.window_controller import WindowController
+from src.config import Configuration
 
 
 class ProgramView:
@@ -38,15 +41,21 @@ class ProgramView:
         self.settings_dialog = SettingsDialog()
         self.file_chooser_dialog = None
 
-
         # Konfiguracja widoczności elementów
-        self.main_image.show()
+        self.main_image.hide()
         self.write_on_statusbar("Witaj podróżniku!")
         self.window.show()
 
         # Obiekt łączący algorytm z oknem
         self.controller = WindowController(self)
 
+        self.right2left_toggle_button = self.builder.get_object("right2left")
+        self.left2right_toggle_button = self.builder.get_object("left2right")
+
+        if Configuration.direction() == "left2right":
+            self.left2right_toggle_button.set_active(True)
+        else:
+            self.right2left_toggle_button.set_active(True)
 
     def write_on_statusbar(self, text):
         self.statusbar.push(self.context_id, text)
@@ -69,6 +78,18 @@ class ProgramView:
         self.run_alg_toggle_button.set_sensitive(False)
         self.open_file_button.set_sensitive(True)
 
+    def on_right2left_toggled(self, object, data=None):
+        is_pressed = self.right2left_toggle_button.get_active()
+        self.left2right_toggle_button.set_active(not is_pressed)
+        if is_pressed:
+            self.controller.set_direction_r2l()
+
+    def on_left2right_toggled(self, object, data=None):
+        is_pressed = self.left2right_toggle_button.get_active()
+        self.right2left_toggle_button.set_active(not is_pressed)
+        if is_pressed:
+            self.controller.set_direction_l2r()
+
     def on_open_file_button_clicked(self, object, data=None):
         self.__create_file_chooser_dialog()
         response = self.file_chooser_dialog.run()
@@ -86,8 +107,14 @@ class ProgramView:
         self.write_on_statusbar("Wybierz kamerę")
 
     def on_open_database_clicked(self, object, data=None):
-        #TODO
+        # TODO
         self.write_on_statusbar("Wybierz bazę danych z samochodami")
+
+    def on_open_images_clicked(self, object, data=None):
+        self.controller.open_images()
+
+    def on_delete_files_clicked(self, object, data=None):
+        self.controller.delete_old_items()
 
     def on_play_toggled(self, object, data=None):
         is_pressed = self.play_toggle_button.get_active()
@@ -95,6 +122,7 @@ class ProgramView:
         if is_pressed:
             self.write_on_statusbar("Odtwarzanie")
             self.controller.play_file()
+            self.main_image.show()
 
     def on_pause_toggled(self, object, data=None):
         is_pressed = self.pause_toggle_button.get_active()
@@ -105,17 +133,20 @@ class ProgramView:
 
     def on_record_toggled(self, object, data=None):
         is_pressed = self.record_toggle_button.get_active()
+        self.controller.set_recording(is_pressed)
         self.write_on_statusbar("Nagrywaj albo nie nagrywaj")
 
     def on_stop_clicked(self, object, data=None):
         self.pause_toggle_button.set_active(True)
         self.play_toggle_button.set_active(False)
         self.disable_buttons()
-        self.controller.stop()
+        self.controller.stop_playing()
         self.main_image.clear()
         self.write_on_statusbar("Stop")
 
     def on_run_alg_toggled(self, object, data=None):
+        is_pressed = self.run_alg_toggle_button.get_active()
+        self.controller.set_algorithm(is_pressed)
         self.write_on_statusbar("Uruchom algorytm albo nie uruchom")
 
     def on_about_button_clicked(self, object, data=None):

@@ -34,7 +34,8 @@ class SettingsDialog:
         self.cell = Gtk.CellRendererText()
         self.direction_combobox.pack_start(self.cell, True)
         self.direction_combobox.add_attribute(self.cell, 'text', 1)
-        self.direction_combobox.set_active(0)
+        # self.direction_combobox.set_active(0)
+        self.direction_combobox.set_sensitive(False)
 
         # Opcje on-off
         self.draw_detection_region_check = self.builder.get_object("draw_detection_region_check")
