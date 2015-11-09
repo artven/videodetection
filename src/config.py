@@ -37,6 +37,8 @@ class Configuration:
     __draw_cars = True
     __play_delay = 0.25
 
+    run_alg = True
+
     @staticmethod
     def load_config(file=filename):
         with open(file) as data_file:

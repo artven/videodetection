@@ -37,6 +37,8 @@ class Database:
         speed = record["speed"]
         date = record["date"]
 
+        print("nowy obiekt w:"+str(width)+" h:"+str(height)+" a:"+str(area)+" s:"+str(speed)+" d:sub"+str(date))
+
         self.cursor.execute("INSERT INTO cars(width, height, area, speed, detection_date) VALUES(%.2f, %.2f, %.2f, %.2f, ?);"
                             % (width, height, area, speed), (date,))
         self.connection.commit()

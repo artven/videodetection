@@ -25,10 +25,11 @@ def perform(frame: Frame, database, img_saver):
     if Configuration.draw_speed_region():
         frame = Classyfication.draw_speed_region(frame)
 
-    if objects is not None:
-        for obj in objects:
-            record = Classyfication.perform(obj)
-            database.write(record)
-            img_saver.write(record)
+    if Configuration.run_alg:
+        if objects is not None:
+            for obj in objects:
+                record = Classyfication.perform(obj)
+                database.write(record)
+                img_saver.write(record)
 
     return frame
