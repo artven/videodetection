@@ -7,11 +7,6 @@ from gui.settings_dialog import SettingsDialog
 from gui.window_controller import WindowController
 
 
-
-from gui.wait_dialog import WaitDialog
-import time
-
-
 class ProgramView:
 
     def __init__(self):
@@ -109,7 +104,7 @@ class ProgramView:
         self.controller.pause_playing()
 
     def on_record_toggled(self, object, data=None):
-
+        is_pressed = self.record_toggle_button.get_active()
         self.write_on_statusbar("Nagrywaj albo nie nagrywaj")
 
     def on_stop_clicked(self, object, data=None):
