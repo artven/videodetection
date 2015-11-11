@@ -32,7 +32,7 @@ class WindowController:
 
         self.database = Database()
         self.img_saver = ImageSaver()
-        GLib.timeout_add(50, self.algorithm)
+        GLib.timeout_add(75, self.algorithm)
         #self.algorithm_thread = MyThread(self.algorithm)
         #self.algorithm_thread.start()
 
@@ -41,13 +41,15 @@ class WindowController:
             return False
 
         if self.play_file_flag:
-            print(self.__current_frame_index)
             frame = Frame(self.__input_video)
 
             if not self.__input_video.is_good():
-                self.play_file_flag = False
-                self.window.disable_buttons()
-                self.__write_msg("Koniec")
+                if len(self.__path):
+                    self.__input_video = VideoReader(self.__path.pop())
+                else:
+                    self.play_file_flag = False
+                    self.window.disable_buttons()
+                    self.__write_msg("Koniec")
             else:
                 frame = perform(frame, self.database, self.img_saver)
                 if self.__record:
@@ -60,14 +62,13 @@ class WindowController:
                 self.__current_frame_index += 1
         return True
 
-    def set_new_file(self, path):
+    def set_new_files(self, path):
         self.__path = path
         self.new_file_flag = True
-        self.__input_video = VideoReader(self.__path)
+        self.__input_video = VideoReader(self.__path.pop())
 
     def play_file(self):
         if self.new_file_flag:
-            self.window.write_on_statusbar("Przygotowywanie katalogu...")
             self.__preprare_directory()
             self.new_file_flag = False
         self.play_file_flag = True
