@@ -764,7 +764,7 @@ Otwórz plik bazy danych
 \begin_inset Quotes prd
 \end_inset
 
- - otwiera wskazaną bazę danych i prezentuje zawarte w niej dane o pojazdach.
+ - otwiera wskazaną bazę danych i prezentuje zawarte w niej dane o pojazdach
 \end_layout
 
 \begin_layout Itemize
@@ -775,7 +775,7 @@ Przeglądaj obrazy
 \begin_inset Quotes prd
 \end_inset
 
- - włącza przeglądarkę zapisanych przez program zdjęć pojazdów.
+ - włącza przeglądarkę zapisanych przez program zdjęć pojazdów
 \end_layout
 
 \begin_layout Itemize
@@ -786,7 +786,7 @@ Usuń poprzednie dane
 \begin_inset Quotes prd
 \end_inset
 
- - usuwa zdjęcia, filmy i dane zapisane przez poprzednie sesje programu.
+ - usuwa zdjęcia, filmy i dane zapisane przez poprzednie sesje programu
 \end_layout
 
 \begin_layout Itemize
@@ -797,7 +797,7 @@ Włącz/wyłącz algorytm
 \begin_inset Quotes prd
 \end_inset
 
- - umożliwia wyłączenie algorytmu w celu kalibracji ustawień.
+ - umożliwia wyłączenie algorytmu w celu kalibracji ustawień
 \end_layout
 
 \begin_layout Itemize
@@ -808,7 +808,7 @@ Odtwarzaj wczytane pliki
 \begin_inset Quotes prd
 \end_inset
 
- - rozpoczyna wyświetlanie i analizę uprzednio wybranych plików.
+ - rozpoczyna wyświetlanie i analizę 
 \end_layout
 
 \begin_layout Itemize
@@ -819,7 +819,7 @@ Zatrzymaj odtwarzanie
 \begin_inset Quotes prd
 \end_inset
 
- - zatrzymuje odtwarzanie obecnego pliku.
+
 \end_layout
 
 \begin_layout Itemize
@@ -830,7 +830,7 @@ Zakończ odtwarzanie
 \begin_inset Quotes prd
 \end_inset
 
- - kończy odtwarzanie i analizę wszystkich plików.
+
 \end_layout
 
 \begin_layout Itemize
@@ -841,7 +841,7 @@ Włącz/wyłącz nagrywanie
 \begin_inset Quotes prd
 \end_inset
 
- - umożliwia nagrywanie obrazu poddanego analizie do pliku wideo.
+
 \end_layout
 
 \begin_layout Itemize
@@ -852,7 +852,7 @@ Ustawienia
 \begin_inset Quotes prd
 \end_inset
 
- - pokazuje okno ustawień programu.
+
 \end_layout
 
 \begin_layout Itemize
@@ -863,7 +863,7 @@ Dokumentacja
 \begin_inset Quotes prd
 \end_inset
 
- - uruchamia stronę html z dokumentajcą.
+
 \end_layout
 
 \begin_layout Itemize
@@ -874,7 +874,7 @@ O programie
 \begin_inset Quotes prd
 \end_inset
 
- - uruchamia okienko dialogowe pokazujące krótką informację o programie.
+
 \end_layout
 
 \begin_layout Itemize
@@ -885,7 +885,7 @@ Zakończ
 \begin_inset Quotes prd
 \end_inset
 
- - wyłącza program.
+
 \end_layout
 
 \begin_layout Chapter

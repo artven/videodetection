@@ -43,19 +43,12 @@ class ProgramView:
 
         # Konfiguracja widoczności elementów
         self.main_image.hide()
-        self.write_on_statusbar("Witaj podróżniku!")
+        # self.write_on_statusbar("Witaj podróżniku!")
         self.window.show()
 
         # Obiekt łączący algorytm z oknem
         self.controller = WindowController(self)
 
-        self.right2left_toggle_button = self.builder.get_object("right2left")
-        self.left2right_toggle_button = self.builder.get_object("left2right")
-
-        if Configuration.direction() == "left2right":
-            self.left2right_toggle_button.set_active(True)
-        else:
-            self.right2left_toggle_button.set_active(True)
 
     def write_on_statusbar(self, text):
         self.statusbar.push(self.context_id, text)
@@ -77,18 +70,6 @@ class ProgramView:
         self.record_toggle_button.set_sensitive(False)
         self.run_alg_toggle_button.set_sensitive(False)
         self.open_file_button.set_sensitive(True)
-
-    def on_right2left_toggled(self, object, data=None):
-        is_pressed = self.right2left_toggle_button.get_active()
-        self.left2right_toggle_button.set_active(not is_pressed)
-        if is_pressed:
-            self.controller.set_direction_r2l()
-
-    def on_left2right_toggled(self, object, data=None):
-        is_pressed = self.left2right_toggle_button.get_active()
-        self.right2left_toggle_button.set_active(not is_pressed)
-        if is_pressed:
-            self.controller.set_direction_l2r()
 
     def on_open_file_button_clicked(self, object, data=None):
         self.__create_file_chooser_dialog()

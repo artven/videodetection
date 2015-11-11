@@ -101,14 +101,6 @@ class WindowController:
     def set_algorithm(self, value):
         Configuration.run_alg = value
 
-    def set_direction_r2l(self):
-        Configuration.direction("right2left")
-        Configuration.save_config()
-
-    def set_direction_l2r(self):
-        Configuration.direction("left2right")
-        Configuration.save_config()
-
     def exit(self):
         self.exit_flag = True
 

@@ -117,7 +117,7 @@
 
 \begin_layout Standard
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -177,7 +177,7 @@ division{}
 
 
 \backslash
-specialization{Inżynieria Biomedyczna}
+specialization{Automatyka i Robotyka}
 \end_layout
 
 \begin_layout Plain Layout
@@ -249,531 +249,425 @@ name "chap:Wstep"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% Te linijki zamieniaj Tabela i Rysunek na Tab.
- i Rys.
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-tablename}{Tab.}
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-renewcommand*{
-\backslash
-figurename}{Rys.}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
+Tutaj będzie wstęp do pracy inżynierskiej
 \end_layout
 
 \begin_layout Standard
-Niniejszy dokument powstał łłąsdw celu usprawnienia pracy studentów podczas
- przygotowywania opisu pracy dyplomowej.
- Aby zrozumieć program LyX warto przeczytać 
-\begin_inset Quotes pld
-\end_inset
-
-samouczek
-\begin_inset Quotes prd
-\end_inset
-
- dostępny w menu 
-\begin_inset Quotes pld
-\end_inset
-
-Pomoc
-\begin_inset Quotes prd
-\end_inset
-
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "The_Lyx_Tutorial"
-
-\end_inset
-
-.
- Głównymi zaletami tego oprogramowania są:
-\end_layout
-
-\begin_layout Itemize
-automatyczna numeracja rysunków i aktualizacja w tekście poprzez etykiety
-\end_layout
-
-\begin_layout Itemize
-automatyczna numeracja tabel i aktualizacja w tekście poprzez etykiety 
-\end_layout
-
-\begin_layout Itemize
-automatyczna numeracja rozdziałów 
-\end_layout
-
-\begin_layout Itemize
-automatyczna numeracja i generowanie spisu treści, rysunków i bibliografii.
-\end_layout
-
-\begin_layout Standard
-Użytkownik może skupić się na tekście -- nie musi myśleć o tym, czy numeracja
- w tekście i przy danym rysunku lub tabeli będzie prawidłowa, gdy przeniesie
- jeden podrozdział w inne miejsce swojej pracy.
- Numeracją zajmie się LyX poprzez mechanizm etykiet.
-\end_layout
-
-\begin_layout Standard
-LyX jest pomyślany w taki sposób, aby odciążyć użytkownika od szczegółowej
- znajomości LaTeX-a.
- Często jednak znajomość LaTeX jest niezbędna.
- Warto wówczas sięgnąć np.
- do 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Kostecki"
-
-\end_inset
-
- lub do wykładu 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Wyklad_Szpyrka"
-
-\end_inset
-
-.
- Kopie tych materiałów zebrano w katalogu 
-\begin_inset Quotes pld
-\end_inset
-
-help
-\begin_inset Quotes prd
-\end_inset
-
- w drzewku plików niniejszego projektu.
-\end_layout
-
-\begin_layout Standard
-W rozdziale 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:wstawianie_rysunkow"
-
-\end_inset
-
- przedstawiono podstawowe informacje na temat wstawiania rysunków.
+Wideo detekcja 
 \end_layout
 
 \begin_layout Chapter
-Wstawianie rysunków
-\begin_inset CommandInset label
-LatexCommand label
-name "chap:wstawianie_rysunkow"
+Systemy wizyjne w zastosowaniach komercyjnych 
+\end_layout
 
-\end_inset
-
-
+\begin_layout Chapter
+Zastosowane narzędzia.
 \end_layout
 
 \begin_layout Standard
-Rysunki można wstawiać używając menu Wstaw 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Wstawka 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Rysunek.
- Spowoduje to pojawienie się obszaru wstawki.
- Od razu warto ustalić i nadać wstawce etykietę, co najszybciej można zrobić
- przyciskiem 
-\begin_inset Quotes pld
-\end_inset
-
-Wstaw etykietę
-\begin_inset Quotes prd
-\end_inset
-
-.
- Kolejny krok to wprowadzenie podpisu pod rysunkiem i finalne wstawienie
- grafiki używając menu Wstaw 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Rysunek.
- Wyśrodkowanie rysunku można zrealizować przyciskiem 
-\begin_inset Quotes pld
-\end_inset
-
-Ustawienia akapitu
-\begin_inset Quotes prd
-\end_inset
-
-.
- Oczywiście teraz możemy w tekście odnieść się do naszego opisanego rysunku
- posługując się jego etykietą i przyciskiem 
-\begin_inset Quotes pld
-\end_inset
-
-Wstaw odsyłacz wewnętrzny
-\begin_inset Quotes prd
-\end_inset
-
-, patrz rys.
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "rys:etykieta_dla_wstawka_rysunek"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/wstawka_rysunek.PNG
-	lyxscale 50
-	width 14cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Podpis pod rysunkiem.
- Tak to wygląda w LyX
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "rys:etykieta_dla_wstawka_rysunek"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Wstawkę z rysunkiem można zamknąć/otworzyć pojedynczym kliknięciem na 
-\begin_inset Quotes pld
-\end_inset
-
-Wstawka: Rysunek
-\begin_inset Quotes prd
-\end_inset
-
-.
+Poniższy rozdział zawiera krótki opis języka programowania, w którym została
+ zaimplementowana praca inżynierska, zastosowanych zewnętrznych bibliotek
+ oraz innych narzędzi użytych przy wykonaniu programu.
  
 \end_layout
 
-\begin_layout Standard
-Często Promotor narzuca Dyplomantom aby rysunki pojawiały się w tekście
- zaraz poniżej pierwszego wystąpienia odnośnika do danego rysunku.
- LyX, tak samo jak LaTeX stara się rysunki rozmieszczać wg swojego wewnętrznego
- algorytmu, często nie tak, jak to my byśmy sobie życzyli.
- Aby uporać się z tym problemem wystarczy wybrać ustawienie 
-\begin_inset Quotes pld
-\end_inset
-
-Tutaj bezwzględnie
-\begin_inset Quotes prd
-\end_inset
-
-, co ilustruje rysunek 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "rys:tutaj_bezwzglednie"
-
-\end_inset
-
-.
+\begin_layout Section*
+Python 
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/tutaj_bezwglednie.png
-	width 7cm
-
-\end_inset
-
-
+Algorytm wideo detekcji pojazdów został zaimplementowany w języku programowania
+ Python, w wersji 3.4.
+ Język ten posiada wiele korzystnych cech, które miały istotny wypływ na
+ proces powstawania programu:
 \end_layout
 
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Ustawienia występowania rysunków w tekście
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "rys:tutaj_bezwzglednie"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Wstawiane pliki z grafiką (w formacie: PNG, JPG, GIF, EMF itd.) mogą mieć
- różną rozdzielczość.
- Często chcemy, aby rysunek na stronie miał żądaną przez nas szerokość lub
- wysokość, a nie rozmiar wynikający z rozdzielczości takiego pliku.
- W LyX można to wygodnie określić, patrz rysunek 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "rys:ustawienia_szerokosci_rys"
-
-\end_inset
-
-.
- Dla tak określonych rozmiarów rysunku w finalnym PDF (w cm) LyX zadba o
- jego proporcje -- nie trzeba określać wysokości.
- Rozmiary rysunku wyświetlanego w edytorze LyX ustawia się w zakładce 
-\begin_inset Quotes pld
-\end_inset
-
-Opcje LaTeX i LyX
-\begin_inset Quotes prd
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/ustaw_szerokosc.PNG
-	width 10cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Ustawienia szerokości rysunku na stronie w finalnym pliku PDF
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "rys:ustawienia_szerokosci_rys"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Dobrym przyzwyczajeniem jest umieszczanie plików rysunków w podkatalogu,
+\begin_layout Itemize
+Jest językiem obiektowym wysokiego poziomu.
+ Obiektowość kodu, w przeciwieństwie do takich popularnych języków jak Java
+ czy C#, nie jest jednak odgórnie wymuszana przez składnię języka.
+ Powoduje to, że w Pythonie można pisać proste liniowe skrypty, służące
  np.
- 
-\begin_inset Quotes pld
-\end_inset
+ do testowania funkcjonalności programu.
+\end_layout
 
-img
-\begin_inset Quotes prd
-\end_inset
+\begin_layout Itemize
+Gramatyka języka jest bardzo prosta, podobna do składni języka angielskiego,
+ przez co kod jest jasny i zrozumiały.
+ Dodatkowo język ten wymusza na programiście stosowanie standardu PEP8,
+ co powoduje jednolity i przejrzysty styl kodu w powstającym programie.
+\end_layout
 
- jak w tym dokumencie.
+\begin_layout Itemize
+Posiada bogatą bibliotekę standardową zawierającą moduły do programowania
+ sieciowego, pracy z plikami html, xml, json, tworzenia interfejsów gui
+ czy przetwarzania wielowątkowego.
+\end_layout
+
+\begin_layout Itemize
+Jest językiem interpretowanym, więc programy wykonane w tym języku są niezależne
+ od platformy i mogą być łatwo przenoszone na inne systemy operacyjne bądź
+ platformy sprzętowe(komputer PC, systemy embeded).
+\end_layout
+
+\begin_layout Itemize
+Ogromna popularność języka Python i szeroka społeczność skupiona wokół niego,
+ skutkuje w ogramnej bazie gotowych rozwiązań, porad i tutoriali dostępnych
+ w sieci.
+\end_layout
+
+\begin_layout Section*
+OpenCV
 \end_layout
 
 \begin_layout Standard
-Na rysunku 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:eps_vs_jpg"
-
+OpenCV jest biblioteką 
+\begin_inset Quotes pld
 \end_inset
 
- możesz zobaczyć różnicę w wyglądzie między formatami EPS i JPG.
- W finalnym dokumencie różnica jak widać jest widoczna, zwłaszcza przy skalowani
-u-powiększeniu strony.
- Warto używać grafik wektorowych takich jak EMF czy EPS i oprogramowania
- Inkscape.
+open source
+\begin_inset Quotes prd
+\end_inset
+
+ służącą do cyfrowego przetwarzania obrazu wizyjnego.
+ Jest ona bezpośrednio zaimplementowana w języku C/C++.
+ Dostępna jest na wszystkich systemach operacyjnych stacjonarnych i mobilnych:
+ Windows, Linux, MacOS, Android, iOS.
+ Biblioteka zapewnia API dla wielu języków, takich jak: Python, Ruby, Java,
+ Matlab.
+ Została napisana z myślą o programach potrzebujących najwyższej wydajności
+ i wykorzystaniu w aplikacjach czasu rzeczywistego.
+ Najnowsze wydanie, w wersji 3.0, przynosi optymalizację biblioteki na wielu
+ poziomach: algorytmów, wykorzystania wątków oraz rdzeni czy rozkazów dla
+ CPU.
+ Najwięksi producenci sprzętu komputerowego, tacy jak Intel czy Nvidia,
+ także wzięli udział w tworzeniu biblioteki, dostarczając własne niskopoziomowe
+ programy do wykonywania operacji na GPU.
+\end_layout
+
+\begin_layout Standard
+Biblioteka jest podzielona na kilkanaście modułów, dostępnych w postaci
+ bibliotek statycznych lub dynamicznych.
+ Poniżej zostały omówione najważniejsze moduły, które znalazły zastosowanie
+ w implementacji pracy inżynierskiej:
+\end_layout
+
+\begin_layout Itemize
+core - podstawowe funkcje do działań na tablicach wielowymiarowych,
+\end_layout
+
+\begin_layout Itemize
+highgui - obsługa graficznego interfejsu użytkownika, wyświetlanie zdjęć
+ i wideo ,
+\end_layout
+
+\begin_layout Itemize
+imgproc - funkcje do przetwarzania obrazu: filtracja, transformacje geometryczne
+, konwersje między przestrzeniami barw,
+\end_layout
+
+\begin_layout Itemize
+imgcodecs - interfejs do odczytu i zapisu zdjęć,
+\end_layout
+
+\begin_layout Itemize
+videoio - przechwytywanie obrazu wideo,
+\end_layout
+
+\begin_layout Itemize
+video - analiza obrazu wideo(śledzenie ruchu, wyodrębnianie tła),
+\end_layout
+
+\begin_layout Itemize
+features2D - znajdywanie krawędzi, dopasowywanie szablonów,
+\end_layout
+
+\begin_layout Itemize
+objectdect - dopasowywanie i wykrywanie obiektów.
+ 
+\end_layout
+
+\begin_layout Standard
+OpenCv znalazło wiele zastosowań w aplikacjach przemysłowych, takich jak:
+ inspekcja gotowych produktów w fabrykach, medycyna, bezpieczeństwo, systemy
+ wizyjne „wielowymiarowe”, robotyka.
+ 
+\end_layout
+
+\begin_layout Section*
+NumPy
+\end_layout
+
+\begin_layout Standard
+NumPy jest zewnętrzną biblioteką 
+\begin_inset Quotes pld
+\end_inset
+
+open source
+\begin_inset Quotes prd
+\end_inset
+
+, służącą do przeprowadzania obliczeń na n-wymiarowych tablicach.
+ Zapewnia ona funkcjonalność podobną do środowiska Matlab.
+ Podstawowa typ tablicy, używany przez bibliotekę znacząco różni się od
+ tablicy(listy) samego Pythona: lista jest kontenerem heterogonicznym, mogącym
+ dynamicznie zmieniać swój rozmiar, natomiast 
+\begin_inset Quotes pld
+\end_inset
+
+ndarray
+\begin_inset Quotes prd
+\end_inset
+
+ jest tablicą homogeniczną o stałym rozmiarze.Rozwiązanie takie zapewnia
+ wysoką wydajność obliczeń i możliwość bezpośredniej integracji z plikami
+ binarnymi biblioteki napisanymi w języku C/C++.
+\end_layout
+
+\begin_layout Section*
+SciPy
+\end_layout
+
+\begin_layout Standard
+Biblioteka SciPy(skrót od 
+\begin_inset Quotes pld
+\end_inset
+
+Scientific Python
+\begin_inset Quotes prd
+\end_inset
+
+) jest biblioteką 
+\begin_inset Quotes pld
+\end_inset
+
+open-source
+\begin_inset Quotes prd
+\end_inset
+
+ zawierającą funkcje do rozwiązywania zadań optymalizacji, algebry liniowej,
+ przetwarzania sygnałów czy rozwiązywania równań różniczkowych.
+ Biblioteka pozwala zrealizować większość funkcjonalności środowiska Matlab.
+ 
+\end_layout
+
+\begin_layout Section*
+PyGtk + Glade
+\end_layout
+
+\begin_layout Standard
+W celu zaprojektowania i stworzenia interfejsu graficznego użytkownika zostało
+ wykorzystane PyGtk oraz program Glade.
+\end_layout
+
+\begin_layout Standard
+PyGtk jest nakładką na bibliotekę Gtk+, pozwalającą na tworzenie graficznego
+ interfejsu użytkownika przy użyciu języka Python.
+ Znalazła ona zastosowanie w wielu popularnych aplikacjach: BitTorrent,
+ Gedit, GIMP.
+ Jest częścią linuksowego środowiska graficznego GNOME.
+ 
+\end_layout
+
+\begin_layout Standard
+Glade jest programem to projektowania interfejsu graficznego użytkownika
+ z wykorzystaniem 
+\begin_inset Quotes pld
+\end_inset
+
+widgetów
+\begin_inset Quotes prd
+\end_inset
+
+ z biblioteki Gtk.
+ Stworzony projekt okna interfejsu jest zapisywany do pliku xml.
+ Spreparowany w ten sposób plik, może być wykorzystany do zbudowania okna
+ za pomocą klasy GtkBuilder.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 wide false
 sideways false
-status collapsed
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/glade.png
+	scale 30
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Widok okna programu Glade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Sphinx
+\end_layout
+
+\begin_layout Standard
+Sphinx jest to narzędzie służące do automatycznej generacji dokumentacji
+ programu na podstawie komentarzy zawartych w kodzie.
+ Program ten pozwala na tworzenie dokumentacji programów napisanych w Pythonie
+ bądź C++.
+ Aby dokumentacja mogła zostać wygenerowana, komentarze muszą być zgodne
+ ze standardem 
+\begin_inset Quotes pld
+\end_inset
+
+reStructuredText
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Dokumentacja może być wygenerowana w postaci tekstu, htmla, w formacie
+ pdf czy Latex.
+\end_layout
+
+\begin_layout Standard
+###### Tutaj dać screen dokumentacji
+\end_layout
+
+\begin_layout Chapter
+Opis programu
+\end_layout
+
+\begin_layout Standard
+Poniższy rozdział opisuje interfejs i sposób działania zaimplementowanego
+ programu.
+\end_layout
+
+\begin_layout Section*
+Struktura programu
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="2" columns="4">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-a)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-b)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/agh.eps
-	width 3cm
+	filename img/struktura programu.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Widok struktury programu
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
-
 \begin_layout Plain Layout
 
 \end_layout
 
 \end_inset
-</cell>
-<cell alignment="center" valignment="top" usebox="none">
-\begin_inset Text
+
+
+\end_layout
+
+\begin_layout Standard
+Program został podzielony na następujące pliki oraz foldery:
+\end_layout
+
+\begin_layout Itemize
+config.json - plik konfiguracyjny programu, zawiera parametry algorytmów
+ oraz opcje dotyczące prezentacji wyników programu,
+\end_layout
+
+\begin_layout Itemize
+data - folder do którego program zapisuje dane o wykrytych pojazdach do
+ baz danych SQLite,
+\end_layout
+
+\begin_layout Itemize
+doc - dokumentacja programu w formacie .html wygenerowana przy użyciu narzędzia
+ Sphinx,
+\end_layout
+
+\begin_layout Itemize
+exemples - spreparowane nagrania testowe,
+\end_layout
+
+\begin_layout Itemize
+gui - pliki w formacie .glade używane do wyświetlania interfejsu graficznego
+ użytkownika,
+\end_layout
+
+\begin_layout Itemize
+images - zdjęcia wykrytych samochodów, opisane danymi samochodu
+\end_layout
+
+\begin_layout Itemize
+readme.txt - plik tekstowy zawierający informacje o potrzebnych do uruchomienia
+ programu bibliotekach i sposobie ich instalacji,
+\end_layout
+
+\begin_layout Itemize
+run.py - skrypt uruchamiający program,
+\end_layout
+
+\begin_layout Itemize
+src - pliki źródłowe programu,
+\end_layout
+
+\begin_layout Itemize
+videos - zapisane przez program wyniki analizy w postaci plików wideo.
+\end_layout
+
+\begin_layout Subsection*
+Główne okno programu
+\end_layout
+
+\begin_layout Standard
+Po uruchomieniu programu skryptem z pliku run.py pojawia się główne okno
+ programu.
+ Ma ono początkowo postać zwykłego paska złożonego z przycisków.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename img/_agh.jpg
-	lyxscale 20
-	width 3cm
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+	filename img/widok programu.png
+	scale 75
 
 \end_inset
 
@@ -784,7 +678,56 @@ b)
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Logo AGH: a) z pliku EPS; b) z pliku JPG
+Główne okno programu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Główne okno programu zapewnia następujące funkcje:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Otwórz plik wideo
+\begin_inset Quotes prd
+\end_inset
+
+ - otwiera poniższe okno dialogowe, umożliwiające wybór jednego bądź większe
+ ilości plików wideo do analizy.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/okno wyboru pliku.png
+	scale 40
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Okno wyboru plików
 \end_layout
 
 \end_inset
@@ -793,12 +736,6 @@ Logo AGH: a) z pliku EPS; b) z pliku JPG
 \end_layout
 
 \begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:eps_vs_jpg"
-
-\end_inset
-
 
 \end_layout
 
@@ -807,58 +744,148 @@ name "fig:eps_vs_jpg"
 
 \end_layout
 
-\begin_layout Chapter
-Wstawianie wzorów matematycznych
-\end_layout
-
-\begin_layout Standard
-Numerowane wzory matematyczne wstawia się używając menu 
+\begin_layout Itemize
 \begin_inset Quotes pld
 \end_inset
 
-Wstaw 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Matematyka 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Numerowana formuła
+Otwórz obraz z kamery
 \begin_inset Quotes prd
 \end_inset
 
-.
- Przykładowo wzór 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "eq:W_AV"
+ - uruchamia podprogram, który zajmuje się analizą obrazu z kamery w czasie
+ rzeczywistym ### dodać screen podprogramu
+\end_layout
 
+\begin_layout Itemize
+\begin_inset Quotes pld
 \end_inset
 
- przedstawia zależność na energię średnią zgromadzoną w polu magnetycznym
- pętli indukcyjnej.
- 
+Otwórz plik bazy danych
+\begin_inset Quotes prd
+\end_inset
+
+ - otwiera wskazaną bazę danych i prezentuje zawarte w niej dane o pojazdach
 \end_layout
 
-\begin_layout Standard
-\begin_inset Formula 
-\begin{equation}
-W_{AV}=\frac{1}{4}\,\intop_{V}\,\underline{\overrightarrow{B}}\cdot\overrightarrow{\underline{H}}{}^{^{*}}\,dV\label{eq:W_AV}
-\end{equation}
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
 
+Przeglądaj obrazy
+\begin_inset Quotes prd
+\end_inset
+
+ - włącza przeglądarkę zapisanych przez program zdjęć pojazdów
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Usuń poprzednie dane
+\begin_inset Quotes prd
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-Tu również stosujemy etykiety, których używamy w opisie, a LyX zadba za
- nas o zgodność tych numerów w finalnym dokumencie.
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Włącz/wyłącz algorytm
+\begin_inset Quotes prd
+\end_inset
+
+
 \end_layout
 
-\begin_layout Chapter
-Wideodetekcja 
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Odtwarzaj wczytane pliki
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Zatrzymaj odtwarzanie
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Zakończ odtwarzanie
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Włącz/wyłącz nagrywanie
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Ustawienia
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Dokumentacja
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+O programie
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Zakończ
+\begin_inset Quotes prd
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -873,145 +900,7 @@ name "chap:Podsumowanie"
 \end_layout
 
 \begin_layout Standard
-Niniejsza praca składa się z rozdziału nr 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Wstep"
-
-\end_inset
-
-, którym jest wstęp.
- W rozdziale 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:wstawianie_rysunkow"
-
-\end_inset
-
- przedstawiono podstawowe informacje na temat wstawiania rysunków w LyX.
- W pracy znajduje się również podsumowanie, które obecnie czytasz, będące
- rozdziałem nr 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "chap:Podsumowanie"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Bibliografia generowana jest na podstawie pliku 
-\begin_inset Quotes pld
-\end_inset
-
-bibliografia.bib
-\begin_inset Quotes prd
-\end_inset
-
-.
- Jest to plik tekstowy, jednak nie warto bibliografii uzupełniać przy pomocy
- zwykłego edytora tekstu, warto do tego wykorzystać program JabRef, którego
- interfejs przedstawia rysunek 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:JabRef"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status collapsed
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/JabRef.JPG
-	width 10cm
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Interfejs programu JabRef
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:JabRef"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Warto również zobaczyć do katalogów 
-\begin_inset Quotes pld
-\end_inset
-
-help
-\begin_inset Quotes prd
-\end_inset
-
- i 
-\begin_inset Quotes pld
-\end_inset
-
-bst
-\begin_inset Quotes prd
-\end_inset
-
- drzewka plików niniejszego projektu aby dowiedzieć się więcej o LyX, LaTeX
- i BibTeX.
-\end_layout
-
-\begin_layout Standard
-Po zainstalowaniu LyX-a na swoim komputerze koniecznie doinstaluj program
- sprawdzania pisowni Hunspell.
- Zobacz do menu Narzędzia 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Ustawienia 
-\begin_inset Formula $\rightarrow$
-\end_inset
-
- Pisownia.
-\end_layout
-
-\begin_layout Standard
-Typowe podsumowanie pracy dyplomowej może rozpocząć się od akapitu 
-\begin_inset Quotes pld
-\end_inset
-
-W pracy przedstawiono wyniki badań autora nad zastosowaniem ...
- do ....
-\begin_inset Quotes prd
-\end_inset
-
-
+A tutaj będzie podsumowanie pracy inżynierskiej, gdy już napiszę to gówno
 \end_layout
 
 \begin_layout Standard
