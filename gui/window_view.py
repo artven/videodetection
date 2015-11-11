@@ -94,9 +94,8 @@ class ProgramView:
         self.__create_file_chooser_dialog()
         response = self.file_chooser_dialog.run()
         if response == Gtk.ResponseType.OK:
-            path = self.file_chooser_dialog.get_filename()
-            self.controller.set_new_file(path)
-            self.write_on_statusbar("Wybrano nowy plik " + path)
+            path = self.file_chooser_dialog.get_filenames()
+            self.controller.set_new_files(path)
             self.enable_buttons()
             # self.main_image.clear()
         self.file_chooser_dialog.destroy()
@@ -172,6 +171,7 @@ class ProgramView:
         if self.file_chooser_dialog is None:
             self.file_chooser_dialog = Gtk.FileChooserDialog("Open...", None, Gtk.FileChooserAction.OPEN,
                                     (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+            self.file_chooser_dialog.set_select_multiple(True)
 
 if __name__ == "__main__":
     window = ProgramView()

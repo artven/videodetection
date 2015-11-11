@@ -86,11 +86,9 @@ class Follower:
                             result.append(record)
 
         if Follower.__detected_right is False and Follower.__right_lock is True:
-            print("zdjęto blokadę z prawej!")
             Follower.__right_lock = False
 
         if Follower.__detected_left is False and Follower.__left_lock is True:
-            print("zdjęto blokadę z lewej!")
             Follower.__left_lock = False
 
         return result if len(result) else None
