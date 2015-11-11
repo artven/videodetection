@@ -1,0 +1,1037 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass aghdpl
+\begin_preamble
+% \documentclass{aghdpl}               % przy kompilacji programem latex
+% \documentclass[pdflatex,en]{aghdpl}  % praca w języku angielskim
+% dodatkowe pakiety
+\usepackage{enumerate}
+\usepackage{listings}
+\lstloadlanguages{TeX}
+\usepackage{caption} 
+\captionsetup[figure]{labelformat=simple, labelsep=period}
+\captionsetup[table]{labelformat=simple, labelsep=period}
+%\captionsetup{font=small}
+\captionsetup{margin=10pt, font={small}, labelfont=bf, format=hang}
+\usepackage{esint}
+\clubpenalty = 10000
+\widowpenalty = 10000
+\usepackage[OT4]{fontenc}
+%\usepackage{graphicx}
+%\usepackage{grfext}
+%\AtBeginDocument{%
+% \PrependGraphicsExtensions*{
+%    .mps,.MPS,.pdf,.PDF,.eps,.EPS,.ps,.PS,
+%    .png,.PNG,.jpg,.jpeg,.JPG,.JPEG,
+%    .funny,.foobar
+%  }%
+%  \PrintGraphicsExtensions % see .log file
+%}
+% \usepackage[style=numeric-comp]{biblatex}
+% \setlength{\itemsep}{-1\parsep}
+%---------------------------------------------------------------------------
+%\usepackage{epstopdf}
+\end_preamble
+\options pdflatex
+\use_default_options true
+\maintain_unincluded_children false
+\language polish
+\language_package default
+\inputencoding iso8859-2
+\fontencoding global
+\font_roman utopia
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics none
+\default_output_format default
+\output_sync 0
+\bibtex_command bibtex
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref true
+\pdf_title "dyplom"
+\pdf_author "Imie Nazwisko"
+\pdf_subject "Temat"
+\pdf_keywords "słowa kluczowe"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize default
+\use_geometry false
+\use_package amsmath 0
+\use_package amssymb 0
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 0
+\use_package mathtools 1
+\use_package mhchem 0
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Indeks
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language polish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 3
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+author{Rafał Prusak}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+shortauthor{R.
+ Prusak}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+titlePL{Wideo detekcja pojazdów samochodowych w ruchu drogowym}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+titleEN{Video-based vehicle detection for road traffic applications}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+shorttitle{LyX-owa formatka pracy dyplomowej}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+faculty{Wydział Elektrotechniki, Automatyki,
+\backslash
+
+\backslash
+Informatyki i Inżynierii Biomedycznej}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+division{}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+specialization{Automatyka i Robotyka}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+thesistype{Praca dyplomowa inżynierska}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+supervisor{dr inż.
+ Zbigniew Marszałek}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+acknowledgements{Wymaga odkomentowania linijek w aghdpl.cls} 
+\end_layout
+
+\begin_layout Plain Layout
+
+%
+\backslash
+date{2015} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+titlepages
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{tocdepth}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Wstęp
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Wstep"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+% Te linijki zamieniaj Tabela i Rysunek na Tab.
+ i Rys.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+tablename}{Tab.}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand*{
+\backslash
+figurename}{Rys.}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Niniejszy dokument powstał łłąsdw celu usprawnienia pracy studentów podczas
+ przygotowywania opisu pracy dyplomowej.
+ Aby zrozumieć program LyX warto przeczytać 
+\begin_inset Quotes pld
+\end_inset
+
+samouczek
+\begin_inset Quotes prd
+\end_inset
+
+ dostępny w menu 
+\begin_inset Quotes pld
+\end_inset
+
+Pomoc
+\begin_inset Quotes prd
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "The_Lyx_Tutorial"
+
+\end_inset
+
+.
+ Głównymi zaletami tego oprogramowania są:
+\end_layout
+
+\begin_layout Itemize
+automatyczna numeracja rysunków i aktualizacja w tekście poprzez etykiety
+\end_layout
+
+\begin_layout Itemize
+automatyczna numeracja tabel i aktualizacja w tekście poprzez etykiety 
+\end_layout
+
+\begin_layout Itemize
+automatyczna numeracja rozdziałów 
+\end_layout
+
+\begin_layout Itemize
+automatyczna numeracja i generowanie spisu treści, rysunków i bibliografii.
+\end_layout
+
+\begin_layout Standard
+Użytkownik może skupić się na tekście -- nie musi myśleć o tym, czy numeracja
+ w tekście i przy danym rysunku lub tabeli będzie prawidłowa, gdy przeniesie
+ jeden podrozdział w inne miejsce swojej pracy.
+ Numeracją zajmie się LyX poprzez mechanizm etykiet.
+\end_layout
+
+\begin_layout Standard
+LyX jest pomyślany w taki sposób, aby odciążyć użytkownika od szczegółowej
+ znajomości LaTeX-a.
+ Często jednak znajomość LaTeX jest niezbędna.
+ Warto wówczas sięgnąć np.
+ do 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Kostecki"
+
+\end_inset
+
+ lub do wykładu 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Wyklad_Szpyrka"
+
+\end_inset
+
+.
+ Kopie tych materiałów zebrano w katalogu 
+\begin_inset Quotes pld
+\end_inset
+
+help
+\begin_inset Quotes prd
+\end_inset
+
+ w drzewku plików niniejszego projektu.
+\end_layout
+
+\begin_layout Standard
+W rozdziale 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:wstawianie_rysunkow"
+
+\end_inset
+
+ przedstawiono podstawowe informacje na temat wstawiania rysunków.
+\end_layout
+
+\begin_layout Chapter
+Wstawianie rysunków
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:wstawianie_rysunkow"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rysunki można wstawiać używając menu Wstaw 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Wstawka 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Rysunek.
+ Spowoduje to pojawienie się obszaru wstawki.
+ Od razu warto ustalić i nadać wstawce etykietę, co najszybciej można zrobić
+ przyciskiem 
+\begin_inset Quotes pld
+\end_inset
+
+Wstaw etykietę
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Kolejny krok to wprowadzenie podpisu pod rysunkiem i finalne wstawienie
+ grafiki używając menu Wstaw 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Rysunek.
+ Wyśrodkowanie rysunku można zrealizować przyciskiem 
+\begin_inset Quotes pld
+\end_inset
+
+Ustawienia akapitu
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Oczywiście teraz możemy w tekście odnieść się do naszego opisanego rysunku
+ posługując się jego etykietą i przyciskiem 
+\begin_inset Quotes pld
+\end_inset
+
+Wstaw odsyłacz wewnętrzny
+\begin_inset Quotes prd
+\end_inset
+
+, patrz rys.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rys:etykieta_dla_wstawka_rysunek"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/wstawka_rysunek.PNG
+	lyxscale 50
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Podpis pod rysunkiem.
+ Tak to wygląda w LyX
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "rys:etykieta_dla_wstawka_rysunek"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wstawkę z rysunkiem można zamknąć/otworzyć pojedynczym kliknięciem na 
+\begin_inset Quotes pld
+\end_inset
+
+Wstawka: Rysunek
+\begin_inset Quotes prd
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Często Promotor narzuca Dyplomantom aby rysunki pojawiały się w tekście
+ zaraz poniżej pierwszego wystąpienia odnośnika do danego rysunku.
+ LyX, tak samo jak LaTeX stara się rysunki rozmieszczać wg swojego wewnętrznego
+ algorytmu, często nie tak, jak to my byśmy sobie życzyli.
+ Aby uporać się z tym problemem wystarczy wybrać ustawienie 
+\begin_inset Quotes pld
+\end_inset
+
+Tutaj bezwzględnie
+\begin_inset Quotes prd
+\end_inset
+
+, co ilustruje rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rys:tutaj_bezwzglednie"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/tutaj_bezwglednie.png
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ustawienia występowania rysunków w tekście
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "rys:tutaj_bezwzglednie"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Wstawiane pliki z grafiką (w formacie: PNG, JPG, GIF, EMF itd.) mogą mieć
+ różną rozdzielczość.
+ Często chcemy, aby rysunek na stronie miał żądaną przez nas szerokość lub
+ wysokość, a nie rozmiar wynikający z rozdzielczości takiego pliku.
+ W LyX można to wygodnie określić, patrz rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "rys:ustawienia_szerokosci_rys"
+
+\end_inset
+
+.
+ Dla tak określonych rozmiarów rysunku w finalnym PDF (w cm) LyX zadba o
+ jego proporcje -- nie trzeba określać wysokości.
+ Rozmiary rysunku wyświetlanego w edytorze LyX ustawia się w zakładce 
+\begin_inset Quotes pld
+\end_inset
+
+Opcje LaTeX i LyX
+\begin_inset Quotes prd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/ustaw_szerokosc.PNG
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ustawienia szerokości rysunku na stronie w finalnym pliku PDF
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "rys:ustawienia_szerokosci_rys"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dobrym przyzwyczajeniem jest umieszczanie plików rysunków w podkatalogu,
+ np.
+ 
+\begin_inset Quotes pld
+\end_inset
+
+img
+\begin_inset Quotes prd
+\end_inset
+
+ jak w tym dokumencie.
+\end_layout
+
+\begin_layout Standard
+Na rysunku 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:eps_vs_jpg"
+
+\end_inset
+
+ możesz zobaczyć różnicę w wyglądzie między formatami EPS i JPG.
+ W finalnym dokumencie różnica jak widać jest widoczna, zwłaszcza przy skalowani
+u-powiększeniu strony.
+ Warto używać grafik wektorowych takich jak EMF czy EPS i oprogramowania
+ Inkscape.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="4">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+a)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+b)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/agh.eps
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/_agh.jpg
+	lyxscale 20
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Logo AGH: a) z pliku EPS; b) z pliku JPG
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:eps_vs_jpg"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Wstawianie wzorów matematycznych
+\end_layout
+
+\begin_layout Standard
+Numerowane wzory matematyczne wstawia się używając menu 
+\begin_inset Quotes pld
+\end_inset
+
+Wstaw 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Matematyka 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Numerowana formuła
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Przykładowo wzór 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:W_AV"
+
+\end_inset
+
+ przedstawia zależność na energię średnią zgromadzoną w polu magnetycznym
+ pętli indukcyjnej.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+W_{AV}=\frac{1}{4}\,\intop_{V}\,\underline{\overrightarrow{B}}\cdot\overrightarrow{\underline{H}}{}^{^{*}}\,dV\label{eq:W_AV}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tu również stosujemy etykiety, których używamy w opisie, a LyX zadba za
+ nas o zgodność tych numerów w finalnym dokumencie.
+\end_layout
+
+\begin_layout Chapter
+Wideodetekcja 
+\end_layout
+
+\begin_layout Chapter
+Podsumowanie
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Podsumowanie"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Niniejsza praca składa się z rozdziału nr 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Wstep"
+
+\end_inset
+
+, którym jest wstęp.
+ W rozdziale 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:wstawianie_rysunkow"
+
+\end_inset
+
+ przedstawiono podstawowe informacje na temat wstawiania rysunków w LyX.
+ W pracy znajduje się również podsumowanie, które obecnie czytasz, będące
+ rozdziałem nr 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Podsumowanie"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Bibliografia generowana jest na podstawie pliku 
+\begin_inset Quotes pld
+\end_inset
+
+bibliografia.bib
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Jest to plik tekstowy, jednak nie warto bibliografii uzupełniać przy pomocy
+ zwykłego edytora tekstu, warto do tego wykorzystać program JabRef, którego
+ interfejs przedstawia rysunek 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:JabRef"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/JabRef.JPG
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Interfejs programu JabRef
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:JabRef"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Warto również zobaczyć do katalogów 
+\begin_inset Quotes pld
+\end_inset
+
+help
+\begin_inset Quotes prd
+\end_inset
+
+ i 
+\begin_inset Quotes pld
+\end_inset
+
+bst
+\begin_inset Quotes prd
+\end_inset
+
+ drzewka plików niniejszego projektu aby dowiedzieć się więcej o LyX, LaTeX
+ i BibTeX.
+\end_layout
+
+\begin_layout Standard
+Po zainstalowaniu LyX-a na swoim komputerze koniecznie doinstaluj program
+ sprawdzania pisowni Hunspell.
+ Zobacz do menu Narzędzia 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Ustawienia 
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+ Pisownia.
+\end_layout
+
+\begin_layout Standard
+Typowe podsumowanie pracy dyplomowej może rozpocząć się od akapitu 
+\begin_inset Quotes pld
+\end_inset
+
+W pracy przedstawiono wyniki badań autora nad zastosowaniem ...
+ do ....
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliografia"
+options "bibtotoc,bst/IEEEtranS"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
