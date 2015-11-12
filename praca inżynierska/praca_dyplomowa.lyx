@@ -253,11 +253,28 @@ Tutaj będzie wstęp do pracy inżynierskiej
 \end_layout
 
 \begin_layout Standard
-Wideo detekcja 
+Burzliwy rozwój nauki i techniki w XX wieku...
+\end_layout
+
+\begin_layout Chapter
+Metody pomiarów parametrów ruchu drogowego
 \end_layout
 
 \begin_layout Chapter
 Systemy wizyjne w zastosowaniach komercyjnych 
+\end_layout
+
+\begin_layout Standard
+Rozdział ten stanowi przegląd dostępnych na rynku metod pomiaru ruchu drogowego,
+ w których zastosowanie znalazły algorytmy wizyjne.
+\end_layout
+
+\begin_layout Section
+NeuroSoft
+\end_layout
+
+\begin_layout Section
+Cat Traffic
 \end_layout
 
 \begin_layout Chapter
@@ -546,6 +563,27 @@ reStructuredText
 ###### Tutaj dać screen dokumentacji
 \end_layout
 
+\begin_layout Section*
+Pycharm 
+\end_layout
+
+\begin_layout Standard
+Pycharm jest środowiskiem deweloperskim dla języka Python, tworzonym przez
+ firmę JetBrains.
+ Zapewnia ono szereg przydatnych funkcji, takich jak: podpowiadanie składni,
+ detekcję błędów, proponowanie poprawek i rozbudowany debuger.
+ Działa zgodnie, ze wszystkimi popularnymi implementacjami języka Python:
+ CPython, IronPython, Jython.
+ Środowisko oferuje wsparcie dla innych technologi, np.
+ Html5, Css3, JavaScript, Angular.js.
+ Za pomocą Pycharma programista może korzystać z frameworków webowych takich
+ jak Django czy Flask.
+ Środowisko wspiera również systemy kontroli wersji(Git, SVN), posiada wsparcie
+ dla narzędzi do pracy z bazami SQL oraz umożliwia zdalne edytowanie kodu
+ w oparciu o protokuł SSH.
+ Firma JetBrains udostępnia 3 wersje IDE: profesjonalną(płatną), 
+\end_layout
+
 \begin_layout Chapter
 Opis programu
 \end_layout
@@ -555,7 +593,20 @@ Poniższy rozdział opisuje interfejs i sposób działania zaimplementowanego
  programu.
 \end_layout
 
-\begin_layout Section*
+\begin_layout Section
+Instalacja 
+\end_layout
+
+\begin_layout Standard
+Tutaj będzie opisany sposób instalacji programu, gdy ten zostanie doprowadzony
+ do końca.
+\end_layout
+
+\begin_layout Standard
+Instalacja z repozytorium githuba + instalacja bibliotek .
+\end_layout
+
+\begin_layout Section
 Struktura programu
 \end_layout
 
@@ -647,8 +698,8 @@ src - pliki źródłowe programu,
 videos - zapisane przez program wyniki analizy w postaci plików wideo.
 \end_layout
 
-\begin_layout Subsection*
-Główne okno programu
+\begin_layout Section
+Interfejs graficzny 
 \end_layout
 
 \begin_layout Standard
@@ -667,7 +718,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/widok programu.png
-	scale 75
+	scale 50
 
 \end_inset
 
@@ -719,7 +770,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/okno wyboru pliku.png
-	scale 40
+	scale 50
 
 \end_inset
 
@@ -765,6 +816,7 @@ Otwórz plik bazy danych
 \end_inset
 
  - otwiera wskazaną bazę danych i prezentuje zawarte w niej dane o pojazdach.
+ ### dodać screen
 \end_layout
 
 \begin_layout Itemize
@@ -776,6 +828,39 @@ Przeglądaj obrazy
 \end_inset
 
  - włącza przeglądarkę zapisanych przez program zdjęć pojazdów.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przeglądanie obrazów.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Widok przeglądania obrazów
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -797,7 +882,11 @@ Włącz/wyłącz algorytm
 \begin_inset Quotes prd
 \end_inset
 
- - umożliwia wyłączenie algorytmu w celu kalibracji ustawień.
+ - umożliwia wyłączenie algorytmu.
+ Program dokonuje wtedy jedynie detekcji poruszających się obiektów bez
+ klasyfikowania oraz logowania danych do bazy danych.
+ Opcja wyłączenia algorytmu może być przydatna w sytuacji, w której użytkownik
+ chciałby dokonać kalibracji ustawień.
 \end_layout
 
 \begin_layout Itemize
@@ -808,7 +897,7 @@ Odtwarzaj wczytane pliki
 \begin_inset Quotes prd
 \end_inset
 
- - rozpoczyna wyświetlanie i analizę uprzednio wybranych plików.
+ - rozpoczyna wyświetlanie i analizę uprzednio wybranych plików wideo.
 \end_layout
 
 \begin_layout Itemize
@@ -853,6 +942,7 @@ Ustawienia
 \end_inset
 
  - pokazuje okno ustawień programu.
+ Okno ustawień zostało szczegółowo opisane w następnym podrozdziale.
 \end_layout
 
 \begin_layout Itemize
@@ -863,7 +953,7 @@ Dokumentacja
 \begin_inset Quotes prd
 \end_inset
 
- - uruchamia stronę html z dokumentajcą.
+ - uruchamia stronę html z dokumentacją.
 \end_layout
 
 \begin_layout Itemize
@@ -875,6 +965,38 @@ O programie
 \end_inset
 
  - uruchamia okienko dialogowe pokazujące krótką informację o programie.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/o programie.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Informacja o programie
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -886,6 +1008,237 @@ Zakończ
 \end_inset
 
  - wyłącza program.
+\end_layout
+
+\begin_layout Section
+Ustawienia
+\end_layout
+
+\begin_layout Standard
+### tutaj będzie obrazek ustawień
+\end_layout
+
+\begin_layout Standard
+Okno ustawień jest podzielone na dwie zakładki.
+ Pierwsza zakładka dotyczy ustawień dotyczących działania algorytmów:
+\end_layout
+
+\begin_layout Itemize
+Odległość pixele - wartość tego pola służy do wyliczynie przelicznika pixeli
+ na obrazie na rzeczywistą odległość w metrach.
+\end_layout
+
+\begin_layout Itemize
+Odległość metry - wartość tego pola ma również zastosowanie w przeliczaniu
+ pixeli na metry.
+ Procedura kalibracji pomiaru została opisana w poprzednim rozdziale 
+\end_layout
+
+\begin_layout Itemize
+Liczba kolorów - określa liczbę kolorów jaką program ma rozpoznać na obiekcie.
+\end_layout
+
+\begin_layout Itemize
+Strefa czułości pozioma - określa ona obszar w poziomie, w którym obiekty
+ są wykrywane i śledzone.
+\end_layout
+
+\begin_layout Itemize
+Strefa czułości pionowa - określa ona obszar w ponie, w którym obiekty są
+ wykrywane i śledzone.
+\end_layout
+
+\begin_layout Itemize
+Wielkość obiektu - obiekt o mniejszej wartości są ignorowane po fazie binearyzac
+ji
+\end_layout
+
+\begin_layout Itemize
+Odległość od krawędzi
+\end_layout
+
+\begin_layout Chapter
+Algorytm detekcji i klasyfikacji pojazdów.
+\end_layout
+
+\begin_layout Standard
+W tym rozdziale zostały opisane kolejne etapy zaimplementowanego algorytmu.
+\end_layout
+
+\begin_layout Chapter
+Analiza wyników 
+\end_layout
+
+\begin_layout Chapter
+Rozwój oprogramowania
+\end_layout
+
+\begin_layout Section*
+Nie zrealizowane funkcjonalności
+\end_layout
+
+\begin_layout Standard
+W trakcie realizacji pracy inżynierskiej nie udało się autorowi zrealizować
+ wszystkich pierwotnych założeń.
+ 
+\end_layout
+
+\begin_layout Standard
+W trakcie pracy nad algorytmem okazało się, że detekcja pojazdów w ruchu
+ na drodze dwupasmowej jest zadaniem bardzo trudnym, jeżeli program ma do
+ dyspozycji jedynie obraz wideo z pobocza drogi.
+ Zachodzi wtedy wiele 
+\begin_inset Quotes pld
+\end_inset
+
+niekorzystnych
+\begin_inset Quotes prd
+\end_inset
+
+ zjawisk:
+\end_layout
+
+\begin_layout Itemize
+Mijanie się samochodów - w tej sytuacji dochodzi do zlewania się obiektów
+ w jeden na obrazie binarnym a pojazdy mogą dotrzeć do przeciwnych końców
+ drogi w odwrotnej kolejności.
+ W celu zabezpieczenia programu przed wynikającymi z tej sytuacji przekłamaniami
+, należałoby dokonać poważnych zmian w algorytmie: zamiast pobierać informację
+ o pojeździe na końcach obszaru 
+\begin_inset Quotes pld
+\end_inset
+
+czułości
+\begin_inset Quotes prd
+\end_inset
+
+ kamery, program musiałby śledzić obiekt w całym polu, wykryć kierunek ruchu
+ i nadać mu szacowaną prędkość(przyrost pozycji w pixelach na kratkę obrazu).
+\end_layout
+
+\begin_layout Itemize
+Wyprzedzanie się pojazdów - ta sytuacja może powodować, że dwa obiekty staną
+ się dla programu jednym, jeżeli manewr zakończy się po za polem widzenia
+ kamery.
+ Skutkiem tej sytuacji będzie całkowita utrata wiadomości o obiekcie.
+\end_layout
+
+\begin_layout Itemize
+Wzajemne rzucanie cienia i odbicia światła od samochodów - Powoduje to zniekszta
+łcenia na obrazie po wyodrębnianiu tła, takie jak połączenia się dwóch pojazdów
+ w jeden w skutek odbicia światła, albo podział pojazdu na dwa niezwiązane
+ ze sobą obiekty.
+\end_layout
+
+\begin_layout Standard
+Rozwiązaniem powyższych problemów mogłoby być całkowite przemodelowanie
+ algorytmu: odejście od prostej, ale wydajnej metody wyodrębnia tła na rzecz
+ bardziej skomplikowanych algorytmów np.
+ 
+\begin_inset Quotes pld
+\end_inset
+
+cam shift
+\begin_inset Quotes prd
+\end_inset
+
+, 
+\begin_inset Quotes pld
+\end_inset
+
+mean shift
+\begin_inset Quotes prd
+\end_inset
+
+ czy 
+\begin_inset Quotes pld
+\end_inset
+
+optical-flow
+\begin_inset Quotes prd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Kolejnym założeniem było zrealizowane funkcjonalności do pracy z obrazem
+ ruchu drogowego 
+\begin_inset Quotes pld
+\end_inset
+
+on-line
+\begin_inset Quotes prd
+\end_inset
+
+ streamowanym w sieci Internet.
+ Niepowodzenie było spowodowane dwoma faktami :
+\end_layout
+
+\begin_layout Itemize
+Znacząca większość dostępnych w sieci obrazów z kamer monitorujących filmuje
+ ruch drogowy z pozycji 
+\begin_inset Quotes pld
+\end_inset
+
+nad drogą
+\begin_inset Quotes prd
+\end_inset
+
+ a nie z pobocza drogi.
+\end_layout
+
+\begin_layout Itemize
+Udostępniany w sieci obraz jest obrazem w skali szarości, niskiej jakości
+ i o bardzo małej ilości klatek, rzędu 2-3 na sekundę, co utrudnia detekcję
+ poruszających się obiektów.
+\end_layout
+
+\begin_layout Section*
+Przyszłe zmiany w programie
+\end_layout
+
+\begin_layout Standard
+W ciągu dalszego rozwoju oprogramowania możliwe byłyby następujące zmiany:
+\end_layout
+
+\begin_layout Itemize
+Podział kodu na klasy i metody operujący na tych samych 
+\begin_inset Quotes pld
+\end_inset
+
+poziomach
+\begin_inset Quotes prd
+\end_inset
+
+ abstrakcji - kod programu miejscami jest niezrozumiały, kilka metod jest
+ zdecydowanie za długie, mieszają się operacje o różnej abstrakcji, co skutkuje
+ niestety w trudnościach w modyfikacji i dodawaniu do programu nowych funkcjonal
+ności.
+\end_layout
+
+\begin_layout Itemize
+Dodanie obsługi baz MySql - dodanie tej funkcjonalności umożliwiłoby automatyczn
+e dokonywanie pomiarów 
+\begin_inset Quotes pld
+\end_inset
+
+w terenie
+\begin_inset Quotes prd
+\end_inset
+
+ po przez użycie mini-komputera klasy RassberyPi i kamery, natomiast obserwacja
+ wyników mogłaby odbywać się zdalnie za pomocą strony WWW.
+\end_layout
+
+\begin_layout Itemize
+Dodatkowe opcje - ustawienia programu należało by poszerzyć o parametry
+ wszystkich algorytmów.
+\end_layout
+
+\begin_layout Itemize
+Zmiany w GUI - istnieje możliwość dodania do gui rysowania wykresów/opisywania
+ statystyk przejechanych pojazdów.
 \end_layout
 
 \begin_layout Chapter
