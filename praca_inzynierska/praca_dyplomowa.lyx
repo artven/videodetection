@@ -1015,7 +1015,42 @@ Ustawienia
 \end_layout
 
 \begin_layout Standard
-### tutaj będzie obrazek ustawień
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/ustawienia.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Okno ustawień programu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1063,6 +1098,10 @@ Algorytm detekcji i klasyfikacji pojazdów.
 
 \begin_layout Standard
 W tym rozdziale zostały opisane kolejne etapy zaimplementowanego algorytmu.
+\end_layout
+
+\begin_layout Chapter
+Analiza wyników 
 \end_layout
 
 \begin_layout Chapter

@@ -27,7 +27,7 @@ Configuration.load_config()
 # Configuration.draw_speed_info(False)
 # Configuration.draw_color_bar(False)
 
-video = VideoReader(f5)
+video = VideoReader()
 output_video = VideoWriter(video.size())
 input_widnow = OpenCVWindow()
 db = Database()

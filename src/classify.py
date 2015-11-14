@@ -50,7 +50,7 @@ class Classyfication:
         # Narysowanie wyników na obrazie
         # Rozmiar
         if Classyfication.draw_size_info:
-            image = SizeMeasurment.draw_size_info(image, new_car, car_width, car_height, car_area)
+            image = SizeMeasurment.draw_size_info(image, car_width, car_height, car_area)
         # Kolor
         if Classyfication.draw_color_bar:
             image = ColorDetector.draw_color_bar(image, color_bar)
@@ -61,19 +61,28 @@ class Classyfication:
         if Classyfication.draw_speed_info:
             image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
 
-        date = new_frame.creationTime
-
+        # Rekord zawierający informacje o pojeździe
         result = {"width": car_width, "height": car_height, "area": car_area, "speed": speed, "image": image,
-                  "date": date}
+                  "date": new_frame.creationTime}
 
         return result
 
     @staticmethod
     def get_ratio():
+        """
+        Oblicza stosunek długości na obrazie wyrażonej w pixelach do rzeczywistej długości w metrach.
+        :return: Znaleziony stosunek.
+        """
         return float(Classyfication.meters_length) / float(Classyfication.pixel_length)
 
     @staticmethod
     def draw_speed_region(frame: Frame):
+        """
+        Rysuje na obrazie dwie pionowe linie, służące pomiarowi osiąganej prędkości.
+        :param frame: Ramka obrazu wideo.
+        :return: Ramka z narysowanymi liniami.
+        """
+
         h, w = frame.size()
         x = int(w/2) - int(Classyfication.pixel_length/2)
         frame.img = cv2.line(frame.img, (x, 0), (x, h), (255, 0, 255), thickness=4)
@@ -82,21 +91,31 @@ class Classyfication:
 
 
 class SpeedMeasurment:
-    # Klasa dokonująca pomiaru rozmiaru samochodu.
+    """
+    Klasa dokonująca pomiaru prędkości.
+    """
 
     @staticmethod
-    def calculate_speed(new_car: Vehicle, frame: Frame, old_car: Vehicle, oldframe: Frame):
+    def calculate_speed(new_car: Vehicle, new_frame: Frame, old_car: Vehicle, old_frame: Frame):
+        """
+        Oblicza prędkość wykretego pojazdu.
+        :param new_car: Samochód opuszczający w pole detekcji.
+        :param new_frame: Ramka obrazu przechwycona podczas opuszczania przez pojazd pola detekcji.
+        :param old_car: Samochód wjeżdżający w pole detekcji.
+        :param old_frame: Ramka obrazu przechwycona podczas wjeżdżania przez pojazd w pole detekcji.
+        :return: Prędkość samochodu w metrach na sekundę.
+        """
 
         time_difference = None
 
         # Jeżeli ramka pochodzi z pliku wideo, różnica jest obliczana na podstawie jej numeru i fps-ów.
-        if not frame.isFromCamera:
-            frame_difference = float(abs(frame.framePos - oldframe.framePos))
-            time_difference = frame_difference * float(1/frame.fps)
+        if not new_frame.isFromCamera:
+            frame_difference = float(abs(new_frame.framePos - old_frame.framePos))
+            time_difference = frame_difference * float(1/new_frame.fps)
         else:
             # Jeżeli ramka pochodzi z kamery, różnica jest obliczana na podstawie czasu jej pobrania.
             # TODO zrobić odejmowanie czasu
-            pass
+            return 0
 
         pixel_difference = float(abs(new_car.centerx - old_car.centerx))
         ratio = Classyfication.get_ratio()
@@ -106,7 +125,15 @@ class SpeedMeasurment:
         return speed
 
     @staticmethod
-    def draw_speed_info(car, speed, img):
+    def draw_speed_info(car: Vehicle, speed, img):
+        """
+        Podpisuje obraz samochodu informacją o jego prędkości
+        Festiwall spierdolenia osiąga maximum
+        :param car:
+        :param speed:
+        :param img:
+        :return:
+        """
 
         # Pobierz położenie pojazdu:
         x, y, w, h = car.get_coordinates()
@@ -122,19 +149,37 @@ class SizeMeasurment:
     # Klasa dokonująca pomiaru rozmiaru samochodu.
 
     @staticmethod
-    def calculate_width(car):
+    def calculate_width(car: Vehicle):
+        """
+        Wylicza szerokość(długość) samochodu w metrach.
+        :param car: Obiekt reprezenetujący samochód.
+        :return: Szerkość wyrażona w metrach.
+        """
+
         width = car.w
         ratio = Classyfication.get_ratio()
         return width * ratio
 
     @staticmethod
-    def calculate_height(car):
+    def calculate_height(car: Vehicle):
+        """
+        Wylicza wysokośc samochodu w metrach.
+        :param car: Obiekt reprezenetujący samochód.
+        :return: Wysokość wyrażona w metrach.
+        """
+
         height = car.h
         ratio = Classyfication.get_ratio()
         return height * ratio
 
     @staticmethod
-    def calculate_area(car, mask):
+    def calculate_area(mask):
+        """
+        Oblicza pole powierzchni bocznej obiektu. Rozmiar obiektu jest obliczna na podstawie ilosci pixeli obiektu
+        razy przelicznik pixele na metry.
+        :param mask: Binarna maska obrazu.
+        :return: Pole powierzchni bocznej karoserii pojazdu.
+        """
 
         # Znajdź kontury samochodu.
         contours = ContourDetector.find(mask)
@@ -151,6 +196,13 @@ class SizeMeasurment:
 
     @staticmethod
     def draw_car_contour(img, car, bin_mask):
+        """
+        Rysuje kontur samochodu na obrazie.
+        :param img: Obraz samochodu.
+        :param car: Obiekt reprezentujący pojazd.
+        :param bin_mask: Binarna maska obrazu.
+        :return: Obraz z oznaczonym konturem samochodu.
+        """
 
         # Wyznacz rejon pojazdu na obrazie.
         x, y, w, h = car.get_coordinates()
@@ -167,42 +219,29 @@ class SizeMeasurment:
         return img
 
     @staticmethod
-    def draw_size_info(img, car, car_width, car_height, car_area):
-
-        # Pobierz położenie pojazdu:
-        x, y, w, h = car.get_coordinates()
-
-        '''
-        # Narysuj informacje o długości.
-        pt1, pt2 = (x, y-20), (x+w, y-20)
-        cv2.line(img, pt1, pt2, (255, 0, 0), thickness=2)
-
-        # Narysuj informacje o wysokości.
-        pt1, pt2 = (x-20, y), (x-20, y+h)
-        cv2.line(img, pt1, pt2, (255, 0, 0), thickness=2)
-
-        # Dorysuj "strzałki".
-        pt1, pt2 = (x-25, y), (x-15, y)
-        cv2.line(img, pt1, pt2, (255, 0, 0), thickness=2)
-        pt1, pt2 = (x-25, y+h), (x-15, y+h)
-        cv2.line(img, pt1, pt2, (255, 0, 0), thickness=2)
-        pt1, pt2 = (x, y-15), (x, y-25)
-        cv2.line(img, pt1, pt2, (255, 0, 0), thickness=2)
-        pt1, pt2 = (x+w, y-15), (x+w, y-25)
-        cv2.line(img, pt1, pt2, (255, 0, 0), thickness=2)
-        '''
-
-        # Dopisz tekst.
-        # text = "W:"+str(car_width)+"m, H:"+str(car_height)+"m, A:"+str(car_area)+"m2"
+    def draw_size_info(img, car_width, car_height, car_area):
+        """
+        Podpisuje obraz samochodu jego wymiarami.
+        :param img: Obraz samochodu.
+        :param car_width: Szerokość(długość) samochodu.
+        :param car_height: Wysokość samochodu.
+        :param car_area: Pole powierzchni bocznej pojazdu.
+        :return: Podpisany parametrami pojadu obraz.
+        """
         text = "width=%.2f m, height=%.2f m, area=%.2f m2" % (car_width, car_height, car_area)
         h, w, _ = img.shape
-        org = (0, h-20)
-        cv2.putText(img, text, org, cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.75, (0, 0, 0))
+        text_place = (0, h-20)
+        cv2.putText(img, text, text_place, cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.75, (0, 0, 0))
 
         return img
 
     @staticmethod
     def __find_biggest_contour(contours):
+        """
+        Wybiera z konturów ten o największej powierzchni.
+        :param contours: Hierarchia konturów.
+        :return:
+        """
         if len(contours) > 1:
             max_area, contour_index = ContourDetector.area(contours[0]), 0
             for index in range(len(contours)):
@@ -212,7 +251,8 @@ class SizeMeasurment:
             cnt = contours[contour_index]
             return cnt
         elif len(contours) == 1:
-            return contours[0]  # TODO nie wiem czy ma być index
+            # TODO nie wiem czy ma być index
+            return contours[0]
         else:
             return None
 
@@ -220,6 +260,7 @@ class SizeMeasurment:
 # Przy implementacji modułu skorzystano z materiałów:
 # http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
 # http://www.pyimagesearch.com/2014/05/26/opencv-python-k-means-color-clustering/
+# zajebałem z powyższych
 
 class ColorDetector:
     # Klasa określająca kolor pojazdu.
