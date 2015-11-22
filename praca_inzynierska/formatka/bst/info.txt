@@ -1,0 +1,14 @@
+To sa zmodyfikowane pliki bibtex-a, dostosowane do pracy dr Zbigniew Marszalek
+- usuniete and,
+- pp. zmienione na .s
+- ..
+
+musza byc w katalogu czytanym przez bibtexa, inaczej to nie dziala.
+
+Po modyfikacji trzeba skopiowac plik do (u mnie to bylo)
+
+C:\Users\AntiC\AppData\Roaming\MiKTeX\2.9\bibtex\bst\ieeetran\
+C:\Program Files (x86)\MiKTeX 2.9\bibtex\bst\ieeetran
+
+
+
