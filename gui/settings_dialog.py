@@ -98,8 +98,8 @@ class SettingsDialog:
     def __load_settings(self):
         """
         Wczytaj obecną konfigurację znajdującą się config.json do widgetów okna.
-        :return: None
         """
+
         Configuration.load_config()
         direct = Configuration.direction()
         if direct == "left2right":
@@ -126,8 +126,8 @@ class SettingsDialog:
     def __write_settings(self):
         """
         Zapisz wartości z widgetów
-        :return:
         """
+
         if 0 == self.direction_combobox.get_active_id():
             Configuration.direction("left2right")
         else:

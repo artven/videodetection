@@ -10,10 +10,17 @@ from sklearn.cluster import KMeans
 
 
 class Classyfication:
+    """
+    Klasa dokonująca klasyfikacji obiektu względem kryteriów.
+    """
 
+    # Odległość kalibracyjna wyrażona w pixelach.
     pixel_length = 200
+
+    # Odległość kalibracyjna wyrażona w metrach.
     meters_length = 4
 
+    # Flagi rysowania inforamcji na obrazie wynikowym.
     draw_size_info = True
     draw_color_bar = True
     draw_conturs = True
@@ -73,6 +80,7 @@ class Classyfication:
         Oblicza stosunek długości na obrazie wyrażonej w pixelach do rzeczywistej długości w metrach.
         :return: Znaleziony stosunek.
         """
+
         return float(Classyfication.meters_length) / float(Classyfication.pixel_length)
 
     @staticmethod
@@ -109,7 +117,7 @@ class SpeedMeasurment:
         time_difference = None
 
         # Jeżeli ramka pochodzi z pliku wideo, różnica jest obliczana na podstawie jej numeru i fps-ów.
-        if not new_frame.isFromCamera:
+        if not new_frame.is_from_camera:
             frame_difference = float(abs(new_frame.framePos - old_frame.framePos))
             time_difference = frame_difference * float(1/new_frame.fps)
         else:
@@ -128,11 +136,10 @@ class SpeedMeasurment:
     def draw_speed_info(car: Vehicle, speed, img):
         """
         Podpisuje obraz samochodu informacją o jego prędkości
-        Festiwall spierdolenia osiąga maximum
-        :param car:
-        :param speed:
-        :param img:
-        :return:
+        :param car: Zidentyfikowany pojazd.
+        :param speed: Obliczona prędkość.
+        :param img: Obraz pojazdu.
+        :return: Obraz podpisany informacją o prędkości.
         """
 
         # Pobierz położenie pojazdu:
@@ -228,6 +235,7 @@ class SizeMeasurment:
         :param car_area: Pole powierzchni bocznej pojazdu.
         :return: Podpisany parametrami pojadu obraz.
         """
+
         text = "width=%.2f m, height=%.2f m, area=%.2f m2" % (car_width, car_height, car_area)
         h, w, _ = img.shape
         text_place = (0, h-20)
@@ -240,8 +248,9 @@ class SizeMeasurment:
         """
         Wybiera z konturów ten o największej powierzchni.
         :param contours: Hierarchia konturów.
-        :return:
+        :return: Największy znaleziony kontur.
         """
+
         if len(contours) > 1:
             max_area, contour_index = ContourDetector.area(contours[0]), 0
             for index in range(len(contours)):
@@ -260,7 +269,6 @@ class SizeMeasurment:
 # Przy implementacji modułu skorzystano z materiałów:
 # http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html
 # http://www.pyimagesearch.com/2014/05/26/opencv-python-k-means-color-clustering/
-# zajebałem z powyższych
 
 class ColorDetector:
     # Klasa określająca kolor pojazdu.
@@ -328,25 +336,28 @@ class ColorDetector:
 
     @staticmethod
     def __create_colors_bar(hist, centroids):
+        """
+        Tworzy pasek zawierający najpopularniejsze kolory.
+        :param hist: Histogram obrazu.
+        :param centroids: Liczba poszukiwanych kolorów.
+        :return:
+        """
 
+        # TODO ogarnąć co to są centroids ???
         w = ColorDetector.__bar_width
         h = ColorDetector.__bar_height
 
-        # initialize the bar chart representing the relative frequency
-        # of each of the colors
+        # Pusty, zainicjowany pasek.
         bar = np.zeros((h, w, 3), dtype=np.uint8)
         startx = 0
 
-        # loop over the percentage of each cluster and the color of
-        # each cluster
+        # Sprawdź dla każdego koloru.
         for (percent, color) in zip(hist, centroids):
-            # plot the relative percentage of each cluster
-            endX = startx + (percent * 300)
-            cv2.rectangle(bar, (int(startx), 0), (int(endX), 50),
+            endx = startx + (percent * 300)
+            cv2.rectangle(bar, (int(startx), 0), (int(endx), 50),
             color.astype("uint8").tolist(), -1)
-            startx = endX
+            startx = endx
 
-        # return the bar chart
         return bar
 
     @staticmethod

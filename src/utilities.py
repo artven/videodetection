@@ -3,6 +3,8 @@ __author__ = 'rafal'
 import os
 import cv2
 
+# TODO sprawdzić czy ten moduł jest jeszcze potrzebny
+
 def clear_console():
     os.system('clear')
 

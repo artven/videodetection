@@ -1,13 +1,13 @@
 __author__ = 'rafal'
 
 import cv2
-import numpy as np
 from datetime import datetime
-
-# TODO dopisać poprawne komentarze
 
 
 class VideoReader:
+    """
+    Klasa obsługująca odczyt obrazu z urządzeń oraz plików.
+    """
 
     def __init__(self, videosource=0):
         self.source = videosource
@@ -19,6 +19,11 @@ class VideoReader:
         self.__cap.release()
 
     def read(self):
+        """
+        Odczytuje ramkę obrazu wideo.
+        :return: None jeśli odczyt się nie powiódł, klatka obrazu w przeciwnym wypadku.
+        """
+
         ret, image = self.__cap.read()
         if not ret:
             self.__good = False
@@ -27,25 +32,58 @@ class VideoReader:
         return image
 
     def is_good(self):
+        """
+        Sprawdza czy źródło obrazu wideo jest sprawne.
+        :return: Prawda/fałsz.
+        """
+
         return self.__good
 
     def position_mseconds(self):
+        """
+        Zwraca pozycję w pliku wideo wyrażoną w milisekundach.
+        :return: Liczba określająca pozycję.
+        """
+
         return self.__cap.get(cv2.CAP_PROP_POS_MSEC)
 
     def position_frames(self):
+        """
+        Zwraca pozycję w pliku wideo wyrażoną w liczbie klatek.
+        :return: Liczba określająca pozycję.
+        """
+
         return self.__cap.get(cv2.CAP_PROP_POS_FRAMES)
 
     def fps(self):
+        """
+        Zwraca liczbę klatek na sekundę.
+        :return: Liczba klatek na sekundę.
+        """
+
         return self.__cap.get(cv2.CAP_PROP_FPS)
 
     def frames_count(self):
+        """
+        Zwraca liczbę klatek w pliku wideo.
+        :return: Liczba klatek.
+        """
+
         return int(self.__cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
     def size(self):
+        """
+        Zwraca rozmiar klatki obrazu.
+        :return: Szerokość obrazu, wysokość obrazu.
+        """
+
         return int(self.__cap.get(cv2.CAP_PROP_FRAME_WIDTH)), int(self.__cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
 
 
 class VideoWriter:
+    """
+    Klasa zapisująca dane wynikowe do pliku wideo.
+    """
 
     forucc = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
     format = ".avi"
@@ -65,6 +103,7 @@ class VideoWriter:
             self.__writer.write(frame)
 
 
+# TODO WTF???
 class OpenCVWindow:
 
     __id = 0
@@ -86,7 +125,9 @@ class OpenCVWindow:
 
 
 class Frame:
-    # Klasa opakowywujacą klatkę obrazu.
+    """
+    Klasa opakowywujacą klatkę obrazu.
+    """
 
     def __init__(self, inputVideo):
 
@@ -94,9 +135,9 @@ class Frame:
         # Jeśli tak, oznacza to, że został odczytany plik.
         # W przeciwynym przypadku obraz pochodzi bezpośrednio z kamery.
         if isinstance(inputVideo.source, str):
-            self.isFromCamera = False
+            self.is_from_camera = False
         else:
-            self.isFromCamera = True
+            self.is_from_camera = True
 
         self.img = inputVideo.read()
         self.creationTime = datetime.now()
@@ -104,5 +145,9 @@ class Frame:
         self.framePos = inputVideo.position_frames()
 
     def size(self):
-        """Zwraca wysokość i szerokość obrazu."""
+        """
+        Zwraca wysokość i szerokość obrazu.
+        :return: Wysokość obrazu, szerokość obrazu.
+        """
+        # TODO ogranąć czy kolejność jest prawidłowa.
         return self.img.shape[0], self.img.shape[1]

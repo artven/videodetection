@@ -2,15 +2,24 @@ __author__ = 'rafal'
 
 
 import threading
-import time
 import functools
 
 
 class MyThread (threading.Thread):
+    """
+    Klasa implementująca uruchamianie zadań w osobnym wątku.
+    """
 
     id = 1
 
     def __init__(self,  fun, *args):
+        """
+        Konstruktor klasy.
+        :param fun: Uruchamiana funkcja.
+        :param args: Argumenty funkcji.
+        :return:
+        """
+
         threading.Thread.__init__(self)
         self.thread_id = MyThread.id
         MyThread.id += 1
@@ -19,5 +28,4 @@ class MyThread (threading.Thread):
         self.exit_flag = False
 
     def run(self):
-            self.function()
-
+        self.function()

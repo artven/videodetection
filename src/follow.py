@@ -1,13 +1,13 @@
 __author__ = 'rafal'
 
-# from algorithm.contourdet import ContourDetector
-from src.detect import Vehicle
+from src.detect import Vehicle, Detector
 from src.video import Frame
-from src.detect import Detector
 
 
 class ObjectRecord:
-    # Klasa przechowująca dane o wykrytm obiekcie
+    """
+    Klasa przechowująca dane o wykrytm obiekcie.
+    """
 
     def __init__(self, new_car: Vehicle, old_car: Vehicle, new_frame: Frame, old_frame: Frame, mask):
         self.new_car, self.old_car, self.new_frame, self.old_frame, self.mask = \
@@ -18,6 +18,9 @@ class ObjectRecord:
 
 
 class Follower:
+    """
+    Klasa śledząca pojazdy na kolejnych klatkach obrazu.
+    """
 
     distance_from_border = 50
 

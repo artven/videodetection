@@ -2,7 +2,9 @@ __author__ = 'rafal'
 
 from gi.repository import Gtk
 
+
 class AboutDialog:
+
     def __init__(self):
         self.glade_file = "gui/about_dialog.glade"
         self.builder = Gtk.Builder()

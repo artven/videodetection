@@ -8,6 +8,9 @@ from src.video import Frame
 
 
 class Vehicle:
+    """
+    Klasa opisująca pojazd.
+    """
 
     def __init__(self, x, y, w, h):
         self.x = x
@@ -22,11 +25,22 @@ class Vehicle:
         return (self.__x, self.__y, self.__w, self.__h) == (x, y, w, h)
 
     def get_coordinates(self):
-        """ Zwraca lewy-górny punkt oraz szerokość i wysokość """
+        """
+        Zwraca współrzędne opisujące pojazd.
+        :return: Współrzędne x, y, szerokość, wysokość.
+        """
+
         return int(self.x), int(self.y), int(self.w), int(self.h)
 
-
+# TODO zmienić na rysowanie pojedynczego samochodu
 def draw_vehicles(frame, vehicles):
+    """
+    Oznacza na obrazie pojazdy wraz ze środkami ciężkości.
+    :param frame: Klatka obrazu.
+    :param vehicles: Lista pojazdów.
+    :return: Obraz z oznaczonymi pojazdami.
+    """
+
     for veh in vehicles:
         x, y, w, h = veh.get_coordinates()
         cx = veh.centerx
@@ -38,7 +52,9 @@ def draw_vehicles(frame, vehicles):
 
 
 class Detector:
-    # Klasa dokonująca wtępnej selekcji obiektów.
+    """
+    Klasa dokonująca wtępnej selekcji obiektów.
+    """
 
     # Właściwości klasy.
     # Obiekty o mniejszej liczbie pixeli będą ignorowane.
@@ -51,6 +67,12 @@ class Detector:
     # Interfejs klasy.
     @staticmethod
     def find_vehicles(frame):
+        """
+        Znajduje pojazdy na obrazie.
+        :param frame: Klatka obrazu.
+        :return: Znlezione pojazdy, maska binarna.
+        """
+
         image = frame.img
         mask = Subtractor.apply(image)
         vehicles = Detector.__find_possible_vehicles(mask)
@@ -61,8 +83,8 @@ class Detector:
     def __find_possible_vehicles(bin_image):
         """
         Oznacza potencjalne obiekty mogące być pojazdami.
-        :param bin_image:
-        :return:
+        :param bin_image: Binarna maska obrazu.
+        :return: Wektor obiektów mogących być pojazdami.
         """
 
         if len(bin_image.shape) == 3:
@@ -84,9 +106,10 @@ class Detector:
     @staticmethod
     def __select(vehicles, frame: Frame):
         """
-        Dokonuje selekcji znalezionych obiektów.
-        Odrzuca obiekty znajdujące się przy krawędzi obrazu.
-        :return: Lista pojazdów.
+        Dokonuje selekcji znalezionych obiektów. Odrzuca obiekty znajdujące się przy krawędzi obrazu.
+        :param vehicles: Wektor potencjalnych samochodów.
+        :param frame: Klatka obrazu
+        :return: Lista z wyseleksjonowanymi pojazdami.
         """
 
         height, width = frame.size()
@@ -99,6 +122,12 @@ class Detector:
 
     @staticmethod
     def draw_detection_region(frame):
+        """
+        Rysuje na klatce obszar czułości kamery.
+        :param frame: Klatka obrazu.
+        :return: Klatka obrazu z oznaczonym obszarem.
+        """
+
         height, width = frame.size()
         lup = (int(Detector.horizontal_border), int(Detector.vertical_border))
         rup = (int(width-Detector.horizontal_border), int(Detector.vertical_border))
@@ -114,28 +143,54 @@ class Detector:
     # Funkcje pomocnicze.
     @staticmethod
     def __mark_components(image):
-        """ Oznacza niezależne obszary. """
+        """
+        Oznacza niezależne obszary.
+        :param image: Obraz.
+        :return: Obraz z wyróżnionymi rozłącznymi obszarami.
+        """
+
         _, marked = cv2.connectedComponents(image)
         return marked
 
     @staticmethod
     def __find_unique_values(image):
-        """ Zwraca wszystkie wartości znajdujące się w obrazie. """
+        """
+        Znajduje unikalne wartości na obrazie.
+        :param image: Obraz z oznaczonymi obszarami.
+        :return: Lista wartości.
+        """
+
         return np.unique(image)
 
     @staticmethod
     def __is_background(value):
-        """ Sprawdza czy podana wartość oznacza tło. """
+        """
+        Sprawdza czy podana wartość oznacza tło.
+        :param value: Sprawdzana wartość.
+        :return: Prawda/fałsz.
+        """
+
         return value == 0
 
     @staticmethod
     def __is_big_enough(region):
-        """ Sprawdza czy obszar jest wystraczająco duży, aby być wartym rozważenia. """
+        """
+        Sprawdza czy obszar jest wystraczająco duży, aby być wartym rozważenia.
+        :param region: Obraz zwierający region oznaczony niezerową wartością.
+        :return: Prawda/fałsz.
+        """
+
         return np.count_nonzero(region) >= Detector.pixel_limit
 
     @staticmethod
     def __get_region(img, value):
-        """ Oznacza fragment obrazu mający podaną wartość. """
+        """
+        Oznacza fragment obrazu mający podaną wartość.
+        :param img: Obraz.
+        :param value: Wartość.
+        :return: Oznaczony obraz.
+        """
+
         return np.uint8(img == value)
 
     @staticmethod
@@ -152,7 +207,9 @@ class Detector:
 
 
 class Subtractor:
-    # Klasa wyodrębniająca tło oraz poruszające się elementy na obrazie.
+    """
+    Klasa wyodrębniająca tło.
+    """
 
     # Silnik wyodrębniania tła.
     substractor_engine = cv2.createBackgroundSubtractorMOG2()
@@ -168,21 +225,26 @@ class Subtractor:
     def apply(image):
         """
         Dokonuje wyodrębnienia tła z klatki obrazu. Zwraca zbinearyzowany obraz.
+        :param image: Obraz.
+        :return: Oznaczony obraz.
         """
 
         if len(image.shape) == 3:
             image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-        substractedFrame = Subtractor.substractor_engine.apply(image)
-        filteredFrame = Subtractor.__filter(substractedFrame)
-        _, substracted = cv2.threshold(filteredFrame, 0, 255, cv2.THRESH_BINARY)
+        substracted_frame = Subtractor.substractor_engine.apply(image)
+        filtered_frame = Subtractor.__filter(substracted_frame)
+        _, substracted = cv2.threshold(filtered_frame, 0, 255, cv2.THRESH_BINARY)
         return substracted
 
     @staticmethod
     def __filter(image):
         """
         Dokonuje filtracji za pomocą mediany i dylatacji.
+        :param image: Binarny obraz wejściowy.
+        :return: Wynikowy przefiltrowany obraz.
         """
+
         ker = cv2.getStructuringElement(Subtractor.kernel, Subtractor.kernelsize)
         morphframe = cv2.morphologyEx(image, Subtractor.operation, ker)
         medianframe = cv2.medianBlur(morphframe, Subtractor.mediansize)

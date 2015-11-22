@@ -7,8 +7,16 @@ from src.follow import Follower
 from src.config import Configuration
 from src.classify import Classyfication
 
+# TODO dodać nową klasę i dodać resetowanie
 
 def perform(frame: Frame, database, img_saver):
+    """
+    Dokonuje przetwarzania ramki obrazu przez algorytn.
+    :param frame: Ramka obrazu.
+    :param database: Baza danych do zapisywania parametrów.
+    :param img_saver: Obiekt zapisyjący pliki obrazów.
+    :return: Przetworzona ramka.
+    """
 
     vehicles, mask = Detector.find_vehicles(frame)
     objects = Follower.update(vehicles, frame, mask)
