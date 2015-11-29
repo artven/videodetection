@@ -1,0 +1,22 @@
+2015-11-29 22:46:33,246 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-11-29 22:46:33,687 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-11-29 22:49:05,125 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-11-29 22:49:05,573 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-11-29 23:01:09,806 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-11-29 23:01:10,249 INFO logs.py: Wykryto przejazd samochodu.
+2015-11-29 23:01:39,962 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-11-29 23:01:40,416 INFO logs.py: Wykryto przejazd samochodu.
+2015-11-29 23:01:41,083 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-11-29 23:02:02,190 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-11-29 23:02:02,633 INFO logs.py: Wykryto przejazd samochodu.
+2015-11-29 23:02:03,027 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-11-29 23:17:51,456 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-11-29 23:17:52,005 INFO logs.py: Wykryto przejazd samochodu.
+2015-11-29 23:17:52,520 INFO logs.py: Przprowadzono klasyfikację pojadu:
+2015-11-29 23:17:52,553 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-11-29 23:21:57,717 INFO logs.py: Zapisano rekord do bazy danych
+2015-11-29 23:21:59,141 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-11-29 23:21:59,657 INFO logs.py: Wykryto przejazd samochodu.
+2015-11-29 23:22:00,148 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 6.02, wysokość: 2.22, pole karoseri bocznej: 9.84, prędkość: 47.14, data: 2015-11-29 23:21:59.628348.
+2015-11-29 23:22:00,180 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-11-29 23:22:02,817 INFO logs.py: Zapisano rekord do bazy danych
