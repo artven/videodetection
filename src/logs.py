@@ -41,9 +41,9 @@ class Database:
         self.connection = sqlite3.connect(self.fileName)
         os.chdir("..")
         self.cursor = self.connection.cursor()
-
         self.cursor.execute("CREATE TABLE cars(id INTEGER PRIMARY KEY, width REAL, height REAL, "
                             "area REAL, speed REAL, detection_date DATE);")
+        Logger.info("Zapisano rekord do bazy danych")
 
     def write(self, record: dict):
         """
@@ -58,8 +58,7 @@ class Database:
         speed = record["speed"]
         date = record["date"]
 
-        # TODO dodać to do loggera
-        # print("nowy obiekt w:"+str(width)+" h:"+str(height)+" a:"+str(area)+" s:"+str(speed)+" d:sub"+str(date))
+        Logger.info("Zapisano rekord do bazy danych")
 
         # TODO sprawdzić czy przełamanie lini nie zepsuje zapisu
         self.cursor.execute("INSERT INTO cars(width, height, area, speed, detection_date) VALUES(%.2f, %.2f, %.2f, %.2f, ?);"

@@ -25,6 +25,8 @@ class Configuration:
     __draw_conturs = True
     __draw_speed_info = True
 
+    run_alg = True
+
     # Domyślna konfiguracja.
     __default_config = {
         "pixel_length": 200,
@@ -44,8 +46,6 @@ class Configuration:
         }
 
     __current_config = {}
-
-    run_alg = True
 
     @staticmethod
     def load_config(file=filename):
@@ -97,7 +97,6 @@ class Configuration:
         Configuration.__current_config["horizontal_border"] = Configuration.horizontal_border()
         Configuration.__current_config["vertical_border"] = Configuration.vertical_border()
         Configuration.__current_config["pixel_limit"] = Configuration.pixel_limit()
-        Configuration.__current_config["direction"] = Configuration.direction()
         Configuration.__current_config["distance_from_border"] = Configuration.distance_from_border()
         Configuration.__current_config["draw_detection_region"] = Configuration.draw_detection_region()
         Configuration.__current_config["draw_speed_region"] = Configuration.draw_speed_region()
@@ -121,7 +120,6 @@ class Configuration:
         Configuration.horizontal_border(config["horizontal_border"])
         Configuration.vertical_border(config["vertical_border"])
         Configuration.pixel_limit(config["pixel_limit"])
-        Configuration.direction(config["direction"])
         Configuration.distance_from_border(config["distance_from_border"])
         Configuration.draw_detection_region(config["draw_detection_region"])
         Configuration.draw_speed_region(config["draw_speed_region"])
@@ -144,8 +142,8 @@ class Configuration:
         """
 
         if value is not None:
-            Classyfication.pixel_length = value
-        return Classyfication.pixel_length
+            Configuration.__pixel_length = value
+        return Configuration.__pixel_length
 
     @staticmethod
     def meters_length(value=None):
@@ -158,8 +156,8 @@ class Configuration:
         """
 
         if value is not None:
-            Classyfication.meters_length = value
-        return Classyfication.meters_length
+            Configuration.__meters_length = value
+        return Configuration.__meters_length
 
     @staticmethod
     def color_number(value=None):
@@ -172,8 +170,8 @@ class Configuration:
         """
 
         if value is not None:
-            ColorDetector.color_number = value
-        return ColorDetector.color_number
+            Configuration.__color_number = value
+        return Configuration.__color_number
 
     @staticmethod
     def horizontal_border(value=None):
@@ -186,8 +184,8 @@ class Configuration:
         """
 
         if value is not None:
-            Detector.horizontal_border = value
-        return Detector.horizontal_border
+            Configuration.__horizontal_border = value
+        return Configuration.__horizontal_border
 
     @staticmethod
     def vertical_border(value=None):
@@ -200,8 +198,8 @@ class Configuration:
         """
 
         if value is not None:
-            Detector.vertical_border = value
-        return Detector.vertical_border
+            Configuration.__vertical_border = value
+        return Configuration.__vertical_border
 
     @staticmethod
     def pixel_limit(value=None):
@@ -214,24 +212,10 @@ class Configuration:
         """
 
         if value is not None:
-            Detector.pixel_limit = value
-        return Detector.pixel_limit
+            Configuration.__pixel_limit = value
+        return Configuration.__pixel_limit
 
-    @staticmethod #TODO to jest do wyjebania
-    def direction(value=None):
-        """
-        Ustawia kierunek jazdy pojazdów.
-
-        :param str value: Nowa wartość.
-        :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
-        :rtype: str
-        """
-
-        if value is not None:
-            Follower.direction = value
-        return Follower.direction
-
-    @staticmethod #TODO to chyba też się wyjebie
+    @staticmethod
     def distance_from_border(value=None):
         """
         Ustawia odległość od strefy czułości w której pojazd zostaje wstępnie rozpoznany.
@@ -242,8 +226,8 @@ class Configuration:
         """
 
         if value is not None:
-            Follower.distance_from_border = value
-        return Follower.distance_from_border
+            Configuration.__distance_from_border = value
+        return Configuration.__distance_from_border
 
     # Opcje rysowania oznaczeń:
 
@@ -300,8 +284,8 @@ class Configuration:
         """
 
         if value is not None:
-            Classyfication.draw_conturs = value
-        return Classyfication.draw_conturs
+            Configuration.__draw_conturs = value
+        return Configuration.__draw_conturs
 
     @staticmethod
     def draw_speed_info(value=None):
@@ -314,8 +298,8 @@ class Configuration:
         """
 
         if value is not None:
-            Classyfication.draw_speed_info = value
-        return Classyfication.draw_speed_info
+            Configuration.__draw_speed_info = value
+        return Configuration.__draw_speed_info
 
     @staticmethod
     def draw_size_info(value=None):
@@ -328,8 +312,8 @@ class Configuration:
         """
 
         if value is not None:
-            Classyfication.draw_size_info = value
-        return Classyfication.draw_size_info
+            Configuration.__draw_size_info = value
+        return Configuration.__draw_size_info
 
     @staticmethod
     def draw_color_bar(value=None):
@@ -342,8 +326,8 @@ class Configuration:
         """
 
         if value is not None:
-            Classyfication.draw_color_bar = value
-        return Classyfication.draw_color_bar
+            Configuration.__draw_color_bar = value
+        return Configuration.__draw_color_bar
 
 
 # Uruchomienie pliku przywraca domyślną konfigurację.

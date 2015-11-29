@@ -6,11 +6,11 @@ import cv2
 import numpy as np
 
 try:
-    from src.contour import ContourDetector
     from src.video import Frame
+    from src.config import Configuration
 except ImportError:
-    from contour import ContourDetector
     from video import Frame
+    from config import Configuration
 
 
 class Vehicle:
@@ -74,14 +74,6 @@ class Detector:
     Klasa dokonująca wtępnej selekcji obiektów.
     """
 
-    # Właściwości klasy.
-    # Obiekty o mniejszej liczbie pixeli będą ignorowane.
-    pixel_limit = 1000
-    # Granica ignorowania w poziomie.
-    horizontal_border = 200
-    # Granica ignorowania w pionie.
-    vertical_border = 50
-
     # Interfejs klasy.
     @staticmethod
     def find_vehicles(frame: Frame):
@@ -113,14 +105,14 @@ class Detector:
             bin_image = cv2.cvtColor(bin_image, cv2.COLOR_BGR2GRAY)
 
         result = []
-        markedImage = Detector.__mark_components(bin_image)
-        values = Detector.__find_unique_values(markedImage)
+        marked_image = Detector.__mark_components(bin_image)
+        values = Detector.__find_unique_values(marked_image)
 
         for value in values:
             if not Detector.__is_background(value):
-                markedRegion = Detector.__get_region(markedImage, value)
-                if Detector.__is_big_enough(markedRegion):
-                    x, y, w, h = Detector.__get_size(markedRegion)
+                marked_region = Detector.__get_region(marked_image, value)
+                if Detector.__is_big_enough(marked_region):
+                    x, y, w, h = Detector.__get_size(marked_region)
                     result.append(Vehicle(x, y, w, h))
 
         return result
@@ -139,8 +131,10 @@ class Detector:
         height, width = frame.size()
         result = []
         for vehic in vehicles:
-            if (vehic.centerx > Detector.horizontal_border) and (vehic.centerx < width-Detector.horizontal_border)\
-                    and (vehic.centery > Detector.vertical_border) and (vehic.centery < height-Detector.vertical_border):
+            horizontal_border = Configuration.horizontal_border()
+            vertical_border = Configuration.vertical_border()
+            if (vehic.centerx > horizontal_border) and (vehic.centerx < width-horizontal_border)\
+                    and (vehic.centery > vertical_border) and (vehic.centery < height-vertical_border):
                 result.append(vehic)
         return result
 
@@ -155,10 +149,12 @@ class Detector:
         """
 
         height, width = frame.size()
-        lup = (int(Detector.horizontal_border), int(Detector.vertical_border))
-        rup = (int(width-Detector.horizontal_border), int(Detector.vertical_border))
-        llp = (int(Detector.horizontal_border), int(height-Detector.vertical_border))
-        rlp = (int(width-Detector.horizontal_border), int(height-Detector.vertical_border))
+        horizontal_border = Configuration.horizontal_border()
+        vertical_border = Configuration.vertical_border()
+        lup = (int(horizontal_border), int(vertical_border))
+        rup = (int(width-horizontal_border), int(vertical_border))
+        llp = (int(horizontal_border), int(height-vertical_border))
+        rlp = (int(width-horizontal_border), int(height-vertical_border))
         frame.img = cv2.line(frame.img, llp, lup, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, llp, rlp, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, rlp, rup, (0, 0, 255), thickness=3)
@@ -214,7 +210,7 @@ class Detector:
         :rtype: bool
         """
 
-        return np.count_nonzero(region) >= Detector.pixel_limit
+        return np.count_nonzero(region) >= Configuration.pixel_limit()
 
     @staticmethod
     def __get_region(img: np.ndarray, value: int):
@@ -261,8 +257,8 @@ class Subtractor:
     __operation = cv2.MORPH_OPEN
     __kernel = cv2.MORPH_ELLIPSE
     __kernelsize = (3, 3)
-    mediansize = 5
-    dilateiter = 5
+    __mediansize = 5
+    __dilateiter = 5
 
     @staticmethod
     def apply(image: np.ndarray):
@@ -294,8 +290,8 @@ class Subtractor:
 
         ker = cv2.getStructuringElement(Subtractor.__kernel, Subtractor.__kernelsize)
         morphframe = cv2.morphologyEx(image, Subtractor.__operation, ker)
-        medianframe = cv2.medianBlur(morphframe, Subtractor.mediansize)
-        dilatframe = cv2.dilate(medianframe, ker, iterations=Subtractor.dilateiter)
+        medianframe = cv2.medianBlur(morphframe, Subtractor.__mediansize)
+        dilatframe = cv2.dilate(medianframe, ker, iterations=Subtractor.__dilateiter)
         return dilatframe
 
 
@@ -366,9 +362,9 @@ class ContourDetector:
         :return: Współrzędne środka: x, y.
         """
 
-        M = ContourDetector.moments(cnt)
-        cx = int(M['m10']/M['m00'])
-        cy = int(M['m01']/M['m00'])
+        moment = ContourDetector.moments(cnt)
+        cx = int(moment['m10']/moment['m00'])
+        cy = int(moment['m01']/moment['m00'])
         return cx, cy
 
     @staticmethod

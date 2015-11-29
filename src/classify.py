@@ -5,9 +5,9 @@ import numpy as np
 
 try:
     from src.follow import ObjectRecord
-    from src.detect import Vehicle, Frame
-    from src.contour import ContourDetector
+    from src.detect import Vehicle, Frame, ContourDetector
     from src.logs import Logger
+    from src.config import Configuration
     from sklearn.cluster import KMeans
 except:
     from follow import ObjectRecord
@@ -21,18 +21,6 @@ class Classyfication:
     """
     Klasa dokonująca klasyfikacji obiektu względem kryteriów.
     """
-
-    # Odległość kalibracyjna wyrażona w pixelach.
-    pixel_length = 200
-
-    # Odległość kalibracyjna wyrażona w metrach.
-    meters_length = 4
-
-    # Flagi rysowania inforamcji na obrazie wynikowym.
-    draw_size_info = True
-    draw_color_bar = True
-    draw_conturs = True
-    draw_speed_info = True
 
     @staticmethod
     def perform(obj: ObjectRecord):
@@ -56,7 +44,7 @@ class Classyfication:
         # Wyznaczenie rozmiaru
         car_width = SizeMeasurment.calculate_width(new_car)
         car_height = SizeMeasurment.calculate_height(new_car)
-        car_area = SizeMeasurment.calculate_area(new_car, mask_roi)
+        car_area = SizeMeasurment.calculate_area(mask_roi)
 
         # Wyznaczenie kolorów
         color_bar, color = ColorDetector.find_color(image_roi)
@@ -66,21 +54,30 @@ class Classyfication:
 
         # Narysowanie wyników na obrazie
         # Rozmiar
-        if Classyfication.draw_size_info:
+        if Configuration.draw_size_info():
             image = SizeMeasurment.draw_size_info(image, car_width, car_height, car_area)
         # Kolor
-        if Classyfication.draw_color_bar:
+        if Configuration.draw_color_bar():
             image = ColorDetector.draw_color_bar(image, color_bar)
         # Kontur
-        if Classyfication.draw_conturs:
+        if Configuration.draw_conturs():
             image = SizeMeasurment.draw_car_contour(image, new_car, mask)
         # Prędkość
-        if Classyfication.draw_speed_info:
+        if Configuration.draw_speed_info():
             image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
 
         # Rekord zawierający informacje o pojeździe
         result = {"width": car_width, "height": car_height, "area": car_area, "speed": speed, "image": image,
                   "date": new_frame.creationTime}
+
+        msg = "Przprowadzono klasyfikację pojadu: "
+        msg += "długość: %.2f, " % car_width
+        msg += "wysokość: %.2f, " % car_height
+        msg += "pole karoseri bocznej: %.2f, " % car_area
+        msg += "prędkość: %.2f, " % speed
+        msg += "data: %s." % str(new_frame.creationTime)
+
+        Logger.info(msg)
 
         return result
 
@@ -93,7 +90,7 @@ class Classyfication:
         :rtype: float
         """
 
-        return float(Classyfication.meters_length) / float(Classyfication.pixel_length)
+        return float(Configuration.meters_length()) / float(Configuration.pixel_length())
 
     @staticmethod
     def draw_speed_region(frame: Frame):
@@ -106,7 +103,7 @@ class Classyfication:
         """
 
         h, w = frame.size()
-        x = int(w/2) - int(Classyfication.pixel_length/2)
+        x = int(w/2) - int(Configuration.pixel_length()/2)
         frame.img = cv2.line(frame.img, (x, 0), (x, h), (255, 0, 255), thickness=4)
         frame.img = cv2.line(frame.img, (w-x, 0), (w-x, h), (255, 0, 255), thickness=4)
         return frame
@@ -374,7 +371,6 @@ class ColorDetector:
         :return: Pasek informujący o kolorze.
         """
 
-        # TODO ogarnąć co to są centroids ???
         w = ColorDetector.__bar_width
         h = ColorDetector.__bar_height
 
