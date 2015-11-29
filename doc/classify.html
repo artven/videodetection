@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Klasyfikacja pojazdów &mdash; Videodetection 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Videodetection 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Konfiguracja programu" href="config.html" />
+    <link rel="prev" title="Śledzenie obiektów" href="follow.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="Konfiguracja programu"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="follow.html" title="Śledzenie obiektów"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-classify">
+<span id="klasyfikacja-pojazdow"></span><h1>Klasyfikacja pojazdów<a class="headerlink" href="#module-classify" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="classify.Classyfication">
+<em class="property">class </em><tt class="descclassname">classify.</tt><tt class="descname">Classyfication</tt><a class="headerlink" href="#classify.Classyfication" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa dokonująca klasyfikacji obiektu względem kryteriów.</p>
+<dl class="staticmethod">
+<dt id="classify.Classyfication.draw_speed_region">
+<em class="property">static </em><tt class="descname">draw_speed_region</tt><big>(</big><em>frame: video.Frame</em><big>)</big><a class="headerlink" href="#classify.Classyfication.draw_speed_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rysuje na obrazie dwie pionowe linie, służące pomiarowi osiąganej prędkości.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frame</strong> (<em>Frame</em>) &#8211; Ramka obrazu wideo.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Ramka z narysowanymi liniami.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Frame</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="classify.Classyfication.get_ratio">
+<em class="property">static </em><tt class="descname">get_ratio</tt><big>(</big><big>)</big><a class="headerlink" href="#classify.Classyfication.get_ratio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oblicza stosunek długości na obrazie wyrażonej w pixelach do rzeczywistej długości w metrach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Znaleziony stosunek.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="classify.Classyfication.perform">
+<em class="property">static </em><tt class="descname">perform</tt><big>(</big><em>obj: follow.ObjectRecord</em><big>)</big><a class="headerlink" href="#classify.Classyfication.perform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Przeprowadza ocenę koloru, rozmiaru i prędkości obiektu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>obj</strong> (<em>ObjectRecord</em>) &#8211; Obiekt wykryty przez klasę Follower.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Parametry pojazdu.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">dict</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="classify.ColorDetector">
+<em class="property">class </em><tt class="descclassname">classify.</tt><tt class="descname">ColorDetector</tt><a class="headerlink" href="#classify.ColorDetector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa określająca kolor pojazdu.</p>
+<dl class="staticmethod">
+<dt id="classify.ColorDetector._ColorDetector__centroid_histogram">
+<em class="property">static </em><tt class="descname">_ColorDetector__centroid_histogram</tt><big>(</big><em>clt</em><big>)</big><a class="headerlink" href="#classify.ColorDetector._ColorDetector__centroid_histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Przydziala wartości histogramu do zdefiniowanych grup. Dokonuje normalizacji nowego histogramu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>clt</strong> &#8211; Zdefiniowane przez KMeans grupy.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Histogram po przydziale pikseli.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="classify.ColorDetector._ColorDetector__create_colors_bar">
+<em class="property">static </em><tt class="descname">_ColorDetector__create_colors_bar</tt><big>(</big><em>hist</em>, <em>centroids</em><big>)</big><a class="headerlink" href="#classify.ColorDetector._ColorDetector__create_colors_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tworzy pasek zawierający najpopularniejsze kolory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>hist</strong> &#8211; Histogram obrazu.</li>
+<li><strong>centroids</strong> &#8211; Liczba poszukiwanych kolorów.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Pasek informujący o kolorze.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="classify.ColorDetector._ColorDetector__find_dominant_colors">
+<em class="property">static </em><tt class="descname">_ColorDetector__find_dominant_colors</tt><big>(</big><em>image: numpy.ndarray</em>, <em>n: int</em><big>)</big><a class="headerlink" href="#classify.ColorDetector._ColorDetector__find_dominant_colors" title="Permalink to this definition">¶</a></dt>
+<dd><blockquote>
+<div>Znajduje n najbardziej dominujących kolorów na obrazie.</div></blockquote>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>image</strong> (<em>np.ndarray</em>) &#8211; badany obraz.</li>
+<li><strong>n</strong> (<em>int</em>) &#8211; liczba poszukiwanych kolorów.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Znalezionye kolory, procent powierzni kolorów.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list, list, np.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="classify.ColorDetector.draw_color_bar">
+<em class="property">static </em><tt class="descname">draw_color_bar</tt><big>(</big><em>img</em>, <em>color_bar</em><big>)</big><a class="headerlink" href="#classify.ColorDetector.draw_color_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rysuje pasek informujący o kolorze na obrazie.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>img</strong> &#8211; Obraz wejściowy</li>
+<li><strong>color_bar</strong> &#8211; Pasek z kolorami.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">Oznaczony obraz.</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="classify.ColorDetector.find_color">
+<em class="property">static </em><tt class="descname">find_color</tt><big>(</big><em>image: numpy.ndarray</em><big>)</big><a class="headerlink" href="#classify.ColorDetector.find_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Przeprowadza analizę dominujących kolorów, wybiera z nich największy.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<em>np.ndarray</em>) &#8211; przeszukiwany obraz.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">obraz wypełniony kolorem, wartość koloru.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="classify.SpeedMeasurment">
+<em class="property">class </em><tt class="descclassname">classify.</tt><tt class="descname">SpeedMeasurment</tt><a class="headerlink" href="#classify.SpeedMeasurment" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa dokonująca pomiaru prędkości.</p>
+<dl class="staticmethod">
+<dt id="classify.SpeedMeasurment.calculate_speed">
+<em class="property">static </em><tt class="descname">calculate_speed</tt><big>(</big><em>new_car: detect.Vehicle</em>, <em>new_frame: video.Frame</em>, <em>old_car: detect.Vehicle</em>, <em>old_frame: video.Frame</em><big>)</big><a class="headerlink" href="#classify.SpeedMeasurment.calculate_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oblicza prędkość wykretego pojazdu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>new_car</strong> (<em>Vehicle</em>) &#8211; Samochód opuszczający w pole detekcji.</li>
+<li><strong>new_frame</strong> (<em>Frame</em>) &#8211; Ramka obrazu przechwycona podczas opuszczania przez pojazd pola detekcji.</li>
+<li><strong>old_car</strong> (<em>Vehicle</em>) &#8211; Samochód wjeżdżający w pole detekcji.</li>
+<li><strong>old_frame</strong> (<em>Frame</em>) &#8211; Ramka obrazu przechwycona podczas wjeżdżania przez pojazd w pole detekcji.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Prędkość samochodu w metrach na sekundę.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">float</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="classify.SpeedMeasurment.draw_speed_info">
+<em class="property">static </em><tt class="descname">draw_speed_info</tt><big>(</big><em>car: detect.Vehicle</em>, <em>speed</em>, <em>img</em><big>)</big><a class="headerlink" href="#classify.SpeedMeasurment.draw_speed_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Podpisuje obraz samochodu informacją o jego prędkości</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>car</strong> (<em>Vehicle</em>) &#8211; Zidentyfikowany pojazd.</li>
+<li><strong>speed</strong> &#8211; Obliczona prędkość.</li>
+<li><strong>img</strong> &#8211; Obraz pojazdu.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Obraz podpisany informacją o prędkości.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">Frame</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="follow.html"
+                        title="previous chapter">Śledzenie obiektów</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="next chapter">Konfiguracja programu</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/classify.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="Konfiguracja programu"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="follow.html" title="Śledzenie obiektów"
+             >previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Rafał Prusak.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

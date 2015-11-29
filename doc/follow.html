@@ -1,93 +1,195 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><title>Python: module follow</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head><body bgcolor="#f0f0f8">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
-<tr bgcolor="#7799ee">
-<td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>follow</strong></big></big></font></td
-><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/rafal/PycharmProjects/videodetection/src/follow.py">/home/rafal/PycharmProjects/videodetection/src/follow.py</a></font></td></tr></table>
-    <p></p>
-<p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ee77aa">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
-</font></dt><dd>
-<dl>
-<dt><font face="helvetica, arial"><a href="follow.html#Follower">Follower</a>
-</font></dt><dt><font face="helvetica, arial"><a href="follow.html#ObjectRecord">ObjectRecord</a>
-</font></dt></dl>
-</dd>
-</dl>
- <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ffc8d8">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Follower">class <strong>Follower</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    <title>Śledzenie obiektów &mdash; Videodetection 1.0.0 documentation</title>
     
-<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">Static methods defined here:<br>
-<dl><dt><a name="Follower-isCloseToLeftBorder"><strong>isCloseToLeftBorder</strong></a>(newCar)</dt></dl>
-
-<dl><dt><a name="Follower-isCloseToRightBorder"><strong>isCloseToRightBorder</strong></a>(newCar)</dt></dl>
-
-<dl><dt><a name="Follower-update"><strong>update</strong></a>(newVehicles, frame:src.video.Frame, mask)</dt></dl>
-
-<hr>
-Data descriptors defined here:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<hr>
-Data and other attributes defined here:<br>
-<dl><dt><strong>detectedCarOnLeft</strong> = False</dl>
-
-<dl><dt><strong>detectedCarOnRight</strong> = False</dl>
-
-<dl><dt><strong>direction</strong> = 'right2left'</dl>
-
-<dl><dt><strong>distanceFromBorder</strong> = 50</dl>
-
-<dl><dt><strong>leftLock</strong> = False</dl>
-
-<dl><dt><strong>rightLock</strong> = False</dl>
-
-<dl><dt><strong>tracked</strong> = []</dl>
-
-</td></tr></table> <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ffc8d8">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="ObjectRecord">class <strong>ObjectRecord</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
-<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">Methods defined here:<br>
-<dl><dt><a name="ObjectRecord-__init__"><strong>__init__</strong></a>(self, new_car:src.detect.Vehicle, old_car:src.detect.Vehicle, new_frame:src.video.Frame, old_frame:src.video.Frame, mask)</dt></dl>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Videodetection 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Klasyfikacja pojazdów" href="classify.html" />
+    <link rel="prev" title="Detekcja" href="detect.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="classify.html" title="Klasyfikacja pojazdów"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="detect.html" title="Detekcja"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-<hr>
-Data descriptors defined here:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-</td></tr></table></td></tr></table><p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#7799ee">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">rafal</td></tr></table>
-</body></html>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-follow">
+<span id="sledzenie-obiektow"></span><h1>Śledzenie obiektów<a class="headerlink" href="#module-follow" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="follow.Follower">
+<em class="property">class </em><tt class="descclassname">follow.</tt><tt class="descname">Follower</tt><a class="headerlink" href="#follow.Follower" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa śledząca pojazdy na kolejnych klatkach obrazu.</p>
+<dl class="staticmethod">
+<dt id="follow.Follower._Follower__is_on_left">
+<em class="property">static </em><tt class="descname">_Follower__is_on_left</tt><big>(</big><em>new_car: detect.Vehicle</em><big>)</big><a class="headerlink" href="#follow.Follower._Follower__is_on_left" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza czy samochód jest blisko lewej krawędzi obszaru czułości.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new_car</strong> (<em>Vehicle</em>) &#8211; Obserwoway samochód.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Prawda/fałsz.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="follow.Follower._Follower__is_on_right">
+<em class="property">static </em><tt class="descname">_Follower__is_on_right</tt><big>(</big><em>new_car</em><big>)</big><a class="headerlink" href="#follow.Follower._Follower__is_on_right" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza czy samochód jest blisko prawej krawędzi obszaru czułości.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>new_car</strong> (<em>Vehicle</em>) &#8211; Obserwoway samochód.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Prawda/fałsz.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="follow.Follower.update">
+<em class="property">static </em><tt class="descname">update</tt><big>(</big><em>new_vehicles: list</em>, <em>frame: video.Frame</em>, <em>mask: numpy.ndarray</em><big>)</big><a class="headerlink" href="#follow.Follower.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aktualizuje śledzone pojazdy.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>new_vehicles</strong> &#8211; Nowe pojazdy.</li>
+<li><strong>frame</strong> (<em>Frame</em>) &#8211; Klatka obrazu.</li>
+<li><strong>mask</strong> (<em>np.ndarray</em>) &#8211; Binarna maska obrazu</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Zidentyfikowane pojazdy(?), None jeśli żadnego nie wykryto.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="follow.ObjectRecord">
+<em class="property">class </em><tt class="descclassname">follow.</tt><tt class="descname">ObjectRecord</tt><big>(</big><em>new_car: detect.Vehicle</em>, <em>old_car: detect.Vehicle</em>, <em>new_frame: video.Frame</em>, <em>old_frame: video.Frame</em>, <em>mask</em><big>)</big><a class="headerlink" href="#follow.ObjectRecord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa przechowująca dane o wykrytm obiekcie.</p>
+<dl class="method">
+<dt id="follow.ObjectRecord.unpack">
+<tt class="descname">unpack</tt><big>(</big><big>)</big><a class="headerlink" href="#follow.ObjectRecord.unpack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rozpakowywuje rekord.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="detect.html"
+                        title="previous chapter">Detekcja</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="classify.html"
+                        title="next chapter">Klasyfikacja pojazdów</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/follow.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="classify.html" title="Klasyfikacja pojazdów"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="detect.html" title="Detekcja"
+             >previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Rafał Prusak.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

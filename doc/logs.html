@@ -1,88 +1,275 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
-<html><head><title>Python: module logs</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head><body bgcolor="#f0f0f8">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
-<tr bgcolor="#7799ee">
-<td valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>logs</strong></big></big></font></td
-><td align=right valign=bottom
-><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/rafal/PycharmProjects/videodetection/src/logs.py">/home/rafal/PycharmProjects/videodetection/src/logs.py</a></font></td></tr></table>
-    <p></p>
-<p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#aa55cc">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="os.html">os</a><br>
-</td><td width="25%" valign=top><a href="sqlite3.html">sqlite3</a><br>
-</td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ee77aa">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    <title>Zapis danych do logów &mdash; Videodetection 1.0.0 documentation</title>
     
-<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl>
-<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
-</font></dt><dd>
-<dl>
-<dt><font face="helvetica, arial"><a href="logs.html#Logger">Logger</a>
-</font></dt><dt><font face="helvetica, arial"><a href="logs.html#Record">Record</a>
-</font></dt></dl>
-</dd>
-</dl>
- <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ffc8d8">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Logger">class <strong>Logger</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
-<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">Methods defined here:<br>
-<dl><dt><a name="Logger-__del__"><strong>__del__</strong></a>(self)</dt></dl>
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Videodetection 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Obsługa obrazu wideo" href="video.html" />
+    <link rel="prev" title="Konfiguracja programu" href="config.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="video.html" title="Obsługa obrazu wideo"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="Konfiguracja programu"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
 
-<dl><dt><a name="Logger-__init__"><strong>__init__</strong></a>(self)</dt></dl>
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-logs">
+<span id="zapis-danych-do-logow"></span><h1>Zapis danych do logów<a class="headerlink" href="#module-logs" title="Permalink to this headline">¶</a></h1>
+<p>Moduł odpowiedzialny za zapis danych wynikowych do bazy danych i plików obrazu.</p>
+<dl class="class">
+<dt id="logs.Database">
+<em class="property">class </em><tt class="descclassname">logs.</tt><tt class="descname">Database</tt><a class="headerlink" href="#logs.Database" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa obsługująca zapis i odczyt z bazy danych.</p>
+<dl class="method">
+<dt id="logs.Database.execute">
+<tt class="descname">execute</tt><big>(</big><em>query: str</em><big>)</big><a class="headerlink" href="#logs.Database.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wykonuje zadaną komende na bazie danych i zwraca jej rezultat.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>query</strong> (<em>str</em>) &#8211; Treść zapytania.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Rezultat zapytania.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-<dl><dt><a name="Logger-execute"><strong>execute</strong></a>(self, query)</dt></dl>
+<dl class="method">
+<dt id="logs.Database.read_logs">
+<tt class="descname">read_logs</tt><big>(</big><big>)</big><a class="headerlink" href="#logs.Database.read_logs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Odczytuje informacje z bazy danych.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Wszystkie rekordy z bazy(tablicy) samochodów.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-<dl><dt><a name="Logger-readLogs"><strong>readLogs</strong></a>(self)</dt></dl>
+<dl class="method">
+<dt id="logs.Database.table_info">
+<tt class="descname">table_info</tt><big>(</big><big>)</big><a class="headerlink" href="#logs.Database.table_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca nazwy kolumn tablicy przechowującej dane o samochodach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Lista nazw.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-<dl><dt><a name="Logger-tableInfo"><strong>tableInfo</strong></a>(self)</dt></dl>
+<dl class="method">
+<dt id="logs.Database.write">
+<tt class="descname">write</tt><big>(</big><em>record: dict</em><big>)</big><a class="headerlink" href="#logs.Database.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje informacje o pojeździe do bazy danych.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>record</strong> (<em>dict</em>) &#8211; Nowy rekord dla bazy.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
 
-<dl><dt><a name="Logger-writeRecord"><strong>writeRecord</strong></a>(self, record)</dt></dl>
+</dd></dl>
 
-<hr>
-Data descriptors defined here:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-</td></tr></table> <p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#ffc8d8">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#000000" face="helvetica, arial"><a name="Record">class <strong>Record</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
-    
-<tr><td bgcolor="#ffc8d8"><tt>&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">Data descriptors defined here:<br>
-<dl><dt><strong>__dict__</strong></dt>
-<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-<dl><dt><strong>__weakref__</strong></dt>
-<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
-</dl>
-</td></tr></table></td></tr></table><p>
-<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
-<tr bgcolor="#7799ee">
-<td colspan=3 valign=bottom>&nbsp;<br>
-<font color="#ffffff" face="helvetica, arial"><big><strong>Author</strong></big></font></td></tr>
-    
-<tr><td bgcolor="#7799ee"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%">rafal</td></tr></table>
-</body></html>
+<dl class="class">
+<dt id="logs.ImageSaver">
+<em class="property">class </em><tt class="descclassname">logs.</tt><tt class="descname">ImageSaver</tt><a class="headerlink" href="#logs.ImageSaver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa zapisująca obraz zidentyfikowanego samochodu do pliku graficznego na dysku.</p>
+<dl class="staticmethod">
+<dt id="logs.ImageSaver.write">
+<em class="property">static </em><tt class="descname">write</tt><big>(</big><em>record: dict</em><big>)</big><a class="headerlink" href="#logs.ImageSaver.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje do obrazu dane o samochodzie.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>record</strong> (<em>dict</em>) &#8211; Rekord danych.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="logs.Logger">
+<em class="property">class </em><tt class="descclassname">logs.</tt><tt class="descname">Logger</tt><a class="headerlink" href="#logs.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa zapisująca komunikaty programu do pliku tekstowego.</p>
+<dl class="staticmethod">
+<dt id="logs.Logger.debug">
+<em class="property">static </em><tt class="descname">debug</tt><big>(</big><em>txt</em><big>)</big><a class="headerlink" href="#logs.Logger.debug" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje wiadomość diagnostyczną.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>txt</strong> &#8211; Tekst komunikatu.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="logs.Logger.error">
+<em class="property">static </em><tt class="descname">error</tt><big>(</big><em>txt: str</em><big>)</big><a class="headerlink" href="#logs.Logger.error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje błąd.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>txt</strong> (<em>str</em>) &#8211; Tekst komunikatu.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="logs.Logger.info">
+<em class="property">static </em><tt class="descname">info</tt><big>(</big><em>txt: str</em><big>)</big><a class="headerlink" href="#logs.Logger.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje informację.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>txt</strong> (<em>str</em>) &#8211; Tekst komunikatu.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="logs.Logger.start">
+<em class="property">static </em><tt class="descname">start</tt><big>(</big><big>)</big><a class="headerlink" href="#logs.Logger.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Włącza możliwość logowania komunikatów.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="logs.Logger.warning">
+<em class="property">static </em><tt class="descname">warning</tt><big>(</big><em>txt: str</em><big>)</big><a class="headerlink" href="#logs.Logger.warning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje ostrzerzenie.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>txt</strong> (<em>str</em>) &#8211; Tekst komunikatu.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="config.html"
+                        title="previous chapter">Konfiguracja programu</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="video.html"
+                        title="next chapter">Obsługa obrazu wideo</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/logs.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="video.html" title="Obsługa obrazu wideo"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="config.html" title="Konfiguracja programu"
+             >previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Rafał Prusak.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
