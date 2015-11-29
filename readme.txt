@@ -15,23 +15,5 @@ sudo apt-get install build-essential python3-dev python3-setuptools \
                      python3-numpy python3-scipy \
                      libatlas-dev libatlas3gf-base
 
-Materiały wykorzystane przy tworzeniu programu:
-- książki:
-	a)OpenCV:
-		- "Learning Image Processing with OpenCV"
-		- "Learning OpenCV.pdf"
-		- "Matering OpenCV with Practical Computer Vision"
-		- "OpenCv2 Computer Vision Application Programing in C++"
-		- "OpenCV Computer Vision with Python"
-		- "OReilly Learning OpenCV"
-		- "Practical OpenCV"
-		- "Programing Computer Vision with Python"
-	b)Python:
-		- "Python dla każdego. Podstawy programowania"
-		- "Introducing Python"
-		- "Dive in Python"
-- zasoby internetowe(dostęp 29 sierpnia 2015):
-		- dokunetacja biblioteki OpenCV 3.0 http://docs.opencv.org/3.0-beta/index.html
-		- OpenCV-Python Tutorials http://docs.opencv.org/master/d6/d00/tutorial_py_root.html#gsc.tab=0
-		- Introduction to OpenCV-Python http://opencv-python-tutroals.readthedocs.org/en/latest/py_tutorials/py_setup/py_intro/py_intro.html
+
 
