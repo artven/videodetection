@@ -1,8 +1,13 @@
 __author__ = 'rafal'
 
-from src.detect import Vehicle, Detector
-from src.video import Frame
+try:
+    from src.detect import Vehicle, Detector
+    from src.video import Frame
+except ImportError:
+    from detect import Vehicle, Detector
+    from video import Frame
 
+import numpy as np
 
 class ObjectRecord:
     """
@@ -14,6 +19,10 @@ class ObjectRecord:
             new_car, old_car, new_frame, old_frame, mask
 
     def unpack(self):
+        """
+        Rozpakowywuje rekord.
+        """
+
         return self.new_car, self.old_car, self.new_frame, self.old_frame, self.mask
 
 
@@ -35,7 +44,16 @@ class Follower:
     __border = 0
 
     @staticmethod  # TODO tę klasę należy poważnie zrefaktoryzować
-    def update(new_vehicles, frame: Frame, mask):
+    def update(new_vehicles: list, frame: Frame, mask: np.ndarray):
+        """
+        Aktualizuje śledzone pojazdy.
+
+        :param new_vehicles: Nowe pojazdy.
+        :param Frame frame: Klatka obrazu.
+        :param np.ndarray mask: Binarna maska obrazu
+        :return: Zidentyfikowane pojazdy(?), None jeśli żadnego nie wykryto.
+        :rtype: list
+        """
 
         if len(new_vehicles) == 0:
             return None
@@ -98,9 +116,25 @@ class Follower:
 
 
     @staticmethod
-    def __is_on_left(new_car):
+    def __is_on_left(new_car: Vehicle):
+        """
+        Sprawdza czy samochód jest blisko lewej krawędzi obszaru czułości.
+
+        :param Vehicle new_car: Obserwoway samochód.
+        :return: Prawda/fałsz.
+        :rtype: bool
+        """
+
         return new_car.centerx < (Follower.__border + Follower.distance_from_border)
 
     @staticmethod
     def __is_on_right(new_car):
+        """
+        Sprawdza czy samochód jest blisko prawej krawędzi obszaru czułości.
+
+        :param Vehicle new_car: Obserwoway samochód.
+        :return: Prawda/fałsz.
+        :rtype: bool
+        """
+
         return new_car.centerx > (Follower.__frame_width - Follower.__border - Follower.distance_from_border)

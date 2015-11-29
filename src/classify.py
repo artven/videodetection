@@ -3,10 +3,18 @@ __author__ = 'rafal'
 import cv2
 import numpy as np
 
-from src.follow import ObjectRecord
-from src.detect import Vehicle, Frame
-from src.contour import ContourDetector
-from sklearn.cluster import KMeans
+try:
+    from src.follow import ObjectRecord
+    from src.detect import Vehicle, Frame
+    from src.contour import ContourDetector
+    from src.logs import Logger
+    from sklearn.cluster import KMeans
+except:
+    from follow import ObjectRecord
+    from detect import Vehicle, Frame
+    from contour import ContourDetector
+    from logs import Logger
+    from sklearn.cluster import KMeans
 
 
 class Classyfication:
@@ -30,8 +38,10 @@ class Classyfication:
     def perform(obj: ObjectRecord):
         """
         Przeprowadza ocenę koloru, rozmiaru i prędkości obiektu.
-        :param obj: Obiekt wykryty przez klasę Follower.
-        :return: Słownik parametrów pojazdu.
+
+        :param ObjectRecord obj: Obiekt wykryty przez klasę Follower.
+        :return: Parametry pojazdu.
+        :rtype: dict
         """
 
         # Pobierz dane o pojeździe.
@@ -78,7 +88,9 @@ class Classyfication:
     def get_ratio():
         """
         Oblicza stosunek długości na obrazie wyrażonej w pixelach do rzeczywistej długości w metrach.
+
         :return: Znaleziony stosunek.
+        :rtype: float
         """
 
         return float(Classyfication.meters_length) / float(Classyfication.pixel_length)
@@ -87,8 +99,10 @@ class Classyfication:
     def draw_speed_region(frame: Frame):
         """
         Rysuje na obrazie dwie pionowe linie, służące pomiarowi osiąganej prędkości.
-        :param frame: Ramka obrazu wideo.
+
+        :param Frame frame: Ramka obrazu wideo.
         :return: Ramka z narysowanymi liniami.
+        :rtype: Frame
         """
 
         h, w = frame.size()
@@ -107,14 +121,14 @@ class SpeedMeasurment:
     def calculate_speed(new_car: Vehicle, new_frame: Frame, old_car: Vehicle, old_frame: Frame):
         """
         Oblicza prędkość wykretego pojazdu.
-        :param new_car: Samochód opuszczający w pole detekcji.
-        :param new_frame: Ramka obrazu przechwycona podczas opuszczania przez pojazd pola detekcji.
-        :param old_car: Samochód wjeżdżający w pole detekcji.
-        :param old_frame: Ramka obrazu przechwycona podczas wjeżdżania przez pojazd w pole detekcji.
-        :return: Prędkość samochodu w metrach na sekundę.
-        """
 
-        time_difference = None
+        :param Vehicle new_car: Samochód opuszczający w pole detekcji.
+        :param Frame new_frame: Ramka obrazu przechwycona podczas opuszczania przez pojazd pola detekcji.
+        :param Vehicle old_car: Samochód wjeżdżający w pole detekcji.
+        :param Frame old_frame: Ramka obrazu przechwycona podczas wjeżdżania przez pojazd w pole detekcji.
+        :return: Prędkość samochodu w metrach na sekundę.
+        :rtype: float
+        """
 
         # Jeżeli ramka pochodzi z pliku wideo, różnica jest obliczana na podstawie jej numeru i fps-ów.
         if not new_frame.is_from_camera:
@@ -136,10 +150,12 @@ class SpeedMeasurment:
     def draw_speed_info(car: Vehicle, speed, img):
         """
         Podpisuje obraz samochodu informacją o jego prędkości
-        :param car: Zidentyfikowany pojazd.
+
+        :param Vehicle car: Zidentyfikowany pojazd.
         :param speed: Obliczona prędkość.
         :param img: Obraz pojazdu.
         :return: Obraz podpisany informacją o prędkości.
+        :rtype: Frame
         """
 
         # Pobierz położenie pojazdu:
@@ -159,8 +175,10 @@ class SizeMeasurment:
     def calculate_width(car: Vehicle):
         """
         Wylicza szerokość(długość) samochodu w metrach.
-        :param car: Obiekt reprezenetujący samochód.
+
+        :param Vehicle car: Obiekt reprezenetujący samochód.
         :return: Szerkość wyrażona w metrach.
+        :rtype: float
         """
 
         width = car.w
@@ -171,8 +189,10 @@ class SizeMeasurment:
     def calculate_height(car: Vehicle):
         """
         Wylicza wysokośc samochodu w metrach.
-        :param car: Obiekt reprezenetujący samochód.
+
+        :param Vehicle car: Obiekt reprezenetujący samochód.
         :return: Wysokość wyrażona w metrach.
+        :rtype: float
         """
 
         height = car.h
@@ -180,12 +200,14 @@ class SizeMeasurment:
         return height * ratio
 
     @staticmethod
-    def calculate_area(mask):
+    def calculate_area(mask: np.ndarray):
         """
-        Oblicza pole powierzchni bocznej obiektu. Rozmiar obiektu jest obliczna na podstawie ilosci pixeli obiektu
+        Oblicza pole powierzchni bocznej obiektu. Rozmiar obiektu jest obliczny na podstawie ilosci pixeli obiektu.
         razy przelicznik pixele na metry.
-        :param mask: Binarna maska obrazu.
+
+        :param np.ndarray mask: Binarna maska obrazu.
         :return: Pole powierzchni bocznej karoserii pojazdu.
+        :rtype: float
         """
 
         # Znajdź kontury samochodu.
@@ -205,6 +227,7 @@ class SizeMeasurment:
     def draw_car_contour(img, car, bin_mask):
         """
         Rysuje kontur samochodu na obrazie.
+
         :param img: Obraz samochodu.
         :param car: Obiekt reprezentujący pojazd.
         :param bin_mask: Binarna maska obrazu.
@@ -226,13 +249,14 @@ class SizeMeasurment:
         return img
 
     @staticmethod
-    def draw_size_info(img, car_width, car_height, car_area):
+    def draw_size_info(img: np.ndarray, car_width: int, car_height: int, car_area: float):
         """
         Podpisuje obraz samochodu jego wymiarami.
-        :param img: Obraz samochodu.
-        :param car_width: Szerokość(długość) samochodu.
-        :param car_height: Wysokość samochodu.
-        :param car_area: Pole powierzchni bocznej pojazdu.
+
+        :param np.ndarray img: Obraz samochodu.
+        :param int car_width: Ddługość samochodu.
+        :param int car_height: Wysokość samochodu.
+        :param flaot car_area: Pole powierzchni bocznej pojazdu.
         :return: Podpisany parametrami pojadu obraz.
         """
 
@@ -247,6 +271,7 @@ class SizeMeasurment:
     def __find_biggest_contour(contours):
         """
         Wybiera z konturów ten o największej powierzchni.
+
         :param contours: Hierarchia konturów.
         :return: Największy znaleziony kontur.
         """
@@ -271,7 +296,9 @@ class SizeMeasurment:
 # http://www.pyimagesearch.com/2014/05/26/opencv-python-k-means-color-clustering/
 
 class ColorDetector:
-    # Klasa określająca kolor pojazdu.
+    """
+    Klasa określająca kolor pojazdu.
+    """
 
     # Liczba kolorów wyszukiwanych w obrazie.
     color_number = 5
@@ -284,6 +311,7 @@ class ColorDetector:
     def __centroid_histogram(clt):
         """
         Przydziala wartości histogramu do zdefiniowanych grup. Dokonuje normalizacji nowego histogramu.
+
         :param clt: Zdefiniowane przez KMeans grupy.
         :return: Histogram po przydziale pikseli.
         """
@@ -300,12 +328,14 @@ class ColorDetector:
         return hist
 
     @staticmethod
-    def __find_dominant_colors(image, n):
+    def __find_dominant_colors(image: np.ndarray, n: int):
         """
-        Znajduje n najbardziej dominujących kolorów na obrazie.
-        :param image: badany obraz.
-        :param n: liczba poszukiwanych kolorów.
-        :return: lista znalezionych kolorów, procent powierzni kolorów.
+         Znajduje n najbardziej dominujących kolorów na obrazie.
+
+        :param np.ndarray image: badany obraz.
+        :param int n: liczba poszukiwanych kolorów.
+        :return: Znalezionye kolory, procent powierzni kolorów.
+        :rtype: list, list, np.ndarray
         """
 
         # Przekształć obraz w listę pixeli.
@@ -338,9 +368,10 @@ class ColorDetector:
     def __create_colors_bar(hist, centroids):
         """
         Tworzy pasek zawierający najpopularniejsze kolory.
+
         :param hist: Histogram obrazu.
         :param centroids: Liczba poszukiwanych kolorów.
-        :return:
+        :return: Pasek informujący o kolorze.
         """
 
         # TODO ogarnąć co to są centroids ???
@@ -361,10 +392,11 @@ class ColorDetector:
         return bar
 
     @staticmethod
-    def find_color(image):
+    def find_color(image: np.ndarray):
         """
         Przeprowadza analizę dominujących kolorów, wybiera z nich największy.
-        :param image: przeszukiwany obraz.
+
+        :param np.ndarray image: przeszukiwany obraz.
         :return: obraz wypełniony kolorem, wartość koloru.
         """
 
@@ -380,6 +412,14 @@ class ColorDetector:
 
     @staticmethod
     def draw_color_bar(img, color_bar):
+        """
+        Rysuje pasek informujący o kolorze na obrazie.
+
+        :param img: Obraz wejściowy
+        :param color_bar: Pasek z kolorami.
+        :return: Oznaczony obraz.
+        """
+
         width = ColorDetector.__bar_width
         height = ColorDetector.__bar_height
         img[:height, :width, :] = color_bar

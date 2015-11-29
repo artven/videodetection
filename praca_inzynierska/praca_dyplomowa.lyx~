@@ -260,21 +260,602 @@ Burzliwy rozwój nauki i techniki w XX wieku...
 Metody pomiarów parametrów ruchu drogowego
 \end_layout
 
+\begin_layout Standard
+W wyniku rozwoju motoryzacji oraz rozbudowy infrastruktury drogowej pojawiła
+ się konieczność zbierania i analizy informacji o ruchu pojazdów.
+\end_layout
+
+\begin_layout Section*
+Generalny Pomiar Ruchu Drogowego
+\end_layout
+
+\begin_layout Standard
+W Polsce od roku 1965, co 5 lat, dokonywany jest Generalny Pomiar Ruchu
+ Drogowego(GPRD).
+ Ma on na celu pozyskanie charakterystyk ruchu drogowego na wszystkich odcinakac
+h dróg krajowych i wojewódzkich.
+ Uzyskiwane w wyniku GPRD pomiary są wykorzystywane przy planowaniu rozbudowy
+ infrastruktury drogowej, organizacji ruchu, utrzymaniu dróg, określaniu
+ przyczyn wypadkowości czy badaniu wpływu ruchu na komfort życia mieszkańców
+ i środowisko naruralne.
+\end_layout
+
+\begin_layout Standard
+W czasie pomiarów pojazdy są klasyfikowane do jednej spośród 8 kategorii:
+ 
+\end_layout
+
+\begin_layout Enumerate
+motocykle, 
+\end_layout
+
+\begin_layout Enumerate
+samochody osobowe, 
+\end_layout
+
+\begin_layout Enumerate
+lekkie samochody ciężarowe, 
+\end_layout
+
+\begin_layout Enumerate
+samochody ciężarowe bez przyczepy, 
+\end_layout
+
+\begin_layout Enumerate
+samochody ciężarowe z przyczepami/ naczepami, 
+\end_layout
+
+\begin_layout Enumerate
+autobusy, 
+\end_layout
+
+\begin_layout Enumerate
+ciągniki rolnicze, 
+\end_layout
+
+\begin_layout Enumerate
+rowery.
+ 
+\end_layout
+
+\begin_layout Standard
+Metodologię dokonywania pomiarów, terminy pomiarów, zadania obserwatorów,
+ etc reguluje zarządzenie nr 38 Generalnego Dyrektora Dróg Krajowych i Autostrad
+ z dnia 1 września 2014 r #dodać odnośnik do bibliografii
+\end_layout
+
+\begin_layout Section*
+Parametry ruchu drogowego
+\end_layout
+
+\begin_layout Standard
+Podczas dokonywania pomiarów dąży się do pozyskania zarówno indywidualnych
+ informacji o pojazdach jak również ogólnej charakterystyki ruchu.
+ Wyróżnia się w tym celu szereg parametrów:
+\end_layout
+
+\begin_layout Itemize
+Prędkość - chwilowa, jazdy, podróży, miarodajna.
+\end_layout
+
+\begin_layout Itemize
+Czas podróży - czas pokonania odcinka drogi.
+\end_layout
+
+\begin_layout Itemize
+Natężenie ruchu - liczba pojazdów na jednostkę czasu.
+\end_layout
+
+\begin_layout Itemize
+Gęstość ruchu - liczba pojazdów znajdujących się na odcinku drogi na jednostkę
+ czasu.
+\end_layout
+
+\begin_layout Itemize
+Zajętość drogi - procent drogi zajęty przez pojazdy.
+\end_layout
+
+\begin_layout Itemize
+Bezpieczeństwo ruchu.
+\end_layout
+
+\begin_layout Itemize
+Wpływ na środowisko.
+\end_layout
+
+\begin_layout Itemize
+Zużycie paliwa.
+\end_layout
+
+\begin_layout Standard
+Pomiarów ruchu drogowego dokonuję się w punkcie, na krótki odcinku drogi,
+ w zdefiniowanym obszarze, na całej trasie lub za pomocą pojazdu/pojazdów
+ próbnych poruszających się po drodze.
+ Rozróżnia się 4 typy ruchu pojazdów: jazda swobodna, jazda przy maksymalnym
+ przepływie, jazda w warunkach dużej gęstości oraz zator.
+\end_layout
+
+\begin_layout Standard
+Indywidualny pojazd można opisać szeregiem wartości: klasą pojazdu, numerem
+ rejestracyjnym, liczbą osi, odległościami między osiami, długością, szerokością
+ , wysokością, prędkością czy naciskiem na jezdnię.
+ Stosuję się także opis strefowy, środowiskowy, pogodowy i opis jezdni.
+\end_layout
+
+\begin_layout Section*
+Detektory
+\end_layout
+
+\begin_layout Standard
+Detektor jest to urządzenie składające się z czujnika, układu kondycjonowania,
+ dyskryminatora oraz elementu wykonawczego.
+ Jego celem jest wykrycie obecności pojazdu w punkcie bądź strefie pomiaru.
+ Detektor powinien być urządzenie prostym w obsłudze i montażu, bezawaryjnym,
+ pozwalającym na łatwy odczyt informacji.
+ Stosowane są dwa rodzaje detektorów: bezinwazyjne i wbudowane(instalowane
+ w nawierzchni).
+ 
+\end_layout
+
+\begin_layout Standard
+Klasyfikacja detektorów wbudowanych:
+\end_layout
+
+\begin_layout Itemize
+Linowy - drut stalowy lub linka nylonowa zamontowana jest na wysokości kilku
+ minimetrów na jezdnią.
+ Nacisk przejeżdżającego pojazdu powoduje naciąg linki i uruchomienie zestyku,
+ który generuje impuls.
+ Ten rodzaj detektory może generować fałszywe impulsy, wymaga regulacji
+ i poprawy naciągu linki, ma ograniczoną maksymalna prędkość pomiarów.
+ Jego zaletą jest prosta budowa.
+\end_layout
+
+\begin_layout Itemize
+Taśmowy - dwie taśmy z gumowymi wkładkami, wypełnione gazem elektrycznie
+ obojętnym.
+ Nacisk pojazdu powoduje zetknięcie się ze sobą taśm.
+ Do działania wymaga specjalnego osprzętu.
+ Występują niekorzystne drgania styków.
+ Montaż wymaga interwencji w nawierzchnię.
+\end_layout
+
+\begin_layout Itemize
+Hydrauliczny - nacisk pojazdu na wąż wypełniony olejem powoduje podniesienie
+ się poziomu w kapilarze i uruchomienie zestyku.
+ Pojazdy o dużej masie mogą uszkodzić ten typ detektora.
+\end_layout
+
+\begin_layout Itemize
+Pneumatyczny - działa na podobnej zasadzie co hydrauliczny.
+\end_layout
+
+\begin_layout Itemize
+Reluktancyjny - nacisk samochodu powoduje zwierzenie się szczeliny.
+ Następuje zmiana reluktancji obwodu magnetycznego w wyniku czego zmienia
+ się częstotliwość sygnału wyjściowego.
+\end_layout
+
+\begin_layout Itemize
+Rezystancyjny - nacisk pojazdu powoduje nieliniową zmianę rezystancji czujnika.
+ Detektor ma ograniczoną prędkość pomiaru do max 80 km/h, więc jest rzadko
+ wykorzystywany.
+\end_layout
+
+\begin_layout Itemize
+Pojemnościowy - dwie elektrody oddzielone dielektrykiem.
+ Nacisk pojazdu powoduje zmniejszenie szerokości kondensatora i zmianę jego
+ pojemności.
+ Czujniki te mają kiepską odporność na uszkodzenia mechaniczne i zasolenie.
+ Ich montaż wymaga kosztownej interwencji w nawierzchnię.
+\end_layout
+
+\begin_layout Itemize
+Piezoelektryczny - jest to taśma wykonana z materiału piezoelektrycznego
+ lub kabel koncentryczny z umieszczoną w środku elektrodą.
+ Czujniki są wrażliwe na zmiany temperatury, której wzrost powoduje pogorszenie
+ jakości pomiaru.
+ Mierzony może być jedynie nacisk zmienny w czasie, co ogranicza prędkość
+ pomiaru do zakresu 20-110 km/h.
+ Ten sposób pomiaru jest szeroko stosowany z powodu dużej czułości, szerokiemu
+ zakresowi temperatury oraz niskiej cenie wykonania.
+\end_layout
+
+\begin_layout Itemize
+Kwarcowe - działa na podobnej zasadzie co piezoelektryczny: nacisk samochodu
+ na aluminiowy profil powoduje nacisk na element kwarcowy.
+ Jest często stosowany w systemach ważenia pojazdów.
+ W przeciwieństwie do poprzedniego typu, cechuje się odpornością na oddziaływani
+e sił podłużnych i większą wrażliwością na oddziaływanie sił poprzecznych.
+ Czujnik może pracować w szerokim zakresie temperatur i prędkości.
+ Jest odporny na zakłócenia temperaturowe i elektromagnetyczne.
+ Jego trwałość osiąga nawet 10 lat.
+\end_layout
+
+\begin_layout Itemize
+Tensometryczny - używany jest zarówno w pomiarach nacisków osi pojazdów
+ statycznych i dynamicznych.
+ Ma postać platformy na której zamontowywane są tensometry, najczęściej
+ w układzie pełnego mostka.Charakteryzuje się dużą dokładnością pomiaru(błędy
+ rzędu 2% przy pomiarze statycznym).
+ Może mierzyć pojazdy o prędkości do 200 km/h.
+ Jego trwałość sięga 10 lat.
+\end_layout
+
+\begin_layout Itemize
+Indukcyjny pętlowy - jest najbardziej rozpowszechnionym typem detektora.
+ Może być stosowany w pomiarach prędkości, wysokości zawieszenia, ilości
+ osi, detekcji incydentów.
+ Uzyskiwany sygnał jest nazwany profilem magnetycznym pojazdu.
+ Czujnik jest odporny na czynniki zewnętrzne, ma dużą trwałość, jego instalacja
+ ma jezdni jest prosta i mało kosztowna.
+\end_layout
+
+\begin_layout Itemize
+Magnetyczne - reaguje na zmiany pola magnetycznego.
+ Jest bardziej czuły na zakłócenia niż pętlowy, ale jego instalacja w nawierzchn
+i jest znacznie prostsza.
+ 
+\end_layout
+
+\begin_layout Standard
+Drugim rodzajem detektorów są detektory nieinwazyjne.
+ Spośród nich wyróżniamy:
+\end_layout
+
+\begin_layout Itemize
+Laserowe aktywne - zbudowane są z nadajnika promieniowania, układu optycznego
+ oraz odbiornika promieniowania.
+ Mogą być wykorzystane do pomiaru prędkości, wysokości czy, przy odpowiedniej
+ częstotliwości próbkowania, budowaniu profilu samochodu.
+ Czujnik tej klasy mogą pracować w szerokim zakresie temperatur, wykazują
+ odporność na warunki atmosferyczne oraz są niezależne od zewnętrznego oświetlen
+ia.
+\end_layout
+
+\begin_layout Itemize
+Laserowa pasywne - reagują na zmiany w promieniowaniu podczerwonym wywołane
+ ruchem obiektów w obszarze detekcji.
+ Detektor ren jest bardzo łatwy w instalacji - nie wymaga żadnej interwencji
+ w ruch drogowy.
+ Detektory tego typu nie oddziałują na siebie nawzajem.
+\end_layout
+
+\begin_layout Itemize
+Akustyczne - składają się z matrycy mikrofonów, które zbierają dźwięki przejeżdż
+ających samochodów: opony, silnik, ruch powietrza.
+\end_layout
+
+\begin_layout Itemize
+Ultradźwiękowe - generują falę dźwiękową niesłyszalną dla człowieka, która
+ służy wykrywaniu obecności obiektów w sferze detekcji.
+\end_layout
+
+\begin_layout Itemize
+Mikrofalowe - działają na zasadzie radaru, generują fale wysokiej częstotliwości.
+ Mogą pracować praktycznie w każdych warunkach.
+\end_layout
+
+\begin_layout Itemize
+Kamery z systemami przetwarzania obrazu.
+\end_layout
+
 \begin_layout Chapter
 Systemy wizyjne w zastosowaniach komercyjnych 
 \end_layout
 
 \begin_layout Standard
-Rozdział ten stanowi przegląd dostępnych na rynku metod pomiaru ruchu drogowego,
- w których zastosowanie znalazły algorytmy wizyjne.
+Rozdział ten stanowi przegląd dostępnych na rynku systemów pomiaru ruchu
+ drogowego, w których zastosowanie znalazły algorytmy wizyjne.
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
+Charakterystyka systemów wizyjnych
+\end_layout
+
+\begin_layout Standard
+Systemy VIP(Video Image Processing) są coraz częściej stosowane przy pomiarach
+ parametrów ruchu drogowego.
+ Początkowo służyły one jedynie wizualizacji pomiarów bądź jako pomoc dla
+ operatora w procesie weryfikacji poprawności pomiarów dokonywanych 
+\begin_inset Quotes pld
+\end_inset
+
+standardowymi
+\begin_inset Quotes prd
+\end_inset
+
+ metodami.
+ Rozwój mocy obliczeniowych komputerów sprawił, że pojawiła się możliwość
+ automatycznej analizy obrazu i wydobywania z niego użytecznych informacji,
+ takich jak:
+\end_layout
+
+\begin_layout Itemize
+obecność pojazdów na skrzyżowaniach, drogach, tunelach, etc,
+\end_layout
+
+\begin_layout Itemize
+kierunek ruchu,
+\end_layout
+
+\begin_layout Itemize
+klasyfikacja pojazdów,
+\end_layout
+
+\begin_layout Itemize
+pomiar natężenia ruchu,
+\end_layout
+
+\begin_layout Itemize
+informacje o obecności pieszych i rowerzystów,
+\end_layout
+
+\begin_layout Itemize
+detekcja incydentów drogowych.
+\end_layout
+
+\begin_layout Standard
+Obecnie wykorzystywane aplikacje wizyjne mogą działać zarówno jako samodzielne
+ metody pomiaru lub stanowić część systemów kontroli wykroczeń, pomiaru
+ prędkości czy ważenia samochodów.
+ 
+\end_layout
+
+\begin_layout Standard
+Efektywność systemów wizyjnych szacuje się na około 90%.
+ Posiadają one wiele zalet:
+\end_layout
+
+\begin_layout Itemize
+są całkowicie bezinwazyjne,
+\end_layout
+
+\begin_layout Itemize
+mimo wysokiej ceny budowy i instalacji systemu, jego dalsza eksploatacja
+ odbywa się niskim kosztem,
+\end_layout
+
+\begin_layout Itemize
+mają szerokie możliwości konfiguracji i dostosowywania strefy detekcji,
+\end_layout
+
+\begin_layout Itemize
+mogą być zintegrowane z systemami pomiaru wbudowanymi w jezdnię,
+\end_layout
+
+\begin_layout Itemize
+w zaawansowanych aplikacjach kamera może dokonywać auto-pozycjonowania w
+ celu kompensacji zakłóceń wynikających ze zmiany położenia słońca czy spadku
+ jakości oświetlenia,
+\end_layout
+
+\begin_layout Itemize
+istnieje możliwość streamowania obrazu przez sieć Internet.
+\end_layout
+
+\begin_layout Standard
+Największymi wadami metod wizyjnych są:
+\end_layout
+
+\begin_layout Itemize
+niekorzystny wpływ warunków atmosferycznych: deszcz, śnieg, mgła, zachmurzenie,
+\end_layout
+
+\begin_layout Itemize
+zjawiska związane ze wzajemnym mijaniem i zasłanianiem się pojazdów,
+\end_layout
+
+\begin_layout Itemize
+zabrudzenia odkładające się na układzie optycznym.
+\end_layout
+
+\begin_layout Standard
+Ważnym czynnikiem mającym wpływ na działanie systemu jest sposób montażu
+ kamery względem nadzorowanego pasa ruchu.
+ Najczęściej umieszcza się kamerę wysoko nad pasem ruchu.
+ Umieszczenie punktu pomiaru z boku drogi zmniejsza skuteczność pomiaru
+ o około 10%.
+\end_layout
+
+\begin_layout Section*
 NeuroSoft
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+Rozwiązania wrocławskiej firmy NeuroSoft są jednymi z najpopularniejszych
+ w kategorii systemów pomiaru i zarządzania ruchem drogowym.
+ Firma ta oferuje system o nazwie 
+\begin_inset Quotes pld
+\end_inset
+
+Neuro Car
+\begin_inset Quotes prd
+\end_inset
+
+ oraz bardziej rozbudowany 
+\begin_inset Quotes pld
+\end_inset
+
+Neuro Car 2.0
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Programy te dokonują wideo rejestracji pojazdów, odczytów tablic rejestracyjnyc
+h i wstępnej selekcji danych.
+ System jest dostarczany w postaci terminala zbudowanego z kamery przemysłowej,
+ komputera, karty WLAN, modemu GPRS i zalicza.
+ Instalacja systemu jest bardzo prosta: polega na ustawieniu kamery, podpięciu
+ zasilania i konfiguracji parametrów.
+\end_layout
+
+\begin_layout Standard
+Zaletami systemu są:
+\end_layout
+
+\begin_layout Itemize
+niska cena,
+\end_layout
+
+\begin_layout Itemize
+możliwość integracji z innymi systemami
+\end_layout
+
+\begin_layout Itemize
+wysoka skuteczność rozpoznawania,
+\end_layout
+
+\begin_layout Itemize
+praca w trybie rzeczywistym,
+\end_layout
+
+\begin_layout Itemize
+odporność na warunki zewnętrzne,
+\end_layout
+
+\begin_layout Itemize
+rozpoznawanie marki, modelu, koloru,
+\end_layout
+
+\begin_layout Itemize
+zastosowanie kamer z dużą dynamiką jasności,
+\end_layout
+
+\begin_layout Itemize
+funkcjonalność zdalnego dostępu do danych.
+\end_layout
+
+\begin_layout Standard
+W systemie Neuro Car zastosowano procesory wielordzeniowe, DSP oraz system
+ operacyjny Linux, umożliwiając w ten sposób pomiar w stałej ilości 25 klatek
+ na sekundę.
+ Rozpoznanie, klasyfikacja i generacja opisu trwa nie mniej niż 100 ms.
+ Dodatkowo program generuje od 3 do 8 zdjęć dla zidentyfikowanego pojazdu.
+ Producent określa skuteczność detekcji na 99%.
+\end_layout
+
+\begin_layout Standard
+W skład systemu wchodzi wiele dodatkowych aplikacji: 
+\end_layout
+
+\begin_layout Itemize
+Velocity - pomiar prędkości chwilowej na podstawie serii zdjęć.
+\end_layout
+
+\begin_layout Itemize
+Dangerous goods - identyfikacja samochodów przewożących materiały niebezpieczne.
+\end_layout
+
+\begin_layout Itemize
+Classification - klasyfikacja pojazdów wg marki i typu(jednośladowy, osobowy,
+ ciężarowy).
+\end_layout
+
+\begin_layout Itemize
+PDA - aplikacja na platformy mobilne do rozpoznawania numerów tablic rejestracyj
+nych.
+\end_layout
+
+\begin_layout Itemize
+SectionControl - pomiar prędkości średniej na odcinku trasy.
+\end_layout
+
+\begin_layout Itemize
+RedLight - detekcja przejazdu na czerwonym świetle.
+\end_layout
+
+\begin_layout Itemize
+City - tworzenie płatnych stref w miastach i pobieranie opłat za przebywanie
+ w nich.
+\end_layout
+
+\begin_layout Itemize
+Parking - monitorowanie parkingu, rozliczenie opłat za parkowanie.
+\end_layout
+
+\begin_layout Itemize
+Monitoring - uniwersalna aplikacja do obserwacji przepływu pojazdów.
+\end_layout
+
+\begin_layout Itemize
+Base - itegracja z basami mySQL lub postgrSQl.
+\end_layout
+
+\begin_layout Itemize
+Monitor - oprogramowanie do wizualizacji wyników pomiaru.
+\end_layout
+
+\begin_layout Itemize
+ScaleGate - system rozpoznawania tablic i ważenia pojazdów, stosowany w
+ hurtowniach i magazynach w celu pozyskiwania statystyk o tonażu materiałów
+ przychodzący i opuszczających teren zakładu.
+\end_layout
+
+\begin_layout Itemize
+Neurocar WIM&MIM - automatyczna detekcja pojazdów ponadgabarytowych(przeciążonyc
+h oraz za wysokich), których obecność powoduje pogorszenie właściwości nawierzch
+ni oraz stwarza zagrożenie na mostach, pod wiaduktami i w tunelach.
+\end_layout
+
+\begin_layout Section*
 Cat Traffic
+\end_layout
+
+\begin_layout Standard
+Poznańska firma Cat Traffic zajmuje się systemami stanowiącymi połączenie
+ metod wizyjnych z wykorzystaniem płyt warzących.
+ Firma wdrożyła kilkanaście stacji warzących na terenie Niemiec, Polski,
+ Austrii i Szwajcarii.
+ W Polsce CatTraffic wdrożyło na autostradzie A4 systemy pomiaru wagi i
+ badania statystki ruchu pojazdów, oraz system czasu przejazdu na 
+\begin_inset Quotes pld
+\end_inset
+
+Zakopiance
+\begin_inset Quotes prd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Rozwiązania oferowane przez firmę:
+\end_layout
+
+\begin_layout Itemize
+System pomiaru prędkości EasyCount oprócz pomiaru prędkości może badać również
+ kierunek jazdy, odległości między pojazdami, i długość pojazdu.
+ Przy użyciu dodatkowego osprzętu , EasyCount umożliwia pomiar na dwóch
+ pasach ruchu.
+ System ma do dyspozycji pamięć, która oferuje miejsce na dane o 800 000
+ przejazdach.
+ Można dokonywać jego konfiguracji za pomocą modułu GSM.
+ Zasilanie zapewniają akumulatory lub baterie słoneczne.
+\end_layout
+
+\begin_layout Itemize
+Easy Count-Bike- oferuje podobne funkcje co Easy Count, ale w odniesieniu
+ do rowerzystów.
+\end_layout
+
+\begin_layout Itemize
+Licznik AVC - to pętlowy system pomiaru ruchu z funkcjonalnością zapisu,
+ transferu i analizy danych.
+\end_layout
+
+\begin_layout Itemize
+V-REX 1000 - mobilny radar do odczytu tablic i badania struktury ruchu.
+\end_layout
+
+\begin_layout Itemize
+VIM-VIVER - automatyczna stacja do ważenia pojazdów w ruchu, wraz z pozyskiwanie
+ profilu pojazdu i numeru tablic rejestracyjnych.
+\end_layout
+
+\begin_layout Itemize
+SAW - przenośna waga, umożliwiająca pomiar pojazdów o nacisku do 15 ton.
+ Wykorzystywana przez Państwową Inspekcję Transportu Drogowego.
 \end_layout
 
 \begin_layout Chapter
@@ -593,7 +1174,7 @@ Poniższy rozdział opisuje interfejs i sposób działania zaimplementowanego
  programu.
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Instalacja 
 \end_layout
 
@@ -606,7 +1187,7 @@ Tutaj będzie opisany sposób instalacji programu, gdy ten zostanie doprowadzony
 Instalacja z repozytorium githuba + instalacja bibliotek .
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Struktura programu
 \end_layout
 
@@ -623,7 +1204,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/struktura programu.png
+	filename img/struktura_programu.png
 	scale 50
 
 \end_inset
@@ -698,7 +1279,7 @@ src - pliki źródłowe programu,
 videos - zapisane przez program wyniki analizy w postaci plików wideo.
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Interfejs graficzny 
 \end_layout
 
@@ -717,7 +1298,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/widok programu.png
+	filename img/widok_programu.png
 	scale 50
 
 \end_inset
@@ -769,7 +1350,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/okno wyboru pliku.png
+	filename img/wybor_pliku.png
 	scale 50
 
 \end_inset
@@ -837,7 +1418,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/przeglądanie obrazów.png
+	filename img/przeladanie_obrazow.png
 	scale 50
 
 \end_inset
@@ -973,7 +1554,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/o programie.png
+	filename img/o_programie.png
 	scale 60
 
 \end_inset
@@ -1010,51 +1591,202 @@ Zakończ
  - wyłącza program.
 \end_layout
 
-\begin_layout Section
+\begin_layout Section*
 Ustawienia
 \end_layout
 
 \begin_layout Standard
-### tutaj będzie obrazek ustawień
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/ustawienia.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Okno ustawień programu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Okno ustawień jest podzielone na dwie zakładki.
- Pierwsza zakładka dotyczy ustawień dotyczących działania algorytmów:
+Okno ustawień umożliwia dostosowywanie parametrów algorytmu oraz wizualizacji
+ danych.
 \end_layout
 
 \begin_layout Itemize
-Odległość pixele - wartość tego pola służy do wyliczynie przelicznika pixeli
- na obrazie na rzeczywistą odległość w metrach.
+\begin_inset Quotes pld
+\end_inset
+
+Odległość pixele
+\begin_inset Quotes prd
+\end_inset
+
+ - wartość tego pola służy do wyliczynie przelicznika pixeli na obrazie
+ na rzeczywistą odległość w metrach.
 \end_layout
 
 \begin_layout Itemize
-Odległość metry - wartość tego pola ma również zastosowanie w przeliczaniu
- pixeli na metry.
+\begin_inset Quotes pld
+\end_inset
+
+Odległość metry
+\begin_inset Quotes prd
+\end_inset
+
+ - wartość tego pola ma również zastosowanie w przeliczaniu pixeli na metry.
  Procedura kalibracji pomiaru została opisana w poprzednim rozdziale 
 \end_layout
 
 \begin_layout Itemize
-Liczba kolorów - określa liczbę kolorów jaką program ma rozpoznać na obiekcie.
+\begin_inset Quotes pld
+\end_inset
+
+Liczba kolorów
+\begin_inset Quotes prd
+\end_inset
+
+ - określa liczbę kolorów jaką program ma rozpoznać na obiekcie.
 \end_layout
 
 \begin_layout Itemize
-Strefa czułości pozioma - określa ona obszar w poziomie, w którym obiekty
- są wykrywane i śledzone.
+\begin_inset Quotes pld
+\end_inset
+
+Strefa czułości pozioma
+\begin_inset Quotes prd
+\end_inset
+
+ - określa ona obszar w poziomie, w którym obiekty są wykrywane i śledzone.
 \end_layout
 
 \begin_layout Itemize
-Strefa czułości pionowa - określa ona obszar w ponie, w którym obiekty są
- wykrywane i śledzone.
+\begin_inset Quotes pld
+\end_inset
+
+Strefa czułości pionowa
+\begin_inset Quotes prd
+\end_inset
+
+ - określa ona obszar w ponie, w którym obiekty są wykrywane i śledzone.
 \end_layout
 
 \begin_layout Itemize
-Wielkość obiektu - obiekt o mniejszej wartości są ignorowane po fazie binearyzac
-ji
+\begin_inset Quotes pld
+\end_inset
+
+Wielkość obiektu
+\begin_inset Quotes prd
+\end_inset
+
+ - obiekt o mniejszej wartości są ignorowane po fazie binearyzacji
 \end_layout
 
 \begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
 Odległość od krawędzi
+\begin_inset Quotes prd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Rysuj rejon czułości
+\begin_inset Quotes prd
+\end_inset
+
+ - oznacza na obszarze czerwonym prostokątem ekran będący strefą detekcji
+ kamery.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Rysuj rejon pomiaru prędkości
+\begin_inset Quotes prd
+\end_inset
+
+ - rysuje na obszarze detekcji dwa pionowe różowe paski służące do kalibracji
+ przelicznika pixeli na metry, w celu obliczenia prędkości.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Oznaczaj samochody
+\begin_inset Quotes prd
+\end_inset
+
+ - oznacza samochody zielonym prostokątem i krzyżykiem symbolizującym środek
+ ciężkości pojazdu.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Wypisz informację o prędkości
+\begin_inset Quotes prd
+\end_inset
+
+ - podpisuje obraz zidentyfikowanego pojazdu informacją o prędkości.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Wypisz informację o rozmiarze
+\begin_inset Quotes prd
+\end_inset
+
+ - podpisuje obraz zidentyfikowanego pojazdu informacją rozmiarze: długości,
+ wysokości, polu powierzchni bocznej.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes pld
+\end_inset
+
+Narysuj pasek kolorów
+\begin_inset Quotes prd
+\end_inset
+
+ - rysuje na obrazie zidentyfikowanego pojazdu pasek informujący o kolorze
+ tego pojazdu.
 \end_layout
 
 \begin_layout Chapter
@@ -1063,6 +1795,34 @@ Algorytm detekcji i klasyfikacji pojazdów.
 
 \begin_layout Standard
 W tym rozdziale zostały opisane kolejne etapy zaimplementowanego algorytmu.
+\end_layout
+
+\begin_layout Section*
+Kalibracja programu
+\end_layout
+
+\begin_layout Section*
+Pobranie obrazu
+\end_layout
+
+\begin_layout Section*
+Wyodrębnianie tła
+\end_layout
+
+\begin_layout Section*
+Detekcja obiektów
+\end_layout
+
+\begin_layout Section*
+Śledzenie pojazdów
+\end_layout
+
+\begin_layout Section*
+Klasyfikacja 
+\end_layout
+
+\begin_layout Section*
+Zapis danych
 \end_layout
 
 \begin_layout Chapter
@@ -1232,6 +1992,14 @@ w terenie
 \end_layout
 
 \begin_layout Itemize
+Zbudowanie funkcjonalności streamowanie obrazu z programu na stronie WWW.
+\end_layout
+
+\begin_layout Itemize
+Dodanie konfiguracji przez WWW.
+\end_layout
+
+\begin_layout Itemize
 Dodatkowe opcje - ustawienia programu należało by poszerzyć o parametry
  wszystkich algorytmów.
 \end_layout
@@ -1253,7 +2021,7 @@ name "chap:Podsumowanie"
 \end_layout
 
 \begin_layout Standard
-A tutaj będzie podsumowanie pracy inżynierskiej, gdy już napiszę to gówno
+A tutaj będzie podsumowanie pracy inżynierskiej, gdy już napiszę to gówno.
 \end_layout
 
 \begin_layout Standard

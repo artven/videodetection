@@ -1,13 +1,13 @@
+#!/usr/bin/env python3
 __author__ = 'rafal'
-__doc__ = """
-Moduł odpowiedzialny za zapis danych wynikowych do bazy danych i plików obrazu.
-"""
-
-from datetime import datetime
+__doc__ = "Moduł odpowiedzialny za zapis danych wynikowych do bazy danych i plików obrazu."
 
 import os
 import cv2
+import sys
 import sqlite3
+import logging
+from datetime import datetime
 
 
 class ImageSaver:
@@ -16,11 +16,11 @@ class ImageSaver:
     """
 
     @staticmethod
-    def write(record):
+    def write(record: dict):
         """
         Zapisuje do obrazu dane o samochodzie.
-        :param record: Rekord danych.
-        :return:
+
+        :param dict record: Rekord danych.
         """
 
         date = record["date"]
@@ -45,12 +45,13 @@ class Database:
         self.cursor.execute("CREATE TABLE cars(id INTEGER PRIMARY KEY, width REAL, height REAL, "
                             "area REAL, speed REAL, detection_date DATE);")
 
-    def write(self, record):
+    def write(self, record: dict):
+        """
+        Zapisuje informacje o pojeździe do bazy danych.
+
+        :param dict record: Nowy rekord dla bazy.
         """
 
-        :param record: Informacje o pojeździe
-        :return:
-        """
         width = record["width"]
         height = record["height"]
         area = record["area"]
@@ -68,7 +69,9 @@ class Database:
     def read_logs(self):
         """
         Odczytuje informacje z bazy danych.
-        :return: Wszystkie rekordy z bazy(tablicy samochodów.
+
+        :return: Wszystkie rekordy z bazy(tablicy) samochodów.
+        :rtype: list
         """
 
         self.cursor.execute("SELECT * FROM cars")
@@ -79,18 +82,22 @@ class Database:
     def table_info(self):
         """
         Zwraca nazwy kolumn tablicy przechowującej dane o samochodach.
+
         :return: Lista nazw.
+        :rtype: list
         """
 
         self.cursor.execute("PRAGMA table_info(cars);")
         self.connection.commit()
         return self.cursor.fetchall()
 
-    def execute(self, query):
+    def execute(self, query: str):
         """
         Wykonuje zadaną komende na bazie danych i zwraca jej rezultat.
-        :param query: Treść zapytania.
+
+        :param str query: Treść zapytania.
         :return: Rezultat zapytania.
+        :rtype: list
         """
 
         self.cursor.execute(query)
@@ -101,4 +108,75 @@ class Database:
         self.connection.close()
 
 
+class Logger:
+    """
+    Klasa zapisująca komunikaty programu do pliku tekstowego.
+    """
 
+    __root_logger = None
+
+    @staticmethod
+    def start():
+        """
+        Włącza możliwość logowania komunikatów.
+        """
+
+        log_formatter = logging.Formatter("%(asctime)s %(levelname)s %(filename)s: %(message)s")
+        logging.basicConfig(level=logging.DEBUG)
+
+        root_logger = logging.getLogger()
+        root_logger.name = ""
+        file_handler = logging.FileHandler("data.log")
+        file_handler.setFormatter(log_formatter)
+        root_logger.addHandler(file_handler)
+
+
+        Logger.__root_logger = root_logger
+
+    @staticmethod
+    def info(txt: str):
+        """
+        Zapisuje informację.
+
+        :param str txt: Tekst komunikatu.
+        """
+
+        Logger.__root_logger.info(txt)
+
+    @staticmethod
+    def error(txt: str):
+        """
+        Zapisuje błąd.
+
+        :param str txt: Tekst komunikatu.
+        """
+
+        Logger.__root_logger.error(txt)
+
+    @staticmethod
+    def warning(txt: str):
+        """
+        Zapisuje ostrzerzenie.
+
+        :param str txt: Tekst komunikatu.
+        """
+
+        Logger.__root_logger.warning(txt)
+
+    @staticmethod
+    def debug(txt):
+        """
+        Zapisuje wiadomość diagnostyczną.
+
+        :param txt: Tekst komunikatu.
+        """
+
+        Logger.__root_logger.debug(txt)
+
+
+if __name__ == '__main__':
+    Logger.start()
+    Logger.debug("debug asdasdsdsa")
+    Logger.error("eeror asd")
+    Logger.warning("warning asd")
+    Logger.info("info sieiassdasd")

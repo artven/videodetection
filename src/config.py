@@ -1,11 +1,5 @@
 __author__ = 'rafal'
 
-
-from src.detect import Detector
-from src.follow import Follower
-from src.classify import Classyfication
-from src.classify import ColorDetector
-
 import json
 
 
@@ -17,6 +11,20 @@ class Configuration:
     # Domyślny plik z konfiguracją.
     filename = "config.json"
 
+    # Opcje programu
+    __distance_pixels = 200
+    __distance_meters = 4
+    __color_number = 5
+    __horizontal_border = 200
+    __vertical_border = 50
+    __pixel_limit = 1000
+    __distance_from_border = 50
+    __draw_detection_region = True
+    __draw_speed_region = True
+    __draw_cars = True
+    __draw_conturs = True
+    __draw_speed_info = True
+
     # Domyślna konfiguracja.
     __default_config = {
         "pixel_length": 200,
@@ -25,7 +33,6 @@ class Configuration:
         "horizontal_border": 200,
         "vertical_border": 50,
         "pixel_limit": 1000,
-        "direction":  "left2right",
         "distance_from_border": 50,
         "draw_detection_region": True,
         "draw_speed_region": True,
@@ -38,19 +45,14 @@ class Configuration:
 
     __current_config = {}
 
-    __draw_detection_region = True
-    __draw_speed_region = True
-    __draw_cars = True
-    __play_delay = 0.25
-
     run_alg = True
 
     @staticmethod
     def load_config(file=filename):
         """
         Ładuje konfiguracją z pliku.
-        :param file: Ścieżka do pliku.
-        :return:
+
+        :param str file: Ścieżka do pliku.
         """
 
         with open(file) as data_file:
@@ -61,8 +63,8 @@ class Configuration:
     def save_config(file=filename):
         """
         Zapisuje konfigurację do pliku.
-        :param file: Ścieżka do pliku.
-        :return:
+
+        :param str file: Ścieżka do pliku.
         """
 
         Configuration.__load_all()
@@ -73,8 +75,8 @@ class Configuration:
     def restore_default(file=filename):
         """
         Przywraca domyślną konfigurację.
-        :param file: Ścieżka do pliku.
-        :return:
+
+        :param str file: Ścieżka do pliku.
         """
 
         Configuration.__current_config = Configuration.__default_config.copy()
@@ -87,7 +89,6 @@ class Configuration:
     def __load_all():
         """
         Ładuje ustawienia w klasach do obecnej konfiguracji.
-        :return:
         """
 
         Configuration.__current_config["pixel_length"] = Configuration.pixel_length()
@@ -110,7 +111,6 @@ class Configuration:
     def __write_all():
         """
         Zapisuje obecne ustawienia do zmiennych w klasach.
-        :return:
         """
 
         config = Configuration.__current_config
@@ -137,8 +137,10 @@ class Configuration:
     def pixel_length(value=None):
         """
         Ustawienia/zwraca długość kalibracyjną w pixelach.
-        :param value: Nowa wartość.
+
+        :param int value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
         """
 
         if value is not None:
@@ -149,8 +151,10 @@ class Configuration:
     def meters_length(value=None):
         """
         Ustawia/zwraca długość kalibracyjną w metrach.
-        :param value: Nowa wartość.
+
+        :param int value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
         """
 
         if value is not None:
@@ -161,8 +165,10 @@ class Configuration:
     def color_number(value=None):
         """
         Ustawia/zwraca liczbę poszukiwanych kolorów.
-        :param value: Nowa wartość.
+
+        :param int value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
         """
 
         if value is not None:
@@ -173,8 +179,10 @@ class Configuration:
     def horizontal_border(value=None):
         """
         Ustawia odległość strefy czułości w poziomie od krawędzi ekranu.
-        :param value: Nowa wartość.
+
+        :param int value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
         """
 
         if value is not None:
@@ -185,8 +193,10 @@ class Configuration:
     def vertical_border(value=None):
         """
         Ustawia odległość strefy czułości w pionie od krawędzi ekranu.
-        :param value: Nowa wartość.
+
+        :param int value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
         """
 
         if value is not None:
@@ -197,8 +207,10 @@ class Configuration:
     def pixel_limit(value=None):
         """
         Ustawia limit wielkości obiektu w pixelach. Jeżeli obiekt jest mniejszy, zostaje zignorowany.
-        :param value: Nowa wartość.
+
+        :param int value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
         """
 
         if value is not None:
@@ -209,8 +221,10 @@ class Configuration:
     def direction(value=None):
         """
         Ustawia kierunek jazdy pojazdów.
-        :param value: Nowa wartość.
+
+        :param str value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: str
         """
 
         if value is not None:
@@ -221,8 +235,10 @@ class Configuration:
     def distance_from_border(value=None):
         """
         Ustawia odległość od strefy czułości w której pojazd zostaje wstępnie rozpoznany.
-        :param value: Nowa wartość.
+
+        :param int value: Nowa wartość.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
         """
 
         if value is not None:
@@ -235,8 +251,10 @@ class Configuration:
     def draw_detection_region(value=None):
         """
         Ustawia flagę rysowania na obrazie wynikowym rejonu czułości kamery.
-        :param value: Nowa wartość(True/False).
+
+        :param bool value: Nowa wartość(True/False).
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: bool
         """
 
         if value is not None:
@@ -247,8 +265,10 @@ class Configuration:
     def draw_speed_region(value=None):
         """
         Ustawia flagę rysowania na obrazie wynikowym rejonu pomiaru prędkości.
-        :param value: Nowa wartość(True/False).
+
+        :param bool value: Nowa wartość(True/False).
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: bool
         """
 
         if value is not None:
@@ -259,8 +279,10 @@ class Configuration:
     def draw_cars(value=None):
         """
         Ustawia flagę rysowania zielonego obramowiania samochodów.
-        :param value: Nowa wartość(True/False).
+
+        :param bool value: Nowa wartość(True/False).
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: bool
         """
 
         if value is not None:
@@ -271,8 +293,10 @@ class Configuration:
     def draw_conturs(value=None):
         """
         Ustawia flagę rysowania konturu samochodu.
-        :param value: Nowa wartość(True/False).
+
+        :param bool value: Nowa wartość(True/False).
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: bool
         """
 
         if value is not None:
@@ -283,8 +307,10 @@ class Configuration:
     def draw_speed_info(value=None):
         """
         Ustawia flagę podpisywania samochodu informacją o jego prędkości.
-        :param value: Nowa wartość(True/False).
+
+        :param bool value: Nowa wartość(True/False).
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: bool
         """
 
         if value is not None:
@@ -295,8 +321,10 @@ class Configuration:
     def draw_size_info(value=None):
         """
         Ustawia flagę podpisywania samochodu informacją o jego rozmiarze.
-        :param value: Nowa wartość(True/False).
+
+        :param bool value: Nowa wartość(True/False).
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: bool
         """
 
         if value is not None:
@@ -307,8 +335,10 @@ class Configuration:
     def draw_color_bar(value=None):
         """
         Ustawia flagę umieszczania na obrazie samochodu paska informującego o kolorze.
-        :param value: Nowa wartość(True/False).
+
+        :param bool value: Nowa wartość(True/False).
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: bool
         """
 
         if value is not None:
