@@ -4,7 +4,6 @@ __doc__ = "Moduł odpowiedzialny za zapis danych wynikowych do bazy danych i pli
 
 import os
 import cv2
-import sys
 import sqlite3
 import logging
 from datetime import datetime
@@ -27,6 +26,7 @@ class ImageSaver:
         image = record["image"]
 
         filename = "images/" + str(date)[0:-7] + ".jpg"
+        Logger.info("Zapisano obraz " + filename)
         cv2.imwrite(filename, image)
 
 
@@ -43,7 +43,7 @@ class Database:
         self.cursor = self.connection.cursor()
         self.cursor.execute("CREATE TABLE cars(id INTEGER PRIMARY KEY, width REAL, height REAL, "
                             "area REAL, speed REAL, detection_date DATE);")
-        Logger.info("Zapisano rekord do bazy danych")
+        Logger.info("Stworzono bazę danych " + self.fileName)
 
     def write(self, record: dict):
         """

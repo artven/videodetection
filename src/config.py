@@ -12,7 +12,9 @@ class Configuration:
     filename = "config.json"
 
     # Opcje programu
-    __distance_pixels = 200
+
+    __distance_border1 = 200
+    __distance_border2 = 400
     __distance_meters = 4
     __color_number = 5
     __horizontal_border = 200
@@ -29,7 +31,8 @@ class Configuration:
 
     # Domyślna konfiguracja.
     __default_config = {
-        "pixel_length": 200,
+        "distance_border1": 200,
+        "distance_border2": 400,
         "meters_length": 4,
         "color_number": 5,
         "horizontal_border": 200,
@@ -91,7 +94,8 @@ class Configuration:
         Ładuje ustawienia w klasach do obecnej konfiguracji.
         """
 
-        Configuration.__current_config["pixel_length"] = Configuration.pixel_length()
+        Configuration.__current_config["distance_border1"] = Configuration.distance_border1()
+        Configuration.__current_config["distance_border2"] = Configuration.distance_border2()
         Configuration.__current_config["meters_length"] = Configuration.meters_length()
         Configuration.__current_config["color_number"] = Configuration.color_number()
         Configuration.__current_config["horizontal_border"] = Configuration.horizontal_border()
@@ -114,7 +118,8 @@ class Configuration:
 
         config = Configuration.__current_config
 
-        Configuration.pixel_length(config["pixel_length"])
+        Configuration.distance_border1(Configuration.__current_config["distance_border1"])
+        Configuration.distance_border2(Configuration.__current_config["distance_border2"])
         Configuration.meters_length(config["meters_length"])
         Configuration.color_number(config["color_number"])
         Configuration.horizontal_border(config["horizontal_border"])
@@ -132,18 +137,43 @@ class Configuration:
     # Opcje konfiguracji programu:
 
     @staticmethod
-    def pixel_length(value=None):
+    def distance_border1(value=None):
         """
-        Ustawienia/zwraca długość kalibracyjną w pixelach.
+        Ustawia pierwszą linię pomiaru prędkości.
 
-        :param int value: Nowa wartość.
+        :param value: Położenie w pikselach.
         :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
         :rtype: int
         """
 
         if value is not None:
-            Configuration.__pixel_length = value
-        return Configuration.__pixel_length
+            Configuration.__distance_border1 = value
+        return Configuration.__distance_border1
+
+    @staticmethod
+    def distance_border1(value=None):
+        """
+        Ustawia drugą linię pomiaru prędkości.
+
+        :param value: Położenie w pikselach.
+        :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
+        """
+
+        if value is not None:
+            Configuration.__distance_border2 = value
+        return Configuration.__distance_border2
+
+    @staticmethod
+    def pixel_length():
+        """
+        Zwraca długość kalibracyjną w pixelach.
+
+        :return: Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.
+        :rtype: int
+        """
+
+        return abs(Configuration.distance_border1() - Configuration.distance_border2())
 
     @staticmethod
     def meters_length(value=None):

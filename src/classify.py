@@ -103,9 +103,10 @@ class Classyfication:
         """
 
         h, w = frame.size()
-        x = int(w/2) - int(Configuration.pixel_length()/2)
-        frame.img = cv2.line(frame.img, (x, 0), (x, h), (255, 0, 255), thickness=4)
-        frame.img = cv2.line(frame.img, (w-x, 0), (w-x, h), (255, 0, 255), thickness=4)
+        border1 = Configuration.distance_border1()
+        border2 = Configuration.distance_border2()
+        frame.img = cv2.line(frame.img, (border1, 0), (border1, h), (255, 0, 255), thickness=4)
+        frame.img = cv2.line(frame.img, (border2, 0), (border2, h), (255, 0, 255), thickness=4)
         return frame
 
 
