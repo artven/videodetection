@@ -1,0 +1,446 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Konfiguracja programu &mdash; Videodetection 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Videodetection 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Zapis danych do logów" href="logs.html" />
+    <link rel="prev" title="Klasyfikacja pojazdów" href="classify.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logs.html" title="Zapis danych do logów"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="classify.html" title="Klasyfikacja pojazdów"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-config">
+<span id="konfiguracja-programu"></span><h1>Konfiguracja programu<a class="headerlink" href="#module-config" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="config.Configuration">
+<em class="property">class </em><tt class="descclassname">config.</tt><tt class="descname">Configuration</tt><a class="headerlink" href="#config.Configuration" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa przechowująca ustawienia programu.</p>
+<dl class="staticmethod">
+<dt id="config.Configuration._Configuration__load_all">
+<em class="property">static </em><tt class="descname">_Configuration__load_all</tt><big>(</big><big>)</big><a class="headerlink" href="#config.Configuration._Configuration__load_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ładuje ustawienia w klasach do obecnej konfiguracji.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration._Configuration__write_all">
+<em class="property">static </em><tt class="descname">_Configuration__write_all</tt><big>(</big><big>)</big><a class="headerlink" href="#config.Configuration._Configuration__write_all" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje obecne ustawienia do zmiennych w klasach.</p>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.color_number">
+<em class="property">static </em><tt class="descname">color_number</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.color_number" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia/zwraca liczbę poszukiwanych kolorów.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.direction">
+<em class="property">static </em><tt class="descname">direction</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia kierunek jazdy pojazdów.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>str</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.distance_from_border">
+<em class="property">static </em><tt class="descname">distance_from_border</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.distance_from_border" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia odległość od strefy czułości w której pojazd zostaje wstępnie rozpoznany.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.draw_cars">
+<em class="property">static </em><tt class="descname">draw_cars</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.draw_cars" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia flagę rysowania zielonego obramowiania samochodów.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) &#8211; Nowa wartość(True/False).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.draw_color_bar">
+<em class="property">static </em><tt class="descname">draw_color_bar</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.draw_color_bar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia flagę umieszczania na obrazie samochodu paska informującego o kolorze.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) &#8211; Nowa wartość(True/False).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.draw_conturs">
+<em class="property">static </em><tt class="descname">draw_conturs</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.draw_conturs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia flagę rysowania konturu samochodu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) &#8211; Nowa wartość(True/False).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.draw_detection_region">
+<em class="property">static </em><tt class="descname">draw_detection_region</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.draw_detection_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia flagę rysowania na obrazie wynikowym rejonu czułości kamery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) &#8211; Nowa wartość(True/False).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.draw_size_info">
+<em class="property">static </em><tt class="descname">draw_size_info</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.draw_size_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia flagę podpisywania samochodu informacją o jego rozmiarze.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) &#8211; Nowa wartość(True/False).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.draw_speed_info">
+<em class="property">static </em><tt class="descname">draw_speed_info</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.draw_speed_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia flagę podpisywania samochodu informacją o jego prędkości.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) &#8211; Nowa wartość(True/False).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.draw_speed_region">
+<em class="property">static </em><tt class="descname">draw_speed_region</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.draw_speed_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia flagę rysowania na obrazie wynikowym rejonu pomiaru prędkości.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) &#8211; Nowa wartość(True/False).</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.horizontal_border">
+<em class="property">static </em><tt class="descname">horizontal_border</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.horizontal_border" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia odległość strefy czułości w poziomie od krawędzi ekranu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.load_config">
+<em class="property">static </em><tt class="descname">load_config</tt><big>(</big><em>file='config.json'</em><big>)</big><a class="headerlink" href="#config.Configuration.load_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ładuje konfiguracją z pliku.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Ścieżka do pliku.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.meters_length">
+<em class="property">static </em><tt class="descname">meters_length</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.meters_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia/zwraca długość kalibracyjną w metrach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.pixel_length">
+<em class="property">static </em><tt class="descname">pixel_length</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.pixel_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawienia/zwraca długość kalibracyjną w pixelach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.pixel_limit">
+<em class="property">static </em><tt class="descname">pixel_limit</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.pixel_limit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia limit wielkości obiektu w pixelach. Jeżeli obiekt jest mniejszy, zostaje zignorowany.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.restore_default">
+<em class="property">static </em><tt class="descname">restore_default</tt><big>(</big><em>file='config.json'</em><big>)</big><a class="headerlink" href="#config.Configuration.restore_default" title="Permalink to this definition">¶</a></dt>
+<dd><p>Przywraca domyślną konfigurację.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Ścieżka do pliku.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.save_config">
+<em class="property">static </em><tt class="descname">save_config</tt><big>(</big><em>file='config.json'</em><big>)</big><a class="headerlink" href="#config.Configuration.save_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje konfigurację do pliku.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>str</em>) &#8211; Ścieżka do pliku.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.vertical_border">
+<em class="property">static </em><tt class="descname">vertical_border</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.vertical_border" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia odległość strefy czułości w pionie od krawędzi ekranu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="classify.html"
+                        title="previous chapter">Klasyfikacja pojazdów</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="logs.html"
+                        title="next chapter">Zapis danych do logów</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/config.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logs.html" title="Zapis danych do logów"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="classify.html" title="Klasyfikacja pojazdów"
+             >previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Rafał Prusak.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

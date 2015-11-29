@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Detekcja ruchu &mdash; Videodetection 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Videodetection 1.0.0 documentation" href="index.html" />
+    <link rel="next" title="Śledzenie obiektów" href="follow.html" />
+    <link rel="prev" title="Dokumentacja pracy inżynierskiej" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="follow.html" title="Śledzenie obiektów"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Dokumentacja pracy inżynierskiej"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-detect">
+<span id="detekcja-ruchu"></span><h1>Detekcja ruchu<a class="headerlink" href="#module-detect" title="Permalink to this headline">¶</a></h1>
+<p>Moduł odpowiedzialny za detekcję obiektów.</p>
+<dl class="class">
+<dt id="detect.Detector">
+<em class="property">class </em><tt class="descclassname">detect.</tt><tt class="descname">Detector</tt><a class="headerlink" href="#detect.Detector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa dokonująca wtępnej selekcji obiektów.</p>
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__find_possible_vehicles">
+<em class="property">static </em><tt class="descname">_Detector__find_possible_vehicles</tt><big>(</big><em>bin_image: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__find_possible_vehicles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oznacza potencjalne obiekty mogące być pojazdami.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>bin_image</strong> (<em>np.ndarray</em>) &#8211; Binarna maska obrazu.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Wektor obiektów mogących być pojazdami.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__find_unique_values">
+<em class="property">static </em><tt class="descname">_Detector__find_unique_values</tt><big>(</big><em>image: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__find_unique_values" title="Permalink to this definition">¶</a></dt>
+<dd><p>Znajduje unikalne wartości na obrazie.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<em>np.ndarray</em>) &#8211; Obraz z oznaczonymi obszarami.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Lista wartości.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__get_region">
+<em class="property">static </em><tt class="descname">_Detector__get_region</tt><big>(</big><em>img: numpy.ndarray</em>, <em>value: int</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__get_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oznacza fragment obrazu mający podaną wartość.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>img</strong> (<em>np.ndarray</em>) &#8211; Obraz.</li>
+<li><strong>value</strong> (<em>int</em>) &#8211; Wartość.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Oznaczony obraz.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">np.ndarray</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__get_size">
+<em class="property">static </em><tt class="descname">_Detector__get_size</tt><big>(</big><em>region: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__get_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca lewy górny punkt regionu, oraz szerokość i wysokość obszaru.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> (<em>np.ndarray</em>) &#8211; Wycinek obrazu binarnego.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Punkty opisujące obszar.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__is_background">
+<em class="property">static </em><tt class="descname">_Detector__is_background</tt><big>(</big><em>value: int</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__is_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza czy podana wartość oznacza tło.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Sprawdzana wartość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Prawda/fałsz.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__is_big_enough">
+<em class="property">static </em><tt class="descname">_Detector__is_big_enough</tt><big>(</big><em>region: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__is_big_enough" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza czy obszar jest wystraczająco duży, aby być wartym rozważenia.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> (<em>np.ndarray</em>) &#8211; Obraz zwierający region oznaczony niezerową wartością.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Prawda/fałsz.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__mark_components">
+<em class="property">static </em><tt class="descname">_Detector__mark_components</tt><big>(</big><em>image: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__mark_components" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oznacza niezależne obszary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<em>np.ndarray</em>) &#8211; Obraz.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obraz z wyróżnionymi rozłącznymi obszarami.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">np.ndarray</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector._Detector__select">
+<em class="property">static </em><tt class="descname">_Detector__select</tt><big>(</big><em>vehicles: list</em>, <em>frame: video.Frame</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dokonuje selekcji znalezionych obiektów. Odrzuca obiekty znajdujące się przy krawędzi obrazu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>vehicles</strong> (<em>list</em>) &#8211; Wektor potencjalnych samochodów.</li>
+<li><strong>frame</strong> (<em>Frame</em>) &#8211; Klatka obrazu</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Wyseleksjonowane pojazdy.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">list</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector.draw_detection_region">
+<em class="property">static </em><tt class="descname">draw_detection_region</tt><big>(</big><em>frame: video.Frame</em><big>)</big><a class="headerlink" href="#detect.Detector.draw_detection_region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rysuje na klatce obszar czułości kamery.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frame</strong> (<em>Frame</em>) &#8211; Klatka obrazu.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Klatka obrazu z oznaczonym obszarem.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">Frame</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Detector.find_vehicles">
+<em class="property">static </em><tt class="descname">find_vehicles</tt><big>(</big><em>frame: video.Frame</em><big>)</big><a class="headerlink" href="#detect.Detector.find_vehicles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Znajduje pojazdy na obrazie.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frame</strong> (<em>Frame</em>) &#8211; Klatka obrazu.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Znlezione pojazdy, maska binarna.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list, np.ndarray</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="detect.Subtractor">
+<em class="property">class </em><tt class="descclassname">detect.</tt><tt class="descname">Subtractor</tt><a class="headerlink" href="#detect.Subtractor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa wyodrębniająca tło.</p>
+<dl class="staticmethod">
+<dt id="detect.Subtractor._Subtractor__filter">
+<em class="property">static </em><tt class="descname">_Subtractor__filter</tt><big>(</big><em>image: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Subtractor._Subtractor__filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dokonuje filtracji za pomocą mediany i dylatacji.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> &#8211; Binarny obraz wejściowy.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Wynikowy przefiltrowany obraz.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">np.ndarray</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="detect.Subtractor.apply">
+<em class="property">static </em><tt class="descname">apply</tt><big>(</big><em>image: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Subtractor.apply" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dokonuje wyodrębnienia tła z klatki obrazu. Zwraca zbinearyzowany obraz.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<em>np.ndarray</em>) &#8211; Obraz.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Oznaczony obraz.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">np.ndarray</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="detect.Vehicle">
+<em class="property">class </em><tt class="descclassname">detect.</tt><tt class="descname">Vehicle</tt><big>(</big><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><big>)</big><a class="headerlink" href="#detect.Vehicle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa opisująca pojazd.</p>
+<dl class="method">
+<dt id="detect.Vehicle.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em><big>)</big><a class="headerlink" href="#detect.Vehicle.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> &#8211; Współrzędna x-owa lewego-górnego wierzchoła.</li>
+<li><strong>y</strong> &#8211; Współrzędna y-owa lewego-górnego wierzchoła.</li>
+<li><strong>w</strong> &#8211; Długość pojazdu.</li>
+<li><strong>h</strong> &#8211; Wysokość pojazdu.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="detect.Vehicle.get_coordinates">
+<tt class="descname">get_coordinates</tt><big>(</big><big>)</big><a class="headerlink" href="#detect.Vehicle.get_coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca współrzędne opisujące pojazd.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Współrzędne x, y, szerokość, wysokość.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="detect.draw_vehicles">
+<tt class="descclassname">detect.</tt><tt class="descname">draw_vehicles</tt><big>(</big><em>frame: video.Frame</em>, <em>vehicles: list</em><big>)</big><a class="headerlink" href="#detect.draw_vehicles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Oznacza na obrazie pojazdy wraz ze środkami ciężkości.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>frame</strong> (<em>Frame</em>) &#8211; Klatka obrazu.</li>
+<li><strong>vehicles</strong> (<em>list</em>) &#8211; Lista pojazdów.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Obraz z oznaczonymi pojazdami.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">numpy.array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Dokumentacja pracy inżynierskiej</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="follow.html"
+                        title="next chapter">Śledzenie obiektów</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/detect.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="follow.html" title="Śledzenie obiektów"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Dokumentacja pracy inżynierskiej"
+             >previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Rafał Prusak.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

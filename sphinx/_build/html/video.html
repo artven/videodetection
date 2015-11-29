@@ -1,0 +1,327 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Obsługa obrazu wideo &mdash; Videodetection 1.0.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Videodetection 1.0.0 documentation" href="index.html" />
+    <link rel="prev" title="Zapis danych do logów" href="logs.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logs.html" title="Zapis danych do logów"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="module-video">
+<span id="obsluga-obrazu-wideo"></span><h1>Obsługa obrazu wideo<a class="headerlink" href="#module-video" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="video.Frame">
+<em class="property">class </em><tt class="descclassname">video.</tt><tt class="descname">Frame</tt><big>(</big><em>inputVideo: video.VideoReader</em><big>)</big><a class="headerlink" href="#video.Frame" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa opakowywujacą klatkę obrazu.</p>
+<dl class="method">
+<dt id="video.Frame.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>inputVideo: video.VideoReader</em><big>)</big><a class="headerlink" href="#video.Frame.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>inputVideo</strong> (<em>VideoReader</em>) &#8211; Plik źródłowy lub urządzenie z którego pobierany jest obraz.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.Frame.size">
+<tt class="descname">size</tt><big>(</big><big>)</big><a class="headerlink" href="#video.Frame.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca wysokość i szerokość obrazu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Wysokość obrazu, szerokość obrazu.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="video.OpenCVWindow">
+<em class="property">class </em><tt class="descclassname">video.</tt><tt class="descname">OpenCVWindow</tt><big>(</big><em>windowmode=256</em><big>)</big><a class="headerlink" href="#video.OpenCVWindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa dostarczająca okienko pozwalające wyświetlać obraz.</p>
+<dl class="method">
+<dt id="video.OpenCVWindow.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>windowmode=256</em><big>)</big><a class="headerlink" href="#video.OpenCVWindow.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>windowmode</strong> &#8211; Tryb zachowania okna, domyślnie</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.OpenCVWindow.get_name">
+<tt class="descname">get_name</tt><big>(</big><big>)</big><a class="headerlink" href="#video.OpenCVWindow.get_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca unikalną nazwę przypisaną do okna.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Nazwa okna w postaci Window+id</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.OpenCVWindow.show">
+<tt class="descname">show</tt><big>(</big><em>img: numpy.ndarray</em><big>)</big><a class="headerlink" href="#video.OpenCVWindow.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wyświetla obraz oknie.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>np.ndarray</em>) &#8211; Klatka obrazu.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="video.VideoReader">
+<em class="property">class </em><tt class="descclassname">video.</tt><tt class="descname">VideoReader</tt><big>(</big><em>videosource=0</em><big>)</big><a class="headerlink" href="#video.VideoReader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa obsługująca odczyt obrazu z urządzeń oraz plików.</p>
+<dl class="method">
+<dt id="video.VideoReader.fps">
+<tt class="descname">fps</tt><big>(</big><big>)</big><a class="headerlink" href="#video.VideoReader.fps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca liczbę klatek na sekundę.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Liczba klatek na sekundę.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.VideoReader.frames_count">
+<tt class="descname">frames_count</tt><big>(</big><big>)</big><a class="headerlink" href="#video.VideoReader.frames_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca liczbę klatek w pliku wideo.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Liczba klatek.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.VideoReader.is_good">
+<tt class="descname">is_good</tt><big>(</big><big>)</big><a class="headerlink" href="#video.VideoReader.is_good" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza czy źródło obrazu wideo jest sprawne.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Prawda/fałsz.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.VideoReader.position_frames">
+<tt class="descname">position_frames</tt><big>(</big><big>)</big><a class="headerlink" href="#video.VideoReader.position_frames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca pozycję w pliku wideo wyrażoną w liczbie klatek.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Liczba określająca pozycję.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.VideoReader.position_mseconds">
+<tt class="descname">position_mseconds</tt><big>(</big><big>)</big><a class="headerlink" href="#video.VideoReader.position_mseconds" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca pozycję w pliku wideo wyrażoną w milisekundach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Liczba określająca pozycję.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.VideoReader.read">
+<tt class="descname">read</tt><big>(</big><big>)</big><a class="headerlink" href="#video.VideoReader.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Odczytuje ramkę obrazu wideo.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">None jeśli odczyt się nie powiódł, klatka obrazu w przeciwnym wypadku.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.VideoReader.size">
+<tt class="descname">size</tt><big>(</big><big>)</big><a class="headerlink" href="#video.VideoReader.size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca rozmiar klatki obrazu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Szerokość obrazu, wysokość obrazu.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="video.VideoWriter">
+<em class="property">class </em><tt class="descclassname">video.</tt><tt class="descname">VideoWriter</tt><big>(</big><em>size: tuple=(640</em>, <em>480)</em><big>)</big><a class="headerlink" href="#video.VideoWriter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Klasa zapisująca dane wynikowe do pliku wideo.</p>
+<dl class="method">
+<dt id="video.VideoWriter.__init__">
+<tt class="descname">__init__</tt><big>(</big><em>size: tuple=(640</em>, <em>480)</em><big>)</big><a class="headerlink" href="#video.VideoWriter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>tuple</em>) &#8211; Rozmiar obrazu wideo w postaci (szerkość, wysokość).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="video.VideoWriter.write">
+<tt class="descname">write</tt><big>(</big><em>image: numpy.ndarray</em><big>)</big><a class="headerlink" href="#video.VideoWriter.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zapisuje klatkę obrazu do pliku wideo.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>image</strong> (<em>np.ndarray</em>) &#8211; Zapisaywana ramka obrazu.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="logs.html"
+                        title="previous chapter">Zapis danych do logów</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/video.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="logs.html" title="Zapis danych do logów"
+             >previous</a> |</li>
+        <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2015, Rafał Prusak.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>
