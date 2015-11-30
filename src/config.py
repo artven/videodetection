@@ -26,6 +26,8 @@ class Configuration:
     __draw_cars = True
     __draw_conturs = True
     __draw_speed_info = True
+    __draw_size_info = True
+    __draw_color_bar = True
 
     run_alg = True
 
@@ -151,7 +153,7 @@ class Configuration:
         return Configuration.__distance_border1
 
     @staticmethod
-    def distance_border1(value=None):
+    def distance_border2(value=None):
         """
         Ustawia drugą linię pomiaru prędkości.
 
@@ -186,8 +188,8 @@ class Configuration:
         """
 
         if value is not None:
-            Configuration.__meters_length = value
-        return Configuration.__meters_length
+            Configuration.__distance_meters = value
+        return Configuration.__distance_meters
 
     @staticmethod
     def color_number(value=None):

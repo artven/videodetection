@@ -84,10 +84,10 @@ class Follower:
             if Follower.__is_on_right(new_car):
                 Follower.__detected_right = True
                 if not Follower.__right_lock:
+                    Follower.__right_lock = True
                     # jeżeli nie ma nic po drugiej stronie to odłóż na stos
                     if not len(Follower.__tracked_left):
                         Follower.__tracked_right.append((new_car, frame))
-                        Follower.__right_lock = True
                         Logger.info("Obiekt zarejestrwany po prawej stronie.")
                     # jeżeli bo drugiej stronie coś było to pobierz ze stosu
                     else:
@@ -99,14 +99,14 @@ class Follower:
             elif Follower.__is_on_left(new_car):
                 Follower.__detected_left = True
                 if not Follower.__left_lock:
+                    Follower.__left_lock = True
                     # jeżeli nie ma nic po drugiej stronie to odłóż na stos
                     if not len(Follower.__tracked_right):
-                        Follower.__left_lock = True
                         Follower.__tracked_left.append((new_car, frame))
                         Logger.info("Obiekt zarejestrwany po lewej stronie.")
                     # jeżeli bo drugiej stronie coś było to pobierz ze stosu
                     else:
-                        old_car, oldframe = Follower.__tracked_left.pop()
+                        old_car, oldframe = Follower.__tracked_right.pop()
                         record = ObjectRecord(new_car, old_car, frame, oldframe, mask)
                         Logger.info("Wykryto przejazd samochodu.")
                         result.append(record)
