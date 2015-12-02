@@ -6,7 +6,7 @@ Program wykonany w języku Python(v3.4), uruchamiany na systemie ubuntu 14.04.
 
 Wymagane do uruchomienia programu :
 - interpreter jeżyka Python(v3.4)
-- biblioteka opencv 3.0 instrukcja instalacji dla ubuntu: http://milq.github.ioinstall-opencv-ubuntu-debian
+- biblioteka opencv 3.0 instrukcja instalacji dla ubuntu: http://milq.github.io/install-opencv-ubuntu-debian
 - biblioteki pygtk+, NumPy
 
 sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython-notebook python-pandas python-sympy python-nose
