@@ -7,7 +7,7 @@ import cv2
 from src.video import VideoReader, VideoWriter
 from gi.repository import Gtk, GdkPixbuf, GLib
 from src.logs import Database, ImageSaver
-from src.alg import perform
+from src.alg import Algorithm
 from src.video import Frame
 from src.config import Configuration
 
@@ -17,6 +17,7 @@ class WindowController:
     tmp_images_directory = "/tmp/loaded_file"
 
     def __init__(self, window):
+        Configuration.load_config()
         self.window = window
 
         self.new_file_flag = False
@@ -33,8 +34,6 @@ class WindowController:
         self.database = Database()
         self.img_saver = ImageSaver()
         GLib.timeout_add(75, self.algorithm)
-        #self.algorithm_thread = MyThread(self.algorithm)
-        #self.algorithm_thread.start()
 
     def algorithm(self):
         if self.exit_flag:
@@ -51,7 +50,7 @@ class WindowController:
                     self.window.disable_buttons()
                     self.__write_msg("Koniec")
             else:
-                frame = perform(frame, self.database, self.img_saver)
+                frame = Algorithm.perform(frame, self.database, self.img_saver)
                 if self.__record:
                     self.__output_video.write(frame.img)
 

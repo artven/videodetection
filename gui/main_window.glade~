@@ -3,15 +3,14 @@
 <interface>
   <requires lib="gtk+" version="3.10"/>
   <object class="GtkWindow" id="main_window">
-    <property name="width_request">600</property>
     <property name="can_focus">False</property>
     <property name="halign">start</property>
     <property name="valign">start</property>
     <property name="title" translatable="yes">Wideodetekcja </property>
     <property name="resizable">False</property>
-    <property name="window_position">center</property>
+    <property name="window_position">mouse</property>
     <property name="icon_name">start-here</property>
-    <property name="gravity">center</property>
+    <property name="gravity">north</property>
     <signal name="destroy" handler="on_main_window_destroy" swapped="no"/>
     <child>
       <object class="GtkBox" id="box">
@@ -19,26 +18,9 @@
         <property name="can_focus">False</property>
         <property name="orientation">vertical</property>
         <child>
-          <object class="GtkImage" id="main_image">
-            <property name="visible">True</property>
-            <property name="sensitive">False</property>
-            <property name="can_focus">False</property>
-            <property name="double_buffered">False</property>
-            <property name="icon_name">image-x-generic</property>
-            <property name="use_fallback">True</property>
-            <property name="icon_size">1</property>
-          </object>
-          <packing>
-            <property name="expand">True</property>
-            <property name="fill">True</property>
-            <property name="position">0</property>
-          </packing>
-        </child>
-        <child>
           <object class="GtkToolbar" id="toolbar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="halign">center</property>
             <child>
               <object class="GtkToolButton" id="open_file_button">
                 <property name="visible">True</property>
@@ -46,24 +28,8 @@
                 <property name="tooltip_text" translatable="yes">Otwórz plik wideo</property>
                 <property name="label" translatable="yes">toolbutton1</property>
                 <property name="use_underline">True</property>
-                <property name="icon_name">video-x-generic</property>
+                <property name="icon_name">document-open</property>
                 <signal name="clicked" handler="on_open_file_button_clicked" swapped="no"/>
-              </object>
-              <packing>
-                <property name="expand">False</property>
-                <property name="homogeneous">True</property>
-              </packing>
-            </child>
-            <child>
-              <object class="GtkToolButton" id="open_camera_button">
-                <property name="visible">True</property>
-                <property name="sensitive">False</property>
-                <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Otwórz obraz z kamery</property>
-                <property name="label" translatable="yes">toolbutton2</property>
-                <property name="use_underline">True</property>
-                <property name="icon_name">camera-video</property>
-                <signal name="clicked" handler="on_open_camera_button_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -73,7 +39,6 @@
             <child>
               <object class="GtkToolButton" id="open_database">
                 <property name="visible">True</property>
-                <property name="sensitive">False</property>
                 <property name="can_focus">False</property>
                 <property name="tooltip_text" translatable="yes">Otwórz plik bazy danych</property>
                 <property name="label" translatable="yes">toolbutton3</property>
@@ -302,6 +267,22 @@
           <packing>
             <property name="expand">False</property>
             <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkImage" id="main_image">
+            <property name="visible">True</property>
+            <property name="sensitive">False</property>
+            <property name="can_focus">False</property>
+            <property name="double_buffered">False</property>
+            <property name="stock">gtk-missing-image</property>
+            <property name="use_fallback">True</property>
+            <property name="icon_size">1</property>
+          </object>
+          <packing>
+            <property name="expand">True</property>
+            <property name="fill">True</property>
             <property name="position">1</property>
           </packing>
         </child>
@@ -309,10 +290,6 @@
           <object class="GtkStatusbar" id="statusbar">
             <property name="visible">True</property>
             <property name="can_focus">False</property>
-            <property name="margin_left">10</property>
-            <property name="margin_right">10</property>
-            <property name="margin_top">6</property>
-            <property name="margin_bottom">6</property>
             <property name="orientation">vertical</property>
             <property name="spacing">2</property>
           </object>

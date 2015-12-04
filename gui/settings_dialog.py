@@ -17,25 +17,14 @@ class SettingsDialog:
         self.window = self.builder.get_object("settings_window")
 
         # Opcje do wprowadzanaia danych
-        self.pixel_length = self.builder.get_object("pixel_length_spin_adjustment")
+        self.border1_adjustment = self.builder.get_object("border1_adjustment")
+        self.border2_adjustment = self.builder.get_object("border2_adjustment")
         self.meters_length_spin_adjustment = self.builder.get_object("meters_length_spin_adjustment")
         self.color_number_spin_adjustment = self.builder.get_object("color_number_spin_adjustment")
         self.horizontal_border_spin_adjustment = self.builder.get_object("horizontal_border_spin_adjustment")
         self.vertical_border_spin_adjustment = self.builder.get_object("vertical_border_spin_adjustment")
         self.pixel_limit_spin_adjustment = self.builder.get_object("pixel_limit_spin_adjustment")
         self.distance_from_border_spin_adjustment = self.builder.get_object("distance_from_border_spin_adjustment")
-
-        # Pole wyboru kierunku
-        self.direction_combobox = self.builder.get_object("direction_combo")
-        self.direction_liststore = Gtk.ListStore(int, str)
-        self.direction_liststore.append([0, "lewa->prawa"])
-        self.direction_liststore.append([1, "prawa->lewa"])
-        self.direction_combobox.set_model(self.direction_liststore)
-        self.cell = Gtk.CellRendererText()
-        self.direction_combobox.pack_start(self.cell, True)
-        self.direction_combobox.add_attribute(self.cell, 'text', 1)
-        # self.direction_combobox.set_active(0)
-        self.direction_combobox.set_sensitive(False)
 
         # Opcje on-off
         self.draw_detection_region_check = self.builder.get_object("draw_detection_region_check")
@@ -100,14 +89,8 @@ class SettingsDialog:
         Wczytaj obecną konfigurację znajdującą się config.json do widgetów okna.
         """
 
-        Configuration.load_config()
-        direct = Configuration.direction()
-        if direct == "left2right":
-            self.direction_combobox.set_active(0)
-        else:
-            self.direction_combobox.set_active(1)
-
-        self.pixel_length.set_value(Configuration.pixel_length())
+        self.border1_adjustment.set_value(Configuration.distance_border1())
+        self.border2_adjustment.set_value(Configuration.distance_border2())
         self.meters_length_spin_adjustment.set_value(Configuration.meters_length())
         self.color_number_spin_adjustment.set_value(Configuration.color_number())
         self.horizontal_border_spin_adjustment.set_value(Configuration.horizontal_border())
@@ -128,12 +111,8 @@ class SettingsDialog:
         Zapisz wartości z widgetów
         """
 
-        if 0 == self.direction_combobox.get_active_id():
-            Configuration.direction("left2right")
-        else:
-            Configuration.direction("right2left")
-
-        Configuration.pixel_length(self.pixel_length.get_value())
+        Configuration.distance_border1(self.border1_adjustment.get_value())
+        Configuration.distance_border2(self.border2_adjustment.get_value())
         Configuration.meters_length(self.meters_length_spin_adjustment.get_value())
         Configuration.color_number(self.color_number_spin_adjustment.get_value())
         Configuration.horizontal_border(self.horizontal_border_spin_adjustment.get_value())
