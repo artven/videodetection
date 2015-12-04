@@ -112,19 +112,26 @@ class ProgramView:
 
         msg_text += "\n"
 
+        i = 0
         for record in Database.read_all_records_from_file(path):
             id = record[0]
             width = record[1]
             height = record[2]
             area = record[3]
+            speed = record[4]
+            date = record[5].split(sep=".")[0]
             msg_text += "%30d " % id
             msg_text += "%32.2f " % width
             msg_text += "%32.2f " % height
             msg_text += "%32.2f " % area
+            msg_text += "%32.2f " % speed
+            msg_text += "%30s " % date
             msg_text += "\n"
+            i += 1
 
         message.set_markup(msg_text)
-        message.set_size_request(1000, 400)
+        message.set_size_request(900, i*25)
+        message.set_title(path)
         message.run()
 
 
