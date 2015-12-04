@@ -49,8 +49,17 @@ class Follower:
         """
         Czyści wewnętrzne dane algorytmu śledzenia pojazdów.
         """
+
         if len(Follower.__tracked_left) or len(Follower.__tracked_right):
             Logger.warning("Usunięto niewykorzystane dane.")
+            Follower.__tracked_left = []
+            Follower.__tracked_right = []
+            Follower.__detected_right = False
+            Follower.__detected_left = False
+            Follower.__left_lock = False
+            Follower.__right_lock = False
+            Follower.__frame_width = 0
+            Follower.__border = 0
 
 
     @staticmethod

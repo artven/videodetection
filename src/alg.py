@@ -14,7 +14,7 @@ class Algorithm:
 
     @staticmethod
     def reset():
-        pass
+        Follower.clear()
 
     @staticmethod
     def perform(frame: Frame, database, img_saver):

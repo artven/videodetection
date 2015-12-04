@@ -36,7 +36,9 @@ class Database:
     """
 
     def __init__(self):
-        self.fileName = str(datetime.now())[0:-7] + ".db"
+        tmp = str(datetime.now())[0:-7].split(sep=" ")
+        name = tmp[0] + "_" + tmp[1]
+        self.fileName = name + ".db"
         os.chdir("data")
         self.connection = sqlite3.connect(self.fileName)
         os.chdir("..")
@@ -60,12 +62,11 @@ class Database:
 
         Logger.info("Zapisano rekord do bazy danych")
 
-        # TODO sprawdzić czy przełamanie lini nie zepsuje zapisu
         self.cursor.execute("INSERT INTO cars(width, height, area, speed, detection_date) VALUES(%.2f, %.2f, %.2f, %.2f, ?);"
                             % (width, height, area, speed), (date,))
         self.connection.commit()
 
-    def read_logs(self):
+    def read_all_records(self):
         """
         Odczytuje informacje z bazy danych.
 
@@ -75,10 +76,25 @@ class Database:
 
         self.cursor.execute("SELECT * FROM cars")
         self.connection.commit()
-        rows = self.cursor.fetchall()
-        return rows
+        return self.cursor.fetchall()
 
-    def table_info(self):
+    @staticmethod
+    def read_all_records_from_file(filepath):
+        """
+        Zwraca rekordy z bazy o podanej ścieżce dostępu.
+
+        :param filepath: Ścieżka do pliku bazy danych.
+        :return: Rekordy w bazie
+        :rtype: list
+        """
+
+        connection = sqlite3.connect(filepath)
+        cursor = connection.cursor()
+        cursor.execute("SELECT * FROM cars")
+        connection.commit()
+        return cursor.fetchall()
+
+    def column_names(self):
         """
         Zwraca nazwy kolumn tablicy przechowującej dane o samochodach.
 
@@ -89,6 +105,20 @@ class Database:
         self.cursor.execute("PRAGMA table_info(cars);")
         self.connection.commit()
         return self.cursor.fetchall()
+
+    @staticmethod
+    def column_names_from_file(filepath):
+        """
+        Zwraca nazwy kolumn z bazy o podanej ścieżce dostępu.
+
+        :param filepath:
+        :return:
+        """
+        connection = sqlite3.connect(filepath)
+        cursor = connection.cursor()
+        cursor.execute("PRAGMA table_info(cars);")
+        connection.commit()
+        return cursor.fetchall()
 
     def execute(self, query: str):
         """
