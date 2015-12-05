@@ -996,6 +996,11 @@
     <property name="halign">start</property>
     <property name="valign">start</property>
     <property name="title" translatable="yes">Ustawienia</property>
+    <property name="resizable">False</property>
+    <property name="type_hint">dialog</property>
+    <property name="deletable">False</property>
+    <property name="has_resize_grip">False</property>
+    <signal name="delete-event" handler="on_settings_window_delete_event" swapped="no"/>
     <signal name="destroy" handler="on_settings_window_destroy" swapped="no"/>
     <child>
       <object class="GtkBox" id="box1">
@@ -1530,6 +1535,7 @@
                   <object class="GtkSpinButton" id="border1_spin">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="valign">end</property>
                     <property name="text" translatable="yes">4</property>
                     <property name="adjustment">border1_adjustment</property>
                     <property name="climb_rate">0.10000000000000001</property>

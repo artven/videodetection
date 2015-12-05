@@ -9,12 +9,35 @@ class SettingsDialog:
     def __init__(self):
         self.glade_file = "gui/settings_dialog.glade"
         self.builder = Gtk.Builder()
+        self.independent = False
+
+        self.window = None
+        self.border1_adjustment = None
+        self.border2_adjustment = None
+        self.meters_length_spin_adjustment = None
+        self.color_number_spin_adjustment = None
+        self.horizontal_border_spin_adjustment = None
+        self.vertical_border_spin_adjustment = None
+        self.pixel_limit_spin_adjustment = None
+        self.distance_from_border_spin_adjustment = None
+        self.draw_detection_region_check = None
+        self.draw_speed_region_check = None
+        self.draw_cars_check = None
+        self.draw_conturs_check = None
+        self.draw_speed_info_check = None
+        self.draw_size_info_check = None
+        self.draw_color_bar_check = None
+        self.display_delay_scale_adjustment = None
+        self.cancel_button = None
+        self.ok_button = None
+
+    def initialize(self):
         self.builder.add_from_file(self.glade_file)
         self.builder.connect_signals(self)
 
-        self.independent = False
-
         self.window = self.builder.get_object("settings_window")
+        self.window.set_modal(True)
+        self.window.set_destroy_with_parent(True)
 
         # Opcje do wprowadzanaia danych
         self.border1_adjustment = self.builder.get_object("border1_adjustment")
@@ -41,8 +64,10 @@ class SettingsDialog:
         # Przyciski
         self.cancel_button = self.builder.get_object("cancel_button")
         self.ok_button = self.builder.get_object("ok_button")
-        
+
     def show(self):
+
+        self.initialize()
         self.__load_settings()
         self.window.show()
 
@@ -54,6 +79,14 @@ class SettingsDialog:
     def on_settings_window_destroy(self, object, data=None):
         if self.independent:
             Gtk.main_quit()
+        else:
+            self.window.hide()
+
+    def on_settings_window_delete_event(self, object, data=None):
+        if self.independent:
+            Gtk.main_quit()
+        else:
+            self.window.hide()
 
     def on_ok_button_clicked(self, object, data=None):
         self.__write_settings()
