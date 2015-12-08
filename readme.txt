@@ -14,6 +14,8 @@ sudo apt-get install python-numpy python-scipy python-matplotlib ipython ipython
 sudo apt-get install build-essential python3-dev python3-setuptools \
                      python3-numpy python3-scipy \
                      libatlas-dev libatlas3gf-base
+					 
+sudo apt-get install libqt5opengl5 libqt5opengl5-dev
 
 Materiały wykorzystane przy tworzeniu programu:
 - książki:
