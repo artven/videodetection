@@ -12,7 +12,6 @@ class Configuration:
     filename = "config.json"
 
     # Opcje programu
-
     __distance_border1 = 200
     __distance_border2 = 400
     __distance_meters = 4
@@ -28,8 +27,6 @@ class Configuration:
     __draw_speed_info = True
     __draw_size_info = True
     __draw_color_bar = True
-
-    run_alg = True
 
     # Domyślna konfiguracja.
     __default_config = {
@@ -50,6 +47,7 @@ class Configuration:
         "draw_color_bar": True
         }
 
+    # Obecna konfiguracja
     __current_config = {}
 
     @staticmethod
