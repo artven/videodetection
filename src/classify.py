@@ -53,22 +53,23 @@ class Classyfication:
         speed = SpeedMeasurment.calculate_speed(new_car, new_frame, old_car, old_frame)
 
         # Narysowanie wyników na obrazie
+        # Kontur
+        if Configuration.draw_conturs():
+            image = SizeMeasurment.draw_car_contour(image, new_car, mask)
         # Rozmiar
         if Configuration.draw_size_info():
             image = SizeMeasurment.draw_size_info(image, car_width, car_height, car_area)
         # Kolor
         if Configuration.draw_color_bar():
             image = ColorDetector.draw_color_bar(image, color_bar)
-        # Kontur
-        if Configuration.draw_conturs():
-            image = SizeMeasurment.draw_car_contour(image, new_car, mask)
+
         # Prędkość
         if Configuration.draw_speed_info():
             image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
 
         # Rekord zawierający informacje o pojeździe
         result = {"width": car_width, "height": car_height, "area": car_area, "speed": speed, "image": image,
-                  "date": new_frame.creationTime}
+                  "date": new_frame.creationTime, "color": color}
 
         msg = "Przprowadzono klasyfikację pojadu: "
         msg += "długość: %.2f, " % car_width
@@ -140,7 +141,10 @@ class SpeedMeasurment:
         pixel_difference = float(abs(new_car.centerx - old_car.centerx))
         ratio = Classyfication.get_ratio()
         meters_difference = ratio * pixel_difference
-        speed = round(meters_difference / time_difference, 5) * 3.6
+        if time_difference != 0:
+            speed = round(meters_difference / time_difference, 5) * 3.6
+        else:
+            speed = 0
 
         return speed
 
@@ -399,7 +403,7 @@ class ColorDetector:
 
         # Znajdź najlepsze kolory.
         colors, percents, color_bar = ColorDetector.__find_dominant_colors(image, n=int(ColorDetector.color_number))
-
+        print(ColorDetector.color_number)
         # Wybierz największy kolor.
         best_percent = max(percents)
         best_percent_index = percents.index(best_percent)
