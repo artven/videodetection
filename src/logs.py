@@ -44,13 +44,14 @@ class Database:
         os.chdir("..")
         self.cursor = self.connection.cursor()
         self.cursor.execute("CREATE TABLE cars(id INTEGER PRIMARY KEY, width REAL, height REAL, "
-                            "area REAL, speed REAL, detection_date DATE);")
+                            "area REAL, speed REAL, file TEXT, detection_date DATE);")
         Logger.info("Stworzono bazę danych " + self.fileName)
 
-    def write(self, record: dict):
+    def write(self, record: dict, path=""):
         """
         Zapisuje informacje o pojeździe do bazy danych.
 
+        :param str path: Ścieżka do pliku wideo z którego pochodzą wykryte dane.
         :param dict record: Nowy rekord dla bazy.
         """
 
@@ -59,11 +60,11 @@ class Database:
         area = record["area"]
         speed = record["speed"]
         date = record["date"]
-
+        path = "\"" + path.split(sep="/")[-1] + "\""
         Logger.info("Zapisano rekord do bazy danych")
 
-        self.cursor.execute("INSERT INTO cars(width, height, area, speed, detection_date) VALUES(%.2f, %.2f, %.2f, %.2f, ?);"
-                            % (width, height, area, speed), (date,))
+        self.cursor.execute("INSERT INTO cars(width, height, area, speed, file, detection_date) VALUES(%.2f, %.2f, %.2f, %.2f, %s, ?);"
+                            % (width, height, area, speed, path), (date,))
         self.connection.commit()
 
     def read_all_records(self):
@@ -158,8 +159,6 @@ class Logger:
         file_handler = logging.FileHandler("data.log")
         file_handler.setFormatter(log_formatter)
         root_logger.addHandler(file_handler)
-
-
         Logger.__root_logger = root_logger
 
     @staticmethod
