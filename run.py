@@ -9,8 +9,8 @@ from src.logs import Logger
 from src.config import Configuration
 
 if __name__ == '__main__':
-    Logger.start()
     Configuration.load_config()
+    Logger.start()
     window = ProgramView()
     Logger.info("Uruchamiano główne okna programu.")
     Gtk.main()

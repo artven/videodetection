@@ -60,6 +60,38 @@
 <em class="property">class </em><tt class="descclassname">logs.</tt><tt class="descname">Database</tt><a class="headerlink" href="#logs.Database" title="Permalink to this definition">¶</a></dt>
 <dd><p>Klasa obsługująca zapis i odczyt z bazy danych.</p>
 <dl class="method">
+<dt id="logs.Database.column_names">
+<tt class="descname">column_names</tt><big>(</big><big>)</big><a class="headerlink" href="#logs.Database.column_names" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca nazwy kolumn tablicy przechowującej dane o samochodach.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Lista nazw.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="logs.Database.column_names_from_file">
+<em class="property">static </em><tt class="descname">column_names_from_file</tt><big>(</big><em>filepath</em><big>)</big><a class="headerlink" href="#logs.Database.column_names_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca nazwy kolumn z bazy o podanej ścieżce dostępu.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filepath</strong> &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
 <dt id="logs.Database.execute">
 <tt class="descname">execute</tt><big>(</big><em>query: str</em><big>)</big><a class="headerlink" href="#logs.Database.execute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Wykonuje zadaną komende na bazie danych i zwraca jej rezultat.</p>
@@ -78,8 +110,8 @@
 </dd></dl>
 
 <dl class="method">
-<dt id="logs.Database.read_logs">
-<tt class="descname">read_logs</tt><big>(</big><big>)</big><a class="headerlink" href="#logs.Database.read_logs" title="Permalink to this definition">¶</a></dt>
+<dt id="logs.Database.read_all_records">
+<tt class="descname">read_all_records</tt><big>(</big><big>)</big><a class="headerlink" href="#logs.Database.read_all_records" title="Permalink to this definition">¶</a></dt>
 <dd><p>Odczytuje informacje z bazy danych.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
@@ -93,17 +125,19 @@
 </table>
 </dd></dl>
 
-<dl class="method">
-<dt id="logs.Database.table_info">
-<tt class="descname">table_info</tt><big>(</big><big>)</big><a class="headerlink" href="#logs.Database.table_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Zwraca nazwy kolumn tablicy przechowującej dane o samochodach.</p>
+<dl class="staticmethod">
+<dt id="logs.Database.read_all_records_from_file">
+<em class="property">static </em><tt class="descname">read_all_records_from_file</tt><big>(</big><em>filepath</em><big>)</big><a class="headerlink" href="#logs.Database.read_all_records_from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca rekordy z bazy o podanej ścieżce dostępu.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Lista nazw.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filepath</strong> &#8211; Ścieżka do pliku bazy danych.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Rekordy w bazie</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
 </tr>
 </tbody>
 </table>
@@ -111,13 +145,17 @@
 
 <dl class="method">
 <dt id="logs.Database.write">
-<tt class="descname">write</tt><big>(</big><em>record: dict</em><big>)</big><a class="headerlink" href="#logs.Database.write" title="Permalink to this definition">¶</a></dt>
+<tt class="descname">write</tt><big>(</big><em>record: dict</em>, <em>path=''</em><big>)</big><a class="headerlink" href="#logs.Database.write" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zapisuje informacje o pojeździe do bazy danych.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>record</strong> (<em>dict</em>) &#8211; Nowy rekord dla bazy.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>path</strong> (<em>str</em>) &#8211; Ścieżka do pliku wideo z którego pochodzą wykryte dane.</li>
+<li><strong>record</strong> (<em>dict</em>) &#8211; Nowy rekord dla bazy.</li>
+</ul>
+</td>
 </tr>
 </tbody>
 </table>

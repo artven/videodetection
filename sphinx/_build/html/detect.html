@@ -138,14 +138,14 @@
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="detect.Detector._Detector__is_background">
-<em class="property">static </em><tt class="descname">_Detector__is_background</tt><big>(</big><em>value: int</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__is_background" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sprawdza czy podana wartość oznacza tło.</p>
+<dt id="detect.Detector._Detector__has_valid_size">
+<em class="property">static </em><tt class="descname">_Detector__has_valid_size</tt><big>(</big><em>region: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__has_valid_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza czy obszar nie jest za mały oraz za duży.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Sprawdzana wartość.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> (<em>np.ndarray</em>) &#8211; Obraz zwierający region oznaczony niezerową wartością.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Prawda/fałsz.</td>
 </tr>
@@ -156,14 +156,14 @@
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="detect.Detector._Detector__is_big_enough">
-<em class="property">static </em><tt class="descname">_Detector__is_big_enough</tt><big>(</big><em>region: numpy.ndarray</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__is_big_enough" title="Permalink to this definition">¶</a></dt>
-<dd><p>Sprawdza czy obszar jest wystraczająco duży, aby być wartym rozważenia.</p>
+<dt id="detect.Detector._Detector__is_background">
+<em class="property">static </em><tt class="descname">_Detector__is_background</tt><big>(</big><em>value: int</em><big>)</big><a class="headerlink" href="#detect.Detector._Detector__is_background" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza czy podana wartość oznacza tło.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>region</strong> (<em>np.ndarray</em>) &#8211; Obraz zwierający region oznaczony niezerową wartością.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Sprawdzana wartość.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Prawda/fałsz.</td>
 </tr>

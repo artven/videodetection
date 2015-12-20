@@ -89,18 +89,36 @@
 </dd></dl>
 
 <dl class="staticmethod">
-<dt id="config.Configuration.direction">
-<em class="property">static </em><tt class="descname">direction</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.direction" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ustawia kierunek jazdy pojazdów.</p>
+<dt id="config.Configuration.distance_border1">
+<em class="property">static </em><tt class="descname">distance_border1</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.distance_border1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia pierwszą linię pomiaru prędkości.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>str</em>) &#8211; Nowa wartość.</td>
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> &#8211; Położenie w pikselach.</td>
 </tr>
 <tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
 </tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="config.Configuration.distance_border2">
+<em class="property">static </em><tt class="descname">distance_border2</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.distance_border2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ustawia drugą linię pomiaru prędkości.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> &#8211; Położenie w pikselach.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>
@@ -302,17 +320,15 @@
 
 <dl class="staticmethod">
 <dt id="config.Configuration.pixel_length">
-<em class="property">static </em><tt class="descname">pixel_length</tt><big>(</big><em>value=None</em><big>)</big><a class="headerlink" href="#config.Configuration.pixel_length" title="Permalink to this definition">¶</a></dt>
-<dd><p>Ustawienia/zwraca długość kalibracyjną w pixelach.</p>
+<em class="property">static </em><tt class="descname">pixel_length</tt><big>(</big><big>)</big><a class="headerlink" href="#config.Configuration.pixel_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zwraca długość kalibracyjną w pixelach.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>int</em>) &#8211; Nowa wartość.</td>
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Obecna wartość jeśli value równe None, nowa wartość w przeciwnym przypadku.</td>
-</tr>
-<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">int</td>
 </tr>
 </tbody>
 </table>

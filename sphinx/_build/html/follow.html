@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Videodetection 1.0.0 documentation" href="index.html" />
     <link rel="next" title="Klasyfikacja pojazdów" href="classify.html" />
-    <link rel="prev" title="Detekcja" href="detect.html" /> 
+    <link rel="prev" title="Detekcja ruchu" href="detect.html" /> 
   </head>
   <body>
     <div class="related">
@@ -41,7 +41,7 @@
           <a href="classify.html" title="Klasyfikacja pojazdów"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="detect.html" title="Detekcja"
+          <a href="detect.html" title="Detekcja ruchu"
              accesskey="P">previous</a> |</li>
         <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
       </ul>
@@ -58,6 +58,12 @@
 <dt id="follow.Follower">
 <em class="property">class </em><tt class="descclassname">follow.</tt><tt class="descname">Follower</tt><a class="headerlink" href="#follow.Follower" title="Permalink to this definition">¶</a></dt>
 <dd><p>Klasa śledząca pojazdy na kolejnych klatkach obrazu.</p>
+<dl class="staticmethod">
+<dt id="follow.Follower._Follower__check_locks">
+<em class="property">static </em><tt class="descname">_Follower__check_locks</tt><big>(</big><big>)</big><a class="headerlink" href="#follow.Follower._Follower__check_locks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sprawdza flagi detekcji i je odblokowywuje.</p>
+</dd></dl>
+
 <dl class="staticmethod">
 <dt id="follow.Follower._Follower__is_on_left">
 <em class="property">static </em><tt class="descname">_Follower__is_on_left</tt><big>(</big><em>new_car: detect.Vehicle</em><big>)</big><a class="headerlink" href="#follow.Follower._Follower__is_on_left" title="Permalink to this definition">¶</a></dt>
@@ -92,6 +98,12 @@
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="follow.Follower.clear">
+<em class="property">static </em><tt class="descname">clear</tt><big>(</big><big>)</big><a class="headerlink" href="#follow.Follower.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Czyści wewnętrzne dane algorytmu śledzenia pojazdów.</p>
 </dd></dl>
 
 <dl class="staticmethod">
@@ -143,7 +155,7 @@
         <div class="sphinxsidebarwrapper">
   <h4>Previous topic</h4>
   <p class="topless"><a href="detect.html"
-                        title="previous chapter">Detekcja</a></p>
+                        title="previous chapter">Detekcja ruchu</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="classify.html"
                         title="next chapter">Klasyfikacja pojazdów</a></p>
@@ -182,7 +194,7 @@
           <a href="classify.html" title="Klasyfikacja pojazdów"
              >next</a> |</li>
         <li class="right" >
-          <a href="detect.html" title="Detekcja"
+          <a href="detect.html" title="Detekcja ruchu"
              >previous</a> |</li>
         <li><a href="index.html">Videodetection 1.0.0 documentation</a> &raquo;</li> 
       </ul>
