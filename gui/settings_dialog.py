@@ -88,6 +88,9 @@ class SettingsDialog:
         else:
             self.window.hide()
 
+    def on_restore_button_clicked(self, object, data=None):
+        self.__restore_default()
+
     def on_ok_button_clicked(self, object, data=None):
         self.__write_settings()
         if self.independent:
@@ -96,18 +99,6 @@ class SettingsDialog:
             self.window.hide()
 
     def on_cancel_button_clicked(self, object, data=None):
-        if self.independent:
-            Gtk.main_quit()
-        else:
-            self.window.hide()
-
-    def on_save_button_clicked(self, object, data=None):
-        self.__write_settings()
-    
-    def on_restore_button_clicked(self, object, data=None):
-        self.__restore_default()
-        
-    def on_quit_button_clicked(self, object, data=None):
         if self.independent:
             Gtk.main_quit()
         else:
