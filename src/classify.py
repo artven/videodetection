@@ -67,6 +67,9 @@ class Classyfication:
         if Configuration.draw_speed_info():
             image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
 
+        # Połącz obrazy pojazdu
+        image = Classyfication.combine_images(old_frame.img, image)
+
         # Rekord zawierający informacje o pojeździe
         result = {"width": car_width, "height": car_height, "area": car_area, "speed": speed, "image": image,
                   "date": new_frame.creationTime, "color": color}
@@ -110,6 +113,21 @@ class Classyfication:
         frame.img = cv2.line(frame.img, (border2, 0), (border2, h), (255, 0, 255), thickness=4)
         return frame
 
+    @staticmethod
+    def combine_images(old_image: np.ndarray, new_image: np.ndarray):
+        """
+        Łączy katkę obrazu wykrytego i opuszczającego obszar detekcji w jeden obraz.
+
+        :param old_image: Obraz z pojazdem opuszczającym obszar detekcji.
+        :param new_image: Obraz z pojazdem wjeżdżającym w obszar detekcji.
+        :return: Obraz powstały z połączenia obrazów wejściowych.
+        :rtype: np.ndarray
+        """
+
+        tmp = np.zeros([480, 720*2, 3], dtype=np.uint8)
+        tmp[:, :720, :] = old_image
+        tmp[:, 720:, :] = new_image
+        return tmp
 
 class SpeedMeasurment:
     """
@@ -149,7 +167,7 @@ class SpeedMeasurment:
         return speed
 
     @staticmethod
-    def draw_speed_info(car: Vehicle, speed, img):
+    def draw_speed_info(car: Vehicle, speed: float, img: np.ndarray):
         """
         Podpisuje obraz samochodu informacją o jego prędkości
 
@@ -166,7 +184,7 @@ class SpeedMeasurment:
         text = ("S: %.2f" % speed) + " km/h"
         h, w, _ = img.shape
         org = (w - 200, h-20)
-        cv2.putText(img, text, org, cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.75, (0, 0, 0))
+        cv2.putText(img, text, org, cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
         return img
 
 
@@ -265,7 +283,7 @@ class SizeMeasurment:
         text = "width=%.2f m, height=%.2f m, area=%.2f m2" % (car_width, car_height, car_area)
         h, w, _ = img.shape
         text_place = (0, h-20)
-        cv2.putText(img, text, text_place, cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.75, (0, 0, 0))
+        cv2.putText(img, text, text_place, cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
 
         return img
 
@@ -402,8 +420,8 @@ class ColorDetector:
         """
 
         # Znajdź najlepsze kolory.
-        colors, percents, color_bar = ColorDetector.__find_dominant_colors(image, n=int(ColorDetector.color_number))
-        print(ColorDetector.color_number)
+        color_count = int(Configuration.color_number())
+        colors, percents, color_bar = ColorDetector.__find_dominant_colors(image, n=color_count)
         # Wybierz największy kolor.
         best_percent = max(percents)
         best_percent_index = percents.index(best_percent)

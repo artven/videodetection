@@ -181,6 +181,10 @@ class Frame:
             self.is_from_camera = True
 
         self.img = inputVideo.read()
+        if self.img is not None:
+            self.orginal_img = self.img.copy()
+        else:
+            self.orginal_img = None
         self.creationTime = datetime.now()
         self.fps = inputVideo.fps()
         self.framePos = inputVideo.position_frames()

@@ -111,7 +111,7 @@ class Detector:
         for value in values:
             if not Detector.__is_background(value):
                 marked_region = Detector.__get_region(marked_image, value)
-                if Detector.__is_big_enough(marked_region):
+                if Detector.__has_valid_size(marked_region):
                     x, y, w, h = Detector.__get_size(marked_region)
                     result.append(Vehicle(x, y, w, h))
 
@@ -201,16 +201,18 @@ class Detector:
         return value == 0
 
     @staticmethod
-    def __is_big_enough(region: np.ndarray):
+    def __has_valid_size(region: np.ndarray):
         """
-        Sprawdza czy obszar jest wystraczająco duży, aby być wartym rozważenia.
+        Sprawdza czy obszar nie jest za mały oraz za duży.
 
         :param np.ndarray region: Obraz zwierający region oznaczony niezerową wartością.
         :return: Prawda/fałsz.
         :rtype: bool
         """
 
-        return np.count_nonzero(region) >= Configuration.pixel_limit()
+        # TODO dodać to do konfiguracji
+        max = (480*720/3)
+        return (np.count_nonzero(region) >= Configuration.pixel_limit()) and (np.count_nonzero(region) < )
 
     @staticmethod
     def __get_region(img: np.ndarray, value: int):

@@ -75,6 +75,8 @@ class ProgramView:
             coulmn = Gtk.TreeViewColumn(col_title, render, text=i)
             self.files_treeview.append_column(coulmn)
 
+        self.files_treeview.connect('button-press-event', self.button_press_event)
+
         # Uruchomienie głównego okna
         self.window.show()
 
@@ -135,7 +137,7 @@ class ProgramView:
         self.controller.open_database()
 
     def on_open_images_clicked(self, object, data=None):
-        self.write_on_statusbar("Usuwanie plików.")
+        self.write_on_statusbar("Przeglądanie obrazów.")
         self.controller.open_images()
 
     def on_delete_files_clicked(self, object, data=None):
@@ -162,3 +164,12 @@ class ProgramView:
     def on_main_window_destroy(self, object, data=None):
         self.controller.exit()
         Gtk.main_quit()
+
+    # Usuwanie plików z listy
+    def button_press_event(self, treeview, event):
+        print("sajonara")
+        if event.button == 3:
+            x = int(event.x)
+            y = int(event.y)
+            path_info = treeview.get_path_at_pos(x, y)
+            self.controller.remove_element(path_info)

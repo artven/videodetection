@@ -15,11 +15,11 @@ class DatabaseDialog:
         self.database_dialog.hide()
         self.database_dialog.set_modal(True)
         self.database_dialog.set_destroy_with_parent(True)
-
+        self.builder.connect_signals(self)
         self.title_label = self.builder.get_object("title_label")
 
         self.database_treeview = self.builder.get_object("database_treeview")
-        self.database_liststore = Gtk.ListStore(int, str, str, str, str, str)
+        self.database_liststore = Gtk.ListStore(int, str, str, str, str, str, str)
         self.database_treeview.set_model(self.database_liststore)
         for i, col_title in enumerate(["Nr", "Długość", "Wysokość", "Pole", "Prędkość", "Plik", "Data"]):
             render = Gtk.CellRendererText()
@@ -27,6 +27,7 @@ class DatabaseDialog:
             self.database_treeview.append_column(coulmn)
 
     def read_database(self, path):
+        self.title_label.set_label(path)
         for record in Database.read_all_records_from_file(path):
             id = record[0]
             width = "%2.2f m" % record[1]
@@ -37,9 +38,8 @@ class DatabaseDialog:
             date = "%s" % (record[6].split(sep=".")[0])
             self.database_liststore.append((id, width, height, area, speed, file, date))
 
-    def on_ok_button_clicked(self):
-        print("adafsasf")
-        self.database_dialog.destroy()
+    def on_ok_button_clicked(self, object, data=None):
+        self.database_dialog.hide()
 
     def run(self):
         self.database_dialog.show()

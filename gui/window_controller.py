@@ -9,7 +9,6 @@ from gi.repository import Gtk, GdkPixbuf, GLib
 from src.logs import Database, ImageSaver, Logger
 from src.alg import Algorithm
 from src.video import Frame
-from src.config import Configuration
 from os import system
 
 from gui.database_dialog import DatabaseDialog
@@ -20,10 +19,6 @@ class WindowController:
     tmp_images_directory = "/tmp/loaded_file"
 
     def __init__(self, window):
-
-        Logger.start()
-        Configuration.load_config()
-
         self.window = window
 
         # Pliki wejściowe
@@ -46,7 +41,7 @@ class WindowController:
 
         self.database = None
         self.img_saver = ImageSaver()
-        GLib.timeout_add(100, self.algorithm)
+        GLib.timeout_add(125, self.algorithm)
 
     # Funkcje obsługujące przyciski głownego meunu
 
@@ -84,6 +79,7 @@ class WindowController:
         os.system("eog " + "images/")
 
     def clear_data(self):
+        self.window.detected_cars_liststore.clear()
         shutil.rmtree('images')
         shutil.rmtree('data')
         os.mkdir('images')
@@ -101,16 +97,21 @@ class WindowController:
     # Funkcje obsługujące przyciski menu odtwarzania
 
     def start_playing(self):
-        if self.database is None and self.__run_alg_flag:
-            self.database = Database()
-        self.__preprare_directory()
-        self.__play_button_enable(False)
-        self.__pause_button_enable(True)
-        self.__replay_button_enable(False)
-        self.__stop_button_enable(True)
-        self.__open_files_button_enable(False)
-        self.__play_file_flag = True
-        self.__enable_main_menu(False)
+        # Sprawdź czy lista plików nie jest pusta
+        if len(self.window.files_liststore):
+            # Stwórz bazę jeśli jej nie ma a jest potrzebna
+            if self.database is None and self.__run_alg_flag:
+                self.database = Database()
+            self.__preprare_directory()
+            self.__play_button_enable(False)
+            self.__pause_button_enable(True)
+            self.__replay_button_enable(False)
+            self.__stop_button_enable(True)
+            self.__open_files_button_enable(False)
+            self.__play_file_flag = True
+            self.__enable_main_menu(False)
+        else:
+            self.__write_msg("Brak plików do otwarcia")
 
     def pause_playing(self):
         self.__play_file_flag = False
@@ -121,7 +122,7 @@ class WindowController:
 
     def stop_playing(self):
         self.__play_file_flag = False
-        self.__played_file = 1
+        self.__played_file = 0
         self.__input_video = None
         self.__play_button_enable(True)
         self.__pause_button_enable(False)
@@ -129,6 +130,8 @@ class WindowController:
         self.__stop_button_enable(False)
         self.__open_files_button_enable(True)
         self.__enable_main_menu(True)
+        self.window.progressbar.set_fraction(0)
+        self.window.files_treeview.set_cursor(0)
 
     def replay(self):
         self.__play_file_flag = False
@@ -146,6 +149,17 @@ class WindowController:
         self.__display_mask_flag = value
 
     # Lista plików
+
+    def remove_element(self, path_info):
+        if len(self.window.files_liststore) and not self.__play_file_flag:
+            path, col, cellx, celly = path_info
+            it = self.window.files_liststore.get_iter(path)
+            self.window.files_liststore.remove(it)
+        if not len(self.window.files_liststore):
+            self.__play_button_enable(False)
+            self.__pause_button_enable(False)
+            self.__replay_button_enable(False)
+            self.__stop_button_enable(False)
 
     def __add_file_to_list(self, path):
         self.__file_number += 1
@@ -280,7 +294,8 @@ class WindowController:
                 area = "%2.2f m2" % record["area"]
                 speed = "%2.2f km/h" % record["speed"]
                 color = "R:%sG:%sB:%s" % (str(record["color"][0]), str(record["color"][1]), str(record["color"][2]))
-                self.window.detected_cars_liststore.append((nr, width, height, area, speed, color, path))
+                file_path = (path.split(sep="/"))[-1]
+                self.window.detected_cars_liststore.append((nr, width, height, area, speed, color, file_path))
                 self.__record_index += 1
 
     def __run_file_chooser_dialog(self, name, allow_multiple=True):

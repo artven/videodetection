@@ -40,6 +40,7 @@ class Algorithm:
         """
 
         frame.img = cv2.resize(frame.img, (720, 480))
+        frame.orginal_img = cv2.resize(frame.orginal_img, (720, 480))
 
         return frame
 
