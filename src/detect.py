@@ -211,8 +211,9 @@ class Detector:
         """
 
         # TODO dodać to do konfiguracji
-        max = (480*720/3)
-        return (np.count_nonzero(region) >= Configuration.pixel_limit()) and (np.count_nonzero(region) < )
+        max = (480*720/2)
+        min = Configuration.pixel_limit()
+        return (np.count_nonzero(region) >= min) and (np.count_nonzero(region) < max)
 
     @staticmethod
     def __get_region(img: np.ndarray, value: int):
