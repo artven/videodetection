@@ -1146,7 +1146,41 @@ reStructuredText
 \end_layout
 
 \begin_layout Standard
-###### Tutaj dać screen dokumentacji
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename img/dokumentacja.png
+	scale 50
+	BoundingBox 0bp 0bp 1350bp 627bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wygenerowana dokumentacja.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1167,7 +1201,16 @@ Pycharm jest środowiskiem deweloperskim dla języka Python, tworzonym przez
  Środowisko wspiera również systemy kontroli wersji(Git, SVN), posiada wsparcie
  dla narzędzi do pracy z bazami SQL oraz umożliwia zdalne edytowanie kodu
  w oparciu o protokuł SSH.
- Firma JetBrains udostępnia 3 wersje IDE: profesjonalną(płatną), 
+ Firma JetBrains udostępnia 3 wersje IDE: profesjonalną(płatną), edukacyjną(dla
+ studentów) oraz 
+\begin_inset Quotes pld
+\end_inset
+
+społecznościową
+\begin_inset Quotes prd
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Chapter
@@ -1184,12 +1227,196 @@ Instalacja
 \end_layout
 
 \begin_layout Standard
-Tutaj będzie opisany sposób instalacji programu, gdy ten zostanie doprowadzony
- do końca.
+Poniżej został opisany sposób instalacji programu oraz wymaganych bibliotek
+ na systemie Linux.
+ 
 \end_layout
 
-\begin_layout Standard
-Instalacja z repozytorium githuba + instalacja bibliotek .
+\begin_layout Enumerate
+Wchodzimy na stronę, i pobieramy najnowszą wersję programu:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+https://github.com/artven/videodetection/releases/latest
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Przechodzimy do folderu zawierające pobrany plik: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+cd ~/Pobrane
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Rozpakowujemy i kopiujemy program do katalogu domowego: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+unzip videodetection.v1.0.zip  
+\end_layout
+
+\begin_layout Plain Layout
+
+mkdir ~/videodetection
+\end_layout
+
+\begin_layout Plain Layout
+
+cp -r cp -r 'videodetection v1.0'/* ~/videodetection/ 
+\end_layout
+
+\begin_layout Plain Layout
+
+cd ~/videodetection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Instalujemy zależności dla biblioteki OpenCV: 
+\begin_inset listings
+lstparams "breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
+ && sudo apt-get autoremove
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo apt-get install build-essential cmake qt5-default libvtk6-dev install
+ zlib1g-dev libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libjasper-dev
+ libopenexr-dev libgdal-dev libdc1394-22-dev libavcodec-dev libavformat-dev
+ libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev
+ yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
+ libtbb-dev libeigen3-dev python-dev python-tk python-numpy python3-dev
+ python3-tk python3-numpy ant default-jdk doxygen
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Pobieramy bibliotekę z oficjalnej strony:
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+cd /tmp
+\end_layout
+
+\begin_layout Plain Layout
+
+wget https://github.com/Itseez/opencv/archive/3.1.0.zip
+\end_layout
+
+\begin_layout Plain Layout
+
+unzip 3.1.0.zip
+\end_layout
+
+\begin_layout Plain Layout
+
+cd opencv-3.1.0/ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Kompilujemy i instalujemy OpenCV: 
+\begin_inset listings
+lstparams "breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+mkdir build
+\end_layout
+
+\begin_layout Plain Layout
+
+cd build
+\end_layout
+
+\begin_layout Plain Layout
+
+cmake -DWITH_QT=ON -DWITH_OPENGL=ON -DFORCE_VTK=ON -DWITH_TBB=ON -DWITH_GDAL=ON
+ -DWITH_XINE=ON -DBUILD_EXAMPLES=ON ..
+\end_layout
+
+\begin_layout Plain Layout
+
+make -j4
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo make install
+\end_layout
+
+\begin_layout Plain Layout
+
+sudo ldconfig
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Instalujemy sklearn: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pip3 install -U scikit-learn
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -1210,7 +1437,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/struktura_programu.png
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -1240,11 +1467,6 @@ Program został podzielony na następujące pliki oraz foldery:
 \end_layout
 
 \begin_layout Itemize
-config.json - plik konfiguracyjny programu, zawiera parametry algorytmów
- oraz opcje dotyczące prezentacji wyników programu,
-\end_layout
-
-\begin_layout Itemize
 data - folder do którego program zapisuje dane o wykrytych pojazdach do
  baz danych SQLite,
 \end_layout
@@ -1255,25 +1477,16 @@ doc - dokumentacja programu w formacie .html wygenerowana przy użyciu narzędzi
 \end_layout
 
 \begin_layout Itemize
-exemples - spreparowane nagrania testowe,
-\end_layout
-
-\begin_layout Itemize
 gui - pliki w formacie .glade używane do wyświetlania interfejsu graficznego
  użytkownika,
 \end_layout
 
 \begin_layout Itemize
-images - zdjęcia wykrytych samochodów, opisane danymi samochodu
+images - zdjęcia wykrytych samochodów, 
 \end_layout
 
 \begin_layout Itemize
-readme.txt - plik tekstowy zawierający informacje o potrzebnych do uruchomienia
- programu bibliotekach i sposobie ich instalacji,
-\end_layout
-
-\begin_layout Itemize
-run.py - skrypt uruchamiający program,
+samples - przykładowe próbki nagrań ruchu samochodów,
 \end_layout
 
 \begin_layout Itemize
@@ -1281,7 +1494,24 @@ src - pliki źródłowe programu,
 \end_layout
 
 \begin_layout Itemize
-videos - zapisane przez program wyniki analizy w postaci plików wideo.
+videos - zapisane przez program wyniki analizy w postaci plików wideo,
+\end_layout
+
+\begin_layout Itemize
+config.json - plik konfiguracyjny programu, zawiera parametry algorytmów
+ oraz opcje dotyczące prezentacji wyników programu,
+\end_layout
+
+\begin_layout Itemize
+data.log - plik gdzie są odkładane komunikaty diagnostyczne programu,
+\end_layout
+
+\begin_layout Itemize
+readme.txt - plik tekstowy zawierający informacje o programie,
+\end_layout
+
+\begin_layout Itemize
+run.py - skrypt uruchamiający program.
 \end_layout
 
 \begin_layout Section*
@@ -1291,7 +1521,7 @@ Interfejs graficzny
 \begin_layout Standard
 Po uruchomieniu programu skryptem z pliku run.py pojawia się główne okno
  programu.
- Ma ono początkowo postać zwykłego paska złożonego z przycisków.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1304,7 +1534,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/widok_programu.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -1328,20 +1558,27 @@ Główne okno programu
 
 \end_layout
 
-\begin_layout Standard
-Główne okno programu zapewnia następujące funkcje:
+\begin_layout Paragraph
+W skład głównego okna wchodzi górne menu, obszar odtwarzania pliku wideo,
+ lista przetwarzanych plików, lista wyników klasyfikacji, menu odtwarzania
+ i pasek informujący o postępie przetwarzania.
+\end_layout
+
+\begin_layout Paragraph
+Funkcje elementów górnego menu:
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Quotes pld
 \end_inset
 
-Otwórz plik wideo
+Dodaj wideo
 \begin_inset Quotes prd
 \end_inset
 
- - otwiera poniższe okno dialogowe, umożliwiające wybór jednego bądź większe
+ - otwiera poniższe okno dialogowe, umożliwiające wybór jednego bądź większej
  ilości plików wideo do analizy.
+ Wybrane pliki są dodawane do listy po prawej stronie.
  
 \begin_inset Float figure
 wide false
@@ -1385,31 +1622,55 @@ Okno wyboru plików
 \begin_inset Quotes pld
 \end_inset
 
-Otwórz obraz z kamery
+Dane
 \begin_inset Quotes prd
 \end_inset
 
- - uruchamia podprogram, który zajmuje się analizą obrazu z kamery w czasie
- rzeczywistym ### dodać screen podprogramu
+ - umożliwia wybranie bazy danych i podejrzenie jej zawartości.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/baza_danych.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Podgląd bazy danych
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Quotes pld
 \end_inset
 
-Otwórz plik bazy danych
-\begin_inset Quotes prd
-\end_inset
-
- - otwiera wskazaną bazę danych i prezentuje zawarte w niej dane o pojazdach.
- ### dodać screen
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Przeglądaj obrazy
+Obrazy
 \begin_inset Quotes prd
 \end_inset
 
@@ -1424,7 +1685,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/przeladanie_obrazow.png
-	scale 50
+	scale 40
 
 \end_inset
 
@@ -1432,7 +1693,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Widok przeglądania obrazów
+Widok przeglądania obrazów.
 \end_layout
 
 \end_inset
@@ -1453,70 +1714,11 @@ Widok przeglądania obrazów
 \begin_inset Quotes pld
 \end_inset
 
-Usuń poprzednie dane
+Wyczyść
 \begin_inset Quotes prd
 \end_inset
 
- - usuwa zdjęcia, filmy i dane zapisane przez poprzednie sesje programu.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Włącz/wyłącz algorytm
-\begin_inset Quotes prd
-\end_inset
-
- - umożliwia wyłączenie algorytmu.
- Program dokonuje wtedy jedynie detekcji poruszających się obiektów bez
- klasyfikowania oraz logowania danych do bazy danych.
- Opcja wyłączenia algorytmu może być przydatna w sytuacji, w której użytkownik
- chciałby dokonać kalibracji ustawień.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Odtwarzaj wczytane pliki
-\begin_inset Quotes prd
-\end_inset
-
- - rozpoczyna wyświetlanie i analizę uprzednio wybranych plików wideo.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Zatrzymaj odtwarzanie
-\begin_inset Quotes prd
-\end_inset
-
- - zatrzymuje odtwarzanie obecnego pliku.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Zakończ odtwarzanie
-\begin_inset Quotes prd
-\end_inset
-
- - kończy odtwarzanie i analizę wszystkich plików.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Włącz/wyłącz nagrywanie
-\begin_inset Quotes prd
-\end_inset
-
- - umożliwia nagrywanie obrazu poddanego analizie do pliku wideo.
+ - usuwa zdjęcia, filmy, bazy danych oraz wyniki klasyfikacji.
 \end_layout
 
 \begin_layout Itemize
@@ -1527,8 +1729,44 @@ Ustawienia
 \begin_inset Quotes prd
 \end_inset
 
- - pokazuje okno ustawień programu.
- Okno ustawień zostało szczegółowo opisane w następnym podrozdziale.
+ -pokazuje okno ustawień programu.
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/ustawienia.png
+	scale 60
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Okno ustawień programu.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -1598,45 +1836,6 @@ Zakończ
 
 \begin_layout Section*
 Ustawienia
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename img/ustawienia.png
-	scale 50
-
-\end_inset
-
-
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Okno ustawień programu
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1804,6 +2003,52 @@ W tym rozdziale zostały opisane kolejne etapy zaimplementowanego algorytmu.
 
 \begin_layout Section*
 Kalibracja programu
+\end_layout
+
+\begin_layout Standard
+Przed rozpoczęciem analizy próbek wideo należy dobrać odpowiednie ustawienia.
+ W tym celu istnieje możliwość wyłączenia przetwarzania obrazu przez algorytm,
+ co znacząco polepsza wydajność programu na tym etapie.
+ Pierwszym krokiem konfiguracji programu, powinno być dostosowanie rozmiaru
+ strefy czułości pojazdu.
+ Należy przy tym stosować się do następujących zasad:
+\end_layout
+
+\begin_layout Enumerate
+Stefa czułości powinna być tak dobrana aby obejmowała obszar obrazu, będący
+ faktycznym rejonem przejazdu pojazdów.
+ Wybranie zbyt dużej strefy, obejmującej np.
+ pobocze, tło, etc, może powodować pojawienie się błędnych odczytów spowodowanyc
+h klasyfikacja odbić światła i cieni jako poruszających się pojazdów.
+\end_layout
+
+\begin_layout Enumerate
+Strefa powinna być na tyle wąska aby pojazdy były wykrywane dopiero gdy
+ znajdą się całkowicie w kadrze.
+ W przeciwnym razie tracona jest dokładność pomiaru prędkości.
+\end_layout
+
+\begin_layout Standard
+Kolejnym etapem jest wprowadzenie granic pomiaru prędkości.
+ Przed nagraniem danych z ruchu drogowego operator powinien dokonać ręcznego
+ pomiaru odległości, następnie w trakcie konfiguracji programu oznaczyć
+ zmierzony odcinek granicami pomiaru i podać zmierzoną wartość.
+ Wartość ta stanowi podstawę przelicznika pixeli na obrazie na rzeczywistą
+ odległość.
+\end_layout
+
+\begin_layout Standard
+Ostatnim etapem powinno być dobranie minimalnego rozmiaru obiektu.
+ Jest to ważna opcja, kluczowa podczas selekcji obiektów na obrazie.
+ Umożliwia odrzucenie obiektów bodących zakłóceniami.
+ Minimalna wielkość obiektu powinna być dobrana z uwzględnieniem odległości
+ urządzenia nagrywającego od jezdni - im urządzenie było bliżej szosy, dolna
+ granica powinna być większa.
+ 
+\end_layout
+
+\begin_layout Standard
+W programie, na chwilę obecną, nie ma możliwości ustalenia
 \end_layout
 
 \begin_layout Section*
