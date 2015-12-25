@@ -68,7 +68,7 @@ class Classyfication:
             image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
 
         # Połącz obrazy pojazdu
-        image = Classyfication.combine_images(old_frame.img, image)
+        image = Classyfication.combine_images(old_frame.orginal_img, image)
 
         # Rekord zawierający informacje o pojeździe
         result = {"width": car_width, "height": car_height, "area": car_area, "speed": speed, "image": image,
@@ -184,7 +184,7 @@ class SpeedMeasurment:
         text = ("S: %.2f" % speed) + " km/h"
         h, w, _ = img.shape
         org = (w - 200, h-20)
-        cv2.putText(img, text, org, cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
+        cv2.putText(img, text, org, cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.75, (255, 255, 255))
         return img
 
 
@@ -283,7 +283,7 @@ class SizeMeasurment:
         text = "width=%.2f m, height=%.2f m, area=%.2f m2" % (car_width, car_height, car_area)
         h, w, _ = img.shape
         text_place = (0, h-20)
-        cv2.putText(img, text, text_place, cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (0, 0, 0))
+        cv2.putText(img, text, text_place, cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.75, (255, 255, 255))
 
         return img
 

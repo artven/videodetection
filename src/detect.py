@@ -48,27 +48,6 @@ class Vehicle:
 
         return int(self.x), int(self.y), int(self.w), int(self.h)
 
-# TODO zmienić na rysowanie pojedynczego samochodu
-def draw_vehicles(frame: Frame, vehicles: list):
-    """
-    Oznacza na obrazie pojazdy wraz ze środkami ciężkości.
-
-    :param Frame frame: Klatka obrazu.
-    :param list vehicles: Lista pojazdów.
-    :return: Obraz z oznaczonymi pojazdami.
-    :rtype: numpy.array
-    """
-
-    for veh in vehicles:
-        x, y, w, h = veh.get_coordinates()
-        cx = veh.centerx
-        cy = veh.centery
-        frame.img = cv2.rectangle(frame.img, (x, y), (x+w, y+h), (0, 255, 0), thickness=4)
-        frame.img = cv2.line(frame.img, (cx, cy-10), (cx, cy+10), (0, 255, 0), thickness=4)
-        frame.img = cv2.line(frame.img, (cx-10, cy), (cx+10, cy), (0, 255, 0), thickness=4)
-    return frame
-
-
 class Detector:
     """
     Klasa dokonująca wtępnej selekcji obiektów.
@@ -90,6 +69,27 @@ class Detector:
         vehicles = Detector.__find_possible_vehicles(mask)
         selected_vehicles = Detector.__select(vehicles, frame)
         return selected_vehicles, mask
+
+    # TODO zmienić na rysowanie pojedynczego samochodu
+    @staticmethod
+    def draw_vehicles(frame: Frame, vehicles: list):
+        """
+        Oznacza na obrazie pojazdy wraz ze środkami ciężkości.
+
+        :param Frame frame: Klatka obrazu.
+        :param list vehicles: Lista pojazdów.
+        :return: Obraz z oznaczonymi pojazdami.
+        :rtype: numpy.array
+        """
+
+        for veh in vehicles:
+            x, y, w, h = veh.get_coordinates()
+            cx = veh.centerx
+            cy = veh.centery
+            frame.img = cv2.rectangle(frame.img, (x, y), (x+w, y+h), (0, 255, 0), thickness=4)
+            frame.img = cv2.line(frame.img, (cx, cy-10), (cx, cy+10), (0, 255, 0), thickness=4)
+            frame.img = cv2.line(frame.img, (cx-10, cy), (cx+10, cy), (0, 255, 0), thickness=4)
+        return frame
 
     @staticmethod
     def __find_possible_vehicles(bin_image: np.ndarray):
@@ -210,7 +210,6 @@ class Detector:
         :rtype: bool
         """
 
-        # TODO dodać to do konfiguracji
         max = (480*720/2)
         min = Configuration.pixel_limit()
         return (np.count_nonzero(region) >= min) and (np.count_nonzero(region) < max)

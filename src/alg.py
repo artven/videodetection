@@ -1,6 +1,6 @@
 __author__ = 'rafal'
 
-from src.detect import Detector, draw_vehicles
+from src.detect import Detector
 from src.video import Frame
 from src.follow import Follower
 from src.config import Configuration
@@ -70,7 +70,7 @@ class Algorithm:
 
         # Rysowanie pojazdów.
         if Configuration.draw_cars():
-            frame = draw_vehicles(frame, vehicles)
+            frame = Detector.draw_vehicles(frame, vehicles)
 
         # Rysowanie obszaru wykrywania.
         if Configuration.draw_detection_region():

