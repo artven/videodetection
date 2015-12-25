@@ -38,6 +38,7 @@ class WindowController:
         self.__record_index = 1
 
         self.__file_number = 0
+        self.__current_image = None
 
         self.database = None
         self.img_saver = ImageSaver()
@@ -107,6 +108,7 @@ class WindowController:
             self.__pause_button_enable(True)
             self.__replay_button_enable(False)
             self.__stop_button_enable(True)
+            self.__save_image_button_enable(False)
             self.__open_files_button_enable(False)
             self.__play_file_flag = True
             self.__enable_main_menu(False)
@@ -119,6 +121,7 @@ class WindowController:
         self.__pause_button_enable(False)
         self.__replay_button_enable(True)
         self.__stop_button_enable(True)
+        self.__save_image_button_enable(True)
 
     def stop_playing(self):
         self.__play_file_flag = False
@@ -130,6 +133,7 @@ class WindowController:
         self.__stop_button_enable(False)
         self.__open_files_button_enable(True)
         self.__enable_main_menu(True)
+        self.__save_image_button_enable(True)
         self.window.progressbar.set_fraction(0)
         self.window.files_treeview.set_cursor(0)
 
@@ -138,6 +142,20 @@ class WindowController:
         self.__input_video = None
         self.__played_file = 0
         self.start_playing()
+
+    def save_image(self):
+        if self.__current_image is not None:
+            name = "Podaj nazwę pliku..."
+            response = self.__run_file_chooser_dialog(name, allow_multiple=False, action=Gtk.FileChooserAction.SAVE)
+            if response is not None:
+                response = response[0]
+                response += ".jpg"
+                print(response)
+                cv2.imwrite(response, self.__current_image)
+            else:
+                self.__write_msg("Błąd przy zapisywaniu pliku.")
+        else:
+            self.__write_msg("Nie można zapisać obrazu.")
 
     def enable_recording(self, value):
         self.__record_video_flag = value
@@ -198,6 +216,9 @@ class WindowController:
 
     def __open_files_button_enable(self, value=True):
         self.window.open_file_button.set_sensitive(value)
+
+    def __save_image_button_enable(self, value=True):
+        self.window.save_image_button.set_sensitive(value)
 
     def __enable_main_menu(self, value=True):
         self.window.open_file_button.set_sensitive(value)
@@ -273,8 +294,10 @@ class WindowController:
                 # Zapisz klatkę obrazu do tymczasowego pliku
                 if not self.__display_mask_flag:
                     self.__save_image(frame.img)
+                    self.__current_image = frame.img
                 else:
                     self.__save_image(mask)
+                    self.__current_image = mask
 
                 # Zamień plik na pixbuf
                 pixbuf = self.__conver_image_to_pixbuf()
@@ -298,11 +321,10 @@ class WindowController:
                 self.window.detected_cars_liststore.append((nr, width, height, area, speed, color, file_path))
                 self.__record_index += 1
 
-    def __run_file_chooser_dialog(self, name, allow_multiple=True):
+    def __run_file_chooser_dialog(self, name, allow_multiple=True, action=Gtk.FileChooserAction.OPEN):
         # Stwórz okno
-        action = Gtk.FileChooserAction.OPEN
         buttuons = (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL, Gtk.STOCK_OPEN, Gtk.ResponseType.OK)
-        file_chooser_dialog = Gtk.FileChooserDialog(name, None, action,buttuons)
+        file_chooser_dialog = Gtk.FileChooserDialog(name, None, action, buttuons)
         file_chooser_dialog.set_select_multiple(allow_multiple)
         response = file_chooser_dialog.run()
 

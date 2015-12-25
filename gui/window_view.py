@@ -2,7 +2,7 @@
 __author__ = 'rafal'
 __doc__ = 'Moduł głównego okna programu.'
 
-from gi.repository import Gtk
+from gi.repository import Gtk, Gdk
 from gui.about_dialog import AboutDialog
 from gui.settings_dialog import SettingsDialog
 from gui.window_controller import WindowController
@@ -33,6 +33,7 @@ class ProgramView:
         self.pause_button = self.builder.get_object("pause_button")
         self.stop_button = self.builder.get_object("stop_button")
         self.replay_button = self.builder.get_object("replay_button")
+        self.save_image_button = self.builder.get_object("save_image_button")
         self.record_toggle_button = self.builder.get_object("record_toggle_button")
         self.run_alg_toggle_button = self.builder.get_object("run_alg_button")
         self.display_mask_button = self.builder.get_object("display_mask_button")
@@ -75,7 +76,11 @@ class ProgramView:
             coulmn = Gtk.TreeViewColumn(col_title, render, text=i)
             self.files_treeview.append_column(coulmn)
 
-        self.files_treeview.connect('button-press-event', self.button_press_event)
+        # Usuwanie plików z listy
+        self.files_treeview.connect("button-press-event", self.button_press_event)
+
+        # Obsługa skrótów klawiszowych
+        self.window.connect("key_press_event", self.on_key_press_event)
 
         # Uruchomienie głównego okna
         self.window.show()
@@ -86,21 +91,25 @@ class ProgramView:
     # Funkcje obsługujące przyciski menu odtwarzania
 
     def on_play_button_clicked(self, object, data=None):
-        self.controller.start_playing()
         self.write_on_statusbar("Odtwarzanie...")
+        self.controller.start_playing()
 
     def on_pause_button_clicked(self, object, data=None):
-        self.controller.pause_playing()
         self.write_on_statusbar("Pauza")
+        self.controller.pause_playing()
 
     def on_stop_clicked(self, object, data=None):
+        self.write_on_statusbar("Stop")
         self.controller.stop_playing()
         self.controller.clear_main_image()
-        self.write_on_statusbar("Stop")
 
     def on_replay_clicked(self, object, data=None):
-        self.controller.replay()
         self.write_on_statusbar("Ponowne odtwarzanie...")
+        self.controller.replay()
+
+    def on_save_image_button_clicked(self, object, data=None):
+        self.write_on_statusbar("Zapisywanie...")
+        self.controller.save_image()
 
     def on_record_toggled(self, object, data=None):
         is_pressed = self.record_toggle_button.get_active()
@@ -157,7 +166,7 @@ class ProgramView:
         self.about_dialog.show()
 
     def on_exit_button_clicked(self, object, data=None):
-        self.write_on_statusbar("Wychodznie z programu.")
+        self.write_on_statusbar("Zakończenie programu.")
         self.controller.exit()
         Gtk.main_quit()
 
@@ -166,10 +175,75 @@ class ProgramView:
         Gtk.main_quit()
 
     # Usuwanie plików z listy
+
     def button_press_event(self, treeview, event):
-        print("sajonara")
         if event.button == 3:
             x = int(event.x)
             y = int(event.y)
             path_info = treeview.get_path_at_pos(x, y)
             self.controller.remove_element(path_info)
+
+    # Obsługa skrótów klawiszowych
+
+    def on_key_press_event(self, widget, event):
+        keyname = Gdk.keyval_name(event.keyval)
+
+        # CTRL+q - otwieranie plików
+        if event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 'q':
+            self.write_on_statusbar("Otwieranie nowych plików.")
+            self.controller.open_files()
+        # CTRL+w - otwarcie bazy danych
+        elif event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 'w':
+            self.write_on_statusbar("Otwieranie bazy danych.")
+            self.controller.open_database()
+        # CTRL+e - otwarcie obrazów
+        elif event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 'e':
+            self.write_on_statusbar("Przeglądanie obrazów.")
+            self.controller.open_images()
+        # CTRL+r - czyszczenie danych
+        elif event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 'r':
+            self.write_on_statusbar("Usuwanie plików.")
+            self.controller.clear_data()
+        # CTRL+t - ustawienia
+        elif event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 't':
+            self.write_on_statusbar("Ustawienia.")
+            self.settings_dialog.show()
+        # CTRL+y - dokumentacja
+        elif event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 'y':
+            self.write_on_statusbar("Dokumentacja.")
+            self.controller.open_documentation()
+        # CTRL+u - o programie
+        elif event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 'u':
+            self.write_on_statusbar("O programie.")
+            self.about_dialog.show()
+        # CTRL+z - zamknij program
+        elif event.state & Gdk.ModifierType.CONTROL_MASK and keyname == 'z':
+            self.write_on_statusbar("Zakończenie programu.")
+            self.controller.exit()
+            Gtk.main_quit()
+        # a - odtwarzanie
+        elif keyname == 'a':
+            if self.play_button.get_sensitive():
+                self.write_on_statusbar("Odtwarzanie...")
+                self.controller.start_playing()
+        # s - pauza
+        elif keyname == 's':
+            if self.pause_button.get_sensitive():
+                self.write_on_statusbar("Pauza")
+                self.controller.pause_playing()
+        # d - replay
+        elif keyname == 'd':
+            if self.replay_button.get_sensitive():
+                self.write_on_statusbar("Ponowne odtwarzanie...")
+                self.controller.replay()
+        # f - stop
+        elif keyname == 'f':
+            if self.stop_button.get_sensitive():
+                self.write_on_statusbar("Stop")
+                self.controller.stop_playing()
+                self.controller.clear_main_image()
+        # g - zapis obrazu
+        elif keyname == 'g':
+            if self.save_image_button.get_sensitive():
+                self.write_on_statusbar("Zapisywanie...")
+                self.controller.save_image()

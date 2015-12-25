@@ -27,7 +27,8 @@
               <object class="GtkToolButton" id="open_file_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Otwórz plik wideo</property>
+                <property name="tooltip_text" translatable="yes">Otwórz plik wideo[Ctrl+q].</property>
+                <property name="margin_right">3</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">Dodaj wideo</property>
                 <property name="use_underline">True</property>
@@ -43,7 +44,7 @@
               <object class="GtkToolButton" id="open_database_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Otwórz plik bazy danych</property>
+                <property name="tooltip_text" translatable="yes">Otwórz plik bazy danych[Ctrl+w].</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">Dane</property>
                 <property name="use_underline">True</property>
@@ -59,7 +60,7 @@
               <object class="GtkToolButton" id="open_images_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Przeglądaj obrazy zapisane przez program</property>
+                <property name="tooltip_text" translatable="yes">Przeglądaj obrazy zapisane przez program[Ctrl+e].</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">Obrazy</property>
                 <property name="use_underline">True</property>
@@ -75,7 +76,7 @@
               <object class="GtkToolButton" id="delete_files_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Usuń poprzednie obrazy i bazy danych stworzone przez program.</property>
+                <property name="tooltip_text" translatable="yes">Usuń poprzednie obrazy i bazy danych stworzone przez program[Ctrl+r].</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">Wyczyść</property>
                 <property name="use_underline">True</property>
@@ -91,7 +92,7 @@
               <object class="GtkToolButton" id="settings_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Ustawienia</property>
+                <property name="tooltip_text" translatable="yes">Ustawienia[Ctrl+t].</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">Ustawienia</property>
                 <property name="use_underline">True</property>
@@ -107,7 +108,7 @@
               <object class="GtkToolButton" id="documentation_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Dokumentacja</property>
+                <property name="tooltip_text" translatable="yes">Dokumentacja[Ctrl+y].</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">Dokumentacja</property>
                 <property name="use_underline">True</property>
@@ -123,7 +124,7 @@
               <object class="GtkToolButton" id="about_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">O programie</property>
+                <property name="tooltip_text" translatable="yes">O programie[Ctrl+u].</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">O programie</property>
                 <property name="use_underline">True</property>
@@ -139,7 +140,7 @@
               <object class="GtkToolButton" id="exit_button">
                 <property name="visible">True</property>
                 <property name="can_focus">False</property>
-                <property name="tooltip_text" translatable="yes">Wyjdź z programu</property>
+                <property name="tooltip_text" translatable="yes">Wyjdź z programu[Ctrl+z].</property>
                 <property name="is_important">True</property>
                 <property name="label" translatable="yes">Zakończ</property>
                 <property name="use_underline">True</property>
@@ -254,7 +255,7 @@
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Rozpocznij przetwarzanie plików wideo.</property>
+                    <property name="tooltip_text" translatable="yes">Rozpocznij przetwarzanie plików wideo[a].</property>
                     <property name="label" translatable="yes">toolbutton</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-media-play</property>
@@ -270,7 +271,7 @@
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Zatrzymaj odtwarzanie</property>
+                    <property name="tooltip_text" translatable="yes">Zatrzymaj odtwarzanie[s].</property>
                     <property name="label" translatable="yes">toolbutton6</property>
                     <property name="use_underline">True</property>
                     <property name="icon_name">media-playback-pause</property>
@@ -285,7 +286,7 @@
                   <object class="GtkToolButton" id="replay_button">
                     <property name="visible">True</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Rozpocznij przetwarzanie od nowa.</property>
+                    <property name="tooltip_text" translatable="yes">Rozpocznij przetwarzanie od nowa[d].</property>
                     <property name="label" translatable="yes">toolbutton3</property>
                     <property name="use_underline">True</property>
                     <property name="stock_id">gtk-refresh</property>
@@ -301,11 +302,27 @@
                     <property name="visible">True</property>
                     <property name="sensitive">False</property>
                     <property name="can_focus">False</property>
-                    <property name="tooltip_text" translatable="yes">Zakończ odtwarzanie</property>
+                    <property name="tooltip_text" translatable="yes">Zakończ odtwarzanie[f].</property>
                     <property name="label" translatable="yes">toolbutton7</property>
                     <property name="use_underline">True</property>
                     <property name="icon_name">media-playback-stop</property>
                     <signal name="clicked" handler="on_stop_clicked" swapped="no"/>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="homogeneous">True</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkToolButton" id="save_image_button">
+                    <property name="visible">True</property>
+                    <property name="sensitive">False</property>
+                    <property name="can_focus">False</property>
+                    <property name="tooltip_text" translatable="yes">Zapisz aktualną klatę obrazu do pliku[g].</property>
+                    <property name="label" translatable="yes">toolbutton1</property>
+                    <property name="use_underline">True</property>
+                    <property name="stock_id">gtk-floppy</property>
+                    <signal name="clicked" handler="on_save_image_button_clicked" swapped="no"/>
                   </object>
                   <packing>
                     <property name="expand">False</property>
