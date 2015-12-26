@@ -6,6 +6,7 @@ import cv2
 
 from src.video import VideoReader, VideoWriter
 from gi.repository import Gtk, GdkPixbuf, GLib
+from gui.ok_cancel_dialog import OkCancleDialog
 from src.logs import Database, ImageSaver, Logger
 from src.alg import Algorithm
 from src.video import Frame
@@ -80,14 +81,19 @@ class WindowController:
         os.system("eog " + "images/")
 
     def clear_data(self):
-        self.window.detected_cars_liststore.clear()
-        shutil.rmtree('images')
-        shutil.rmtree('data')
-        os.mkdir('images')
-        os.mkdir('data')
-        os.mknod("images/.keepfile")
-        os.mknod("data/.keepfile")
-        self.database = Database()
+        label = "Czy napewno chcesz usunąć dane programu?"
+        dialog = OkCancleDialog(label)
+        response = dialog.run()
+        if response == Gtk.ResponseType.OK:
+            self.window.detected_cars_liststore.clear()
+            shutil.rmtree('images')
+            shutil.rmtree('data')
+            os.mkdir('images')
+            os.mkdir('data')
+            os.mknod("images/.keepfile")
+            os.mknod("data/.keepfile")
+            self.database = Database()
+        dialog.destroy()
 
     def open_documentation(self):
         system("firefox doc/index.html")

@@ -41,8 +41,8 @@
 \use_default_options true
 \maintain_unincluded_children false
 \language polish
-\language_package default
-\inputencoding iso8859-2
+\language_package auto
+\inputencoding utf8
 \fontencoding global
 \font_roman utopia
 \font_sans default
@@ -63,10 +63,9 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref true
-\pdf_title "dyplom"
-\pdf_author "Imie Nazwisko"
-\pdf_subject "Temat"
-\pdf_keywords "słowa kluczowe"
+\pdf_title "Praca dyplomowa"
+\pdf_author "Rafał Prusak"
+\pdf_subject "Wideodetekcja pojazdów samochodowych"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen false
@@ -76,7 +75,7 @@
 \pdf_colorlinks false
 \pdf_backref false
 \pdf_pdfusetitle true
-\papersize default
+\papersize a4paper
 \use_geometry false
 \use_package amsmath 0
 \use_package amssymb 0
@@ -109,6 +108,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\listings_params "frame=tblr"
 \tracking_changes false
 \output_changes false
 \html_math_output 3
@@ -274,7 +274,21 @@ Generalny Pomiar Ruchu Drogowego
 
 \begin_layout Standard
 W Polsce od roku 1965, co 5 lat, dokonywany jest Generalny Pomiar Ruchu
- Drogowego(GPRD).
+ Drogowego(GPRD)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GPRD1"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GPRD2"
+
+\end_inset
+
+.
  Ma on na celu pozyskanie charakterystyk ruchu drogowego na wszystkich odcinakac
 h dróg krajowych i wojewódzkich.
  Uzyskiwane w wyniku GPRD pomiary są wykorzystywane przy planowaniu rozbudowy
@@ -324,7 +338,7 @@ rowery.
 \begin_layout Standard
 Metodologię dokonywania pomiarów, terminy pomiarów, zadania obserwatorów,
  etc reguluje zarządzenie nr 38 Generalnego Dyrektora Dróg Krajowych i Autostrad
- z dnia 1 września 2014 r #dodać odnośnik do bibliografii
+ z dnia 1 września 2014 r.
 \end_layout
 
 \begin_layout Section*
@@ -396,7 +410,14 @@ Detektor jest to urządzenie składające się z czujnika, układu kondycjonowan
  Detektor powinien być urządzenie prostym w obsłudze i montażu, bezawaryjnym,
  pozwalającym na łatwy odczyt informacji.
  Stosowane są dwa rodzaje detektorów: bezinwazyjne i wbudowane(instalowane
- w nawierzchni).
+ w nawierzchni)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gajda"
+
+\end_inset
+
+.
  
 \end_layout
 
@@ -667,7 +688,14 @@ NeuroSoft
 
 \begin_layout Standard
 Rozwiązania wrocławskiej firmy NeuroSoft są jednymi z najpopularniejszych
- w kategorii systemów pomiaru i zarządzania ruchem drogowym.
+ w kategorii systemów pomiaru i zarządzania ruchem drogowym
+\begin_inset CommandInset citation
+LatexCommand cite
+key "neurosoft"
+
+\end_inset
+
+.
  Firma ta oferuje system o nazwie 
 \begin_inset Quotes pld
 \end_inset
@@ -807,7 +835,14 @@ Cat Traffic
 
 \begin_layout Standard
 Poznańska firma Cat Traffic zajmuje się systemami stanowiącymi połączenie
- metod wizyjnych z wykorzystaniem płyt warzących.
+ metod wizyjnych z wykorzystaniem płyt warzących
+\begin_inset CommandInset citation
+LatexCommand cite
+key "cattraffic"
+
+\end_inset
+
+.
  Firma wdrożyła kilkanaście stacji warzących na terenie Niemiec, Polski,
  Austrii i Szwajcarii.
  W Polsce CatTraffic wdrożyło na autostradzie A4 systemy pomiaru wagi i
@@ -883,7 +918,21 @@ Python
 
 \begin_layout Standard
 Algorytm wideo detekcji pojazdów został zaimplementowany w języku programowania
- Python, w wersji 3.4.
+ Python, w wersji 3.4
+\begin_inset CommandInset citation
+LatexCommand cite
+key "python1"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "python2"
+
+\end_inset
+
+.
  Język ten posiada wiele korzystnych cech, które miały istotny wypływ na
  proces powstawania programu:
 \end_layout
@@ -1098,12 +1147,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/glade.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/glade.png
 	scale 30
 
 \end_inset
@@ -1156,7 +1201,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/dokumentacja.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/dokumentacja.png
 	scale 50
 	BoundingBox 0bp 0bp 1350bp 627bp
 
@@ -1174,10 +1219,6 @@ Wygenerowana dokumentacja.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1203,7 +1244,7 @@ Pycharm jest środowiskiem deweloperskim dla języka Python, tworzonym przez
  jak Django czy Flask.
  Środowisko wspiera również systemy kontroli wersji(Git, SVN), posiada wsparcie
  dla narzędzi do pracy z bazami SQL oraz umożliwia zdalne edytowanie kodu
- w oparciu o protokuł SSH.
+ w oparciu o protokół SSH.
  Firma JetBrains udostępnia 3 wersje IDE: profesjonalną(płatną), edukacyjną(dla
  studentów) oraz 
 \begin_inset Quotes pld
@@ -1433,13 +1474,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/struktura_programu.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/struktura_programu.png
 	scale 60
 
 \end_inset
@@ -1453,10 +1490,6 @@ Widok struktury programu
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1536,7 +1569,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/widok_programu.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/widok_programu.png
 	scale 40
 
 \end_inset
@@ -1561,7 +1594,7 @@ Główne okno programu
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 W skład głównego okna wchodzi górne menu, obszar odtwarzania pliku wideo,
  lista przetwarzanych plików, lista wyników klasyfikacji, menu odtwarzania
  i pasek informujący o postępie przetwarzania.
@@ -1589,13 +1622,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/wybor_pliku.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/wybor_pliku.png
 	scale 50
 
 \end_inset
@@ -1609,10 +1638,6 @@ Okno wyboru plików
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1637,13 +1662,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/baza_danych.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/baza_danych.png
 	scale 60
 
 \end_inset
@@ -1657,10 +1678,6 @@ Podgląd bazy danych
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1687,7 +1704,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/przeladanie_obrazow.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/przeladanie_obrazow.png
 	scale 40
 
 \end_inset
@@ -1701,10 +1718,6 @@ Widok przeglądania obrazów.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1740,13 +1753,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/ustawienia.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/ustawienia.png
 	scale 60
 
 \end_inset
@@ -1760,10 +1769,6 @@ Okno ustawień programu.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1800,7 +1805,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/o_programie.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/o_programie.png
 	scale 60
 
 \end_inset
@@ -1814,10 +1819,6 @@ Informacja o programie
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -2008,7 +2009,7 @@ W tym rozdziale zostały opisane kolejne etapy zaimplementowanego algorytmu.
 Kalibracja programu
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Przed rozpoczęciem analizy próbek wideo należy dobrać odpowiednie ustawienia.
  W tym celu istnieje możliwość wyłączenia przetwarzania obrazu przez algorytm,
  co znacząco polepsza wydajność programu na tym etapie.
@@ -2031,7 +2032,7 @@ Strefa powinna być na tyle wąska aby pojazdy były wykrywane dopiero gdy
  W przeciwnym razie tracona jest dokładność pomiaru prędkości.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Kolejnym etapem jest wprowadzenie granic pomiaru prędkości.
  Przed nagraniem danych z ruchu drogowego operator powinien dokonać ręcznego
  pomiaru odległości, następnie w trakcie konfiguracji programu oznaczyć
@@ -2040,7 +2041,7 @@ Kolejnym etapem jest wprowadzenie granic pomiaru prędkości.
  odległość.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 Ostatnim etapem powinno być dobranie minimalnego rozmiaru obiektu.
  Jest to ważna opcja, kluczowa podczas selekcji obiektów na obrazie.
  Umożliwia odrzucenie obiektów bodących zakłóceniami.
@@ -2050,7 +2051,7 @@ Ostatnim etapem powinno być dobranie minimalnego rozmiaru obiektu.
  
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Standard
 W programie, na chwilę obecną, nie ma możliwości ustawienia przez użytkownika
  górnej granicy obiektu.
  Została ona ustalona jako stała wartość równa połowie liczby pikseli klatki
@@ -2061,13 +2062,13 @@ W programie, na chwilę obecną, nie ma możliwości ustawienia przez użytkowni
 Detekcja obiektów
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 Pierwszym właściwym krokiem algorytmu jest analiza pojedynczej klatki obrazu,
  znalezienie grup pikseli mogących być obiektami i i ich selekcja.
  
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 Pobierane z pliku wideo klatki obrazu są poddawane operacji wyodrębniania
  tła, która oddziela niezmieniające się, nieruchome elementy tła od poruszającyc
 h się elementów na pierwszym planie.
@@ -2077,30 +2078,43 @@ GMG.
 \end_layout
 
 \begin_layout Description
-BackgroundSubtractorMOG - wyodrębnia tło w oparciu o algorytm o anglojęzycznej
- nazwie 
-\begin_inset Quotes pld
+BackgroundSubtractorMOG
+\begin_inset CommandInset citation
+LatexCommand cite
+key "artykul_mog"
+
 \end_inset
 
-mixture-based background/foreground segmentation algorithm
-\begin_inset Quotes prd
-\end_inset
-
-.
- #Dodać opis#
+ - 
 \end_layout
 
 \begin_layout Description
-BackgroundSubtractorMOG2 - klasa ta została oparta na tym samym algorytmie
- co powyższa, z uwzględnieniem dodatkowych warunków opisanych w artykułach
- Z.
- Zikovicia.
- #Dodać opis#
+BackgroundSubtractorMOG2
+\begin_inset CommandInset citation
+LatexCommand cite
+key "artykul_mog2_1"
+
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "artykul_mog2_2"
+
+\end_inset
+
+ - 
 \end_layout
 
 \begin_layout Description
-BackgroundSubtractorGMG - ostatnia klasa różni się znacząco o dwóch pozostałych,
- blebleble
+BackgroundSubtractorGMG
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GMG"
+
+\end_inset
+
+ - 
 \end_layout
 
 \begin_layout Standard
@@ -2108,45 +2122,119 @@ BackgroundSubtractorGMG - ostatnia klasa różni się znacząco o dwóch pozosta
 \end_layout
 
 \begin_layout Standard
-W programie została wykorzystana klasa MOG2, ze względu na #dopisać#
-\end_layout
-
-\begin_layout Paragraph*
 Następnym etapem jest filtracja uzyskanego obrazu binarnego.
- Odbywa się ona po przez wykonanie na obrazie kolejno: otwarcia z jądrem
- eliptycznym, filtracji medianowej z oknem 5x5, dylatacji i binaryzacja.
+ Odbywa się ona po przez wykonanie na obrazie kolejno: otwarcia, mediany
+ oraz dylatacji
+\begin_inset CommandInset citation
+LatexCommand cite
+key "tadeusiewicz-systemy-wizyjne"
+
+\end_inset
+
+.
  
 \end_layout
 
 \begin_layout Description
-Otwarcie jest to operacja, blebleble
+Binaryzacja to jedno z podstawowych przekształceń obrazu.
+ Polega na zamianie wartości widocznych na obrazie przedstawionym w skali
+ szarości na poziomy 0 i 1(ewentualnie 0 i 255).
+ Kluczowym elementem tego algorytmu jest dobór progu.
+ Stosuje się binaryzację z pojedynczym progiem, odwrotną, z progiem podwójnym
+ i wielokryteriową.
+ Uzyskanie odpowiedniego obrazu binarnego stanowi pierwszy etap algorytmów
+ detekcji obiektów i rozpoznawania kształtów.
 \end_layout
 
 \begin_layout Description
-Mediana 
+Mediana jest operacją kontekstową - dla przeprowadzenia wyliczenia wartości
+ transformacji dla konkretnego piksela obrazu potrzebna jest informacja
+ o otoczeniu, nazwanym również oknem.
+ Charakterystyczną cechą mediany jest to, że równocześnie usuwając zakłócenia
+ nie powoduje uszkodzenia krawędzi obrazu.
+ Działanie metody oparte jest, jak wskazuje nazwa, na matematycznej operacji
+ mediany: z uporządkowanego ciągu wartości pikseli w oknie wybierana jest
+ wartość środkowa, która jest wynikiem transformacji dla elementu centralnego
+ okna.
+ Daje to szereg korzyści: wartości ekstremalne są odrzucane przez filtr,
+ a operacja nie wprowadza do obrazu nowych wartości, ponieważ operuje wyłącznie
+ na wartościach już istniejących w obrazie.
+ Negatywnym skutkiem zastosowania mediany jest pogorszenie jakości zaokrąglonych
+ obszarów.
+ Zjawisko to jest coraz bardziej widoczne wraz ze wzrostem rozmiaru obszaru
+ przetwarzania.
+ Wyliczenie wartości mediany jest kosztowne obliczeniowo, gdyż wymaga dla
+ każdego punktu obrazu posortowania wartości elementów okna.
 \end_layout
 
 \begin_layout Description
-Dylatacja
+Erozja należy do klasy operacji przetwarzania obrazu nazwanej przekształceniami
+ morfologicznymi.
+ Opierają się one na zdefiniowaniu jądra transformacji(w postaci siatki
+ eliptycznej, kwadratowej, etc), które zawiera warunki dotyczące wartości
+ pikseli obrazu.
+ Operacja morfologiczna polega na przyłożeniu elementu strukturalnego do
+ każdego punktu obrazu i transformacji tych pikseli, które spełniają warunek.
+ Własność ta powoduje, że w przeciwieństwie do innych metod(punktowych,
+ kontekstowych) przekształceniu ulega tylko fragment obrazu.
+ Sama erozja jest zdefiniowana jako filtr minimalny: każdemu elementowi
+ przypisywana jest minimalna wartość z pośród sąsiednich pikseli.
+ Na obrazie binarnym jej działanie objawia się pomniejszeniem pola powierzchni
+ 
+\begin_inset Quotes pld
+\end_inset
+
+skupionych
+\begin_inset Quotes prd
+\end_inset
+
+ obszarów oraz usunięciem zakłóceń w postaci cienkich 
+\begin_inset Quotes pld
+\end_inset
+
+włosów
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Może zostać wykorzystana do odseparowania od siebie obszarów.
 \end_layout
 
 \begin_layout Description
-Binaryzacja asdsa
+Dylatacja jest również operacją morfologiczną, przeciwną do erozji, gdyż
+ działa jak filtr maksymalny.
+ Powoduje usunięcie zakłóceń w postaci 
+\begin_inset Quotes pld
+\end_inset
+
+dziur
+\begin_inset Quotes prd
+\end_inset
+
+ i zagłębień wewnątrz obszarów.
+ Małe, położone blisko siebie obszary zostają połączone w jeden większy
+ rejon.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Description
+Otwarcie jest kombinacją powyższych dwóch metod: najpierw na obrazie wykonuję
+ się erozje, a potem dylatację.
+ W ten sposób zapobiega się zmianom pola powierzchni obiektów.
+ Na obrazie binarnym powoduje usunięcie drobnych wklęsłości i rozłączenie
+ niektórych obiektów.
+ Negatywną cechą tej operacji jest zamazywanie i zniekształcanie obrazu.
+\end_layout
+
+\begin_layout Standard
 Na przefiltrowanym obrazie jest oznaczane są unikalnymi wartościami rozłączne
  elementy pierwszego planu.
  Każdy znaleziony obiekt jest poddawany ocenie względem kryterium rozmiaru.
  Jeżeli ocena jest pozytywna program dokonuje opisu rejonu elementu prostokątem
  i informację o położeniu lewego-górnego wierzchołka prostokąta, wysokości,
  długości i środku ciężkości obiektu.
- Następnie odrzucane są te obiekty, które znajdują się po za rejonem czułości
- kamery.
- 
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 Zastosowana metodologia filtracji i selekcji zapewnia że program skutecznie
  wykrywa obiekty będące pojazdami oraz odrzuca większość zakłóceń.
 \end_layout
@@ -2155,7 +2243,7 @@ Zastosowana metodologia filtracji i selekcji zapewnia że program skutecznie
 Śledzenie pojazdów
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 Śledzenie pojazdów polega na analizie informacji o obiektach znajdujących
  się na kolejnych klatkach obrazu.
  Klasa odpowiedzialna za śledzenie dokonuje przeglądu wszystkich obiektów,
@@ -2163,8 +2251,13 @@ Zastosowana metodologia filtracji i selekcji zapewnia że program skutecznie
 \end_layout
 
 \begin_layout Enumerate
+Sprawdź czy obiekt znajduje się w rejonie czułości kamery.
+ Jeżeli nie idź do punktu 5.
+\end_layout
+
+\begin_layout Enumerate
 Sprawdź czy obiekt znajduje się blisko lewej bądź prawej krawędzi obrazu.
- Jeśli nie, idź do punktu 4.
+ Jeśli nie, idź do punktu 5.
 \end_layout
 
 \begin_layout Enumerate
@@ -2184,14 +2277,14 @@ Jeżeli lista obiektów przy przeciwnej krawędzi rejonu detekcji nie jest
 Weź następny obiekt do analizy.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 W celu zabezpieczenia przed kilkukrotnym wykryciem i zapisaniem tego samego
  przejazdu, po wykryciu pojawienia się pojazdu lub opuszczenia przez niego
  obszaru, wykrywanie zostaje zablokowane aż do momentu opuszczenia otoczenia
  krawędzi rejonu detekcji.
 \end_layout
 
-\begin_layout Paragraph*
+\begin_layout Standard
 Ocena obecności w otoczeniu krawędzi odbywa się po przez obliczenie odległości
  środka ciężkości obiektu od krawędzi rejonu.
  

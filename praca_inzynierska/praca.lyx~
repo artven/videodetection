@@ -41,8 +41,8 @@
 \use_default_options true
 \maintain_unincluded_children false
 \language polish
-\language_package default
-\inputencoding iso8859-2
+\language_package auto
+\inputencoding utf8
 \fontencoding global
 \font_roman utopia
 \font_sans default
@@ -63,10 +63,9 @@
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref true
-\pdf_title "dyplom"
-\pdf_author "Imie Nazwisko"
-\pdf_subject "Temat"
-\pdf_keywords "słowa kluczowe"
+\pdf_title "Praca dyplomowa"
+\pdf_author "Wojciech Gumuła"
+\pdf_subject "Algorytm detekcji osi pojazdów"
 \pdf_bookmarks true
 \pdf_bookmarksnumbered true
 \pdf_bookmarksopen false
@@ -76,7 +75,7 @@
 \pdf_colorlinks false
 \pdf_backref false
 \pdf_pdfusetitle true
-\papersize default
+\papersize a4paper
 \use_geometry false
 \use_package amsmath 0
 \use_package amssymb 0
@@ -109,6 +108,7 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\listings_params "frame=tblr"
 \tracking_changes false
 \output_changes false
 \html_math_output 3
@@ -1098,12 +1098,8 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/glade.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/glade.png
 	scale 30
 
 \end_inset
@@ -1156,7 +1152,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename img/dokumentacja.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/dokumentacja.png
 	scale 50
 	BoundingBox 0bp 0bp 1350bp 627bp
 
@@ -1174,10 +1170,6 @@ Wygenerowana dokumentacja.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1433,13 +1425,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/struktura_programu.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/struktura_programu.png
 	scale 60
 
 \end_inset
@@ -1453,10 +1441,6 @@ Widok struktury programu
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1536,7 +1520,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/widok_programu.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/widok_programu.png
 	scale 40
 
 \end_inset
@@ -1589,13 +1573,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/wybor_pliku.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/wybor_pliku.png
 	scale 50
 
 \end_inset
@@ -1609,10 +1589,6 @@ Okno wyboru plików
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1637,13 +1613,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/baza_danych.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/baza_danych.png
 	scale 60
 
 \end_inset
@@ -1657,10 +1629,6 @@ Podgląd bazy danych
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1687,7 +1655,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/przeladanie_obrazow.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/przeladanie_obrazow.png
 	scale 40
 
 \end_inset
@@ -1701,10 +1669,6 @@ Widok przeglądania obrazów.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1740,13 +1704,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/ustawienia.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/ustawienia.png
 	scale 60
 
 \end_inset
@@ -1760,10 +1720,6 @@ Okno ustawień programu.
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -1800,7 +1756,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/o_programie.png
+	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/o_programie.png
 	scale 60
 
 \end_inset
@@ -1814,10 +1770,6 @@ Informacja o programie
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 

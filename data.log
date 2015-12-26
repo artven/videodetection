@@ -1,3 +1,245 @@
 2015-12-20 23:41:23,435 INFO connectionpool.py: Starting new HTTPS connection (1): 104.236.253.19
 2015-12-20 23:42:26,799 INFO connectionpool.py: Starting new HTTPS connection (1): 104.236.253.19
 2015-12-20 23:42:27,487 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-20 23:45:08,836 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-20 23:45:26,078 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:45:26,575 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:45:27,561 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:45:31,969 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:45:36,520 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:45:37,049 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:45:37,588 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:45:38,440 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:45:38,440 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:45:38,709 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:45:39,053 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:45:43,229 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:45:48,271 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:45:48,813 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:45:49,046 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:45:49,405 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:45:50,239 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:45:51,199 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:45:51,505 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:45:51,505 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:45:52,017 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:45:58,887 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:45:59,266 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:45:59,985 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:45:59,985 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:46:00,244 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:46:00,498 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:46:10,332 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:46:11,218 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:47:00,590 INFO logs.py: Stworzono bazę danych 2015-12-20_23:47:00.db
+2015-12-20 23:47:04,917 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:47:05,422 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:47:06,477 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 8.08, wysokość: 3.32, pole karoseri bocznej: 20.41, prędkość: 165.24, data: 2015-12-20 23:47:05.396409.
+2015-12-20 23:47:06,477 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:47:06,504 INFO logs.py: Zapisano obraz images/2015-12-20 23:47:05.jpg
+2015-12-20 23:47:16,367 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:47:16,894 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:47:19,072 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.88, wysokość: 4.96, pole karoseri bocznej: 36.18, prędkość: 143.64, data: 2015-12-20 23:47:16.837883.
+2015-12-20 23:47:19,072 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:47:19,096 INFO logs.py: Zapisano obraz images/2015-12-20 23:47:16.jpg
+2015-12-20 23:47:19,792 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:47:20,290 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:47:20,553 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:47:24,938 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:47:29,986 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:47:30,506 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:47:31,091 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 8.18, wysokość: 3.14, pole karoseri bocznej: 17.68, prędkość: 154.98, data: 2015-12-20 23:47:30.464924.
+2015-12-20 23:47:31,091 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:47:31,140 INFO logs.py: Zapisano obraz images/2015-12-20 23:47:30.jpg
+2015-12-20 23:47:31,342 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:47:31,539 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:47:31,734 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:47:32,601 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:47:33,470 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:47:34,193 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 6.82, wysokość: 3.12, pole karoseri bocznej: 12.27, prędkość: 88.56, data: 2015-12-20 23:47:33.433689.
+2015-12-20 23:47:34,193 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:47:34,257 INFO logs.py: Zapisano obraz images/2015-12-20 23:47:33.jpg
+2015-12-20 23:47:34,979 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:47:37,047 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:47:41,843 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:47:42,223 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:47:43,509 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.38, wysokość: 3.42, pole karoseri bocznej: 22.63, prędkość: 172.08, data: 2015-12-20 23:47:42.195233.
+2015-12-20 23:47:43,510 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:47:43,530 INFO logs.py: Zapisano obraz images/2015-12-20 23:47:42.jpg
+2015-12-20 23:47:44,468 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:47:44,675 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:47:48,869 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:47:54,447 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:47:55,306 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:47:59,415 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.88, wysokość: 6.00, pole karoseri bocznej: 52.13, prędkość: 75.91, data: 2015-12-20 23:47:55.271904.
+2015-12-20 23:47:59,415 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:47:59,441 INFO logs.py: Zapisano obraz images/2015-12-20 23:47:55.jpg
+2015-12-20 23:48:27,866 INFO logs.py: Stworzono bazę danych 2015-12-20_23:48:27.db
+2015-12-20 23:48:45,477 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:48:45,980 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:48:46,560 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 8.08, wysokość: 3.32, pole karoseri bocznej: 20.40, prędkość: 165.24, data: 2015-12-20 23:48:45.952899.
+2015-12-20 23:48:46,560 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:48:46,628 INFO logs.py: Zapisano obraz images/2015-12-20 23:48:45.jpg
+2015-12-20 23:48:56,456 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:48:56,990 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:48:57,899 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.88, wysokość: 4.94, pole karoseri bocznej: 36.02, prędkość: 143.64, data: 2015-12-20 23:48:56.928319.
+2015-12-20 23:48:57,899 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:48:57,914 INFO logs.py: Zapisano obraz images/2015-12-20 23:48:56.jpg
+2015-12-20 23:48:58,996 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:48:59,256 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:48:59,256 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:49:03,580 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:49:08,614 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:49:09,149 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:49:09,577 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 8.18, wysokość: 3.14, pole karoseri bocznej: 17.67, prędkość: 154.98, data: 2015-12-20 23:49:09.091744.
+2015-12-20 23:49:09,577 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:49:09,631 INFO logs.py: Zapisano obraz images/2015-12-20 23:49:09.jpg
+2015-12-20 23:49:09,820 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:49:10,174 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:49:10,175 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:49:11,003 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:49:11,004 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:49:11,149 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 4.80, wysokość: 1.22, pole karoseri bocznej: 3.23, prędkość: 157.14, data: 2015-12-20 23:49:10.799692.
+2015-12-20 23:49:11,149 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:49:11,186 INFO logs.py: Zapisano obraz images/2015-12-20 23:49:10.jpg
+2015-12-20 23:49:12,040 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:49:14,907 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:49:19,699 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:49:20,084 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:49:20,811 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.42, wysokość: 3.42, pole karoseri bocznej: 22.61, prędkość: 172.80, data: 2015-12-20 23:49:20.051868.
+2015-12-20 23:49:20,811 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:49:20,852 INFO logs.py: Zapisano obraz images/2015-12-20 23:49:20.jpg
+2015-12-20 23:49:21,688 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-20 23:49:21,980 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-20 23:49:26,024 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-20 23:49:31,580 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-20 23:49:32,459 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-20 23:49:33,648 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.88, wysokość: 6.00, pole karoseri bocznej: 52.11, prędkość: 75.91, data: 2015-12-20 23:49:32.422274.
+2015-12-20 23:49:33,648 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-20 23:49:33,679 INFO logs.py: Zapisano obraz images/2015-12-20 23:49:32.jpg
+2015-12-21 23:00:30,304 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-21 23:06:17,670 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-21 23:15:42,190 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-21 23:17:40,064 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-21 23:17:53,365 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-21 23:26:01,511 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-24 22:58:59,055 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-24 22:59:01,135 INFO logs.py: Stworzono bazę danych 2015-12-24_22:59:01.db
+2015-12-24 22:59:21,582 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-24 22:59:22,205 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-24 22:59:23,035 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.22, wysokość: 3.48, pole karoseri bocznej: 24.97, prędkość: 111.46, data: 2015-12-24 22:59:22.182135.
+2015-12-24 22:59:23,036 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-24 22:59:23,057 INFO logs.py: Zapisano obraz images/2015-12-24 22:59:22.jpg
+2015-12-24 22:59:32,063 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-24 22:59:36,966 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-24 22:59:37,249 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-24 22:59:41,926 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-24 22:59:42,309 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-24 22:59:42,925 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 9.58, wysokość: 3.46, pole karoseri bocznej: 24.64, prędkość: 175.68, data: 2015-12-24 22:59:42.274132.
+2015-12-24 22:59:42,926 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-24 22:59:42,935 INFO logs.py: Zapisano obraz images/2015-12-24 22:59:42.jpg
+2015-12-24 22:59:43,835 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-24 22:59:43,836 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-24 22:59:48,202 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-24 23:00:38,554 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-24 23:00:38,555 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-24 23:00:38,695 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-24 23:00:38,861 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-24 23:00:39,063 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-24 23:00:39,279 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-24 23:00:39,280 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-24 23:00:39,324 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 2.04, wysokość: 0.88, pole karoseri bocznej: 0.89, prędkość: 161.84, data: 2015-12-24 23:00:39.073855.
+2015-12-24 23:00:39,325 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-24 23:00:39,377 INFO logs.py: Zapisano obraz images/2015-12-24 23:00:39.jpg
+2015-12-24 23:00:39,606 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-24 23:00:55,842 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-24 23:00:57,476 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-24 23:00:57,581 INFO logs.py: Przprowadzono klasyfikację pojadu: długość: 3.38, wysokość: 1.12, pole karoseri bocznej: 2.71, prędkość: 43.82, data: 2015-12-24 23:00:57.450396.
+2015-12-24 23:00:57,581 INFO logs.py: Zapisano rekord do bazy danych
+2015-12-24 23:00:57,615 INFO logs.py: Zapisano obraz images/2015-12-24 23:00:57.jpg
+2015-12-25 11:55:03,872 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 11:56:39,307 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 12:06:54,145 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 12:07:42,667 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 12:10:15,969 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 12:10:28,374 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-25 12:10:29,748 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 12:10:31,012 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:31,143 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:31,272 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:31,393 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:31,519 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:31,641 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:31,774 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:31,774 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 12:10:31,898 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:32,032 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:32,033 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 12:10:32,157 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:32,285 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:32,285 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 12:10:32,409 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:36,104 WARNING logs.py: Usunięto niewykorzystane dane.
+2015-12-25 12:10:36,393 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:10:36,394 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-25 12:10:42,078 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 12:35:47,450 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 12:36:13,091 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 12:36:14,981 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:36:15,109 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 12:36:15,724 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 12:36:19,757 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 12:37:23,808 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 12:37:47,511 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 12:45:59,810 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 12:46:12,304 INFO logs.py: Obiekt zarejestrwany po lewej stronie.
+2015-12-25 12:46:13,931 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 13:03:36,008 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 13:05:58,794 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 13:26:55,693 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 13:30:42,402 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 13:32:05,036 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 13:32:23,157 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 13:36:38,344 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 14:29:54,924 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 14:30:09,135 INFO logs.py: Stworzono bazę danych 2015-12-25_14:30:09.db
+2015-12-25 14:30:33,322 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 14:31:05,854 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 14:31:08,125 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 14:31:08,258 WARNING logs.py: Otrzymano więcej niż jeden pojazd.
+2015-12-25 14:31:08,866 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 14:31:13,272 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 14:32:13,066 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 14:32:15,705 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 14:32:24,870 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 14:32:34,163 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 14:32:36,416 INFO logs.py: Obiekt zarejestrwany po prawej stronie.
+2015-12-25 14:32:42,954 INFO logs.py: Wykryto przejazd samochodu.
+2015-12-25 14:38:25,703 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 14:42:25,703 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:09:45,702 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:25:00,670 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:25:06,407 INFO logs.py: Stworzono bazę danych 2015-12-25_15:25:06.db
+2015-12-25 15:25:11,297 INFO logs.py: Stworzono bazę danych 2015-12-25_15:25:11.db
+2015-12-25 15:25:14,629 INFO logs.py: Stworzono bazę danych 2015-12-25_15:25:14.db
+2015-12-25 15:26:01,774 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:26:52,375 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:26:55,985 INFO logs.py: Stworzono bazę danych 2015-12-25_15:26:55.db
+2015-12-25 15:29:54,001 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:29:57,531 INFO logs.py: Stworzono bazę danych 2015-12-25_15:29:57.db
+2015-12-25 15:30:32,944 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:30:36,546 INFO logs.py: Stworzono bazę danych 2015-12-25_15:30:36.db
+2015-12-25 15:30:48,171 INFO logs.py: Stworzono bazę danych 2015-12-25_15:30:48.db
+2015-12-25 15:33:02,574 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:33:38,608 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:33:45,086 INFO logs.py: Stworzono bazę danych 2015-12-25_15:33:45.db
+2015-12-25 15:34:32,348 INFO logs.py: Stworzono bazę danych 2015-12-25_15:34:32.db
+2015-12-25 15:36:22,690 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:36:27,797 INFO logs.py: Stworzono bazę danych 2015-12-25_15:36:27.db
+2015-12-25 15:38:56,802 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:38:58,963 INFO logs.py: Stworzono bazę danych 2015-12-25_15:38:58.db
+2015-12-25 15:41:12,244 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:41:20,339 INFO logs.py: Stworzono bazę danych 2015-12-25_15:41:20.db
+2015-12-25 15:43:12,836 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:43:58,023 INFO logs.py: Uruchamiano główne okna programu.
+2015-12-25 15:44:42,652 INFO logs.py: Stworzono bazę danych 2015-12-25_15:44:42.db
