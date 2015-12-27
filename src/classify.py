@@ -124,9 +124,9 @@ class Classyfication:
         :rtype: np.ndarray
         """
 
-        tmp = np.zeros([480, 720*2, 3], dtype=np.uint8)
-        tmp[:, :720, :] = old_image
-        tmp[:, 720:, :] = new_image
+        tmp = np.zeros([480*2, 720, 3], dtype=np.uint8)
+        tmp[:480, :, :] = old_image
+        tmp[480:, :, :] = new_image
         return tmp
 
 class SpeedMeasurment:

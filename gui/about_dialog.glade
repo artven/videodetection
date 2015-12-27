@@ -9,7 +9,7 @@
     <property name="gravity">center</property>
     <property name="program_name">Wideodetekcja</property>
     <property name="comments" translatable="yes">Praca inżynierska na kierunku automatyka i robotyka.
-Tytuł: wideodetekcja pojazdów w ruchu samochodowym.
+Tytuł: wideodetekcja pojazdów samochodowych w ruchu drogowym.
 Autor: Rafał Prusak.
 Opiekun: dr Zbigniew Marszałek.</property>
     <property name="authors">Dziękuję wszystkim, którzy mi pomogli.

@@ -276,6 +276,7 @@ class Subtractor:
             image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         substracted_frame = Subtractor.substractor_engine.apply(image)
+        _, substracted_frame = cv2.threshold(substracted_frame, 0, 255, cv2.THRESH_BINARY)
         filtered_frame = Subtractor.__filter(substracted_frame)
         _, substracted = cv2.threshold(filtered_frame, 0, 255, cv2.THRESH_BINARY)
         return substracted

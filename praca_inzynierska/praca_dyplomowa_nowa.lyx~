@@ -155,7 +155,7 @@ titleEN{Video-based vehicle detection for road traffic applications}
 
 
 \backslash
-shorttitle{LyX-owa formatka pracy dyplomowej}
+shorttitle{co tutaj ma byc wpisane?}
 \end_layout
 
 \begin_layout Plain Layout
@@ -238,6 +238,19 @@ LatexCommand tableofcontents
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -257,6 +270,22 @@ Tutaj będzie wstęp do pracy inżynierskiej
 
 \begin_layout Standard
 Burzliwy rozwój nauki i techniki w XX wieku...
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -294,7 +323,7 @@ h dróg krajowych i wojewódzkich.
  Uzyskiwane w wyniku GPRD pomiary są wykorzystywane przy planowaniu rozbudowy
  infrastruktury drogowej, organizacji ruchu, utrzymaniu dróg, określaniu
  przyczyn wypadkowości czy badaniu wpływu ruchu na komfort życia mieszkańców
- i środowisko naruralne.
+ i środowisko naturalne.
 \end_layout
 
 \begin_layout Standard
@@ -562,6 +591,22 @@ Mikrofalowe - działają na zasadzie radaru, generują fale wysokiej częstotliw
 
 \begin_layout Itemize
 Kamery z systemami przetwarzania obrazu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -899,6 +944,22 @@ SAW - przenośna waga, umożliwiająca pomiar pojazdów o nacisku do 15 ton.
 \begin_layout Itemize
 ANPR - automatyczne rozpoznawanie tablic, z maksymalnie 8 kamer jednocześnie.
  
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -1257,6 +1318,22 @@ społecznościową
 .
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Opis programu
 \end_layout
@@ -1551,7 +1628,7 @@ run.py - skrypt uruchamiający program.
 \end_layout
 
 \begin_layout Section*
-Interfejs graficzny 
+Interfejs 
 \end_layout
 
 \begin_layout Standard
@@ -1600,8 +1677,87 @@ W skład głównego okna wchodzi górne menu, obszar odtwarzania pliku wideo,
  i pasek informujący o postępie przetwarzania.
 \end_layout
 
-\begin_layout Paragraph
-Funkcje elementów górnego menu:
+\begin_layout Subsubsection*
+Opis oznaczeń na obrazie
+\end_layout
+
+\begin_layout Standard
+Podczas przetwarzania plików wideo odbywa się równoczesne ich wyświetlanie
+ z naniesionymi przez program oznaczeniami.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/oznaczenia.jpg
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oznaczenia na obrazie
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Pojazdy są oznaczane zielonym prostokątem.
+ Prostokąt ten otacza rejon obiektu wykrytego po wyodrębnieniu tła.
+ Zielony krzyżyk jest umiejscowiony w środku ciężkości obiektu.
+\end_layout
+
+\begin_layout Itemize
+Czerwony prostokąt stanowi obszar 
+\begin_inset Quotes pld
+\end_inset
+
+czułości
+\begin_inset Quotes prd
+\end_inset
+
+ kamery.
+ Wszystkie obiekty, których środki ciężkości znajdują się po za tym obszarem
+ są ignorowane przez program.
+ 
+\end_layout
+
+\begin_layout Itemize
+Dwie różowe pionowe linie służą do oznaczenia odcinka, którego długość stanowi
+ podstawę do wyliczenia przelicznika pikseli na obrazie na metry.
+ Pozwala to określać prędkość i wymiary samochodów.
+\end_layout
+
+\begin_layout Standard
+Wyświetlanie oznaczeń można włączać/wyłączać w opcjach programu, które zostały
+ opisane w dalszej części pracy.
+\end_layout
+
+\begin_layout Subsubsection*
+Funkcje elementów głównego menu:
 \end_layout
 
 \begin_layout Itemize
@@ -1615,7 +1771,9 @@ Dodaj wideo
  - otwiera poniższe okno dialogowe, umożliwiające wybór jednego bądź większej
  ilości plików wideo do analizy.
  Wybrane pliki są dodawane do listy po prawej stronie.
- 
+ Użytkownik może usuwać pliki z listy po przez kliknięcie prawym klawiszem
+ myszy na nazwie pliku.
+ Skrót klawiszowy Ctrl+q.
 \begin_inset Float figure
 wide false
 sideways false
@@ -1655,6 +1813,91 @@ Dane
 \end_inset
 
  - umożliwia wybranie bazy danych i podejrzenie jej zawartości.
+ W bazie danych wygenerowanej przez program znajduje się jedna tabela 
+\begin_inset Quotes pld
+\end_inset
+
+cars
+\begin_inset Quotes prd
+\end_inset
+
+, w której znajdują się pola 
+\begin_inset Quotes pld
+\end_inset
+
+id
+\begin_inset Quotes prd
+\end_inset
+
+, 
+\begin_inset Quotes pld
+\end_inset
+
+width
+\begin_inset Quotes prd
+\end_inset
+
+, 
+\begin_inset Quotes pld
+\end_inset
+
+height
+\begin_inset Quotes prd
+\end_inset
+
+, 
+\begin_inset Quotes pld
+\end_inset
+
+area
+\begin_inset Quotes prd
+\end_inset
+
+, 
+\begin_inset Quotes pld
+\end_inset
+
+speed
+\begin_inset Quotes prd
+\end_inset
+
+, 
+\begin_inset Quotes pld
+\end_inset
+
+file
+\begin_inset Quotes prd
+\end_inset
+
+ i 
+\begin_inset Quotes pld
+\end_inset
+
+date
+\begin_inset Quotes prd
+\end_inset
+
+.
+ Pole 
+\begin_inset Quotes pld
+\end_inset
+
+file
+\begin_inset Quotes prd
+\end_inset
+
+ umożliwia identyfikację przetwarzanego pliku w celu weryfikacji wyników.
+ Pole 
+\begin_inset Quotes pld
+\end_inset
+
+date
+\begin_inset Quotes prd
+\end_inset
+
+ została w umieszczone w celu przyszłej implementacji przetwarzania obrazu
+ w czasie rzeczywistym.
+ Skrót klawiszowy Ctrl+w.
  
 \begin_inset Float figure
 wide false
@@ -1695,6 +1938,7 @@ Obrazy
 \end_inset
 
  - włącza przeglądarkę zapisanych przez program zdjęć pojazdów.
+ Skrót klawiszowy Ctrl+e.
  
 \begin_inset Float figure
 wide false
@@ -1704,8 +1948,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/przeladanie_obrazow.png
-	scale 40
+	filename img/przeladanie_obrazow.jpg
+	scale 50
 
 \end_inset
 
@@ -1726,6 +1970,25 @@ Widok przeglądania obrazów.
 
 \end_layout
 
+\begin_layout Standard
+Przeglądanie obrazów odbywa się po przez wywołanie domyślnego programu do
+ otwierania obrazów na systemie Linux(na dystrybucji Ubuntu jest to program
+ 
+\begin_inset Quotes pld
+\end_inset
+
+eog
+\begin_inset Quotes prd
+\end_inset
+
+).
+ Na wygenerowanym przez program obrazie wynikowym został umieszczony pojazd
+ wjeżdżający w obszar detekcji(w górnej części) oraz pojazd opuszczający
+ ten obszar(na dole obrazu).
+ Dodatkowo program wypisuje na obrazie informację o wynikach klasyfikacji,
+ w postaci paska kolorów w lewym górnym rogu oraz podpisu u dołu zdjęcia.
+\end_layout
+
 \begin_layout Itemize
 \begin_inset Quotes pld
 \end_inset
@@ -1735,6 +1998,10 @@ Wyczyść
 \end_inset
 
  - usuwa zdjęcia, filmy, bazy danych oraz wyniki klasyfikacji.
+ Przed wykonaniem operacji pojawia się okno dialogowe z prośbą o potwierdzenie
+ usunięcia danych.
+ Pozwala to uniknąć przypadkowego usunięcia danych.
+ Skrót klawiszowy Ctrl+r.
 \end_layout
 
 \begin_layout Itemize
@@ -1746,6 +2013,8 @@ Ustawienia
 \end_inset
 
  -pokazuje okno ustawień programu.
+ Opcje programu zostały opisane w następnym podrozdziale programu.
+ Skrót klawiszowy Ctrl+t.
  
 \begin_inset Float figure
 wide false
@@ -1756,7 +2025,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/ustawienia.png
-	scale 60
+	scale 70
 
 \end_inset
 
@@ -1777,6 +2046,63 @@ Okno ustawień programu.
 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Miejsce pomiaru prędkości 1/2 - wartość tego pola służy do oznaczenia zmierzoneg
+o w rzeczywistości odcinka.
+\end_layout
+
+\begin_layout Itemize
+Zmierzona odległość - długość zmierzonego odcinka.
+\end_layout
+
+\begin_layout Itemize
+Liczba szukanych kolorów - określa liczbę kolorów jaką program ma rozpoznać
+ na obiekcie.
+\end_layout
+
+\begin_layout Itemize
+Odległość strefy od krawędzi w pionie/poziomie- określa ona odległość(wyrażoną
+ w pikselach) o jaką obszar wykrywania jest odsunięty od krawędzi obrazu.
+\end_layout
+
+\begin_layout Itemize
+Minimalna wielkość obiektu - obiekt o mniejszej wartości są ignorowane na
+ etapie detekcji.
+\end_layout
+
+\begin_layout Itemize
+Obszar detekcji - flaga rysowania czerwonego prostokątem ekran będący strefą
+ detekcji kamery.
+\end_layout
+
+\begin_layout Itemize
+Pomiar prędkości- flaga rysowania pionowych linii do pomiaru odległości.
+\end_layout
+
+\begin_layout Itemize
+Samochody - flaga obrysowywania zielonym prostokątem pojazdów.
+\end_layout
+
+\begin_layout Itemize
+Prędkość - podpisywanie obrazu zidentyfikowanego pojazdu informacją o prędkości.
+\end_layout
+
+\begin_layout Itemize
+Rozmiar - podpisuje obraz zidentyfikowanego pojazdu informacją rozmiarze:
+ długości, wysokości, polu powierzchni bocznej.
+\end_layout
+
+\begin_layout Itemize
+Pasek kolorów - rysuje na obrazie zidentyfikowanego pojazdu pasek informujący
+ o kolorze tego pojazdu.
+\end_layout
+
+\begin_layout Itemize
+Kontur pojazdu - rysuje niebieski kontur pojazdu na obrazie wynikowym.
+\end_layout
+
+\end_deeper
 \begin_layout Itemize
 \begin_inset Quotes pld
 \end_inset
@@ -1785,7 +2111,8 @@ Dokumentacja
 \begin_inset Quotes prd
 \end_inset
 
- - uruchamia stronę html z dokumentacją.
+ - uruchamia w domyślnej przeglądarce systemowej stronę główną dokumentacji.
+ Skrót klawiszowy Ctrl+y.
 \end_layout
 
 \begin_layout Itemize
@@ -1797,6 +2124,7 @@ O programie
 \end_inset
 
  - uruchamia okienko dialogowe pokazujące krótką informację o programie.
+ Skrót klawiszowym Ctrl+u.
 \begin_inset Float figure
 wide false
 sideways false
@@ -1836,165 +2164,68 @@ Zakończ
 \end_inset
 
  - wyłącza program.
+ Skrót klawiszowy Ctrl+z.
 \end_layout
 
-\begin_layout Section*
-Ustawienia
+\begin_layout Subsubsection*
+Funkcje menu odtwarzania: 
+\end_layout
+
+\begin_layout Itemize
+Rozpoczęcie przetwarzania.
+ Skrót klawiszowy a.
+\end_layout
+
+\begin_layout Itemize
+Pauza.
+ Skrót klawiszowy s.
+\end_layout
+
+\begin_layout Itemize
+Rozpoczęcie odtwarzania od nowa.
+ Skrót klawiszowy d.
+\end_layout
+
+\begin_layout Itemize
+Stop.
+ Skrót klawiszowy f.
+\end_layout
+
+\begin_layout Itemize
+Zapisz - pozwala zapisać obecną klatę obrazu do pliku.
+ Skrót klawiszowy g.
+\end_layout
+
+\begin_layout Itemize
+Włączenie/wyłączenie nagrywania rezultatu przetwarzania do pliku video.
+\end_layout
+
+\begin_layout Itemize
+Włączenie/wyłączenie algorytmu - gdy przycisk nie jest wciśnięty program
+ wykonuje jedynie detekcję obiektów, pominja zaś śledzenie, klasyfikację
+ i zapis rezultatów.
+\end_layout
+
+\begin_layout Itemize
+Włączenie/wyłącznie pokazywania maski - binarnego obrazu powstałego wy wyniku
+ wycięcia tła.
+ 
 \end_layout
 
 \begin_layout Standard
-Okno ustawień umożliwia dostosowywanie parametrów algorytmu oraz wizualizacji
- danych.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
 \end_layout
 
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Odległość pixele
-\begin_inset Quotes prd
-\end_inset
-
- - wartość tego pola służy do wyliczynie przelicznika pixeli na obrazie
- na rzeczywistą odległość w metrach.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Odległość metry
-\begin_inset Quotes prd
-\end_inset
-
- - wartość tego pola ma również zastosowanie w przeliczaniu pixeli na metry.
- Procedura kalibracji pomiaru została opisana w poprzednim rozdziale 
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Liczba kolorów
-\begin_inset Quotes prd
-\end_inset
-
- - określa liczbę kolorów jaką program ma rozpoznać na obiekcie.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Strefa czułości pozioma
-\begin_inset Quotes prd
-\end_inset
-
- - określa ona obszar w poziomie, w którym obiekty są wykrywane i śledzone.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Strefa czułości pionowa
-\begin_inset Quotes prd
-\end_inset
-
- - określa ona obszar w ponie, w którym obiekty są wykrywane i śledzone.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Wielkość obiektu
-\begin_inset Quotes prd
-\end_inset
-
- - obiekt o mniejszej wartości są ignorowane po fazie binearyzacji
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Odległość od krawędzi
-\begin_inset Quotes prd
 \end_inset
 
 
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Rysuj rejon czułości
-\begin_inset Quotes prd
-\end_inset
-
- - oznacza na obszarze czerwonym prostokątem ekran będący strefą detekcji
- kamery.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Rysuj rejon pomiaru prędkości
-\begin_inset Quotes prd
-\end_inset
-
- - rysuje na obszarze detekcji dwa pionowe różowe paski służące do kalibracji
- przelicznika pixeli na metry, w celu obliczenia prędkości.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Oznaczaj samochody
-\begin_inset Quotes prd
-\end_inset
-
- - oznacza samochody zielonym prostokątem i krzyżykiem symbolizującym środek
- ciężkości pojazdu.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Wypisz informację o prędkości
-\begin_inset Quotes prd
-\end_inset
-
- - podpisuje obraz zidentyfikowanego pojazdu informacją o prędkości.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Wypisz informację o rozmiarze
-\begin_inset Quotes prd
-\end_inset
-
- - podpisuje obraz zidentyfikowanego pojazdu informacją rozmiarze: długości,
- wysokości, polu powierzchni bocznej.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes pld
-\end_inset
-
-Narysuj pasek kolorów
-\begin_inset Quotes prd
-\end_inset
-
- - rysuje na obrazie zidentyfikowanego pojazdu pasek informujący o kolorze
- tego pojazdu.
 \end_layout
 
 \begin_layout Chapter
@@ -2003,6 +2234,8 @@ Algorytm detekcji i klasyfikacji pojazdów.
 
 \begin_layout Standard
 W tym rozdziale zostały opisane kolejne etapy zaimplementowanego algorytmu.
+ Składa się on z trzech etapów: detekcji obiektów, śledzenia pojazdów i
+ klasyfikacji.
 \end_layout
 
 \begin_layout Section*
@@ -2073,8 +2306,7 @@ Pobierane z pliku wideo klatki obrazu są poddawane operacji wyodrębniania
  tła, która oddziela niezmieniające się, nieruchome elementy tła od poruszającyc
 h się elementów na pierwszym planie.
  Operacja ta została zaimplementowana w bibliotece OpenCV pod postacią klas
- BackgroundSubtractorMOG(), BackgroundSubtractorMOG2() oraz BackgroundSubtractor
-GMG.
+ BackgroundSubtractorMOG, BackgroundSubtractorMOG2 oraz BackgroundSubtractorGMG.
 \end_layout
 
 \begin_layout Description
@@ -2085,7 +2317,12 @@ key "artykul_mog"
 
 \end_inset
 
- - 
+ - dokonuje dla każdego piksela obrazu oszacowania czasu przez jaki jego
+ kolor pozostaje niezmienny.
+ Jako elementy tła wybierane są te punkty, których wartości nie zmieniają
+ się wcale lub zmieniają się w niewielkim stopniu.
+ Klasa ta została określona w bibliotece jako przestarzała, nie zaleca się
+ jej stosowania.
 \end_layout
 
 \begin_layout Description
@@ -2103,7 +2340,9 @@ key "artykul_mog2_2"
 
 \end_inset
 
- - 
+ - działa na podobnej zasadzie co powyższa klasa.
+ Dodatkowo dla każdego piksela obrazu wybierany jest inny model przybliżenia
+ czasu niezmienności.
 \end_layout
 
 \begin_layout Description
@@ -2114,11 +2353,55 @@ key "GMG"
 
 \end_inset
 
- - 
+ - na podstawie pierwszych 120 klatek obrazu dokonuje oceny prawdopodobieństwa,
+ który region obrazu może zostać uznany jako tło.
+ Ocena ta ulega zmianie, pod wpływem następnych klatek obrazu.
 \end_layout
 
 \begin_layout Standard
-# dodać przykładowy przejazd przeanalizowany wszystkimi 3 metodami #
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/substrakcja.png
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Porównanie metod wyznaczania tła.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na powyższym obrazie zostało zaprezentowanie porównanie metody MOG2(u góry)
+ z metodą GMG(na dole) na przykładowym nagraniu przejazdu samochodu.
+ Rezultaty nie odbiegają od siebie znacząco - można zauważyć, że GMG generuje
+ odrobinę więcej zakłóceń.
+ W programie zdecydowano się na użycie pierwszej metody.
 \end_layout
 
 \begin_layout Standard
@@ -2226,17 +2509,58 @@ Otwarcie jest kombinacją powyższych dwóch metod: najpierw na obrazie wykonuj�
 \end_layout
 
 \begin_layout Standard
+Zastosowana metodologia filtracji i selekcji zapewnia że program skutecznie
+ wykrywa obiekty będące pojazdami oraz odrzuca większość zakłóceń.
+ Na poniższym obrazie zaprezentowano rezultat - kolejno od góry znajduje
+ się obraz oryginalny, obraz po wykryciu tła oraz obraz po filtracji.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/filtracja.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rezultat filtracji.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Na przefiltrowanym obrazie jest oznaczane są unikalnymi wartościami rozłączne
  elementy pierwszego planu.
  Każdy znaleziony obiekt jest poddawany ocenie względem kryterium rozmiaru.
  Jeżeli ocena jest pozytywna program dokonuje opisu rejonu elementu prostokątem
  i informację o położeniu lewego-górnego wierzchołka prostokąta, wysokości,
- długości i środku ciężkości obiektu.
-\end_layout
-
-\begin_layout Standard
-Zastosowana metodologia filtracji i selekcji zapewnia że program skutecznie
- wykrywa obiekty będące pojazdami oraz odrzuca większość zakłóceń.
+ długości i środku ciężkości obiektu zapisuje do listy rezultatów detekcji.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -2287,19 +2611,261 @@ W celu zabezpieczenia przed kilkukrotnym wykryciem i zapisaniem tego samego
 \begin_layout Standard
 Ocena obecności w otoczeniu krawędzi odbywa się po przez obliczenie odległości
  środka ciężkości obiektu od krawędzi rejonu.
+ Jeżeli ta odległość jest mniejsza niż 50 pikseli, obiekt jest klasyfikowany
+ jako znajdujący się w otoczeniu krawędzi.
+\end_layout
+
+\begin_layout Subsubsection*
+Śledzenie przykładowego przejazdu pojazdu
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przyklad/1.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nowy pojazd w kadrze.
  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+W kadrze kamery pojawia się pojazd, ale jest po za rejonem detekcji, więc
+ jest ignorowany przez program.
+ Odpowiada to krokowi 1 i 2 przedstawionego wyżej algorytmu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przyklad/2.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wykrycie pojazdu.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pojazd wchodzi w obszar czułości kamery.
+ Program zapisuje aktualną klatkę obrazu, jej numer oraz współrzędne środka
+ ciężkości pojazdu.
+ Odpowiada to krokowi 3 algorytmu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przyklad/3.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pojazd w obszarze detekcji.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Środek ciężkości samochodu znajduje się w obszarze wykrywania.
+ Program śledzi jego ruch, aż zbliży się do przeciwnego boku prostokąta.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przyklad/4.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Opuszczenie rejonu detekcji.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Samochód jest w otoczeniu drugiej krawędzi prostokąta.
+ Program, podobnie jak na drugim obrazie, pobiera klatkę obrazu, jej numer
+ i współrzędne środka ciężkości i przesyła dane to klasyfikacji.
+ Jest to krok 4 algorytmu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przyklad/5.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Opuszczenie kadru.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Przejzad samochodu został sklasyfikowany.
+ Pojazd opóścił rejon wykrywania i nie jest już interesujący dla programu.
 \end_layout
 
 \begin_layout Section*
 Klasyfikacja 
 \end_layout
 
-\begin_layout Section*
-Zapis danych
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
 Analiza wyników 
+\end_layout
+
+\begin_layout Subsubsection*
+Ocena skuteczności i poprawności działania programu
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
@@ -2482,6 +3048,22 @@ Zmiany w GUI - istnieje możliwość dodania do gui rysowania wykresów/opisywan
  statystyk przejechanych pojazdów.
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Podsumowanie
 \begin_inset CommandInset label
@@ -2495,6 +3077,22 @@ name "chap:Podsumowanie"
 
 \begin_layout Standard
 A tutaj będzie podsumowanie pracy inżynierskiej, gdy już napiszę to gówno.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cleardoublepage{}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
