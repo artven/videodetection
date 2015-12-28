@@ -39,7 +39,7 @@
   Timestamp                = {2015.12.26}
 }
 
-@Article{,
+@Article{GMG,
   Title                    = {Visual Tracking of Human Visitors under Variable-Lighting Conditions for a Responsive Audio Art Installation},
   Author                   = {Andrew B. Godbehere and Akihiro Matsukawa and Ken Goldberg},
   Year                     = {2012},
@@ -95,6 +95,15 @@
 
   Owner                    = {rafal},
   Timestamp                = {2015.12.25}
+}
+
+@Electronic{KMeans,
+  Title                    = {K-means user guide},
+  Note                     = {Dostęp: 28 XII 2015},
+  Url                      = {http://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html},
+
+  Owner                    = {rafal},
+  Timestamp                = {2015.12.28}
 }
 
 @Electronic{python1,
