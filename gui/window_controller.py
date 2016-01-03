@@ -289,8 +289,7 @@ class WindowController:
                 if self.__record_video_flag:
                     # Stwórz wynikowy plik wideo
                     if self.__output_video is None:
-                        size = self.__input_video.size()
-                        self.__output_video = VideoWriter(size)
+                        self.__output_video = VideoWriter()
                     # Zapisz klatkę obrazu
                     self.__output_video.write(frame.img)
 
