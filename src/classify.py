@@ -23,7 +23,7 @@ class Classyfication:
     """
 
     @staticmethod
-    def perform(obj: ObjectRecord):
+    def perform(obj: ObjectRecord, file):
         """
         Przeprowadza ocenę koloru, rozmiaru i prędkości obiektu.
 
@@ -68,7 +68,7 @@ class Classyfication:
             image = SpeedMeasurment.draw_speed_info(new_car, speed, image)
 
         # Połącz obrazy pojazdu
-        image = Classyfication.combine_images(old_frame.orginal_img, image)
+        image = Classyfication.combine_images(old_frame.orginal_img, image, file)
 
         # Rekord zawierający informacje o pojeździe
         result = {"width": car_width, "height": car_height, "area": car_area, "speed": speed, "image": image,
@@ -114,7 +114,7 @@ class Classyfication:
         return frame
 
     @staticmethod
-    def combine_images(old_image: np.ndarray, new_image: np.ndarray):
+    def combine_images(old_image: np.ndarray, new_image: np.ndarray, file):
         """
         Łączy katkę obrazu wykrytego i opuszczającego obszar detekcji w jeden obraz.
 
@@ -127,6 +127,10 @@ class Classyfication:
         tmp = np.zeros([480*2, 720, 3], dtype=np.uint8)
         tmp[:480, :, :] = old_image
         tmp[480:, :, :] = new_image
+        tmp[:60, :, :] = (0, 0, 0)
+        org = (20, 20)
+        text = file.split(sep="/")[-1]
+        cv2.putText(tmp, text, org, cv2.FONT_HERSHEY_COMPLEX_SMALL, 1, (255, 255, 255))
         return tmp
 
 class SpeedMeasurment:
@@ -273,7 +277,7 @@ class SizeMeasurment:
         """
         Podpisuje obraz samochodu jego wymiarami.
 
-        :param np.ndarray img: Obraz samochodu.
+        :param np.ndarray img: Obraz samochodu.a
         :param int car_width: Ddługość samochodu.
         :param int car_height: Wysokość samochodu.
         :param flaot car_area: Pole powierzchni bocznej pojazdu.
@@ -283,6 +287,7 @@ class SizeMeasurment:
         text = "width=%.2f m, height=%.2f m, area=%.2f m2" % (car_width, car_height, car_area)
         h, w, _ = img.shape
         text_place = (0, h-20)
+        img[(h-40):h, :, :] = (0, 0, 0)
         cv2.putText(img, text, text_place, cv2.FONT_HERSHEY_COMPLEX_SMALL, 0.75, (255, 255, 255))
 
         return img

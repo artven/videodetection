@@ -94,19 +94,16 @@ class VideoWriter:
     """
 
     """ format zapisu danych     """
-    forucc = cv2.VideoWriter_fourcc('X', 'V', 'I', 'D')
+    forucc = cv2.VideoWriter_fourcc('M','J','P','G')
     format = ".avi"
     fps = 20
     folder = "videos/"
+    size = (720, 480)
 
-    def __init__(self, size: tuple=(640, 480)):
-        """
-        :param tuple size: Rozmiar obrazu wideo w postaci (szerkość, wysokość).
-        """
+    def __init__(self):
 
         self.__filename = VideoWriter.folder + str(datetime.now())[0:-7] + VideoWriter.format
-        self.__size = size
-        self.__writer = cv2.VideoWriter(self.__filename, VideoWriter.forucc, VideoWriter.fps, self.__size)
+        self.__writer = cv2.VideoWriter(self.__filename, VideoWriter.forucc, VideoWriter.fps, VideoWriter.size)
 
     def __del__(self):
         self.__writer.release()

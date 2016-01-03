@@ -15,7 +15,7 @@ class ImageSaver:
     """
 
     @staticmethod
-    def write(record: dict):
+    def write(record: dict, file):
         """
         Zapisuje do obrazu dane o samochodzie.
 
@@ -25,7 +25,7 @@ class ImageSaver:
         date = record["date"]
         image = record["image"]
 
-        filename = "images/" + str(date)[0:-7] + ".jpg"
+        filename = "images/" + file.split(sep="/")[-1] + " " + str(date)[0:-7] + ".jpg"
         Logger.info("Zapisano obraz " + filename)
         cv2.imwrite(filename, image)
 
@@ -169,7 +169,8 @@ class Logger:
         :param str txt: Tekst komunikatu.
         """
 
-        Logger.__root_logger.info(txt)
+        if Logger.__root_logger is not None:
+            Logger.__root_logger.info(txt)
 
     @staticmethod
     def error(txt: str):
@@ -178,8 +179,8 @@ class Logger:
 
         :param str txt: Tekst komunikatu.
         """
-
-        Logger.__root_logger.error(txt)
+        if Logger.__root_logger is not None:
+            Logger.__root_logger.error(txt)
 
     @staticmethod
     def warning(txt: str):
@@ -189,7 +190,8 @@ class Logger:
         :param str txt: Tekst komunikatu.
         """
 
-        Logger.__root_logger.warning(txt)
+        if Logger.__root_logger is not None:
+            Logger.__root_logger.warning(txt)
 
     @staticmethod
     def debug(txt):
@@ -199,12 +201,5 @@ class Logger:
         :param txt: Tekst komunikatu.
         """
 
-        Logger.__root_logger.debug(txt)
-
-
-if __name__ == '__main__':
-    Logger.start()
-    Logger.debug("debug asdasdsdsa")
-    Logger.error("eeror asd")
-    Logger.warning("warning asd")
-    Logger.info("info sieiassdasd")
+        if Logger.__root_logger is not None:
+            Logger.__root_logger.debug(txt)

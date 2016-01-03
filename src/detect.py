@@ -48,6 +48,7 @@ class Vehicle:
 
         return int(self.x), int(self.y), int(self.w), int(self.h)
 
+
 class Detector:
     """
     Klasa dokonująca wtępnej selekcji obiektów.
@@ -72,7 +73,7 @@ class Detector:
 
     # TODO zmienić na rysowanie pojedynczego samochodu
     @staticmethod
-    def draw_vehicles(frame: Frame, vehicles: list):
+    def draw_vehicles(frame: Frame, mask, vehicles: list):
         """
         Oznacza na obrazie pojazdy wraz ze środkami ciężkości.
 
@@ -89,7 +90,10 @@ class Detector:
             frame.img = cv2.rectangle(frame.img, (x, y), (x+w, y+h), (0, 255, 0), thickness=4)
             frame.img = cv2.line(frame.img, (cx, cy-10), (cx, cy+10), (0, 255, 0), thickness=4)
             frame.img = cv2.line(frame.img, (cx-10, cy), (cx+10, cy), (0, 255, 0), thickness=4)
-        return frame
+            mask = cv2.rectangle(mask, (x, y), (x+w, y+h), (0, 255, 0), thickness=4)
+            mask = cv2.line(mask, (cx, cy-10), (cx, cy+10), (0, 255, 0), thickness=4)
+            mask = cv2.line(mask, (cx-10, cy), (cx+10, cy), (0, 255, 0), thickness=4)
+        return frame, mask
 
     @staticmethod
     def __find_possible_vehicles(bin_image: np.ndarray):
@@ -139,7 +143,7 @@ class Detector:
         return result
 
     @staticmethod
-    def draw_detection_region(frame: Frame):
+    def draw_detection_region(frame: Frame, mask):
         """
         Rysuje na klatce obszar czułości kamery.
 
@@ -159,8 +163,12 @@ class Detector:
         frame.img = cv2.line(frame.img, llp, rlp, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, rlp, rup, (0, 0, 255), thickness=3)
         frame.img = cv2.line(frame.img, lup, rup, (0, 0, 255), thickness=3)
+        mask = cv2.line(mask, llp, lup, (0, 0, 255), thickness=3)
+        mask = cv2.line(mask, llp, rlp, (0, 0, 255), thickness=3)
+        mask = cv2.line(mask, rlp, rup, (0, 0, 255), thickness=3)
+        mask = cv2.line(mask, lup, rup, (0, 0, 255), thickness=3)
 
-        return frame
+        return frame, mask
 
     # Funkcje pomocnicze.
     @staticmethod
@@ -253,12 +261,12 @@ class Subtractor:
     """
 
     # Silnik wyodrębniania tła.
-    substractor_engine = cv2.createBackgroundSubtractorMOG2()
+    substractor_engine = cv2.createBackgroundSubtractorKNN()
 
     # Parametry filtracji obrazu.
     __operation = cv2.MORPH_OPEN
     __kernel = cv2.MORPH_ELLIPSE
-    __kernelsize = (3, 3)
+    __kernelsize = (5, 5)
     __mediansize = 5
     __dilateiter = 5
 
@@ -276,13 +284,12 @@ class Subtractor:
             image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
         substracted_frame = Subtractor.substractor_engine.apply(image)
-        _, substracted_frame = cv2.threshold(substracted_frame, 0, 255, cv2.THRESH_BINARY)
-        filtered_frame = Subtractor.__filter(substracted_frame)
-        _, substracted = cv2.threshold(filtered_frame, 0, 255, cv2.THRESH_BINARY)
-        return substracted
+        filtered_frame = Subtractor.filter(substracted_frame)
+
+        return filtered_frame
 
     @staticmethod
-    def __filter(image: np.ndarray):
+    def filter(image: np.ndarray):
         """
         Dokonuje filtracji za pomocą mediany i dylatacji.
 
@@ -290,6 +297,8 @@ class Subtractor:
         :return: Wynikowy przefiltrowany obraz.
         :rtype: np.ndarray
         """
+
+        image[image != 255] = 0
 
         ker = cv2.getStructuringElement(Subtractor.__kernel, Subtractor.__kernelsize)
         morphframe = cv2.morphologyEx(image, Subtractor.__operation, ker)

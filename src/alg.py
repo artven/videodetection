@@ -63,18 +63,22 @@ class Algorithm:
         if run_classyfication:
             if objects is not None:
                 for obj in objects:
-                    record = Classyfication.perform(obj)
+                    record = Classyfication.perform(obj, Algorithm.file)
                     records.append(record)
-                    database.write(record, Algorithm.file)
-                    img_saver.write(record)
+                    if database is not None:
+                        database.write(record, Algorithm.file)
+                    if img_saver is not None:
+                        img_saver.write(record, Algorithm.file)
+
+        mask = cv2.cvtColor(mask, cv2.COLOR_GRAY2BGR)
 
         # Rysowanie pojazdów.
         if Configuration.draw_cars():
-            frame = Detector.draw_vehicles(frame, vehicles)
+            frame, mask = Detector.draw_vehicles(frame, mask, vehicles)
 
         # Rysowanie obszaru wykrywania.
         if Configuration.draw_detection_region():
-            frame = Detector.draw_detection_region(frame)
+            frame, mask = Detector.draw_detection_region(frame, mask)
 
         # Rysowanie obszaru pomiaru prędkości
         if Configuration.draw_speed_region():
