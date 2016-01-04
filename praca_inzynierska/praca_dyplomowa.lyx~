@@ -155,7 +155,7 @@ titleEN{Video-based vehicle detection for road traffic applications}
 
 
 \backslash
-shorttitle{co tutaj ma byc wpisane?}
+shorttitle{Wideo detekcja pojazdów samochodowych w ruchu drogowym}
 \end_layout
 
 \begin_layout Plain Layout
@@ -296,6 +296,10 @@ Ważne miejsce wśród metod bezinwazyjnych zajmują systemy wizyjne.
  punktowe i odcinkowe pomiary prędkości czy systemy poboru opłat.
 \end_layout
 
+\begin_layout Section*
+Cel i zakres pracy
+\end_layout
+
 \begin_layout Standard
 W pracy przedstawiono zagadnienia związane z wykrawaniem i klasyfikacją
  pojazdów na podstawie obrazu wideo.
@@ -309,19 +313,41 @@ W rozdziale drugim omówiono sposób przeprowadzania pomiarów ruchu drogowego
  w Polsce.
  Przedstawiono najpopularniejsze detektory ruchu pojazdów.
  Przeanalizowano zalety i wady ich użycia.
- Rozdział trzeci zawiera opis kilku popularnych aplikacji komercyjnych,
- w których zastosowanie znalazło przetwarzanie obrazu.
- Rozdział czwarty to prezentacja użytych przez autora narzędzi.
- W piątym rozdziale znajdują się informacje o interfejsie i możliwościach
+ 
+\end_layout
+
+\begin_layout Standard
+Rozdział trzeci zawiera opis kilku popularnych aplikacji komercyjnych, w
+ których zastosowanie znalazło przetwarzanie obrazu.
+ 
+\end_layout
+
+\begin_layout Standard
+Rozdział czwarty to prezentacja użytych przez autora narzędzi: jezyka programowa
+nia, zewnętrznych bibliotek oraz programów użytych w czasi e pisania programu.
+ 
+\end_layout
+
+\begin_layout Standard
+W piątym rozdziale znajdują się informacje o interfejsie i możliwościach
  programu.
- Rozdział szósty opisuje zaimplementowany algorytm, prezentując dokładnie
+ 
+\end_layout
+
+\begin_layout Standard
+Rozdział szósty opisuje zaimplementowany algorytm, prezentując dokładnie
  jego etapy na przykładach.
- Rozdział siódmy zawiera analizę wyników działania programu wraz z porównaniem
+ 
+\end_layout
+
+\begin_layout Standard
+Rozdział siódmy zawiera analizę wyników działania programu wraz z porównaniem
  z pomiarem przeprowadzonym przy pomocy pętli indukcyjnych.
- W rozdziale 8 znalazło się podsumowanie funkcjonalności, które mimo wcześniejsz
-ych planów nie zostały zrealizowane, trudności napotkanych w trakcie pisania
- programu oraz dalszych planów rozwoju oprogramowania.
- Rozdział 9 stanowi podsumowanie pracy.
+ 
+\end_layout
+
+\begin_layout Standard
+W rozdziale 8 znalazło się podsumowanie pracy.
 \end_layout
 
 \begin_layout Standard
@@ -851,7 +877,7 @@ zastosowanie kamer z dużą dynamiką jasności,
 \end_layout
 
 \begin_layout Itemize
-funkcjonalność zdalnego dostępu do danych.
+zdalny dostępu do danych.
 \end_layout
 
 \begin_layout Standard
@@ -975,8 +1001,8 @@ Easy Count-Bike- oferuje podobne funkcje co Easy Count, ale w odniesieniu
 \end_layout
 
 \begin_layout Itemize
-Licznik AVC - to pętlowy system pomiaru ruchu z funkcjonalnością zapisu,
- transferu i analizy danych.
+Licznik AVC - to pętlowy system pomiaru ruchu, umożliwiający zapis, transfer
+ i analizę danych.
 \end_layout
 
 \begin_layout Itemize
@@ -1056,7 +1082,7 @@ Jest językiem obiektowym wysokiego poziomu.
  czy C#, nie jest jednak odgórnie wymuszana przez składnię języka.
  Powoduje to, że w Pythonie można pisać proste liniowe skrypty, służące
  np.
- do testowania funkcjonalności programu.
+ do testowania programu.
 \end_layout
 
 \begin_layout Itemize
@@ -1176,7 +1202,7 @@ open source
 \end_inset
 
 , służącą do przeprowadzania obliczeń na n-wymiarowych tablicach.
- Zapewnia ona funkcjonalność podobną do środowiska Matlab.
+ Jest ona podobna do środowiska Matlab.
  Podstawowa typ tablicy, używany przez bibliotekę znacząco różni się od
  tablicy(listy) samego Pythona: lista jest kontenerem heterogonicznym, mogącym
  dynamicznie zmieniać swój rozmiar, natomiast 
@@ -1215,7 +1241,8 @@ open-source
 
  zawierającą funkcje do rozwiązywania zadań optymalizacji, algebry liniowej,
  przetwarzania sygnałów czy rozwiązywania równań różniczkowych.
- Biblioteka pozwala zrealizować większość funkcjonalności środowiska Matlab.
+ Biblioteka pozwala zrealizować większość operacji dostępnych w środowisku
+ Matlab.
  
 \end_layout
 
@@ -1261,7 +1288,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/glade.png
+	filename img/glade.png
 	scale 30
 
 \end_inset
@@ -1314,7 +1341,7 @@ status open
 
 \begin_layout Plain Layout
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/dokumentacja.png
+	filename img/dokumentacja.png
 	scale 50
 	BoundingBox 0bp 0bp 1350bp 627bp
 
@@ -1408,6 +1435,7 @@ Poniżej został opisany sposób instalacji programu oraz wymaganych bibliotek
 \begin_layout Enumerate
 Wchodzimy na stronę, i pobieramy najnowszą wersję programu:
 \begin_inset listings
+lstparams "basicstyle={\footnotesize},showstringspaces=false,tabsize=4"
 inline false
 status open
 
@@ -1424,6 +1452,7 @@ https://github.com/artven/videodetection/releases/latest
 \begin_layout Enumerate
 Przechodzimy do folderu zawierające pobrany plik: 
 \begin_inset listings
+lstparams "basicstyle={\footnotesize}"
 inline false
 status open
 
@@ -1440,6 +1469,7 @@ cd ~/Pobrane
 \begin_layout Enumerate
 Rozpakowujemy i kopiujemy program do katalogu domowego: 
 \begin_inset listings
+lstparams "basicstyle={\footnotesize},showstringspaces=false,tabsize=4"
 inline false
 status open
 
@@ -1455,7 +1485,7 @@ mkdir ~/videodetection
 
 \begin_layout Plain Layout
 
-cp -r cp -r 'videodetection v1.0'/* ~/videodetection/ 
+cp -r 'videodetection v1.0'/* ~/videodetection/ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1471,7 +1501,7 @@ cd ~/videodetection
 \begin_layout Enumerate
 Instalujemy zależności dla biblioteki OpenCV: 
 \begin_inset listings
-lstparams "breaklines=true"
+lstparams "basicstyle={\footnotesize},breaklines=true,showstringspaces=false,tabsize=4"
 inline false
 status open
 
@@ -1483,13 +1513,13 @@ sudo apt-get update && sudo apt-get upgrade && sudo apt-get dist-upgrade
 
 \begin_layout Plain Layout
 
-sudo apt-get install build-essential cmake qt5-default libvtk6-dev install
- zlib1g-dev libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libjasper-dev
- libopenexr-dev libgdal-dev libdc1394-22-dev libavcodec-dev libavformat-dev
- libswscale-dev libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev
- yasm libopencore-amrnb-dev libopencore-amrwb-dev libv4l-dev libxine2-dev
- libtbb-dev libeigen3-dev python-dev python-tk python-numpy python3-dev
- python3-tk python3-numpy ant default-jdk doxygen
+sudo apt-get install build-essential cmake qt5-default libvtk6-dev zlib1g-dev
+ libjpeg-dev libwebp-dev libpng-dev libtiff5-dev libjasper-dev libopenexr-dev
+ libgdal-dev libdc1394-22-dev libavcodec-dev libavformat-dev libswscale-dev
+ libtheora-dev libvorbis-dev libxvidcore-dev libx264-dev yasm libopencore-amrnb-
+dev libopencore-amrwb-dev libv4l-dev libxine2-dev libtbb-dev libeigen3-dev
+ python-dev python-tk python-numpy python3-dev python3-tk python3-numpy
+ ant default-jdk doxygen
 \end_layout
 
 \begin_layout Plain Layout
@@ -1505,6 +1535,7 @@ sudo apt-get install build-essential cmake qt5-default libvtk6-dev install
 \begin_layout Enumerate
 Pobieramy bibliotekę z oficjalnej strony:
 \begin_inset listings
+lstparams "basicstyle={\footnotesize},showstringspaces=false,tabsize=4"
 inline false
 status open
 
@@ -1536,7 +1567,7 @@ cd opencv-3.1.0/
 \begin_layout Enumerate
 Kompilujemy i instalujemy OpenCV: 
 \begin_inset listings
-lstparams "breaklines=true"
+lstparams "basicstyle={\footnotesize},breaklines=true,showstringspaces=false,tabsize=4"
 inline false
 status open
 
@@ -1579,6 +1610,7 @@ sudo ldconfig
 \begin_layout Enumerate
 Instalujemy sklearn: 
 \begin_inset listings
+lstparams "basicstyle={\footnotesize},showstringspaces=false,tabsize=4"
 inline false
 status open
 
@@ -1605,7 +1637,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/struktura_programu.png
+	filename img/struktura_programu.png
 	scale 60
 
 \end_inset
@@ -1698,7 +1730,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/widok_programu.png
+	filename img/widok_programu.png
 	scale 40
 
 \end_inset
@@ -1834,7 +1866,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/wybor_pliku.png
+	filename img/wybor_pliku.png
 	scale 50
 
 \end_inset
@@ -1959,7 +1991,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/baza_danych.png
+	filename img/baza_danych.png
 	scale 60
 
 \end_inset
@@ -2000,7 +2032,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename img/przeladanie_obrazow.jpg
+	filename img/przeladanie_obrazow.png
 	scale 50
 
 \end_inset
@@ -2076,8 +2108,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/ustawienia.png
-	scale 70
+	filename img/ustawienia.png
+	scale 60
 
 \end_inset
 
@@ -2185,7 +2217,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/rafal/PycharmProjects/videodetection/praca_inzynierska/img/o_programie.png
+	filename img/o_programie.png
 	scale 60
 
 \end_inset
@@ -2453,7 +2485,9 @@ Na powyższym obrazie zostało zaprezentowanie porównanie metody MOG2(u góry)
  z metodą GMG(na dole) na przykładowym nagraniu przejazdu samochodu.
  Rezultaty nie odbiegają od siebie znacząco - można zauważyć, że GMG generuje
  odrobinę więcej zakłóceń.
- W programie zdecydowano się na użycie pierwszej metody.
+ Metoda ta ma jednak ogromną zaletę - potrafi wyodrębniać cienie obiektów,
+ co pozwala na ich usuwanie na etapie filtracji.
+ W programie zdecydowano się na użycie tej metody.
 \end_layout
 
 \begin_layout Standard
@@ -3008,8 +3042,1561 @@ cleardoublepage{}
 Analiza wyników 
 \end_layout
 
+\begin_layout Standard
+Wyniki działania programu zostały porównane z danymi pochodzącymi z pomiaru
+ za pomocą pętli indukcyjnych.
+ Dane te miały postać plików *.avi oraz plików tekstowych w formacie 
+\begin_inset Quotes pld
+\end_inset
+
+kolumnowym
+\begin_inset Quotes prd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pole
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Postać lub jednostka
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Data
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RRRR-MM-DD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Godzina
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+HH:MM:SS
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temperatura
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+st.
+ C.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prędkość
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+km/h
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Długość
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Liczba osi
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7-12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Odległość między osiami
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13-19
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Naciski osi z czujnika nr 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+20-26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Naciski osi z czujnika nr 2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Format pliku wejściowego.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Plik avi był powiązany z wpisem w pliku tekstowym(nazwą pliku była godzina
+ pomiaru, z dokładnością do kilku sekund).
+\end_layout
+
 \begin_layout Subsubsection*
-Ocena skuteczności i poprawności działania programu
+Skrypt przeprowadzający testy
+\end_layout
+
+\begin_layout Standard
+W celu automatyzacji testowania został napisany skrypt w języku Python.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+from os import listdir 
+\end_layout
+
+\begin_layout Plain Layout
+
+from datetime import datetime 
+\end_layout
+
+\begin_layout Plain Layout
+
+from numpy import mean, median
+\end_layout
+
+\begin_layout Plain Layout
+
+from src.video import VideoReader, Frame 
+\end_layout
+
+\begin_layout Plain Layout
+
+from src.alg import Algorithm 
+\end_layout
+
+\begin_layout Plain Layout
+
+from src.config import Configuration 
+\end_layout
+
+\begin_layout Plain Layout
+
+from src.logs import Database, ImageSaver, Logger 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pierwszy etapem w skrypcie jest zaimportowanie potrzebnych bibliotek i klas:
+\end_layout
+
+\begin_layout Description
+os - moduł biblioteki standardowej, zapewniający podstawowe funkcje zależne
+ od architektury systemu operacyjnego(otwieranie/czytanie plików, poruszanie
+ się po hierarchii katalogów, manipulowanie zmiennymi systemowi)
+\end_layout
+
+\begin_layout Description
+datetime - moduł biblioteki standardowej, służący do manipulacji datą, czasem,
+ strefą czasową, umożliwiający także odmierzanie czasu.
+\end_layout
+
+\begin_layout Description
+numpy - zewnętrzna biblioteka do operacji numerycznych
+\end_layout
+
+\begin_layout Description
+VideoReader - klasą do odczytu danych z pliku wideo, zapewniająca dostęp
+ do właściwości pliku.
+\end_layout
+
+\begin_layout Description
+Frame - klasa opakowująca klatki obrazu pobrane z pliku.
+\end_layout
+
+\begin_layout Description
+Algorithm - klasa reprezentująca algorytm programu.
+\end_layout
+
+\begin_layout Description
+Configuration - klasa pozwalająca zmieniać, przywracać i zapisywać ustawienia
+ programu.
+\end_layout
+
+\begin_layout Description
+Database - klasa zapisująca wyniki do bazy danych.
+\end_layout
+
+\begin_layout Description
+ImageSaver - reprezentacja rezultatów w postaci obrazów.
+\end_layout
+
+\begin_layout Description
+Logger - zapisywanie komunikatów diagnostycznych do pliku tekstowego.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+input_file = open("input.txt")
+\end_layout
+
+\begin_layout Plain Layout
+
+output_file = open("output.txt", "w")
+\end_layout
+
+\begin_layout Plain Layout
+
+folder = "/media/Dane/Dropbox/Studia/IV rok/inżynierka/Dane_AVI" 
+\end_layout
+
+\begin_layout Plain Layout
+
+avi_files = listdir("/media/Dane/Dropbox/Studia/IV rok/inżynierka/Dane_AVI")
+\end_layout
+
+\begin_layout Plain Layout
+
+db = Database() 
+\end_layout
+
+\begin_layout Plain Layout
+
+img_saver = ImageSaver()
+\end_layout
+
+\begin_layout Plain Layout
+
+Logger.start() 
+\end_layout
+
+\begin_layout Plain Layout
+
+Configuration.load_config()
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Następnie skrypt otwiera plik z wynikami pomiarów, pobiera listę nagrań,
+ tworzył obiekty do zapisu danych i ładuje ustawienia.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def test_sigle_file(file):        
+\end_layout
+
+\begin_layout Plain Layout
+
+	Algorithm.reset()     
+\end_layout
+
+\begin_layout Plain Layout
+
+	input_video = VideoReader(file)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	result = []
+\end_layout
+
+\begin_layout Plain Layout
+
+    while 1:         
+\end_layout
+
+\begin_layout Plain Layout
+
+		frame = Frame(input_video)
+\end_layout
+
+\begin_layout Plain Layout
+
+        if not input_video.is_good():
+\end_layout
+
+\begin_layout Plain Layout
+
+            break
+\end_layout
+
+\begin_layout Plain Layout
+
+        frame = Algorithm.resize(frame)         
+\end_layout
+
+\begin_layout Plain Layout
+
+		frame, mask, records = Algorithm.perform(frame, db, img_saver, True)
+\end_layout
+
+\begin_layout Plain Layout
+
+		if records is not None and len(records) > 0:             
+\end_layout
+
+\begin_layout Plain Layout
+
+			for rec in records:
+\end_layout
+
+\begin_layout Plain Layout
+
+				r1 = round(rec['width'], 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+				r2 = round(rec["speed"], 2)                
+\end_layout
+
+\begin_layout Plain Layout
+
+				result.append((r1, r2))
+\end_layout
+
+\begin_layout Plain Layout
+
+    return result
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na listingu powyżej znajduje się funkcja, wykonywana w głównej pętli programu.
+ Kolejne klatki obrazu są czytane z pliku wideo, konwertowane na rozmiar
+ 480x720 pikseli i przetwarzane przez algorytm.
+ Funkcja wyciąga z rezultatów przetwarzania potrzebne do późniejszego porównania
+ prędkość i długość pojazdu.
+ Pełny rezultat jest zapisywany w plikach jpg i bazie danych.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+for i, line in enumerate(input_file.readlines()):     
+\end_layout
+
+\begin_layout Plain Layout
+
+	data = line.split(sep="
+\backslash
+t")
+\end_layout
+
+\begin_layout Plain Layout
+
+	lp = str(i)     
+\end_layout
+
+\begin_layout Plain Layout
+
+	date, time, speed, lenght, axes = , data[0], data[1], data[3], data[4],
+ data[5]     
+\end_layout
+
+\begin_layout Plain Layout
+
+	HH, MM, SS = time.split(sep=":")[0], time.split(sep=":")[1], time.split(sep=":")[2
+]     
+\end_layout
+
+\begin_layout Plain Layout
+
+	orginal_file = "M151001_"+HH+MM+SS+".avi"  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Kolejnym etapem jest przegląd całego pliku wejściowego.
+ Z każdej linii tekstu wyciągana jest data, prędkość, długość samochodu
+ oraz liczba osi.
+ Na podstawie czasu pomiaru jest rozpoznawana nazwa pliku wideo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+	if float(speed) > 0 and float(lenght) > 0 and int(axes) in (1, 2):    
+     
+\end_layout
+
+\begin_layout Plain Layout
+
+		found_file = None         
+\end_layout
+
+\begin_layout Plain Layout
+
+		for SS2 in range(int(SS)-2, int(SS)+3):             
+\end_layout
+
+\begin_layout Plain Layout
+
+			s = str(SS2) if len(str(SS2)) > 1 else "0"+str(SS2)             
+\end_layout
+
+\begin_layout Plain Layout
+
+			f = "M151001_"+HH+MM+s+".avi"             
+\end_layout
+
+\begin_layout Plain Layout
+
+			if f in avi_files:                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				found_file = f                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				used_files_count += 1                 
+\end_layout
+
+\begin_layout Plain Layout
+
+				results = test_sigle_file(folder+"/"+f)   
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Skrypt sprawdza poprawność pomiaru: czy prędkość i długość jest dodatnia
+ oraz czy liczba osi jest równa 1 bądź 2.
+ Drugie kryterium jest wynikiem ustawienia kamery na stanowisku pomiarowym.
+ Jest ona ustawiona zbyt blisko jezdni, przez co dłuższe pojazdy, posiadające
+ więcej osi, nie mieszczą się w kadrze kamery co uniemożliwia ich detekcję
+ w programie.
+ Jeżeli dane są poprawne, wyszukiwany jest plik wideo odpowiadający tym
+ danym.
+ Znaleziony plik poddawany jest analizie.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+				for r in results:                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					found_length, found_speed = r[0], r[1]
+\end_layout
+
+\begin_layout Plain Layout
+
+					# błąd długości                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					length_error = round(abs(float(lenght) - found_length), 2)
+\end_layout
+
+\begin_layout Plain Layout
+
+					length_error_pr = round((length_error / float(lenght)), 2) * 100  
+                   
+\end_layout
+
+\begin_layout Plain Layout
+
+					length_errors.append(length_error_pr)
+\end_layout
+
+\begin_layout Plain Layout
+
+            		# błąd prędkości                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					speed_error = round(abs(float(speed) - found_speed), 2)           
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+					speed_error_pr = round((speed_error / float(speed)), 2) * 100     
+                
+\end_layout
+
+\begin_layout Plain Layout
+
+					speed_errors.append(speed_error_pr)
+\end_layout
+
+\begin_layout Plain Layout
+
+    	        	if speed_error_pr < 25 and length_error_pr < 25:         
+                
+\end_layout
+
+\begin_layout Plain Layout
+
+						status = "OK"                         
+\end_layout
+
+\begin_layout Plain Layout
+
+						valid_detection_count += 1                     
+\end_layout
+
+\begin_layout Plain Layout
+
+					else:                         
+\end_layout
+
+\begin_layout Plain Layout
+
+						status = "BAD"                         
+\end_layout
+
+\begin_layout Plain Layout
+
+						bad_detection_count += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+            	output_file.write(form % (lp, lenght, speed, orginal_file, found_fil
+e, 
+\end_layout
+
+\begin_layout Plain Layout
+
+					str(found_length), str(length_error), str(length_error_pr), 
+\end_layout
+
+\begin_layout Plain Layout
+
+					str(found_speed), str(speed_error), str(speed_error_pr), status))
+\end_layout
+
+\begin_layout Plain Layout
+
+            	break
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Następuje porównanie danych otrzymanych z przetwarzania obrazu z danymi
+ wejściowymi.
+ Jeśli dane te nie różnią się o więcej niż 25%, rezultat uznawany jest za
+ prawidłowy, a odpowiednia informacja jest zapisywana w pliku wyjściowym.
+\end_layout
+
+\begin_layout Standard
+Skrypt testujący zlicza prawidłowe oraz nieprawidłowe wpisy w plikach i
+ rezultaty.
+ Rekord w wejściowym pliku tekstowym, jest uznany za prawidłowy, wtedy gdy
+ prędkość i długość ma dodatnią wartość a liczba osi jest równa jeden bądź
+ dwa.
+ Rezultat analizy jest uznawany za prawidłowy, jeżeli obliczona prędkość
+ i długości nie różni się o więcej niż o 25% od danych wejściowych.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,basicstyle={\footnotesize},showstringspaces=false,tabsize=4,extendedchars=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+		if found_file is None:             
+\end_layout
+
+\begin_layout Plain Layout
+
+			not_found_files_count += 1             
+\end_layout
+
+\begin_layout Plain Layout
+
+			status = "nie znaleziono pliku"             
+\end_layout
+
+\begin_layout Plain Layout
+
+            output_file.write("%5s %10s %10s %20s %20s 
+\backslash
+n" 
+\end_layout
+
+\begin_layout Plain Layout
+
+			% (lp, lenght, speed, orginal_file, status))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	else:
+\end_layout
+
+\begin_layout Plain Layout
+
+		unused_files_count += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+		status = "niepoprawny pomiar"
+\end_layout
+
+\begin_layout Plain Layout
+
+		output_file.write("%5s %10s %10s %20s %20s 
+\backslash
+n" 
+\end_layout
+
+\begin_layout Plain Layout
+
+		% (lp, lenght, speed, orginal_file, status))
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na końcu do pliku zapisywane są komunikaty o nieznalezieniu pliku wideo
+ i błędnym formacie danych wejściowych.
+ Zwrócony rezultat jest zapisywany do pliku tekstowego, którego format opisuje
+ poniższa tabela.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="13" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nazwa pola
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Opis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+lp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+numer wpisu z pliku wejściowego
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+długość
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+długość pojazdu z pliku wejściowego
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+prędkość
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+prędkość pojazdu z pliku wejściowego
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+plik oryginalny
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+nazwa pliku avi na podstawie czasu pomiaru
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+plik znaleziony
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+dopasowany plik avi
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+długość
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+długość wykryta na podstawie obrazu wideo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+błąd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+różnica pomiarów długości
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+błąd %
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+stosunek błędu długości do wartości z pliku wejściowego
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+prędkość
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+prędkość wykryta na podstawie obrazu wideo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+błąd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+różnica pomiarów prędkość
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+błąd %
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+stosunek błędu prędkości do wartości z pliku wejściowego
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+status
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Quotes pld
+\end_inset
+
+OK
+\begin_inset Quotes prd
+\end_inset
+
+ jeżeli pomiar został uznany za prawidłowy, 
+\begin_inset Quotes pld
+\end_inset
+
+BAD
+\begin_inset Quotes prd
+\end_inset
+
+ w p.
+ p.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Format pliku wynikowego.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Wynik testów
+\end_layout
+
+\begin_layout Standard
+W poniższej tabeli przedstawiono wynik działania skryptu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nazwa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wartość
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wpisy zweryfikowane jako prawidłowe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2111
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wpisy zweryfikowane jako nieprawidłowe
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+330
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wpisy bez pliku wideo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+181
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Obiekty zidentyfikowane prawidłowo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1657
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Obiekty zidentyfikowane błędnie
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+666
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Średni błąd wyznaczenia długości
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediana błędu wyznaczenia długości
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Błąd średni wyznaczenia prędkości
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mediana błędu wyznaczenia prędkości
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15 %
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Czas wykonania skryptu
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1:33:23
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Rezultat testu.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Skrypt testujący odrzucił około 1/5 danych wejściowych.
+ Pojazdy posiadające większą liczbę osi, zostały na wstępie odrzuce, gdyż
+ z powodu pozycji kamery na stanowisku pomiarowym, program nie był w stanie
+ dokonać poprawnej identyfikacji.
+\end_layout
+
+\begin_layout Standard
+Algorytm osiągnął poprawność sięgającą 72 procent.
+ Główną przyczyną takiego wyniku testu jest niezgodność zarejestrowanych
+ przejazdów z założeniami dotyczącymi działania programu.
+ Błędne przypadki testowe zostały opisane w następnym podrozdziale.
+ 
+\end_layout
+
+\begin_layout Standard
+Użycie skryptu pozwoliło przyśpieszyć testowanie, gdyż wydajność głównego
+ programu jest ograniczona możliwościami widgetu z biblioteki PyGtk służącego
+ do wyświetlania obrazu.
+ Interfejs graficzny, aby program działał stabilnie, może wyświetlać nową
+ klatkę obrazu co 100 ms, natomiast skrypt działał bez wyświetlania obrazu.
 \end_layout
 
 \begin_layout Subsubsection*
@@ -3017,68 +4604,13 @@ Nieudane przypadki działania
 \end_layout
 
 \begin_layout Standard
-#Opisać przypadki poniżej#
-\end_layout
-
-\begin_layout Standard
-małe pojazdy poniżej progu wielkości
-\end_layout
-
-\begin_layout Standard
-długie pojazdy, np autobusy
-\end_layout
-
-\begin_layout Standard
-duże samochody nie mieszczące się w kadrze
-\end_layout
-
-\begin_layout Standard
-klasyfikacja odbić światła jako obecności pojazdu
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-cleardoublepage{}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Chapter
-Rozwój oprogramowania
-\end_layout
-
-\begin_layout Section*
-Nie zrealizowane funkcjonalności
-\end_layout
-
-\begin_layout Standard
-W trakcie realizacji pracy inżynierskiej nie udało się autorowi zrealizować
- wszystkich pierwotnych założeń.
- 
-\end_layout
-
-\begin_layout Standard
-W trakcie pracy nad algorytmem okazało się, że detekcja pojazdów w ruchu
- na drodze dwupasmowej jest zadaniem bardzo trudnym, jeżeli program ma do
- dyspozycji jedynie obraz wideo z pobocza drogi.
- Zachodzi wtedy wiele 
-\begin_inset Quotes pld
-\end_inset
-
-niekorzystnych
-\begin_inset Quotes prd
-\end_inset
-
- zjawisk:
+Podstawową przyczyną błędnej identyfikacji było założenie przyjęte przy
+ pisaniu programu, mówiące o tym, że program ma służyć do identyfikacji
+ pojazdów na drodze jednokierunkowej.
+ W trakcie pracy nad algorytmem i późniejszych testów okazało się, że detekcja
+ pojazdów w ruchu na drodze dwupasmowej jest zadaniem bardzo trudnym, jeżeli
+ program ma do dyspozycji jedynie obraz wideo z pobocza drogi.
+ Zachodzi wtedy wiele niekorzystnych zjawisk:
 \end_layout
 
 \begin_layout Itemize
@@ -3096,7 +4628,43 @@ czułości
 \end_inset
 
  kamery, program musiałby śledzić obiekt w całym polu, wykryć kierunek ruchu
- i nadać mu szacowaną prędkość(przyrost pozycji w pixelach na kratkę obrazu).
+ i nadać mu szacowaną prędkość(przyrost pozycji w pikselach na kratkę obrazu).
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/bledy/2.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wymijanie.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -3104,6 +4672,38 @@ Wyprzedzanie się pojazdów - ta sytuacja może powodować, że dwa obiekty stan
  się dla programu jednym, jeżeli manewr zakończy się po za polem widzenia
  kamery.
  Skutkiem tej sytuacji będzie całkowita utrata wiadomości o obiekcie.
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/bledy/4.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wyprzedzanie.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -3114,122 +4714,134 @@ Wzajemne rzucanie cienia i odbicia światła od samochodów - Powoduje to znieks
 \end_layout
 
 \begin_layout Standard
-Rozwiązaniem powyższych problemów mogłoby być całkowite przemodelowanie
- algorytmu: odejście od prostej, ale wydajnej metody wyodrębnia tła na rzecz
- bardziej skomplikowanych algorytmów np.
- 
-\begin_inset Quotes pld
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/bledy/1.jpg
+	scale 50
+
 \end_inset
 
-cam shift
-\begin_inset Quotes prd
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pojazd na innym pasie.
+\end_layout
+
 \end_inset
 
-, 
-\begin_inset Quotes pld
+
+\end_layout
+
 \end_inset
 
-mean shift
-\begin_inset Quotes prd
-\end_inset
 
- czy 
-\begin_inset Quotes pld
-\end_inset
-
-optical-flow
-\begin_inset Quotes prd
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Standard
-Kolejnym założeniem było zrealizowane funkcjonalności do pracy z obrazem
- ruchu drogowego 
-\begin_inset Quotes pld
-\end_inset
-
-on-line
-\begin_inset Quotes prd
-\end_inset
-
- streamowanym w sieci Internet.
- Niepowodzenie było spowodowane dwoma faktami :
-\end_layout
-
-\begin_layout Itemize
-Znacząca większość dostępnych w sieci obrazów z kamer monitorujących filmuje
- ruch drogowy z pozycji 
-\begin_inset Quotes pld
-\end_inset
-
-nad drogą
-\begin_inset Quotes prd
-\end_inset
-
- a nie z pobocza drogi.
-\end_layout
-
-\begin_layout Itemize
-Udostępniany w sieci obraz jest obrazem w skali szarości, niskiej jakości
- i o bardzo małej ilości klatek, rzędu 2-3 na sekundę, co utrudnia detekcję
- poruszających się obiektów.
-\end_layout
-
-\begin_layout Section*
-Przyszłe zmiany w programie
+Stanowisko pomiarowe było umieszczone przy drodze dwukierunkowej, posiadającej
+ po dwa pasy ruchu w każdym kierunku.
+ Pomiar za pomocą pętli indukcyjnych był przeprowadzany tylko na jednym
+ pasie, przez co zidentyfikowane na podstawie obrazu parametry pojazdów
+ na innych pasach były całkowicie nieadekwatne do danych wejściowych.
 \end_layout
 
 \begin_layout Standard
-W ciągu dalszego rozwoju oprogramowania możliwe byłyby następujące zmiany:
-\end_layout
+\begin_inset Float figure
+wide false
+sideways false
+status open
 
-\begin_layout Itemize
-Podział kodu na klasy i metody operujący na tych samych 
-\begin_inset Quotes pld
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/bledy/5.jpg
+	scale 50
+
 \end_inset
 
-poziomach
-\begin_inset Quotes prd
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pojazd niemieszczący się kadrze.
+\end_layout
+
 \end_inset
 
- abstrakcji - kod programu miejscami jest niezrozumiały, kilka metod jest
- zdecydowanie za długie, mieszają się operacje o różnej abstrakcji, co skutkuje
- niestety w trudnościach w modyfikacji i dodawaniu do programu nowych funkcjonal
-ności.
+
 \end_layout
 
-\begin_layout Itemize
-Dodanie obsługi baz MySql - dodanie tej funkcjonalności umożliwiłoby automatyczn
-e dokonywanie pomiarów 
-\begin_inset Quotes pld
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
-w terenie
-\begin_inset Quotes prd
+
+\end_layout
+
+\begin_layout Standard
+Rysunek 7.4 prezentuje sytuację, gdy pojazd nie mieści się kadrze.
+ W wyniku tego nie można poprawnie określić długości pojazdu.
+ Obliczenie prędkości auta wymaga znajomości położenia środka ciężkości
+ i indeksu ramki obrazu.
+ Jeżeli pojazd nie jest w całości w polu widzenia kamery, środek znajduje
+ się w niewłaściwym miejscu, co obniża prędkość wynikową.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/bledy/3.jpg
+	scale 50
+
 \end_inset
 
- po przez użycie mini-komputera klasy RassberyPi i kamery, natomiast obserwacja
- wyników mogłaby odbywać się zdalnie za pomocą strony WWW.
+
 \end_layout
 
-\begin_layout Itemize
-Zbudowanie funkcjonalności streamowanie obrazu z programu na stronie WWW.
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pomiar w godzinach wieczornych.
 \end_layout
 
-\begin_layout Itemize
-Dodanie konfiguracji przez WWW.
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-Dodatkowe opcje - ustawienia programu należało by poszerzyć o parametry
- wszystkich algorytmów.
+\begin_layout Plain Layout
+
 \end_layout
 
-\begin_layout Itemize
-Zmiany w GUI - istnieje możliwość dodania do gui rysowania wykresów/opisywania
- statystyk przejechanych pojazdów.
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na pomiar miały wpływ także warunki oświetleniowe.
+ Na rysunku 7.5 pokazany jest pomiar w godzinach wieczornych.
+ Mniejsza ilość światła słonecznego pogarszała widoczność konturu karoserii,
+ co skutkowała błędnym oszacowaniem rozmiaru obiektu.
 \end_layout
 
 \begin_layout Standard
@@ -3261,8 +4873,7 @@ name "chap:Podsumowanie"
 
 \begin_layout Standard
 Celem niniejsze pracy było stworzenie oprogramowania umożliwiającego przeprowadz
-enie detekcji i klasyfikacji pojazdów samochodowych na podstawie obrazu
- wideo.
+enie detekcji pojazdów samochodowych na podstawie obrazu wideo.
  
 \end_layout
 
@@ -3279,23 +4890,79 @@ Systemy wizyjne znajdują coraz szersze wykorzystanie w aplikacjach związanych
 Napisane oprogramowanie spełniało swoje zadanie.
  Program przeprowadzał detekcję pojazdów oraz dokonywał oceny wykrytych
  pojazdów pod względem rozmiaru, koloru i prędkości.
- Dodatkowo udostępniał użytkownikowi wiele dodatkowych funkcjonalności,
- takich jak: dostosowywanie ustawień i parametrów algorytmu, liczne formaty
- wyjściowe(pliki jpg, avi, bazy danych sqlite3) czy możliwość sterowania
+ Umożliwiał użytkownikowi dostosowywanie ustawień i parametrów algorytmu,
+ zapis danych w kilku formatach(jpg, avi, sqlite3) oraz możliwość sterowania
  przebiegiem przetwarzania danych wejściowych.
 \end_layout
 
 \begin_layout Standard
 Niestety nie we wszystkich przypadkach program działał prawidłowo.
  Pewne specyficzne sytuacje pojawiające się w wejściowych nagraniach powodowały
- błędy detekcji i klasyfikacji pojazdów lub całkowicie uniemożliwiały wykrycie
+ błędy detekcji i identyfikacji pojazdów lub całkowicie uniemożliwiały wykrycie
  pojazdu.
- Powodem tych sytuacji były z jednej strony ograniczeniami algorytmu oraz
- , z drugiej strony uproszczeniami przyjętymi w czasie pisania programu.
+ Powodem tych sytuacji były ograniczenia algorytmu oraz uproszczenia przyjęte
+ w czasie pisania programu.
 \end_layout
 
 \begin_layout Standard
-Autor planuje dalszy rozwój oprogramowania.
+Realizacja pracy inżynierskiej pozwoliła autorowi utrwalić i wykorzystać
+ wiedzę z przedmiotu 
+\begin_inset Quotes pld
+\end_inset
+
+systemy wizyjne
+\begin_inset Quotes prd
+\end_inset
+
+ w zagadanieniu praktycznym.
+ W programie wykorzystano wiele algorytmów i operacji wizyjnych omawianych
+ na zajęciach.
+ Podczas tworzenia oprogramowania autor dogłębnie zapoznał się z bardzo
+ popularną biblioteką OpenCV.
+ Dodatkowo nauczył się nowego języka programowania i zaznajomił się z najważniej
+szymi możliwościami jego wykorzystania, takimi jak budowa interfejsów graficznyc
+h, praca z plikami(tekstowymi, graficznymi, json), obsługa baz danych czy
+ przetwarzanie wielowątkowe.
+\end_layout
+
+\begin_layout Section*
+Dalszy rozwój oprogramowania
+\end_layout
+
+\begin_layout Standard
+Autor oprogramowania planuje jego dalszy rozwój.
+ W przyszłości możliwe byłoby wprowadzenie następujących zmian:
+\end_layout
+
+\begin_layout Itemize
+Lepszy podział kodu - przez znaczną część okresu powstawania programu, proces
+ ten odbywał się bez dokładnej wiedzy o końcowym kształcie projektu.
+ Spowodowało to, że kod programu miejscami jest niezrozumiały, w niektórych
+ miejscach pojawiają się pozostałości po niewykorzystanych modułach i rozwiązani
+ach, które porzucono.
+ Kilka metod jest zdecydowanie za długie(funkcja odpowiadająca za śledzenie
+ pojazdu).
+ W kodzie mieszają się operacje o różnym poziomie abstrakcji, na przykład
+ każda z klas dokonujących detekcji, śledzenie i oceny dorysowuje własne
+ oznaczenia do obrazu wideo.
+ Poprawa tych mankamentów będzie kluczowa i pozwoli na sprawne dodawanie
+ nowych możliwości do programu.
+\end_layout
+
+\begin_layout Itemize
+Identyfikacja pojazdów on-line - aby dodanie tej funkcji do programu było
+ możliwe, musiałby on znacząco podnieść swoją wydajność.
+ Rozwiązaniem tego problemu byłoby przemodelowanie algorytmu, w taki sposób,
+ aby każdy etap przetwarzania(odczyt obrazu, detekcja, śledzenie, identyfikacja
+ i zapis wyników) działał niezależnie w osobnym wątku.
+ Konieczna byłaby również rezygnacja z wyświetlania obrazu, gdyż pochłania
+ ona sporo czasu i mocy obliczeniowej.
+\end_layout
+
+\begin_layout Itemize
+Strona WWW - program mógłby w łatwy sposób wysyłać dane z pomiarów(np.
+ zapisywać je w bazie danych mysql), które następnie byłyby wizualizowane
+ na stronie www.
 \end_layout
 
 \begin_layout Standard
@@ -3325,6 +4992,7 @@ cleardoublepage{}
 \begin_layout Standard
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintAll"
 bibfiles "bibliografia"
 options "bibtotoc,bst/IEEEtranS"
 
