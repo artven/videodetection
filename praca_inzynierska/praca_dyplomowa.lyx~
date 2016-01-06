@@ -267,33 +267,63 @@ name "chap:Wstep"
 \begin_layout Standard
 Wraz z rozwojem motoryzacji i infrastruktury drogowej pojawiła się konieczność
  badania parametrów ruchu drogowego.
- Badania te mają na celu pozyskanie informacji o statystykach pojazdów,
- poziomie dostosowania stanu dróg do potrzeb użytkowników ruchu drogowego,
- wpływie ruchu drogowego na środowisko naturalne czy przyczynach wypadków
- samochodowych.
- Rezultaty badań są również ważnym czynnikiem, branym pod uwagę przy projektowan
-iu długofalowych planów rozbudowy infrastruktury, który pozwala określić
- najważniejsze cele i potrzeby rozwoju sieci dróg.
-\end_layout
-
-\begin_layout Standard
-Naukowcy dysponują obecnie szeroką gamą narzędzi umożliwiających przeprowadzanie
- badań.
- Klasyczne metody, nazwane inwazyjnymi, pozwalają dokonać z dużą dokładnością
- pomiarów takich parametrów jak prędkość, masa czy ilość osi .
- Niestety, jak wskazuje ich nazwa, wymagają one często kosztownej i czasochłonne
-j ingerencji w nawierzchnię drogi.
- Z drugiej strony, w wyniku szybkiego wzrostu mocy obliczeniowej komputerów,
- pojawiły się metody bezinwazyjne, bazujące na wiązkach laserowych czy ultradźwi
-ękach.
+ Badania mają na celu pozyskanie informacji o liczbie pojazdów i ich typie,
+ stanie dróg, wpływie samochodów na środowisko naturalne i życie mieszkańców,
+ czy przyczynach wypadków samochodowych.
+ Rezultaty badań są ważnym czynnikiem, branym pod uwagę przy planowaniu
+ rozbudowy infrastruktury.
  
 \end_layout
 
 \begin_layout Standard
-Ważne miejsce wśród metod bezinwazyjnych zajmują systemy wizyjne.
- Znalazły one wykorzystanie w wielu aspektach, takich jak: sprawdzanie obecności
- pieszych i pojazdów na pasach/skrzyżowaniach, detekcja przeciążonych pojazdów,
- punktowe i odcinkowe pomiary prędkości czy systemy poboru opłat.
+Istnieje kilka metod przeprowadzania pomiarów, takich jak pomiar punktowy,
+ odcinkowy, strefowy.
+ Podstawowym narzędziem przeprowadzania pomiaru jest detektor.
+ Jest to urządzenie składające się z czujnika, układu kondycjonowania, dyskrymin
+atora oraz elementu wykonawczego.
+ W metodzie punktowej wykorzystuje się detektory punktowe, których zadaniem
+ jest wykrywanie, zliczanie i identyfikacja parametrów pojazdów przejeżdżających
+ przez stanowisko pomiarowe.
+ Pomiar na odcinku wymaga zastosowania pary detektorów bądź zaawansowanego
+ systemu kamer.
+ W przeciwieństwie do pierwszej techniki, umożliwia zmierzenie natężenia
+ ruchu.
+\end_layout
+
+\begin_layout Standard
+Zastosowany w detektorze czujnik jest najważniejszym elementem decydującym
+ o cechach detektora.
+ Wykorzystywane czujniki dzieli się na dwie kategorie: wbudowane oraz bezinwazyj
+ne.
+ Do pierwszej kategorii zalicza się m.
+ in.
+ czujniki indukcyjne, pneumatyczne, kwarcowe.
+ Montuje się je bezpośrednio w jezdni lub bądź na powierzchni.
+ Ich instalacja wymaga kosztownej i czasochłonnej ingerencji w nawierzchnię
+ drogi, która wiąże się z koniecznością czasowego zamknięcia pasa ruchu.
+ Są one również podatne na czynniki zewnętrzne, takie jak temperatura czy
+ wilgotność.
+ 
+\end_layout
+
+\begin_layout Standard
+Z drugiej strony, wykorzystywane są metody bezinwazyjne, bazujące na czujnikach
+ laserowych, ultradźwiękowych czy przetwarzaniu obrazu.
+ Systemy wizyjne nalazły wykorzystanie w wielu aspektach, takich jak: sprawdzani
+e obecności pieszych i pojazdów, wykrywanie przeciążonych pojazdów, punktowe
+ i odcinkowe pomiary prędkości, systemy poboru opłat czy kontrola dostępu.
+ W wielu miastach, które z natury mają ograniczone możliwości rozbudowy
+ infrastruktury, stosuje się systemy monitorowania, w celu optymalizacji
+ sterownia przepływem pojazdów na skrzyżowaniach.
+ 
+\end_layout
+
+\begin_layout Standard
+Wideo-detektory są proste w montażu, przenośne oraz odporne na oddziaływanie
+ środowiska.
+ W wyniku wzrostu mocy obliczeniowej komputerów, detektory umożliwiają stosowani
+e zaawansowanych algorytmów odpornych na warunki pogodowe oraz dysponują
+ wysoką wydajnością przetwarzania, przekraczającą 20 klatek na sekundę.
 \end_layout
 
 \begin_layout Section*
@@ -301,53 +331,38 @@ Cel i zakres pracy
 \end_layout
 
 \begin_layout Standard
-W pracy przedstawiono zagadnienia związane z wykrawaniem i klasyfikacją
- pojazdów na podstawie obrazu wideo.
- Na potrzeby pracy napisano program, który z próbek wideo zawierających
- nagrania ruchu pojazdów na odcinku drogi jednokierunkowej uzyskuje informacje
- o przejeżdżających pojazdach.
-\end_layout
-
-\begin_layout Standard
-W rozdziale drugim omówiono sposób przeprowadzania pomiarów ruchu drogowego
- w Polsce.
- Przedstawiono najpopularniejsze detektory ruchu pojazdów.
- Przeanalizowano zalety i wady ich użycia.
+W pracy przedstawiono zagadnienia związane z wykrawaniem i identyfikacją
+ parametrów pojazdów na podstawie obrazu wideo.
+ Napisano program, który z nagrań ruchu na odcinku drogi jednokierunkowej,
+ uzyskiwał długość, wysokość, prędkość i kolor pojazdu.
+ Źródło obrazu stanowiła kamera znajdująca się na poboczu drogi.
+ Nagrania użyte podczas tworzenia i testowania oprogramowania, pochodziły
+ z pomiarów dokonanych przez autora oraz ze stanowiska pomiarowego, używanego
+ przez naukowców z Katedry Metrologi Akademii Górniczo-Hutniczej w Krakowie.
  
 \end_layout
 
 \begin_layout Standard
-Rozdział trzeci zawiera opis kilku popularnych aplikacji komercyjnych, w
- których zastosowanie znalazło przetwarzanie obrazu.
- 
-\end_layout
-
-\begin_layout Standard
-Rozdział czwarty to prezentacja użytych przez autora narzędzi: jezyka programowa
-nia, zewnętrznych bibliotek oraz programów użytych w czasi e pisania programu.
- 
-\end_layout
-
-\begin_layout Standard
-W piątym rozdziale znajdują się informacje o interfejsie i możliwościach
- programu.
- 
-\end_layout
-
-\begin_layout Standard
-Rozdział szósty opisuje zaimplementowany algorytm, prezentując dokładnie
- jego etapy na przykładach.
- 
-\end_layout
-
-\begin_layout Standard
-Rozdział siódmy zawiera analizę wyników działania programu wraz z porównaniem
- z pomiarem przeprowadzonym przy pomocy pętli indukcyjnych.
- 
-\end_layout
-
-\begin_layout Standard
-W rozdziale 8 znalazło się podsumowanie pracy.
+W rozdziale drugim omówiono najpopularniejsze typy detektory pod kątem ich
+ parametrów, wad i zalet.
+ Przedstawiono również sposób przeprowadzania pomiarów ruchu drogowego w
+ Polsce.
+ Rozdział trzeci zawiera opis możliwości systemów wizyjnych.
+ W rozdziale podano dla przykładu kilka popularnych aplikacji komercyjnych,
+ w których zastosowanie znalazło przetwarzanie obrazu.
+ Rozdział czwarty to prezentacja użytych przez autora podczas tworzenia
+ oprogramowania języka programowania, bibliotek oraz pomocniczych programów.
+ W piątym rozdziale znajdują się informacje o strukturze, interfejsie i
+ działaniu programu.
+ Rozdział szósty opisuje zaimplementowany algorytm wykrywania samochodów,
+ prezentując dokładnie jego etapy na przykładach.
+ Zostały opisane metody identyfikacji poszczególnych parametrów samochodów.
+ Rozdział siódmy zawiera analizę wyników działania programu.
+ Rezultaty wideo detekcji porównano z wynikami pochodzącymi ze stanowiska
+ pomiarowego wykorzystującego pętle indukcyjne.
+ Na tej podstawie określono skuteczność programu oraz zidentyfikowano przyczyny
+ błędów pomiaru.
+ W rozdziale 8 znalazło się podsumowanie pracy.
 \end_layout
 
 \begin_layout Standard
@@ -370,18 +385,18 @@ cleardoublepage{}
 Metody pomiarów parametrów ruchu drogowego
 \end_layout
 
-\begin_layout Standard
-W wyniku rozwoju motoryzacji oraz rozbudowy infrastruktury drogowej pojawiła
- się konieczność zbierania i analizy informacji o ruchu pojazdów.
-\end_layout
-
 \begin_layout Section*
 Generalny Pomiar Ruchu Drogowego
 \end_layout
 
 \begin_layout Standard
-W Polsce od roku 1965, co 5 lat, dokonywany jest Generalny Pomiar Ruchu
- Drogowego(GPRD)
+Pierwsze pomiary ruchu drogowego zostały przeprowadzone we Francji w XIX
+ wieku.
+ W Polsce w okresie międzywojennym przeprowadzano zliczanie pojazdów w miastach.
+ w okresach szczególnego natężenia ruchu.
+ Po II Wojnie Światowej wznowiono pomiary w 1954r.
+ Od 1965, co 5 lat, dokonywany jest Generalny Pomiar Ruchu Drogowego (GPRD)
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "GPRD1"
@@ -398,53 +413,44 @@ key "GPRD2"
 .
  Ma on na celu pozyskanie charakterystyk ruchu drogowego na wszystkich odcinakac
 h dróg krajowych i wojewódzkich.
- Uzyskiwane w wyniku GPRD pomiary są wykorzystywane przy planowaniu rozbudowy
+ Uzyskiwane w wyniku GPR pomiary są wykorzystywane przy planowaniu rozbudowy
  infrastruktury drogowej, organizacji ruchu, utrzymaniu dróg, określaniu
  przyczyn wypadkowości czy badaniu wpływu ruchu na komfort życia mieszkańców
  i środowisko naturalne.
 \end_layout
 
 \begin_layout Standard
-W czasie pomiarów pojazdy są klasyfikowane do jednej spośród 8 kategorii:
- 
-\end_layout
-
-\begin_layout Enumerate
-motocykle, 
-\end_layout
-
-\begin_layout Enumerate
-samochody osobowe, 
-\end_layout
-
-\begin_layout Enumerate
-lekkie samochody ciężarowe, 
-\end_layout
-
-\begin_layout Enumerate
-samochody ciężarowe bez przyczepy, 
-\end_layout
-
-\begin_layout Enumerate
-samochody ciężarowe z przyczepami/ naczepami, 
-\end_layout
-
-\begin_layout Enumerate
-autobusy, 
-\end_layout
-
-\begin_layout Enumerate
-ciągniki rolnicze, 
-\end_layout
-
-\begin_layout Enumerate
-rowery.
- 
+W czasie pomiarów pojazdy są klasyfikowane do jednej spośród kategorii:
+ motocykle, samochody osobowe, lekkie samochody ciężarowe, samochody ciężarowe
+ bez przyczepy, samochody ciężarowe z przyczepami/ naczepami, autobusy,
+ ciągniki rolnicze, rowery.
 \end_layout
 
 \begin_layout Standard
-Metodologię dokonywania pomiarów, terminy pomiarów, zadania obserwatorów,
- etc reguluje zarządzenie nr 38 Generalnego Dyrektora Dróg Krajowych i Autostrad
+Pomiar w 2015 został przeprowadzony na 1954 odcinkach, z których 161 wykorzystyw
+ało wideorejestrację.
+ Był wykonywany metodami automatycznymi, półautomatycznymi oraz ręcznymi.
+ Na drogach krajowych badania przeprowadzano w 11 terminach: przez 9 dni
+ przeprowadzano pomiar dzienny w godzinach 6-22, w pozostałe 2 dni miał
+ miejsce pomiar nocny od godziny 22 do 6 rano.
+ Na drogach wojewódzkich przeprowadzono pomiar w 6 terminach, w tym jednym
+ nocnym.
+\end_layout
+
+\begin_layout Standard
+Pomiar ruchu przeprowadzony w 2010 wskazuje na wzrost ruchu pojazdów silnikowych
+ na drogach krajowych o 22 procent.
+ Najbardziej obciążone drogi znajdowały się w województwach śląskim, małopolskim
+, łódzkim, dolnośląskim i mazowieckim.
+ Trasami o największym natężeniu ruchu były autostrada A4(polski fragment
+ trasy europejskie E40) oraz drogi krajowe nr 91, 6, 1(trasa europejska
+ E75).
+ Na tych droga średni ruch dobowy przekraczał 20000 pojazdów/dobę.
+\end_layout
+
+\begin_layout Standard
+Metodologię dokonywania pomiarów, terminy pomiarów, zadania obserwatorów
+ reguluje zarządzenie nr 38 Generalnego Dyrektora Dróg Krajowych i Autostrad
  z dnia 1 września 2014 r.
 \end_layout
 
@@ -459,36 +465,36 @@ Podczas dokonywania pomiarów dąży się do pozyskania zarówno indywidualnych
 \end_layout
 
 \begin_layout Itemize
-Prędkość - chwilowa, jazdy, podróży, miarodajna.
+prędkość - chwilowa, jazdy, podróży, miarodajna,
 \end_layout
 
 \begin_layout Itemize
-Czas podróży - czas pokonania odcinka drogi.
+czas podróży - czas pokonania odcinka drogi,
 \end_layout
 
 \begin_layout Itemize
-Natężenie ruchu - liczba pojazdów na jednostkę czasu.
+natężenie ruchu - liczba pojazdów na jednostkę czasu,
 \end_layout
 
 \begin_layout Itemize
-Gęstość ruchu - liczba pojazdów znajdujących się na odcinku drogi na jednostkę
- czasu.
+gęstość ruchu - liczba pojazdów znajdujących się na odcinku drogi na jednostkę
+ czasu,
 \end_layout
 
 \begin_layout Itemize
-Zajętość drogi - procent drogi zajęty przez pojazdy.
+zajętość drogi - procent drogi zajęty przez pojazdy,
 \end_layout
 
 \begin_layout Itemize
-Bezpieczeństwo ruchu.
+bezpieczeństwo ruchu,
 \end_layout
 
 \begin_layout Itemize
-Wpływ na środowisko.
+wpływ na środowisko,
 \end_layout
 
 \begin_layout Itemize
-Zużycie paliwa.
+zużycie paliwa.
 \end_layout
 
 \begin_layout Standard
@@ -503,7 +509,7 @@ Pomiarów ruchu drogowego dokonuję się w punkcie, na krótki odcinku drogi,
 Indywidualny pojazd można opisać szeregiem wartości: klasą pojazdu, numerem
  rejestracyjnym, liczbą osi, odległościami między osiami, długością, szerokością
  , wysokością, prędkością czy naciskiem na jezdnię.
- Stosuję się także opis strefowy, środowiskowy, pogodowy i opis jezdni.
+ Stosuje się także opis strefowy, środowiskowy, pogodowy i opis jezdni.
 \end_layout
 
 \begin_layout Section*
@@ -514,10 +520,10 @@ Detektory
 Detektor jest to urządzenie składające się z czujnika, układu kondycjonowania,
  dyskryminatora oraz elementu wykonawczego.
  Jego celem jest wykrycie obecności pojazdu w punkcie bądź strefie pomiaru.
- Detektor powinien być urządzenie prostym w obsłudze i montażu, bezawaryjnym,
+ Detektor powinien być urządzeniem prostym w obsłudze i montażu, bezawaryjnym,
  pozwalającym na łatwy odczyt informacji.
  Stosowane są dwa rodzaje detektorów: bezinwazyjne i wbudowane(instalowane
- w nawierzchni)
+ w nawierzchni) 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gajda"
@@ -535,8 +541,7 @@ Klasyfikacja detektorów wbudowanych:
 \begin_layout Itemize
 Linowy - drut stalowy lub linka nylonowa zamontowana jest na wysokości kilku
  minimetrów na jezdnią.
- Nacisk przejeżdżającego pojazdu powoduje naciąg linki i uruchomienie zestyku,
- który generuje impuls.
+ Nacisk przejeżdżającego pojazdu powoduje naciąg linki i uruchomienie zestyku.
  Ten rodzaj detektory może generować fałszywe impulsy, wymaga regulacji
  i poprawy naciągu linki, ma ograniczoną maksymalna prędkość pomiarów.
  Jego zaletą jest prosta budowa.
@@ -691,27 +696,15 @@ cleardoublepage{}
 Systemy wizyjne w zastosowaniach komercyjnych 
 \end_layout
 
-\begin_layout Standard
-Rozdział ten stanowi przegląd dostępnych na rynku systemów pomiaru ruchu
- drogowego, w których zastosowanie znalazły algorytmy wizyjne.
-\end_layout
-
 \begin_layout Section*
 Charakterystyka systemów wizyjnych
 \end_layout
 
 \begin_layout Standard
-Systemy VIP(Video Image Processing) są coraz częściej stosowane przy pomiarach
- parametrów ruchu drogowego.
+Systemy wizyjne są coraz częściej stosowane przy pomiarach parametrów ruchu
+ drogowego.
  Początkowo służyły one jedynie wizualizacji pomiarów bądź jako pomoc dla
- operatora w procesie weryfikacji poprawności pomiarów dokonywanych 
-\begin_inset Quotes pld
-\end_inset
-
-standardowymi
-\begin_inset Quotes prd
-\end_inset
-
+ operatora w procesie weryfikacji poprawności pomiarów dokonywanych innymi
  metodami.
  Rozwój mocy obliczeniowych komputerów sprawił, że pojawiła się możliwość
  automatycznej analizy obrazu i wydobywania z niego użytecznych informacji,
@@ -719,7 +712,7 @@ standardowymi
 \end_layout
 
 \begin_layout Itemize
-obecność pojazdów na skrzyżowaniach, drogach, tunelach, etc,
+obecność pojazdów na skrzyżowaniach, drogach, tunelach, 
 \end_layout
 
 \begin_layout Itemize
@@ -750,8 +743,7 @@ Obecnie wykorzystywane aplikacje wizyjne mogą działać zarówno jako samodziel
 \end_layout
 
 \begin_layout Standard
-Efektywność systemów wizyjnych szacuje się na około 90%.
- Posiadają one wiele zalet:
+Systemy wizyjne posiadają wiele zalet:
 \end_layout
 
 \begin_layout Itemize
@@ -778,7 +770,7 @@ w zaawansowanych aplikacjach kamera może dokonywać auto-pozycjonowania w
 \end_layout
 
 \begin_layout Itemize
-istnieje możliwość streamowania obrazu przez sieć Internet.
+istnieje możliwość udostępniania obrazu przez sieć Internet.
 \end_layout
 
 \begin_layout Standard
@@ -801,8 +793,7 @@ zabrudzenia odkładające się na układzie optycznym.
 Ważnym czynnikiem mającym wpływ na działanie systemu jest sposób montażu
  kamery względem nadzorowanego pasa ruchu.
  Najczęściej umieszcza się kamerę wysoko nad pasem ruchu.
- Umieszczenie punktu pomiaru z boku drogi zmniejsza skuteczność pomiaru
- o około 10%.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -920,8 +911,7 @@ RedLight - detekcja przejazdu na czerwonym świetle.
 \end_layout
 
 \begin_layout Itemize
-City - tworzenie płatnych stref w miastach i pobieranie opłat za przebywanie
- w nich.
+City - zarządzanie płatnymi strefami parkowania w miastach, pobieranie opłat.
 \end_layout
 
 \begin_layout Itemize
@@ -1057,7 +1047,7 @@ Python
 
 \begin_layout Standard
 Algorytm wideo detekcji pojazdów został zaimplementowany w języku programowania
- Python, w wersji 3.4
+ Python, w wersji 3.4 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "python1"
@@ -1100,14 +1090,12 @@ Posiada bogatą bibliotekę standardową zawierającą moduły do programowania
 
 \begin_layout Itemize
 Jest językiem interpretowanym, więc programy wykonane w tym języku są niezależne
- od platformy i mogą być łatwo przenoszone na inne systemy operacyjne bądź
- platformy sprzętowe(komputer PC, systemy embeded).
+ od platformy i mogą być łatwo przenoszone na inne systemy operacyjne.
 \end_layout
 
 \begin_layout Itemize
 Ogromna popularność języka Python i szeroka społeczność skupiona wokół niego,
- skutkuje w ogramnej bazie gotowych rozwiązań, porad i tutoriali dostępnych
- w sieci.
+ skutkuje w ogromnej bazie gotowych rozwiązań i poradników.
 \end_layout
 
 \begin_layout Section*
@@ -1115,15 +1103,7 @@ OpenCV
 \end_layout
 
 \begin_layout Standard
-OpenCV jest biblioteką 
-\begin_inset Quotes pld
-\end_inset
-
-open source
-\begin_inset Quotes prd
-\end_inset
-
- służącą do cyfrowego przetwarzania obrazu wizyjnego.
+OpenCV jest darmową biblioteką służącą do cyfrowego przetwarzania obrazu.
  Jest ona bezpośrednio zaimplementowana w języku C/C++.
  Dostępna jest na wszystkich systemach operacyjnych stacjonarnych i mobilnych:
  Windows, Linux, MacOS, Android, iOS.
@@ -1289,7 +1269,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename img/glade.png
-	scale 30
+	scale 32
 
 \end_inset
 
@@ -1450,6 +1430,24 @@ https://github.com/artven/videodetection/releases/latest
 \end_layout
 
 \begin_layout Enumerate
+Alternatywą do kroku 1.
+ jest sklonowanie całego repozytorium: 
+\begin_inset listings
+lstparams "basicstyle={\footnotesize},tabsize=4"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+git clone https://github.com/artven/videodetection.git
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
 Przechodzimy do folderu zawierające pobrany plik: 
 \begin_inset listings
 lstparams "basicstyle={\footnotesize}"
@@ -1475,7 +1473,7 @@ status open
 
 \begin_layout Plain Layout
 
-unzip videodetection.v1.0.zip  
+unzip videodetection.v1.2.zip  
 \end_layout
 
 \begin_layout Plain Layout
@@ -1485,7 +1483,7 @@ mkdir ~/videodetection
 
 \begin_layout Plain Layout
 
-cp -r 'videodetection v1.0'/* ~/videodetection/ 
+cp -r 'videodetection v1.2'/* ~/videodetection/ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1757,8 +1755,9 @@ Główne okno programu
 
 \begin_layout Standard
 W skład głównego okna wchodzi górne menu, obszar odtwarzania pliku wideo,
- lista przetwarzanych plików, lista wyników klasyfikacji, menu odtwarzania
- i pasek informujący o postępie przetwarzania.
+ lista przetwarzanych plików, lista wyników, menu odtwarzania i pasek informując
+y o postępie przetwarzania.
+ 
 \end_layout
 
 \begin_layout Subsubsection*
@@ -2069,8 +2068,8 @@ eog
  Na wygenerowanym przez program obrazie wynikowym został umieszczony pojazd
  wjeżdżający w obszar detekcji(w górnej części) oraz pojazd opuszczający
  ten obszar(na dole obrazu).
- Dodatkowo program wypisuje na obrazie informację o wynikach klasyfikacji,
- w postaci paska kolorów w lewym górnym rogu oraz podpisu u dołu zdjęcia.
+ Dodatkowo program wypisuje na obrazie informację, w postaci paska kolorów
+ w lewym górnym rogu oraz podpisu u dołu zdjęcia.
 \end_layout
 
 \begin_layout Itemize
@@ -2286,8 +2285,8 @@ Włączenie/wyłączenie nagrywania rezultatu przetwarzania do pliku video.
 
 \begin_layout Itemize
 Włączenie/wyłączenie algorytmu - gdy przycisk nie jest wciśnięty program
- wykonuje jedynie detekcję obiektów, pominja zaś śledzenie, klasyfikację
- i zapis rezultatów.
+ wykonuje jedynie detekcję obiektów, pomija zaś śledzenie, analizę i zapis
+ rezultatów.
 \end_layout
 
 \begin_layout Itemize
@@ -2313,7 +2312,7 @@ cleardoublepage{}
 \end_layout
 
 \begin_layout Chapter
-Algorytm detekcji i klasyfikacji pojazdów.
+Algorytm detekcji i identyfikacji cech pojazdów.
 \end_layout
 
 \begin_layout Standard
@@ -2340,7 +2339,7 @@ Stefa czułości powinna być tak dobrana aby obejmowała obszar obrazu, będąc
  faktycznym rejonem przejazdu pojazdów.
  Wybranie zbyt dużej strefy, obejmującej np.
  pobocze, tło, etc, może powodować pojawienie się błędnych odczytów spowodowanyc
-h klasyfikacja odbić światła i cieni jako poruszających się pojazdów.
+h rejestracją odbić światła i cieni jako poruszających się pojazdów.
 \end_layout
 
 \begin_layout Enumerate
@@ -2611,7 +2610,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/filtracja.png
-	scale 75
+	scale 85
 
 \end_inset
 
@@ -2697,12 +2696,51 @@ W celu zabezpieczenia przed kilkukrotnym wykryciem i zapisaniem tego samego
 \begin_layout Standard
 Ocena obecności w otoczeniu krawędzi odbywa się po przez obliczenie odległości
  środka ciężkości obiektu od krawędzi rejonu.
- Jeżeli ta odległość jest mniejsza niż 50 pikseli, obiekt jest klasyfikowany
+ Jeżeli ta odległość jest mniejsza niż 50 pikseli, obiekt jest oznaczany
  jako znajdujący się w otoczeniu krawędzi.
 \end_layout
 
 \begin_layout Subsubsection*
 Śledzenie przykładowego przejazdu pojazdu
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przyklad/6.jpg
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pusta jezdnia.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Na początku w kadrze kamery nie znajduje się żaden poruszający się pojazd.
 \end_layout
 
 \begin_layout Standard
@@ -2747,7 +2785,7 @@ Nowy pojazd w kadrze.
 \begin_layout Standard
 W kadrze kamery pojawia się pojazd, ale jest po za rejonem detekcji, więc
  jest ignorowany przez program.
- Odpowiada to krokowi 1 i 2 przedstawionego wyżej algorytmu.
+ Odpowiada to krokowi 1 i 2 przedstawionego wcześniej algorytmu.
 \end_layout
 
 \begin_layout Standard
@@ -2866,7 +2904,8 @@ Opuszczenie rejonu detekcji.
 \begin_layout Standard
 Samochód jest w otoczeniu drugiej krawędzi prostokąta.
  Program, podobnie jak na drugim obrazie, pobiera klatkę obrazu, jej numer
- i współrzędne środka ciężkości i przesyła dane to klasyfikacji.
+ i współrzędne środka ciężkości i przesyła dane do klasy zajmującej się
+ obliczaniem parametrów.
  Jest to krok 4 algorytmu.
 \end_layout
 
@@ -2906,17 +2945,19 @@ Opuszczenie kadru.
 \end_layout
 
 \begin_layout Standard
-Przejazd samochodu został sklasyfikowany.
- Pojazd opuścił rejon wykrywania i nie jest już interesujący dla programu.
+Przejazd samochodu został wykryty.
+ Pojazd opuścił rejon pomiaru i nie jest już śledzony przez program.
+ Pozyskane dane zostały przekazane do następnego kroku algorytmu, w celu
+ identyfikacji parametrów.
+ 
 \end_layout
 
 \begin_layout Section*
-Klasyfikacja 
+Identyfikacja
 \end_layout
 
 \begin_layout Standard
-Klasyfikacja przejazdu ma dostarczyć danych o rozmiarze pojazdu, kolorze
- i prędkości.
+Oprogramowanie ma dostarczyć danych o rozmiarze pojazdu, kolorze i prędkości.
 \end_layout
 
 \begin_layout Standard
@@ -2931,14 +2972,14 @@ Na wyznaczenie rozmiaru składa się obliczenie jego długości, wysokości i
 W celu wykrycia koloru, program wyszukuje w prostokącie otaczającym pojazd
  K dominujących kolorów i wybiera ten największy.
  Funkcja wyboru kolorów została zaimplementowana z wykorzystaniem klasy
- KMeans
+ KMeans 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "KMeans"
 
 \end_inset
 
- z pakietu scikit-learn
+ z pakietu scikit-learn 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -3009,7 +3050,7 @@ Przykład działania algorytmu K-means.
 \begin_layout Standard
 Aby zidentyfikować prędkość pojazdu program pobiera różnicę klatek między
  pojawieniem się a opuszczeniem pola detekcji przez samochód, następnie
- znając liczbę fps na sekundę określa czas między zajściem tych zdarzeń.
+ znając liczbę klatek na sekundę określa czas między zajściem tych zdarzeń.
  Kolejnym krokiem jest wyliczenie różnicy między środkami ciężkości pojazdu
  w obu miejscach.
  Znając różnicę w czasie, odległość w pikselach oraz przelicznik metrów
@@ -3017,9 +3058,9 @@ Aby zidentyfikować prędkość pojazdu program pobiera różnicę klatek międz
 \end_layout
 
 \begin_layout Standard
-Wszystkie wyniki klasyfikacji są pakowane do struktury danych, zwanej w
- języku Python słownikiem, i przesyłane do modułu zajmującego się zapisywaniem
- wyników do obrazów i baz danych.
+Wszystkie wyniki identyfikacji parametrów są pakowane do struktury danych,
+ zwanej w języku Python słownikiem, i przesyłane do modułu zajmującego się
+ zapisywaniem wyników.
 \end_layout
 
 \begin_layout Standard
@@ -3045,15 +3086,7 @@ Analiza wyników
 \begin_layout Standard
 Wyniki działania programu zostały porównane z danymi pochodzącymi z pomiaru
  za pomocą pętli indukcyjnych.
- Dane te miały postać plików *.avi oraz plików tekstowych w formacie 
-\begin_inset Quotes pld
-\end_inset
-
-kolumnowym
-\begin_inset Quotes prd
-\end_inset
-
-:
+ Dane te miały postać plików avi oraz plików tekstowych w formacie kolumnowym:
 \end_layout
 
 \begin_layout Standard
@@ -3454,14 +3487,13 @@ Pierwszy etapem w skrypcie jest zaimportowanie potrzebnych bibliotek i klas:
 \end_layout
 
 \begin_layout Description
-os - moduł biblioteki standardowej, zapewniający podstawowe funkcje zależne
- od architektury systemu operacyjnego(otwieranie/czytanie plików, poruszanie
- się po hierarchii katalogów, manipulowanie zmiennymi systemowi)
+os - podstawowe funkcje zależne od architektury systemu operacyjnego(otwieranie/
+czytanie plików, poruszanie się po hierarchii katalogów, manipulowanie zmiennymi
+ systemowi),
 \end_layout
 
 \begin_layout Description
-datetime - moduł biblioteki standardowej, służący do manipulacji datą, czasem,
- strefą czasową, umożliwiający także odmierzanie czasu.
+datetime - manipulacji datą, czasem, strefą czasową, odmierzanie czasu,
 \end_layout
 
 \begin_layout Description
@@ -3469,8 +3501,7 @@ numpy - zewnętrzna biblioteka do operacji numerycznych
 \end_layout
 
 \begin_layout Description
-VideoReader - klasą do odczytu danych z pliku wideo, zapewniająca dostęp
- do właściwości pliku.
+VideoReader - odczytu danych z pliku wideo, dostęp do właściwości pliku.
 \end_layout
 
 \begin_layout Description
@@ -3478,16 +3509,15 @@ Frame - klasa opakowująca klatki obrazu pobrane z pliku.
 \end_layout
 
 \begin_layout Description
-Algorithm - klasa reprezentująca algorytm programu.
+Algorithm - główny algorytm programu.
 \end_layout
 
 \begin_layout Description
-Configuration - klasa pozwalająca zmieniać, przywracać i zapisywać ustawienia
- programu.
+Configuration - ustawienia programu.
 \end_layout
 
 \begin_layout Description
-Database - klasa zapisująca wyniki do bazy danych.
+Database - zapis rezultatu do bazy danych.
 \end_layout
 
 \begin_layout Description
@@ -4642,7 +4672,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bledy/2.jpg
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -4681,7 +4711,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bledy/4.jpg
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -4723,7 +4753,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bledy/1.jpg
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -4765,7 +4795,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bledy/5.jpg
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -4809,7 +4839,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename img/bledy/3.jpg
-	scale 50
+	scale 60
 
 \end_inset
 
@@ -4914,7 +4944,7 @@ systemy wizyjne
 \begin_inset Quotes prd
 \end_inset
 
- w zagadanieniu praktycznym.
+ w zagadnieniu praktycznym.
  W programie wykorzystano wiele algorytmów i operacji wizyjnych omawianych
  na zajęciach.
  Podczas tworzenia oprogramowania autor dogłębnie zapoznał się z bardzo
@@ -4994,7 +5024,7 @@ cleardoublepage{}
 LatexCommand bibtex
 btprint "btPrintAll"
 bibfiles "bibliografia"
-options "bibtotoc,bst/IEEEtranS"
+options "bibtotoc,plplain"
 
 \end_inset
 
