@@ -4,7 +4,7 @@
 \begin_header
 \textclass aghdpl
 \begin_preamble
-% \documentclass{aghdpl}               % przy kompilacji programem latex
+%\documentclass{aghdpl}               % przy kompilacji programem latex
 % \documentclass[pdflatex,en]{aghdpl}  % praca w języku angielskim
 % dodatkowe pakiety
 \usepackage{enumerate}
@@ -173,7 +173,7 @@ Informatyki i Inżynierii Biomedycznej}
 
 
 \backslash
-division{}
+division{Katedra Automatyki i Inżynierii Biomedycznej}
 \end_layout
 
 \begin_layout Plain Layout
@@ -267,7 +267,7 @@ name "chap:Wstep"
 \begin_layout Standard
 Wraz z rozwojem motoryzacji i infrastruktury drogowej pojawiła się konieczność
  badania parametrów ruchu drogowego.
- Badania mają na celu pozyskanie informacji o liczbie pojazdów i ich typie,
+ Badania mają na celu pozyskanie informacji o liczbie i typie pojazdów,
  stanie dróg, wpływie samochodów na środowisko naturalne i życie mieszkańców,
  czy przyczynach wypadków samochodowych.
  Rezultaty badań są ważnym czynnikiem, branym pod uwagę przy planowaniu
@@ -286,8 +286,8 @@ atora oraz elementu wykonawczego.
  przez stanowisko pomiarowe.
  Pomiar na odcinku wymaga zastosowania pary detektorów bądź zaawansowanego
  systemu kamer.
- W przeciwieństwie do pierwszej techniki, umożliwia zmierzenie natężenia
- ruchu.
+ W przeciwieństwie do pierwszej techniki, pomiar odcinkowy umożliwia zmierzenie
+ natężenia ruchu.
 \end_layout
 
 \begin_layout Standard
@@ -298,9 +298,9 @@ ne.
  Do pierwszej kategorii zalicza się m.
  in.
  czujniki indukcyjne, pneumatyczne, kwarcowe.
- Montuje się je bezpośrednio w jezdni lub bądź na powierzchni.
- Ich instalacja wymaga kosztownej i czasochłonnej ingerencji w nawierzchnię
- drogi, która wiąże się z koniecznością czasowego zamknięcia pasa ruchu.
+ Montuje się je bezpośrednio w jezdni lub bądź na jej nawierzchni.
+ Ich instalacja wymaga kosztownej i czasochłonnej ingerencji, która wiąże
+ się z koniecznością czasowego zamknięcia pasa ruchu.
  Są one również podatne na czynniki zewnętrzne, takie jak temperatura czy
  wilgotność.
  
@@ -336,8 +336,8 @@ W pracy przedstawiono zagadnienia związane z wykrawaniem i identyfikacją
  Napisano program, który z nagrań ruchu na odcinku drogi jednokierunkowej,
  uzyskiwał długość, wysokość, prędkość i kolor pojazdu.
  Źródło obrazu stanowiła kamera znajdująca się na poboczu drogi.
- Nagrania użyte podczas tworzenia i testowania oprogramowania, pochodziły
- z pomiarów dokonanych przez autora oraz ze stanowiska pomiarowego, używanego
+ Pliki użyte podczas tworzenia i testowania oprogramowania, pochodziły z
+ nagrań dokonanych przez autora oraz ze stanowiska pomiarowego, używanego
  przez naukowców z Katedry Metrologi Akademii Górniczo-Hutniczej w Krakowie.
  
 \end_layout
@@ -392,8 +392,8 @@ Generalny Pomiar Ruchu Drogowego
 \begin_layout Standard
 Pierwsze pomiary ruchu drogowego zostały przeprowadzone we Francji w XIX
  wieku.
- W Polsce w okresie międzywojennym przeprowadzano zliczanie pojazdów w miastach.
- w okresach szczególnego natężenia ruchu.
+ W Polsce już w okresie międzywojennym przeprowadzano zliczanie pojazdów
+ w miastach.
  Po II Wojnie Światowej wznowiono pomiary w 1954r.
  Od 1965, co 5 lat, dokonywany jest Generalny Pomiar Ruchu Drogowego (GPRD)
  
@@ -416,7 +416,7 @@ h dróg krajowych i wojewódzkich.
  Uzyskiwane w wyniku GPR pomiary są wykorzystywane przy planowaniu rozbudowy
  infrastruktury drogowej, organizacji ruchu, utrzymaniu dróg, określaniu
  przyczyn wypadkowości czy badaniu wpływu ruchu na komfort życia mieszkańców
- i środowisko naturalne.
+ oraz środowisko naturalne.
 \end_layout
 
 \begin_layout Standard
@@ -503,13 +503,10 @@ Pomiarów ruchu drogowego dokonuję się w punkcie, na krótki odcinku drogi,
  próbnych poruszających się po drodze.
  Rozróżnia się 4 typy ruchu pojazdów: jazda swobodna, jazda przy maksymalnym
  przepływie, jazda w warunkach dużej gęstości oraz zator.
-\end_layout
-
-\begin_layout Standard
-Indywidualny pojazd można opisać szeregiem wartości: klasą pojazdu, numerem
+ Indywidualny pojazd można opisać szeregiem wartości: klasą pojazdu, numerem
  rejestracyjnym, liczbą osi, odległościami między osiami, długością, szerokością
  , wysokością, prędkością czy naciskiem na jezdnię.
- Stosuje się także opis strefowy, środowiskowy, pogodowy i opis jezdni.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -522,7 +519,7 @@ Detektor jest to urządzenie składające się z czujnika, układu kondycjonowan
  Jego celem jest wykrycie obecności pojazdu w punkcie bądź strefie pomiaru.
  Detektor powinien być urządzeniem prostym w obsłudze i montażu, bezawaryjnym,
  pozwalającym na łatwy odczyt informacji.
- Stosowane są dwa rodzaje detektorów: bezinwazyjne i wbudowane(instalowane
+ Stosowane są dwa rodzaje detektorów: bezinwazyjne i wbudowane (instalowane
  w nawierzchni) 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -539,8 +536,8 @@ Klasyfikacja detektorów wbudowanych:
 \end_layout
 
 \begin_layout Itemize
-Linowy - drut stalowy lub linka nylonowa zamontowana jest na wysokości kilku
- minimetrów na jezdnią.
+Linowy - zbudowany na bazie linki zamontowanej na wysokości kilku minimetrów
+ na jezdnią.
  Nacisk przejeżdżającego pojazdu powoduje naciąg linki i uruchomienie zestyku.
  Ten rodzaj detektory może generować fałszywe impulsy, wymaga regulacji
  i poprawy naciągu linki, ma ograniczoną maksymalna prędkość pomiarów.
@@ -548,8 +545,7 @@ Linowy - drut stalowy lub linka nylonowa zamontowana jest na wysokości kilku
 \end_layout
 
 \begin_layout Itemize
-Taśmowy - dwie taśmy z gumowymi wkładkami, wypełnione gazem elektrycznie
- obojętnym.
+Taśmowy - dwie taśmy z gumowymi wkładkami, wypełnione gazem.
  Nacisk pojazdu powoduje zetknięcie się ze sobą taśm.
  Do działania wymaga specjalnego osprzętu.
  Występują niekorzystne drgania styków.
@@ -557,19 +553,14 @@ Taśmowy - dwie taśmy z gumowymi wkładkami, wypełnione gazem elektrycznie
 \end_layout
 
 \begin_layout Itemize
-Hydrauliczny - nacisk pojazdu na wąż wypełniony olejem powoduje podniesienie
- się poziomu w kapilarze i uruchomienie zestyku.
+Hydrauliczny/pneumatyczny - nacisk pojazdu na wąż powoduje podniesienie
+ się poziomu cieczy i uruchomienie zestyku.
  Pojazdy o dużej masie mogą uszkodzić ten typ detektora.
 \end_layout
 
 \begin_layout Itemize
-Pneumatyczny - działa na podobnej zasadzie co hydrauliczny.
-\end_layout
-
-\begin_layout Itemize
-Reluktancyjny - nacisk samochodu powoduje zwierzenie się szczeliny.
- Następuje zmiana reluktancji obwodu magnetycznego w wyniku czego zmienia
- się częstotliwość sygnału wyjściowego.
+Reluktancyjny - zwęrzenie się szczeliny, zmienia reluktancji obwodu magnetyczneg
+o w wyniku czego zmienia się również częstotliwość sygnału wyjściowego.
 \end_layout
 
 \begin_layout Itemize
@@ -579,43 +570,38 @@ Rezystancyjny - nacisk pojazdu powoduje nieliniową zmianę rezystancji czujnika
 \end_layout
 
 \begin_layout Itemize
-Pojemnościowy - dwie elektrody oddzielone dielektrykiem.
- Nacisk pojazdu powoduje zmniejszenie szerokości kondensatora i zmianę jego
- pojemności.
- Czujniki te mają kiepską odporność na uszkodzenia mechaniczne i zasolenie.
- Ich montaż wymaga kosztownej interwencji w nawierzchnię.
+Pojemnościowy - przejazd samochodu powoduje zmniejszenie szerokości kondensatora
+ i zmianę jego pojemności.
+ Czujniki te są podatne na uszkodzenia mechaniczne.
+ Ich montaż wymaga kosztownej interwencji.
 \end_layout
 
 \begin_layout Itemize
 Piezoelektryczny - jest to taśma wykonana z materiału piezoelektrycznego
- lub kabel koncentryczny z umieszczoną w środku elektrodą.
- Czujniki są wrażliwe na zmiany temperatury, której wzrost powoduje pogorszenie
- jakości pomiaru.
+ lub kabel z elektrodą.
+ Wzrost temperatury otoczenia powoduje pogorszenie jakości pomiaru.
  Mierzony może być jedynie nacisk zmienny w czasie, co ogranicza prędkość
  pomiaru do zakresu 20-110 km/h.
- Ten sposób pomiaru jest szeroko stosowany z powodu dużej czułości, szerokiemu
- zakresowi temperatury oraz niskiej cenie wykonania.
+ Ten sposób pomiaru jest szeroko stosowany z powodu dużej czułoś oraz niskiej
+ cenie wykonania.
 \end_layout
 
 \begin_layout Itemize
-Kwarcowe - działa na podobnej zasadzie co piezoelektryczny: nacisk samochodu
- na aluminiowy profil powoduje nacisk na element kwarcowy.
+Kwarcowe - działa na podobnej zasadzie co piezoelektryczny: oddziaływanie
+ samochodu na aluminiowy profil powoduje nacisk na element kwarcowy.
  Jest często stosowany w systemach ważenia pojazdów.
  W przeciwieństwie do poprzedniego typu, cechuje się odpornością na oddziaływani
 e sił podłużnych i większą wrażliwością na oddziaływanie sił poprzecznych.
  Czujnik może pracować w szerokim zakresie temperatur i prędkości.
  Jest odporny na zakłócenia temperaturowe i elektromagnetyczne.
- Jego trwałość osiąga nawet 10 lat.
 \end_layout
 
 \begin_layout Itemize
-Tensometryczny - używany jest zarówno w pomiarach nacisków osi pojazdów
- statycznych i dynamicznych.
- Ma postać platformy na której zamontowywane są tensometry, najczęściej
- w układzie pełnego mostka.Charakteryzuje się dużą dokładnością pomiaru(błędy
- rzędu 2% przy pomiarze statycznym).
+Tensometryczny - ma postać platformy na której zamontowywane są tensometry.
+ Charakteryzuje się dużą dokładnością pomiaru (błędy rzędu 2% przy pomiarze
+ statycznym).
  Może mierzyć pojazdy o prędkości do 200 km/h.
- Jego trwałość sięga 10 lat.
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -627,13 +613,6 @@ Indukcyjny pętlowy - jest najbardziej rozpowszechnionym typem detektora.
  ma jezdni jest prosta i mało kosztowna.
 \end_layout
 
-\begin_layout Itemize
-Magnetyczne - reaguje na zmiany pola magnetycznego.
- Jest bardziej czuły na zakłócenia niż pętlowy, ale jego instalacja w nawierzchn
-i jest znacznie prostsza.
- 
-\end_layout
-
 \begin_layout Standard
 Drugim rodzajem detektorów są detektory nieinwazyjne.
  Spośród nich wyróżniamy:
@@ -642,8 +621,8 @@ Drugim rodzajem detektorów są detektory nieinwazyjne.
 \begin_layout Itemize
 Laserowe aktywne - zbudowane są z nadajnika promieniowania, układu optycznego
  oraz odbiornika promieniowania.
- Mogą być wykorzystane do pomiaru prędkości, wysokości czy, przy odpowiedniej
- częstotliwości próbkowania, budowaniu profilu samochodu.
+ Mogą być wykorzystane do pomiaru prędkości, wysokości czy budowania profilu
+ samochodu.
  Czujnik tej klasy mogą pracować w szerokim zakresie temperatur, wykazują
  odporność na warunki atmosferyczne oraz są niezależne od zewnętrznego oświetlen
 ia.
@@ -673,7 +652,7 @@ Mikrofalowe - działają na zasadzie radaru, generują fale wysokiej częstotliw
 \end_layout
 
 \begin_layout Itemize
-Kamery z systemami przetwarzania obrazu.
+Wizyjne - kamery z systemami przetwarzania obrazu.
 \end_layout
 
 \begin_layout Standard
@@ -756,7 +735,7 @@ mimo wysokiej ceny budowy i instalacji systemu, jego dalsza eksploatacja
 \end_layout
 
 \begin_layout Itemize
-mają szerokie możliwości konfiguracji i dostosowywania strefy detekcji,
+mają szerokie możliwości dostosowywania strefy detekcji,
 \end_layout
 
 \begin_layout Itemize
@@ -764,9 +743,7 @@ mogą być zintegrowane z systemami pomiaru wbudowanymi w jezdnię,
 \end_layout
 
 \begin_layout Itemize
-w zaawansowanych aplikacjach kamera może dokonywać auto-pozycjonowania w
- celu kompensacji zakłóceń wynikających ze zmiany położenia słońca czy spadku
- jakości oświetlenia,
+kamera może dokonywać auto-pozycjonowania w celu kompensacji zakłóceń,
 \end_layout
 
 \begin_layout Itemize
@@ -802,7 +779,7 @@ NeuroSoft
 
 \begin_layout Standard
 Rozwiązania wrocławskiej firmy NeuroSoft są jednymi z najpopularniejszych
- w kategorii systemów pomiaru i zarządzania ruchem drogowym
+ w kategorii systemów pomiaru i zarządzania ruchem drogowym 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "neurosoft"
@@ -948,7 +925,7 @@ Cat Traffic
 
 \begin_layout Standard
 Poznańska firma Cat Traffic zajmuje się systemami stanowiącymi połączenie
- metod wizyjnych z wykorzystaniem płyt warzących
+ metod wizyjnych z wykorzystaniem płyt warzących 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "cattraffic"
@@ -959,7 +936,7 @@ key "cattraffic"
  Firma wdrożyła kilkanaście stacji warzących na terenie Niemiec, Polski,
  Austrii i Szwajcarii.
  W Polsce CatTraffic wdrożyło na autostradzie A4 systemy pomiaru wagi i
- badania statystki ruchu pojazdów, oraz system czasu przejazdu na 
+ badania statystki ruchu pojazdów oraz system czasu przejazdu na 
 \begin_inset Quotes pld
 \end_inset
 
@@ -1076,21 +1053,20 @@ Jest językiem obiektowym wysokiego poziomu.
 \end_layout
 
 \begin_layout Itemize
-Gramatyka języka jest bardzo prosta, podobna do składni języka angielskiego,
- przez co kod jest jasny i zrozumiały.
+Gramatyka języka jest bardzo prosta, podobna do składni języka angielskiego.
  Dodatkowo język ten wymusza na programiście stosowanie standardu PEP8,
- co powoduje jednolity i przejrzysty styl kodu w powstającym programie.
+ co pozwala utrzymać jednolity i przejrzysty styl kodu w powstającym programie.
 \end_layout
 
 \begin_layout Itemize
 Posiada bogatą bibliotekę standardową zawierającą moduły do programowania
- sieciowego, pracy z plikami html, xml, json, tworzenia interfejsów gui
- czy przetwarzania wielowątkowego.
+ sieciowego, pracy z plikami html, xml, json, tworzenia interfejsów gui,
+ przetwarzania wielowątkowego.
 \end_layout
 
 \begin_layout Itemize
 Jest językiem interpretowanym, więc programy wykonane w tym języku są niezależne
- od platformy i mogą być łatwo przenoszone na inne systemy operacyjne.
+ od platformy i mogą być przenoszone na inne systemy operacyjne.
 \end_layout
 
 \begin_layout Itemize
@@ -1149,7 +1125,7 @@ videoio - przechwytywanie obrazu wideo,
 \end_layout
 
 \begin_layout Itemize
-video - analiza obrazu wideo(śledzenie ruchu, wyodrębnianie tła),
+video - analiza obrazu wideo (śledzenie ruchu, wyodrębnianie tła),
 \end_layout
 
 \begin_layout Itemize
@@ -1173,19 +1149,12 @@ NumPy
 \end_layout
 
 \begin_layout Standard
-NumPy jest zewnętrzną biblioteką 
-\begin_inset Quotes pld
-\end_inset
-
-open source
-\begin_inset Quotes prd
-\end_inset
-
-, służącą do przeprowadzania obliczeń na n-wymiarowych tablicach.
- Jest ona podobna do środowiska Matlab.
+NumPy jest zewnętrzną biblioteką służącą do przeprowadzania obliczeń na
+ n-wymiarowych tablicach.
+ Jest podobna do środowiska Matlab.
  Podstawowa typ tablicy, używany przez bibliotekę znacząco różni się od
- tablicy(listy) samego Pythona: lista jest kontenerem heterogonicznym, mogącym
- dynamicznie zmieniać swój rozmiar, natomiast 
+ tablicy (listy) samego Pythona: lista jest kontenerem heterogonicznym,
+ mogącym dynamicznie zmieniać swój rozmiar, natomiast 
 \begin_inset Quotes pld
 \end_inset
 
@@ -1193,9 +1162,9 @@ ndarray
 \begin_inset Quotes prd
 \end_inset
 
- jest tablicą homogeniczną o stałym rozmiarze.Rozwiązanie takie zapewnia
- wysoką wydajność obliczeń i możliwość bezpośredniej integracji z plikami
- binarnymi biblioteki napisanymi w języku C/C++.
+ jest tablicą homogeniczną o stałym rozmiarze.
+ Rozwiązanie takie zapewnia wysoką wydajność obliczeń i możliwość bezpośredniej
+ integracji z plikami binarnymi biblioteki napisanymi w języku C/C++.
 \end_layout
 
 \begin_layout Section*
@@ -1203,7 +1172,7 @@ SciPy
 \end_layout
 
 \begin_layout Standard
-Biblioteka SciPy(skrót od 
+Biblioteka SciPy (skrót od 
 \begin_inset Quotes pld
 \end_inset
 
@@ -1211,16 +1180,8 @@ Scientific Python
 \begin_inset Quotes prd
 \end_inset
 
-) jest biblioteką 
-\begin_inset Quotes pld
-\end_inset
-
-open-source
-\begin_inset Quotes prd
-\end_inset
-
- zawierającą funkcje do rozwiązywania zadań optymalizacji, algebry liniowej,
- przetwarzania sygnałów czy rozwiązywania równań różniczkowych.
+) jest biblioteką zawierającą funkcje do rozwiązywania zadań optymalizacji,
+ algebry liniowej, przetwarzania sygnałów czy rozwiązywania równań różniczkowych.
  Biblioteka pozwala zrealizować większość operacji dostępnych w środowisku
  Matlab.
  
@@ -1362,11 +1323,11 @@ Pycharm jest środowiskiem deweloperskim dla języka Python, tworzonym przez
  Html5, Css3, JavaScript, Angular.js.
  Za pomocą Pycharma programista może korzystać z frameworków webowych takich
  jak Django czy Flask.
- Środowisko wspiera również systemy kontroli wersji(Git, SVN), posiada wsparcie
- dla narzędzi do pracy z bazami SQL oraz umożliwia zdalne edytowanie kodu
- w oparciu o protokół SSH.
- Firma JetBrains udostępnia 3 wersje IDE: profesjonalną(płatną), edukacyjną(dla
- studentów) oraz 
+ Środowisko wspiera również systemy kontroli wersji (Git, SVN), posiada
+ wsparcie dla narzędzi do pracy z bazami SQL oraz umożliwia zdalne edytowanie
+ kodu w oparciu o protokół SSH.
+ Firma JetBrains udostępnia 3 wersje IDE: profesjonalną, edukacyjną oraz
+ 
 \begin_inset Quotes pld
 \end_inset
 
@@ -1397,11 +1358,6 @@ cleardoublepage{}
 Opis programu
 \end_layout
 
-\begin_layout Standard
-Poniższy rozdział opisuje interfejs i sposób działania zaimplementowanego
- programu.
-\end_layout
-
 \begin_layout Section*
 Instalacja 
 \end_layout
@@ -1409,7 +1365,8 @@ Instalacja
 \begin_layout Standard
 Poniżej został opisany sposób instalacji programu oraz wymaganych bibliotek
  na systemie Linux.
- 
+ W celu instalacji na systemie Windows użytkownik musi zamodzielnie zainstlować
+ wymagane biblioteki.
 \end_layout
 
 \begin_layout Enumerate
@@ -1662,18 +1619,15 @@ Program został podzielony na następujące pliki oraz foldery:
 \end_layout
 
 \begin_layout Itemize
-data - folder do którego program zapisuje dane o wykrytych pojazdach do
- baz danych SQLite,
+data - bazy danych z wynikami,
 \end_layout
 
 \begin_layout Itemize
-doc - dokumentacja programu w formacie .html wygenerowana przy użyciu narzędzia
- Sphinx,
+doc - dokumentacja programu,
 \end_layout
 
 \begin_layout Itemize
-gui - pliki w formacie .glade używane do wyświetlania interfejsu graficznego
- użytkownika,
+gui - pliki graficznego interfejsu użytkownika,
 \end_layout
 
 \begin_layout Itemize
@@ -1689,20 +1643,19 @@ src - pliki źródłowe programu,
 \end_layout
 
 \begin_layout Itemize
-videos - zapisane przez program wyniki analizy w postaci plików wideo,
+videos - przetworzone pliki wideo,
 \end_layout
 
 \begin_layout Itemize
-config.json - plik konfiguracyjny programu, zawiera parametry algorytmów
- oraz opcje dotyczące prezentacji wyników programu,
+config.json - konfiguracja programu, 
 \end_layout
 
 \begin_layout Itemize
-data.log - plik gdzie są odkładane komunikaty diagnostyczne programu,
+data.log - komunikaty diagnostyczne programu,
 \end_layout
 
 \begin_layout Itemize
-readme.txt - plik tekstowy zawierający informacje o programie,
+readme.txt - informacje o programie,
 \end_layout
 
 \begin_layout Itemize
@@ -1814,22 +1767,14 @@ Pojazdy są oznaczane zielonym prostokątem.
 \end_layout
 
 \begin_layout Itemize
-Czerwony prostokąt stanowi obszar 
-\begin_inset Quotes pld
-\end_inset
-
-czułości
-\begin_inset Quotes prd
-\end_inset
-
- kamery.
+Czerwony prostokąt stanowi obszar detekcji.
  Wszystkie obiekty, których środki ciężkości znajdują się po za tym obszarem
  są ignorowane przez program.
  
 \end_layout
 
 \begin_layout Itemize
-Dwie różowe pionowe linie służą do oznaczenia odcinka, którego długość stanowi
+Dwie pionowe linie służą do oznaczenia odcinka, którego długość stanowi
  podstawę do wyliczenia przelicznika pikseli na obrazie na metry.
  Pozwala to określać prędkość i wymiary samochodów.
 \end_layout
@@ -1851,12 +1796,12 @@ Dodaj wideo
 \begin_inset Quotes prd
 \end_inset
 
- - otwiera poniższe okno dialogowe, umożliwiające wybór jednego bądź większej
- ilości plików wideo do analizy.
+ - otwiera okno dialogowe, umożliwiające wybór jednego bądź większej ilości
+ plików wideo do analizy.
  Wybrane pliki są dodawane do listy po prawej stronie.
  Użytkownik może usuwać pliki z listy po przez kliknięcie prawym klawiszem
  myszy na nazwie pliku.
- Skrót klawiszowy Ctrl+q.
+ Skrót klawiszowy ctrl+q.
 \begin_inset Float figure
 wide false
 sideways false
@@ -1980,7 +1925,7 @@ date
 
  została w umieszczone w celu przyszłej implementacji przetwarzania obrazu
  w czasie rzeczywistym.
- Skrót klawiszowy Ctrl+w.
+ Skrót klawiszowy ctrl+w.
  
 \begin_inset Float figure
 wide false
@@ -2021,7 +1966,7 @@ Obrazy
 \end_inset
 
  - włącza przeglądarkę zapisanych przez program zdjęć pojazdów.
- Skrót klawiszowy Ctrl+e.
+ Skrót klawiszowy ctrl+e.
  
 \begin_inset Float figure
 wide false
@@ -2055,19 +2000,10 @@ Widok przeglądania obrazów.
 
 \begin_layout Standard
 Przeglądanie obrazów odbywa się po przez wywołanie domyślnego programu do
- otwierania obrazów na systemie Linux(na dystrybucji Ubuntu jest to program
- 
-\begin_inset Quotes pld
-\end_inset
-
-eog
-\begin_inset Quotes prd
-\end_inset
-
-).
+ otwierania obrazów na systemie Linux.
  Na wygenerowanym przez program obrazie wynikowym został umieszczony pojazd
- wjeżdżający w obszar detekcji(w górnej części) oraz pojazd opuszczający
- ten obszar(na dole obrazu).
+ wjeżdżający w obszar detekcji (w górnej części) oraz pojazd opuszczający
+ ten obszar (na dole obrazu).
  Dodatkowo program wypisuje na obrazie informację, w postaci paska kolorów
  w lewym górnym rogu oraz podpisu u dołu zdjęcia.
 \end_layout
@@ -2084,7 +2020,7 @@ Wyczyść
  Przed wykonaniem operacji pojawia się okno dialogowe z prośbą o potwierdzenie
  usunięcia danych.
  Pozwala to uniknąć przypadkowego usunięcia danych.
- Skrót klawiszowy Ctrl+r.
+ Skrót klawiszowy ctrl+r.
 \end_layout
 
 \begin_layout Itemize
@@ -2095,9 +2031,9 @@ Ustawienia
 \begin_inset Quotes prd
 \end_inset
 
- -pokazuje okno ustawień programu.
+ - pokazuje okno ustawień programu.
  Opcje programu zostały opisane w następnym podrozdziale programu.
- Skrót klawiszowy Ctrl+t.
+ Skrót klawiszowy ctrl+t.
  
 \begin_inset Float figure
 wide false
@@ -2140,8 +2076,8 @@ Zmierzona odległość - długość zmierzonego odcinka.
 \end_layout
 
 \begin_layout Itemize
-Liczba szukanych kolorów - określa liczbę kolorów jaką program ma rozpoznać
- na obiekcie.
+Liczba szukanych kolorów - określa liczbę kolorów na jaką program dzieli
+ obiekt.
 \end_layout
 
 \begin_layout Itemize
@@ -2195,7 +2131,7 @@ Dokumentacja
 \end_inset
 
  - uruchamia w domyślnej przeglądarce systemowej stronę główną dokumentacji.
- Skrót klawiszowy Ctrl+y.
+ Skrót klawiszowy ctrl+y.
 \end_layout
 
 \begin_layout Itemize
@@ -2207,7 +2143,7 @@ O programie
 \end_inset
 
  - uruchamia okienko dialogowe pokazujące krótką informację o programie.
- Skrót klawiszowym Ctrl+u.
+ Skrót klawiszowym ctrl+u.
 \begin_inset Float figure
 wide false
 sideways false
@@ -2313,12 +2249,6 @@ cleardoublepage{}
 
 \begin_layout Chapter
 Algorytm detekcji i identyfikacji cech pojazdów.
-\end_layout
-
-\begin_layout Standard
-W tym rozdziale zostały opisane kolejne etapy zaimplementowanego algorytmu.
- Składa się on z trzech etapów: detekcji obiektów, śledzenia pojazdów i
- klasyfikacji.
 \end_layout
 
 \begin_layout Section*
@@ -2480,8 +2410,8 @@ Porównanie metod wyznaczania tła.
 \end_layout
 
 \begin_layout Standard
-Na powyższym obrazie zostało zaprezentowanie porównanie metody MOG2(u góry)
- z metodą GMG(na dole) na przykładowym nagraniu przejazdu samochodu.
+Na powyższym obrazie zostało zaprezentowanie porównanie metody MOG2 (u góry)
+ z metodą GMG (na dole) na przykładowym nagraniu przejazdu samochodu.
  Rezultaty nie odbiegają od siebie znacząco - można zauważyć, że GMG generuje
  odrobinę więcej zakłóceń.
  Metoda ta ma jednak ogromną zaletę - potrafi wyodrębniać cienie obiektów,
@@ -2506,7 +2436,7 @@ key "tadeusiewicz-systemy-wizyjne"
 \begin_layout Description
 Binaryzacja to jedno z podstawowych przekształceń obrazu.
  Polega na zamianie wartości widocznych na obrazie przedstawionym w skali
- szarości na poziomy 0 i 1(ewentualnie 0 i 255).
+ szarości na poziomy 0 i 1 (ewentualnie 0 i 255).
  Kluczowym elementem tego algorytmu jest dobór progu.
  Stosuje się binaryzację z pojedynczym progiem, odwrotną, z progiem podwójnym
  i wielokryteriową.
@@ -2715,6 +2645,14 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename img/przyklad/6.jpg
+	scale 50
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2726,13 +2664,13 @@ Pusta jezdnia.
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Na początku w kadrze kamery nie znajduje się żaden poruszający się pojazd.
 \end_layout
 
 \begin_layout Standard
@@ -2938,7 +2876,10 @@ Opuszczenie kadru.
 
 \begin_layout Standard
 Przejazd samochodu został wykryty.
- Pojazd opuścił rejon pomiaru i nie jest już interesujący dla programu.
+ Pojazd opuścił rejon pomiaru i nie jest już śledzony przez program.
+ Pozyskane dane zostały przekazane do następnego kroku algorytmu, w celu
+ identyfikacji parametrów.
+ 
 \end_layout
 
 \begin_layout Section*
@@ -2961,14 +2902,14 @@ Na wyznaczenie rozmiaru składa się obliczenie jego długości, wysokości i
 W celu wykrycia koloru, program wyszukuje w prostokącie otaczającym pojazd
  K dominujących kolorów i wybiera ten największy.
  Funkcja wyboru kolorów została zaimplementowana z wykorzystaniem klasy
- KMeans
+ KMeans 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "KMeans"
 
 \end_inset
 
- z pakietu scikit-learn
+ z pakietu scikit-learn 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "scikit-learn"
@@ -3039,7 +2980,7 @@ Przykład działania algorytmu K-means.
 \begin_layout Standard
 Aby zidentyfikować prędkość pojazdu program pobiera różnicę klatek między
  pojawieniem się a opuszczeniem pola detekcji przez samochód, następnie
- znając liczbę fps na sekundę określa czas między zajściem tych zdarzeń.
+ znając liczbę klatek na sekundę określa czas między zajściem tych zdarzeń.
  Kolejnym krokiem jest wyliczenie różnicy między środkami ciężkości pojazdu
  w obu miejscach.
  Znając różnicę w czasie, odległość w pikselach oraz przelicznik metrów
@@ -3047,9 +2988,8 @@ Aby zidentyfikować prędkość pojazdu program pobiera różnicę klatek międz
 \end_layout
 
 \begin_layout Standard
-Wszystkie wyniki identyfikacji parametrów są pakowane do struktury danych,
- zwanej w języku Python słownikiem, i przesyłane do modułu zajmującego się
- zapisywaniem wyników do obrazów i baz danych.
+Wszystkie wyniki identyfikacji parametrów są pakowane do słownika, a następie
+ przesyłane do modułu zajmującego się zapisywaniem wyników.
 \end_layout
 
 \begin_layout Standard
@@ -3075,15 +3015,7 @@ Analiza wyników
 \begin_layout Standard
 Wyniki działania programu zostały porównane z danymi pochodzącymi z pomiaru
  za pomocą pętli indukcyjnych.
- Dane te miały postać plików *.avi oraz plików tekstowych w formacie 
-\begin_inset Quotes pld
-\end_inset
-
-kolumnowym
-\begin_inset Quotes prd
-\end_inset
-
-:
+ Dane te miały postać plików avi oraz plików tekstowych w formacie kolumnowym:
 \end_layout
 
 \begin_layout Standard
@@ -3484,14 +3416,13 @@ Pierwszy etapem w skrypcie jest zaimportowanie potrzebnych bibliotek i klas:
 \end_layout
 
 \begin_layout Description
-os - moduł biblioteki standardowej, zapewniający podstawowe funkcje zależne
- od architektury systemu operacyjnego(otwieranie/czytanie plików, poruszanie
- się po hierarchii katalogów, manipulowanie zmiennymi systemowi)
+os - podstawowe funkcje zależne od architektury systemu operacyjnego(otwieranie/
+czytanie plików, poruszanie się po hierarchii katalogów, manipulowanie zmiennymi
+ systemowi),
 \end_layout
 
 \begin_layout Description
-datetime - moduł biblioteki standardowej, służący do manipulacji datą, czasem,
- strefą czasową, umożliwiający także odmierzanie czasu.
+datetime - manipulacji datą, czasem, strefą czasową, odmierzanie czasu,
 \end_layout
 
 \begin_layout Description
@@ -3499,8 +3430,7 @@ numpy - zewnętrzna biblioteka do operacji numerycznych
 \end_layout
 
 \begin_layout Description
-VideoReader - klasą do odczytu danych z pliku wideo, zapewniająca dostęp
- do właściwości pliku.
+VideoReader - odczytu danych z pliku wideo, dostęp do właściwości pliku.
 \end_layout
 
 \begin_layout Description
@@ -3508,16 +3438,15 @@ Frame - klasa opakowująca klatki obrazu pobrane z pliku.
 \end_layout
 
 \begin_layout Description
-Algorithm - klasa reprezentująca algorytm programu.
+Algorithm - główny algorytm programu.
 \end_layout
 
 \begin_layout Description
-Configuration - klasa pozwalająca zmieniać, przywracać i zapisywać ustawienia
- programu.
+Configuration - ustawienia programu.
 \end_layout
 
 \begin_layout Description
-Database - klasa zapisująca wyniki do bazy danych.
+Database - zapis rezultatu do bazy danych.
 \end_layout
 
 \begin_layout Description

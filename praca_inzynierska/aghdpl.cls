@@ -76,8 +76,8 @@ im. Stanis\l{}awa Staszica w Krakowie}}}
 
 %\rule{\textwidth}{1mm}\vspace*{1mm}
 
-{\large \bfseries\scshape \@faculty}\\\vspace*{20mm}
-{\large \bfseries\scshape \@division}}\vspace*{0mm}
+{\large \bfseries\scshape \@faculty}\\\vspace*{5mm}
+{\large \scshape \@division}}\vspace*{20mm}
 
 {\huge \@thesistype}\\\vspace*{22mm}
 
